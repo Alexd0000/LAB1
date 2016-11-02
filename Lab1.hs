@@ -1,5 +1,8 @@
+module Foo where
+
+import Test.QuickCheck
 -- ============================= INTRODUCTION ==============================
--- In this lab assignment, we will implement the power function in two 
+-- In this lab assignment, we will implement the power function in two
 -- different ways.
 
 -- One possible implementation of this function is :
@@ -45,9 +48,9 @@ power1 n k = product (initialiseList n k)
 
 -- Calculate n^k, if k even it returns (n*n)^(k/2) and if it is odd, n*(n)^(k-10)
 power2:: Num a => a -> Integer -> a
-power2 n k | k < 0 = error "initialiseList : k must be positive" 
-           | k == 0 = 1 
-           | even k = power2 (n*n) (div k 2) 
+power2 n k | k < 0 = error "initialiseList : k must be positive"
+           | k == 0 = 1
+           | even k = power2 (n*n) (div k 2)
            | odd k = n*power2 n (k-1)
 
 
@@ -56,8 +59,15 @@ power2 n k | k < 0 = error "initialiseList : k must be positive"
 -- ================================ PART 4 =================================
 
 -- -------------------------------- TASK A ---------------------------------
-
-
+{-
+Test cases:
+1. n and k positive integers
+2. n = 0
+3. n<0
+4. k not Integer, n Integer -> power1 will not work, because it takes only
+  integers as arguments
+5. n not Integer, k Integer -> power2 will have problems
+-}
 -- -------------------------------------------------------------------------
 
 -- -------------------------------- TASK B ---------------------------------
