@@ -68,7 +68,7 @@ Test cases:
 4. n not Integer, k Integer -> power will have problems
 
 We tried also making k not integer, but that will only result in an error for
-all the power functions and not make the prop_powers false.
+all the power functions and not make the prop_powers false same for char and strings.
 
 -}
 -- -------------------------------------------------------------------------
