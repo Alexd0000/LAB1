@@ -65,9 +65,7 @@ Test cases:
    should be.
 2. n = 0  -> check if power1 retrieves 1 or nothing
 3. n<0	-> should be working
-4. k not Integer, n Integer -> all will not work, because they take only
-  integer for k.
-5. n not Integer, k Integer -> power will have problems
+4. n not Integer, k Integer -> power will have problems
 -}
 -- -------------------------------------------------------------------------
 
@@ -83,7 +81,7 @@ prop_powers n k = power n k == power1 n k && power2 n k == power1 n k
 
 -- -------------------------------- TASK C ---------------------------------
 
-listOfCases = [(5.0,2.0),(0.0,5.0),((-5.0),3.0),(2.0,2.3),(2.5,6.0)]
+listOfCases = [(5.0,2),(0.0,5),((-5.0),3),(2.0,2),(2.5,6)]
 
 
 doingTests listOfPairs = [prop_powers (fst x) (snd x) | x<-listOfPairs ]
@@ -93,7 +91,7 @@ doingTests listOfPairs = [prop_powers (fst x) (snd x) | x<-listOfPairs ]
 
 -- -------------------------------- TASK D ---------------------------------
 {-
-  The Problem Quickcheck had was while using negative values for k. If we take
+  The Problem QuickCheck had was while using negative values for k. If we take
   the absolute value of k, we can avoid these cases and QuickCheck will succeed.
 -}
 
