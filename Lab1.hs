@@ -71,7 +71,8 @@ Test cases:
 -- -------------------------------------------------------------------------
 
 -- -------------------------------- TASK B ---------------------------------
-{-This function test if for the same inputs values n and k all three
+{-
+  This function test if for the same inputs values n and k all three
   power functions return the same output
 -}
 
@@ -86,6 +87,10 @@ prop_powers n k = power n k == power1 n k && power2 n k == power1 n k
 -- -------------------------------------------------------------------------
 
 -- -------------------------------- TASK D ---------------------------------
+{-
+  The Problem Quickcheck had was while using negative values for k. If we take
+  the absolute value of k, we can avoid these cases and QuickCheck will succeed.
+-}
 
 prop_powers' n k = power n (abs k) == power1 n (abs k)
                   && power2 n (abs k) == power1 n (abs k)
