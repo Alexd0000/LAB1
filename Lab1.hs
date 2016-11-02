@@ -1,3 +1,17 @@
+-- ============================= INTRODUCTION ==============================
+-- In this lab assignment, we will implement the power function in two 
+-- different ways.
+
+-- One possible implementation of this function is :
+power :: Integer -> Integer -> Integer
+power n k | k < 0 = error "power: negative argument"
+power n 0 = 1
+power n k = n * power n (k-1)
+
+
+-- =========================================================================
+
+
 -- ================================ PART 1 =================================
 
 -- We want to know how many "steps" are being used by the function power n k
@@ -21,7 +35,7 @@ initialiseList n k | k<0 = error "power: negative argument"
                    | k>0 = [n | x<-[1..k]]
 
 -- Calculate n^k multuplying all the terms of a list of k elements all being equal to n
--- power1:: Num a => a -> Integer -> [a]
+power1:: Num a => a -> Integer -> a
 power1 n k | k < 0 = error "initialiseList : k must be positive"
 power1 n k = product (initialiseList n k)
 
@@ -30,6 +44,7 @@ power1 n k = product (initialiseList n k)
 -- ================================ PART 3 =================================
 
 -- Calculate n^k, if k even it returns (n*n)^(k/2) and if it is odd, n*(n)^(k-10)
+power2:: Num a => a -> Integer -> a
 power2 n k | k < 0 = error "initialiseList : k must be positive" 
            | k == 0 = 1 
            | even k = power2 (n*n) (div k 2) 
@@ -41,9 +56,8 @@ power2 n k | k < 0 = error "initialiseList : k must be positive"
 -- ================================ PART 4 =================================
 
 -- -------------------------------- TASK A ---------------------------------
--- We need to come up with a number of test cases
 
--- 1 : n=5 and k=0
+
 -- -------------------------------------------------------------------------
 
 -- -------------------------------- TASK B ---------------------------------
