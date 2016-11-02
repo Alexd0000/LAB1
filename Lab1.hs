@@ -61,12 +61,13 @@ power2 n k | k < 0 = error "initialiseList : k must be positive"
 -- -------------------------------- TASK A ---------------------------------
 {-
 Test cases:
-1. n and k positive integers
-2. n = 0
-3. n<0
-4. k not Integer, n Integer -> power1 will not work, because it takes only
-  integers as arguments
-5. n not Integer, k Integer -> power2 will have problems
+1. n and k positive integers -> basics tests to see if it is working as it
+   should be.
+2. n = 0  -> check if power1 retrieves 1 or nothing
+3. n<0	-> should be working
+4. k not Integer, n Integer -> all will not work, because they take only
+  integer for k.
+5. n not Integer, k Integer -> power will have problems
 -}
 -- -------------------------------------------------------------------------
 
@@ -77,6 +78,11 @@ prop_powers n k = power n k == power1 n k && power2 n k == power1 n k
 -- -------------------------------------------------------------------------
 
 -- -------------------------------- TASK C ---------------------------------
+
+listOfCases = [(5.0,2.0),(0.0,5.0),((-5.0),3.0),(2.0,2.3),(2.5,6.0)]
+
+
+doingTests listOfPairs = [prop_powers (fst x) (snd x) | x<-listOfPairs ]
 
 -- -------------------------------------------------------------------------
 
