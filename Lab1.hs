@@ -1,4 +1,4 @@
-module Foo where
+module Lab1 where
 
 import Test.QuickCheck
 -- ============================= INTRODUCTION ==============================
@@ -6,7 +6,7 @@ import Test.QuickCheck
 -- different ways.
 
 -- One possible implementation of this function is :
-power :: Integer -> Integer -> Integer
+power :: Num a => a -> Integer -> a
 power n k | k < 0 = error "power: negative argument"
 power n 0 = 1
 power n k = n * power n (k-1)
@@ -72,6 +72,9 @@ Test cases:
 -- -------------------------------------------------------------------------
 
 -- -------------------------------- TASK B ---------------------------------
+{-This function test if for the same inputs values n and k all three
+  power functions return the same output
+-}
 
 prop_powers n k = power n k == power1 n k && power2 n k == power1 n k
 
@@ -84,9 +87,13 @@ listOfCases = [(5.0,2.0),(0.0,5.0),((-5.0),3.0),(2.0,2.3),(2.5,6.0)]
 
 doingTests listOfPairs = [prop_powers (fst x) (snd x) | x<-listOfPairs ]
 
+
 -- -------------------------------------------------------------------------
 
 -- -------------------------------- TASK D ---------------------------------
+
+prop_powers' n k = power n (abs k) == power1 n (abs k)
+                  && power2 n (abs k) == power1 n (abs k)
 
 -- -------------------------------------------------------------------------
 -- =========================================================================
