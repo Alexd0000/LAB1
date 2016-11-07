@@ -12,6 +12,7 @@ empty = Empty
 
 
 -- Function that calculates the value of a Rank
+-- Use default value 11 for aces
 valueRank :: Rank -> Integer
 valueRank rank =
 	case rank of
@@ -19,13 +20,11 @@ valueRank rank =
 		Queen -> 10
 		King -> 10
 		Numeric m -> m
--- what to do for an Ace ??
-
+		Ace -> 11
 
 -- Function that calculates the value of a Card
 valueCard :: Card -> Integer
 valueCard card = valueRank (rank card)
-
 
 -- That calculates the number of aces in a given hand
 numberOfAces :: Hand -> Integer
@@ -34,10 +33,15 @@ numberOfAces (Add card hand) = case (rank card) of
 	Ace -> 1 + numberOfAces hand
 	otherwise -> numberOfAces hand
 
+-- Function that calculates the value of the hand where all aces are valued 11
+valueHelp :: Hand -> Integer
+valueHelp Empty = 0
+valueHelp (Add card hand) = valueCard card + value hand
+
 -- Function that calculates the value of the hand
 value :: Hand -> Integer
-value Empty = 0
-value (Add card hand) = valueCard card + value hand
+value hand | (valueHelp hand) > 21 = (valueHelp hand) - 10*(numberOfAces hand)
+           | otherwise = valueHelp hand 
 
 -- Given a hand, is the player bust?
 gameOver :: Hand -> Bool

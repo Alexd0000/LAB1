@@ -34,8 +34,7 @@ power n k = n * power n (k-1)
 -- We used list comprehension :
 initialiseList :: a -> Integer -> [a]
 initialiseList n k | k<0 = error "power: negative argument"
-                   | k==0 = []
-                   | k>0 = [n | x<-[1..k]]
+                   | otherwise= [n | x<-[1..k]]
 
 -- Calculate n^k multuplying all the terms of a list of k elements all being equal to n
 power1:: Num a => a -> Integer -> a
