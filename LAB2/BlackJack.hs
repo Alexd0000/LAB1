@@ -59,7 +59,7 @@ numberOfAces (Add card hand) = case (rank card) of
 -- Function that calculates the value of the hand where all aces are 11.
 valueHelp :: Hand -> Integer
 valueHelp Empty = 0
-valueHelp (Add card hand) = valueCard card + value hand
+valueHelp (Add card hand) = valueCard card + valueHelp hand
 
 -- Function that calculates the true value of the hand putting the aces at
 -- 1 if the value of the hand is larger than 21.
