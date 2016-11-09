@@ -2,53 +2,80 @@ module BlackJack where
 import Cards
 import RunGame
 
--- Part A: Task 3.1 (reading the document), Task 3.2 (writing out what happens to the size function), and part of Task 3.3, namely: implement the functions "empty", "value", "gameOver", and "winner".
+-- #########################################################################
+-- ############################ LAB 2 - PART A #############################
+-- #########################################################################
+
+-- ================================ Task 3.2 ===============================
+
+-- In this task, we had to write out what happens when we apply the size
+-- function on hand2.
+-- hand2 = Add (Card (Numeric 2) Hearts) (Add (Card Jack Spades) Empty)
+
+-- size hand2
+--    = size (Add (Card (Numeric 2) Hearts) (Add (Card Jack Spades) Empty))
+--    = 1 + size (Add (Card Jack Spades) Empty)
+--    = 1 + 1 + size Empty
+--    = 1 + 1 + 0
+--    = 2
+
+-- =========================================================================
+
+-- ================================ Task 3.3 ===============================
+
+-- In this task (for part A), we had to implement the functions "empty",
+-- "value", "gameOver", and "winner".
 
 
---  Function that returns an empty hand
+--  Function that returns an empty hand.
 empty :: Hand
 empty = Empty
 
 
 
--- Function that calculates the value of a Rank
--- Use default value 11 for aces
+-- Function that calculates the value of a Rank.
+-- We use default value 11 for aces.
 valueRank :: Rank -> Integer
 valueRank rank =
 	case rank of
-		Jack -> 10
+
+		Numeric m		Jack -> 10
 		Queen -> 10
-		King -> 10
-		Numeric m -> m
+		King -> 10 -> m
 		Ace -> 11
 
--- Function that calculates the value of a Card
+-- Function that calculates the value of a Card.
 valueCard :: Card -> Integer
 valueCard card = valueRank (rank card)
 
--- That calculates the number of aces in a given hand
+-- Function that calculates the number of aces in a given hand.
 numberOfAces :: Hand -> Integer
 numberOfAces Empty = 0
 numberOfAces (Add card hand) = case (rank card) of
 	Ace -> 1 + numberOfAces hand
 	otherwise -> numberOfAces hand
 
--- Function that calculates the value of the hand where all aces are valued 11
+-- Function that calculates the value of the hand where all aces are 11.
 valueHelp :: Hand -> Integer
 valueHelp Empty = 0
 valueHelp (Add card hand) = valueCard card + value hand
 
--- Function that calculates the value of the hand
+-- Function that calculates the true value of the hand putting the aces at
+-- 1 if the value of the hand is larger than 21.
 value :: Hand -> Integer
 value hand | (valueHelp hand) > 21 = (valueHelp hand) - 10*(numberOfAces hand)
            | otherwise = valueHelp hand 
 
--- Given a hand, is the player bust?
+-- Function that calculates if a hand has a value larger than 21. If it is
+-- the case the player holding this hand has lost.
 gameOver :: Hand -> Bool
 gameOver hand = (value hand > 21)
 
--- Given one hand for the guest and one for the bank (in that order), which player has won?
+-- Function that determines who is the winner between a Guest and the Bank
+-- given their hands and according to Black Jack rules.
 winner :: Hand -> Hand -> Player
 winner handGuest handBank | (value handGuest > value handBank) && (not (gameOver handGuest)) && (not (gameOver handBank)) = Guest
                           | (not (gameOver handGuest)) && gameOver handBank = Guest
 	                      | otherwise = Bank
+
+-- =========================================================================
