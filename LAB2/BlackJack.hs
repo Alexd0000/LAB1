@@ -38,10 +38,10 @@ empty = Empty
 valueRank :: Rank -> Integer
 valueRank rank =
 	case rank of
-
-		Numeric m		Jack -> 10
+		Numeric m -> m		
+		Jack -> 10
 		Queen -> 10
-		King -> 10 -> m
+		King -> 10 
 		Ace -> 11
 
 -- Function that calculates the value of a Card.
