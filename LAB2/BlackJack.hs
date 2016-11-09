@@ -37,7 +37,7 @@ empty = Empty
 -- We use default value 11 for aces.
 valueRank :: Rank -> Integer
 valueRank rank =
-	case rank of
+ case rank of
 
 		Numeric m	-> m
 		Jack -> 10
@@ -79,5 +79,4 @@ winner handGuest handBank | value handGuest > value handBank
 														&& not (gameOver handGuest) = Guest
                           | not (gameOver handGuest) && gameOver handBank = Guest
 	                      | otherwise = Bank
-
 -- =========================================================================
