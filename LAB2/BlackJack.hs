@@ -39,9 +39,10 @@ valueRank :: Rank -> Integer
 valueRank rank =
 	case rank of
 
-		Numeric m		Jack -> 10
+		Numeric m	-> m
+		Jack -> 10
 		Queen -> 10
-		King -> 10 -> m
+		King -> 10
 		Ace -> 11
 
 -- Function that calculates the value of a Card.
@@ -63,19 +64,20 @@ valueHelp (Add card hand) = valueCard card + value hand
 -- Function that calculates the true value of the hand putting the aces at
 -- 1 if the value of the hand is larger than 21.
 value :: Hand -> Integer
-value hand | (valueHelp hand) > 21 = (valueHelp hand) - 10*(numberOfAces hand)
-           | otherwise = valueHelp hand 
+value hand | valueHelp hand <= 21 = valueHelp hand
+           | otherwise = valueHelp hand - 10*numberOfAces hand
 
 -- Function that calculates if a hand has a value larger than 21. If it is
 -- the case the player holding this hand has lost.
 gameOver :: Hand -> Bool
-gameOver hand = (value hand > 21)
+gameOver hand = value hand > 21
 
 -- Function that determines who is the winner between a Guest and the Bank
 -- given their hands and according to Black Jack rules.
 winner :: Hand -> Hand -> Player
-winner handGuest handBank | (value handGuest > value handBank) && (not (gameOver handGuest)) && (not (gameOver handBank)) = Guest
-                          | (not (gameOver handGuest)) && gameOver handBank = Guest
+winner handGuest handBank | value handGuest > value handBank
+														&& not (gameOver handGuest) = Guest
+                          | not (gameOver handGuest) && gameOver handBank = Guest
 	                      | otherwise = Bank
 
 -- =========================================================================
