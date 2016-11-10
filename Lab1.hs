@@ -15,6 +15,9 @@ power n k = n * power n (k-1)
 -- =========================================================================
 
 
+  
+
+
 -- ================================ PART 1 =================================
 
 -- We want to know how many "steps" are being used by the function power n k
@@ -47,8 +50,8 @@ power1 n k = product (initialiseList n k)
 
 -- Calculate n^k, if k even it returns (n*n)^(k/2) and if it is odd, n*(n)^(k-10)
 power2:: Num a => a -> Integer -> a
+power2 n 0 = 1
 power2 n k | k < 0 = error "initialiseList : k must be positive"
-           | k == 0 = 1
            | even k = power2 (n*n) (div k 2)
            | odd k = n*power2 n (k-1)
 
@@ -63,8 +66,10 @@ Test cases:
 1. n and k positive integers -> basics tests to see if it is working as it
    should be.
 2. n = 0  -> check if power1 retrieves 1 or nothing
-3. n<0	-> should be working
-4. n not Integer, k Integer -> power will have problems
+3. n not Integer, k Integer -> power will have problems
+4. odd value of k and negative n -> result should be negative
+5. even value of k  and negative n -> result should be positive
+6. k=0 -> result should be 1 for any numeric value of n
 
 We tried also making k not integer, but that will only result in an error for
 all the power functions and not make the prop_powers false same for char and strings.
@@ -88,7 +93,7 @@ prop_powers n k = power n k == power1 n k && power2 n k == power1 n k
   prop_powers on each of them. The results were combined with the and function.
 -}
 
-listOfCases = [(5.0,2),(0.0,5),((-5.0),3),(2.0,2),(2.5,6)]
+listOfCases = [(5.0,2),(0.0,5),(2.0,2),(2.5,6),((-2.0),3),((-2.0),8),(5.0,0)]
 
 doingTests listOfPairs = and [prop_powers (fst x) (snd x) | x<-listOfPairs ]
 
