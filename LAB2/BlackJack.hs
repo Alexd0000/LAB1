@@ -1,6 +1,8 @@
 module BlackJack where
 import Cards
 import RunGame
+import Test.QuickCheck
+
 
 -- #########################################################################
 -- ############################ LAB 2 - PART A #############################
@@ -80,3 +82,19 @@ winner handGuest handBank | value handGuest > value handBank
                           | not (gameOver handGuest) && gameOver handBank = Guest
 	                      | otherwise = Bank
 -- =========================================================================
+
+
+-- Given two hands, <+ puts the first one on top of the second one:
+(<+) :: Hand -> Hand -> Hand
+Empty <+ hand2 =hand2
+(Add card hand1) <+ hand2 = Add card (hand1<+hand2)
+
+
+-- This function must satisfy the following QuickCheck properties
+prop_onTopOf_assoc :: Hand -> Hand -> Hand -> Bool
+prop_onTopOf_assoc p1 p2 p3 =
+    p1<+(p2<+p3) == (p1<+p2)<+p3
+
+-- The size of the combined hand should be the sum of the sizes of the two individual hands
+prop_size_onTopOf :: Hand -> Hand -> Bool
+prop_size_onTopOf hand1 hand2 = (size hand1) + (size hand2) == (size (hand1<+hand2))
