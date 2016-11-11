@@ -2,6 +2,7 @@ module BlackJack where
 import Cards
 import RunGame
 import Test.QuickCheck
+import System.Random
 
 -- #########################################################################
 -- ############################ LAB 2 - PART A #############################
@@ -138,6 +139,41 @@ playBank' deck bankHand = (deck',bankHand')
 --playBank :: Hand -> Hand
 --playBank hand | value hand < 16 = playBank (first (playBank' deck hand))
 --              | otherwise = hand
+
+--function that removes n-th card from a deck
+removeNthCard :: Hand -> Integer -> (Hand, Card)
+removeNthCard (Add card hand) n | size hand == n-1 = (hand, card)
+                                | size hand >= n = removeNthCard hand n
+                                | otherwise = error "remove: Not enough cards."
+
+--function that moves the nth from the first hand to the second
+moveNthCard :: Hand -> Hand-> Integer -> (Hand, Hand)
+moveNthCard oldDeck newDeck n = (fst(removeNthCard oldDeck n), Add (snd(removeNthCard oldDeck n)) newDeck)
+
+--helper function that actually does the shuffling
+helpShuffle :: StdGen -> (Hand,Hand) -> (Hand,Hand)
+helpShuffle g (Empty, newDeck)  = (Empty, newDeck)
+helpShuffle g (oldDeck, newDeck) = helpShuffle g1 (moveNthCard oldDeck newDeck n)
+ where (n,g1) = randomR (1, size oldDeck) g
+
+
+--function that shuffles a hand
+shuffle :: StdGen -> Hand -> Hand
+shuffle g deck = snd (helpShuffle g (deck, Empty))
+
+--Test wether a card belongs to a hand
+belongsTo :: Card -> Hand -> Bool
+c `belongsTo` Empty = False
+c `belongsTo` (Add c' h) = c == c' || c `belongsTo` h
+
+--Test whether shuffling returns the same cards
+prop_shuffle_sameCards :: StdGen -> Card -> Hand -> Bool
+prop_shuffle_sameCards g c h =
+    c `belongsTo` h == c `belongsTo` BlackJack.shuffle g h
+
+--Test whether the size is preserved during shuffling
+prop_size_shuffle :: StdGen -> Hand -> Bool
+prop_size_shuffle g hand = size hand == size (BlackJack.shuffle g hand)
 
 
 -- =========================================================================
