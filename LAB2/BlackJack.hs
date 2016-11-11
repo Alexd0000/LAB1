@@ -140,11 +140,22 @@ playBank' deck bankHand = (deck',bankHand')
 --playBank hand | value hand < 16 = playBank (first (playBank' deck hand))
 --              | otherwise = hand
 
+
+--function that turns a hand into a list of hands with just one card each
+handToList :: Hand -> [Hand]
+handToList Empty = []
+handToList (Add card hand) = [Add card Empty] ++ handToList hand
+
 --function that removes n-th card from a deck
-removeNthCard :: Hand -> Integer -> (Hand, Card)
-removeNthCard (Add card hand) n | size hand == n-1 = (hand, card)
-                                | size hand >= n = removeNthCard hand n
-                                | otherwise = error "remove: Not enough cards."
+helpRemoveNthCard :: Hand -> Integer -> (Hand, Hand)
+helpRemoveNthCard hand n = (foldr (<+) Empty (let (ys,zs) = splitAt (fromInteger n) (handToList hand)
+     in   ys ++ (tail zs)), head (snd (splitAt (fromInteger n) (handToList hand))))
+
+--function that removes n-th card from a deck
+--removeNthCard :: Hand -> Integer -> (Hand, Card)
+--removeNthCard (Add card hand) n | size hand == n-1 = (hand, card)
+--                                | size hand >= n = removeNthCard hand n
+--                                | otherwise = error "remove: Not enough cards."
 
 --function that moves the nth from the first hand to the second
 moveNthCard :: Hand -> Hand-> Integer -> (Hand, Hand)
