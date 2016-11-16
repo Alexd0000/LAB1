@@ -95,82 +95,52 @@ prop_onTopOf_assoc p1 p2 p3 =
 prop_size_onTopOf :: Hand -> Hand -> Bool
 prop_size_onTopOf hand1 hand2 = size hand1 + size hand2 == size (hand1 <+ hand2)
 
---function that given a hand and a suit adds all numerical cards with that suit
---works only if initial given set is empty -> should only be used by suitCards
-suitCardsNum :: Suit -> Hand -> Hand
-suitCardsNum suit hand | size hand < 9 = suitCardsNum suit (Add (Card (Numeric (size hand+2)) suit) hand)
-suitCardsNum suit hand | otherwise = hand
 
 --function that given a suit returns a hand consisting of all cards in that suit
-suitCards :: Suit -> Hand
-suitCards suit = Add (Card Ace suit) (Add (Card King suit) (Add (Card Queen suit)
-                (Add (Card Jack suit) (suitCardsNum suit Empty))))
-
--- TEST TEST
-oneSuitCardsNum :: Suit -> Hand
-oneSuitCardsNum suit = foldr (<+) Empty ([Add (Card (Numeric n) suit) Empty | n<-[2..10]] ++ [Add (Card f suit) Empty | f<-[Queen,King,Jack,Ace]])
-
-fullDeckBis :: Hand
-fullDeckBis = foldr (<+) Empty ([oneSuitCardsNum s | s<-[Spades,Hearts,Clubs,Diamonds]])
-
--- =====
-
+suitCardsNum :: Suit -> Hand
+suitCardsNum suit = foldr (<+) Empty ([Add (Card (Numeric n) suit) Empty | n<-[2..10]] ++ [Add (Card f suit) Empty | f<-[Queen,King,Jack,Ace]])
 
 -- function that returns a full deck of cards
 fullDeck :: Hand
-fullDeck = suitCards Hearts <+ suitCards Spades <+ suitCards Diamonds <+ suitCards Clubs
+fullDeck = foldr (<+) Empty ([suitCardsNum s | s<-[Spades,Hearts,Clubs,Diamonds]])
+
 
 --function that draws one card from a deck to a hand and returns both
 draw :: Hand -> Hand -> (Hand,Hand)
 draw Empty _ = error "draw: The deck is empty."
 draw (Add card deck) hand = (deck, Add card hand)
 
---helper function that takes the first from pair
-first :: (a, b) -> a
-first (x,y) = x
-
 --helper function that draws card from deck to hand
-playBank' :: Hand -> Hand -> (Hand, Hand)
-playBank' deck bankHand = (deck',bankHand')
+playBank' :: Hand -> Hand -> Hand
+playBank' deck bankHand | value bankHand >= 16 = bankHand
+                        | otherwise = playBank' deck' bankHand'
   where (deck',bankHand') = draw deck bankHand
 
 --function that plays for the bank according to the rules
---Which deck to use???
---playBank :: Hand -> Hand
---playBank hand | value hand < 16 = playBank (first (playBank' deck hand))
---              | otherwise = hand
-
+playBank :: Hand -> Hand
+playBank deck = playBank' deck Empty
 
 --function that turns a hand into a list of hands with just one card each
 handToList :: Hand -> [Hand]
 handToList Empty = []
 handToList (Add card hand) = [Add card Empty] ++ handToList hand
 
---function that removes n-th card from a deck
-helpRemoveNthCard :: Hand -> Integer -> (Hand, Hand)
-helpRemoveNthCard hand n = (foldr (<+) Empty (let (ys,zs) = splitAt (fromInteger n) (handToList hand)
-     in   ys ++ (tail zs)), head (snd (splitAt (fromInteger n) (handToList hand))))
 
---function that removes n-th card from a deck
---removeNthCard :: Hand -> Integer -> (Hand, Card)
---removeNthCard (Add card hand) n | size hand == n-1 = (hand, card)
---                                | size hand >= n = removeNthCard hand n
---                                | otherwise = error "remove: Not enough cards."
 
---function that moves the nth from the first hand to the second
-moveNthCard :: Hand -> Hand-> Integer -> (Hand, Hand)
-moveNthCard oldDeck newDeck n = (fst(removeNthCard oldDeck n), Add (snd(removeNthCard oldDeck n)) newDeck)
-
---helper function that actually does the shuffling
-helpShuffle :: StdGen -> (Hand,Hand) -> (Hand,Hand)
-helpShuffle g (Empty, newDeck)  = (Empty, newDeck)
-helpShuffle g (oldDeck, newDeck) = helpShuffle g1 (moveNthCard oldDeck newDeck n)
- where (n,g1) = randomR (1, size oldDeck) g
-
+-- Function that moves the nth card of an hand
+-- It returns a tuple containing the deck withouth the nth card
+-- and the card removed
+removeNthCard :: Hand -> Hand -> Integer -> (Hand, Card)
+removeNthCard (Add card part1Deck) part2Deck 1 = (part1Deck<+part2Deck,card)
+removeNthCard (Add card part1Deck) part2Deck nth = removeNthCard part1Deck (Add card part2Deck) (nth-1)
 
 --function that shuffles a hand
 shuffle :: StdGen -> Hand -> Hand
-shuffle g deck = snd (helpShuffle g (deck, Empty))
+shuffle g Empty = Empty
+shuffle g hand = Add cardRemoved (BlackJack.shuffle g1 tmpHand)
+   where
+    (nth,g1) = randomR (1, size hand) g
+    (tmpHand,cardRemoved)= removeNthCard hand Empty nth
 
 --Test wether a card belongs to a hand
 belongsTo :: Card -> Hand -> Bool
@@ -187,4 +157,18 @@ prop_size_shuffle :: StdGen -> Hand -> Bool
 prop_size_shuffle g hand = size hand == size (BlackJack.shuffle g hand)
 
 
+
+implementation = Interface
+  { iEmpty    = empty
+  , iFullDeck = fullDeck
+  , iValue    = value
+  , iGameOver = gameOver
+  , iWinner   = winner 
+  , iDraw     = draw
+  , iPlayBank = playBank
+  , iShuffle  = BlackJack.shuffle
+  }
+
+main :: IO ()
+main = runGame implementation
 -- =========================================================================
