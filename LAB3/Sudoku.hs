@@ -1,6 +1,7 @@
 module Sudoku where
 
 import Test.QuickCheck
+import Data.Char
 
 -------------------------------------------------------------------------
 
@@ -39,25 +40,45 @@ isSudoku (Sudoku matrix) = length matrix == 9 &&
 
 -- isSolved sud checks if sud is already solved, i.e. there are no blanks
 isSolved :: Sudoku -> Bool
-isSolved (Sudoku matrix) = isSudoku (Sudoku matrix) &&
-                           all (\x -> all (\y -> y /= Nothing) x) matrix
+isSolved sud = isSudoku sud &&
+                           all (\x -> all (\y -> y /= Nothing) x) (rows sud)
 
 -------------------------------------------------------------------------
 
+--converts the entry of a Sudoku field to a char, either the number or .
+convertSudokuEntryToChar :: Maybe Int -> Char
+convertSudokuEntryToChar Nothing = '.'
+convertSudokuEntryToChar (Just n) = chr (n+48)
+
 -- printSudoku sud prints a representation of the sudoku sud on the screen
 printSudoku :: Sudoku -> IO ()
-printSudoku = undefined
+printSudoku sud = sequence_ (map putStrLn (map (map convertSudokuEntryToChar) (rows sud)))
+
+--converts a char to the corresponding Sudoku Entry
+convertCharToSudokuEntry :: Char -> Maybe Int
+convertCharToSudokuEntry '.' = Nothing
+convertCharToSudokuEntry c = Just ((ord c)-48)
+
 
 -- readSudoku file reads from the file, and either delivers it, or stops
 -- if the file did not contain a sudoku
+
+--error handling still missing, use isSudoku and maybe check if length s=90 before
+
 readSudoku :: FilePath -> IO Sudoku
-readSudoku = undefined
+readSudoku path = do
+                  s <- readFile path
+                  if (length s /= 90) then putStrLn "error: not a Sudoku"
+                    else do sud <- Sudoku (map (map convertCharToSudokuEntry) (lines(s)))
+                            if (isSudoku sud) then return (sud) else putStrLn "error: not a Sudoku"
 
 -------------------------------------------------------------------------
 
 -- cell generates an arbitrary cell in a Sudoku
 cell :: Gen (Maybe Int)
-cell = undefined
+cell = frequency [(1,rNumber),(9,nothing)]
+   where rNumber = elements [ (Just n)|n<-[1..9]]
+         nothing = elements [Nothing]
 
 -- an instance for generating Arbitrary Sudokus
 instance Arbitrary Sudoku where
@@ -65,4 +86,7 @@ instance Arbitrary Sudoku where
     do rows <- sequence [ sequence [ cell | j <- [1..9] ] | i <- [1..9] ]
        return (Sudoku rows)
 
+--property to check whether generated Sudoku is really a sudoku
+prop_Sudoku :: Sudoku -> Bool
+prop_Sudoku sud = isSudoku sud
 -------------------------------------------------------------------------
