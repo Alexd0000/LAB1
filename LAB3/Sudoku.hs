@@ -63,14 +63,11 @@ convertCharToSudokuEntry c = Just ((ord c)-48)
 -- readSudoku file reads from the file, and either delivers it, or stops
 -- if the file did not contain a sudoku
 
---error handling still missing, use isSudoku and maybe check if length s=90 before
-
 readSudoku :: FilePath -> IO Sudoku
 readSudoku path = do
                   s <- readFile path
-                  if (length s /= 90) then putStrLn "error: not a Sudoku"
-                    else do sud <- Sudoku (map (map convertCharToSudokuEntry) (lines(s)))
-                            if (isSudoku sud) then return (sud) else putStrLn "error: not a Sudoku"
+                  let sud = Sudoku (map (map convertCharToSudokuEntry) (lines(s)))
+                  if (isSudoku sud) then return (sud) else  error "error: This is not a Sudoku"
 
 -------------------------------------------------------------------------
 
