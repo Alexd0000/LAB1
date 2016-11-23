@@ -58,16 +58,16 @@ numberOfAces (Add card hand) = case (rank card) of
 	Ace -> 1 + numberOfAces hand
 	otherwise -> numberOfAces hand
 
--- Function that calculates the value of the hand where all aces are 11.
-valueHelp :: Hand -> Integer
-valueHelp Empty = 0
-valueHelp (Add card hand) = valueCard card + valueHelp hand
-
 -- Function that calculates the true value of the hand putting the aces at
 -- 1 if the value of the hand is larger than 21.
 value :: Hand -> Integer
 value hand | valueHelp hand <= 21 = valueHelp hand
            | otherwise = valueHelp hand - 10*numberOfAces hand
+  where
+    -- Function that calculates the value of the hand where all aces are 11.
+    valueHelp :: Hand -> Integer
+    valueHelp Empty = 0
+    valueHelp (Add card hand) = valueCard card + valueHelp hand
 
 -- Function that calculates if a hand has a value larger than 21. If it is
 -- the case the player holding this hand has lost.
@@ -110,15 +110,17 @@ draw :: Hand -> Hand -> (Hand,Hand)
 draw Empty _ = error "draw: The deck is empty."
 draw (Add card deck) hand = (deck, Add card hand)
 
---helper function that draws card from deck to hand
-playBank' :: Hand -> Hand -> Hand
-playBank' deck bankHand | value bankHand >= 16 = bankHand
-                        | otherwise = playBank' deck' bankHand'
-  where (deck',bankHand') = draw deck bankHand
+
 
 --function that plays for the bank according to the rules
 playBank :: Hand -> Hand
 playBank deck = playBank' deck Empty
+  where
+  --helper function that draws card from deck to hand
+  playBank' :: Hand -> Hand -> Hand
+  playBank' deck bankHand | value bankHand >= 16 = bankHand
+                          | otherwise = playBank' deck' bankHand'
+    where (deck',bankHand') = draw deck bankHand
 
 --function that turns a hand into a list of hands with just one card each
 handToList :: Hand -> [Hand]
