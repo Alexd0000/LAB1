@@ -2,28 +2,13 @@ module Sudoku where
 
 import Test.QuickCheck
 import Data.Char
+import Data.List
+import Data.Maybe
 
 -------------------------------------------------------------------------
 
 data Sudoku = Sudoku { rows :: [[Maybe Int]] }
  deriving ( Show, Eq )
-
-example :: Sudoku
-example =
-     Sudoku
-       [ [j 3,j 6,n  ,n  ,j 7,j 1,j 2,n  ,n  ]
-       , [n  ,j 5,n  ,n  ,n  ,n  ,j 1,j 8,n  ]
-       , [n  ,n  ,j 9,j 2,n  ,j 4,j 7,n  ,n  ]
-       , [n  ,n  ,n  ,n  ,j 1,j 3,n  ,j 2,j 8]
-       , [j 4,n  ,n  ,j 5,n  ,j 2,n  ,n  ,j 9]
-       , [j 2,j 7,n  ,j 4,j 6,n  ,n  ,n  ,n  ]
-       , [n  ,n  ,j 5,j 3,n  ,j 8,j 9,n  ,n  ]
-       , [n  ,j 8,j 3,n  ,n  ,n  ,n  ,j 6,n  ]
-       , [n  ,n  ,j 7,j 6,j 9,n  ,n  ,j 4,j 3]
-       ]
-   where
-     n = Nothing
-     j = Just
 
 -- allBlankSudoku is a sudoku with just blanks
 allBlankSudoku :: Sudoku
@@ -34,7 +19,8 @@ allBlankSudoku = Sudoku [[Nothing | x<-[1..9]] | y<-[1..9]]
 isSudoku :: Sudoku -> Bool
 isSudoku (Sudoku matrix) = length matrix == 9 &&
                            all (\x -> length x == 9) matrix &&
-                           all (\x -> all (\y -> ((Just 1<=y) && (y<=Just 9)) || (y==Nothing)) x) matrix
+                           all (\x -> all (\y -> ((Just 1<=y) && (y<=Just 9))
+                            || (y==Nothing)) x) matrix
 
 
 
@@ -67,7 +53,8 @@ readSudoku :: FilePath -> IO Sudoku
 readSudoku path = do
                   s <- readFile path
                   let sud = Sudoku (map (map convertCharToSudokuEntry) (lines(s)))
-                  if (isSudoku sud) then return (sud) else  error "error: This is not a Sudoku"
+                  if (isSudoku sud) then return (sud)
+                    else  error "error: This is not a Sudoku"
 
 -------------------------------------------------------------------------
 
@@ -87,3 +74,21 @@ instance Arbitrary Sudoku where
 prop_Sudoku :: Sudoku -> Bool
 prop_Sudoku sud = isSudoku sud
 -------------------------------------------------------------------------
+type Block = [Maybe Int]
+
+--given a block, checks if that block does not contain the same digit twice
+isOkayBlock :: Block -> Bool
+isOkayBlock b = length (nonothing b) == length (nub (nonothing b))
+  where nonothing b = filter isJust b
+
+--given a Sudoku, creates a list of all blocks of that Sudoku
+blocks :: Sudoku -> [Block]
+blocks sud =  [ getBlocks (rows sud) j i | i <- [0..2], j <- [0..2]]
+  where getBlocks r x y = foldr (++) [] (map (take 3 . drop (3*x)) (take 3 $ drop (3*y) (rows sud)))
+
+--given a Soduko, checks that all rows, colums and 3x3 blocks do not contain
+--the same digit twice
+isOkay :: Sudoku -> Bool
+isOkay sud = all (\x -> isOkayBlock x) (rows sud) &&
+              all (\x -> isOkayBlock x) (blocks sud) &&
+              all (\x -> isOkayBlock x) (transpose $ rows sud)
