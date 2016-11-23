@@ -94,8 +94,9 @@ type Block = [Maybe Int]
 
 -- Function that, given a block, checks if that block does not contain the same digit twice
 isOkayBlock :: Block -> Bool
-isOkayBlock block = length (noNothing block) == length (nub (noNothing block)
-    where (noNothing block) = filter isJust block
+isOkayBlock block = length (noNothing block) == length (nub (noNothing block))
+  where
+    noNothing block = filter isJust block
     --The isJust function returns True iff its argument is of the form Just _.                    
 
         
