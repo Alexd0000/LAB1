@@ -99,5 +99,13 @@ isOkayBlock block = length (noNothing block) == length (nub (noNothing block))
     noNothing block = filter isJust block
     --The isJust function returns True iff its argument is of the form Just _.                    
 
+
+-- Function that, given a Sudoku, creates a list of all blocks of that Sudoku
+blocks :: Sudoku -> [Block]
+blocks (Sudoku matrix) = r ++ c ++ b
+
+-- Function that, given a Sudoku, checks that all rows, colums and 3x3 blocks do not contain the same digit twice.
+isOkay :: Sudoku -> Bool
+isOkay (Sudoku matrix) = all isOkayBlock (blocks matrix)
         
          
