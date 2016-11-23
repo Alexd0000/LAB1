@@ -2,6 +2,8 @@ module Sudoku where
 
 import Test.QuickCheck
 import Data.Char
+import Data.List
+import Data.Maybe
 
 -------------------------------------------------------------------------
 
@@ -87,3 +89,14 @@ instance Arbitrary Sudoku where
 prop_Sudoku :: Sudoku -> Bool
 prop_Sudoku sud = isSudoku sud
 -------------------------------------------------------------------------
+-- A block is either a row or a column or a 3x3 block. A block therefore contains 9 cells
+type Block = [Maybe Int]
+
+-- Function that, given a block, checks if that block does not contain the same digit twice
+isOkayBlock :: Block -> Bool
+isOkayBlock block = length (noNothing block) == length (nub (noNothing block)
+    where (noNothing block) = filter isJust block
+    --The isJust function returns True iff its argument is of the form Just _.                    
+
+        
+         
