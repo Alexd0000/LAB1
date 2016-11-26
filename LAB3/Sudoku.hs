@@ -83,12 +83,11 @@ isOkayBlock b = length (nonothing b) == length (nub (nonothing b))
 
 --given a Sudoku, creates a list of all blocks of that Sudoku
 blocks :: Sudoku -> [Block]
-blocks sud =  [ getBlocks (rows sud) j i | i <- [0..2], j <- [0..2]]
+blocks sud =  [ getBlocks (rows sud) j i | i <- [0..2], j <- [0..2]] ++
+              rows sud ++ (transpose $ rows sud)
   where getBlocks r x y = foldr (++) [] (map (take 3 . drop (3*x)) (take 3 $ drop (3*y) (rows sud)))
 
 --given a Soduko, checks that all rows, colums and 3x3 blocks do not contain
 --the same digit twice
 isOkay :: Sudoku -> Bool
-isOkay sud = all (\x -> isOkayBlock x) (rows sud) &&
-              all (\x -> isOkayBlock x) (blocks sud) &&
-              all (\x -> isOkayBlock x) (transpose $ rows sud)
+isOkay sud = all (\x -> isOkayBlock x) (blocks sud)
