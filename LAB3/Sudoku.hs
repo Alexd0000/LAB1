@@ -91,3 +91,46 @@ blocks sud =  [ getBlocks (rows sud) j i | i <- [0..2], j <- [0..2]] ++
 --the same digit twice
 isOkay :: Sudoku -> Bool
 isOkay sud = all (\x -> isOkayBlock x) (blocks sud)
+
+-------------------------------------------------------------------------
+
+type Pos = (Int,Int)
+
+--given a Sudoku returns a list of the positions in the Sudoku that are still blank
+blanks :: Sudoku -> [Pos]
+blanks sud = foldr (++) [] [ index (((rows sud)!!i)!!j) i j| i <- [0..8], j <- [0..8]]
+  where index Nothing k l = [(k,l)]
+        index r _ _ = []
+
+--given a list, and a tuple containing an index in the list and a new value,
+--updates the given list with the new value at the given index
+(!!=) :: [a] -> (Int,a) -> [a]
+(!!=) (x:xs) (0, value) = value:xs
+(!!=) (x:xs) (index, value) = x:(xs !!= (index-1, value))
+
+--prop_updateValue :: [a] -> (Int,a) -> Bool
+
+
+
+--given a Sudoku, a position, and a new cell value, updates the given Sudoku at
+--the given position with the new value
+update :: Sudoku -> Pos -> Maybe Int -> Sudoku
+update sud (k,l) val = Sudoku (rows sud !!= (k, updatedRow))
+  where updatedRow = rows sud !! k !!= (l,val)
+
+prop_update :: Sudoku -> Pos -> Maybe Int -> Bool
+prop_update sud (k,l) val = rows (update sud (k,l) val) !! k !! l == val
+
+--given a Sudoku, and a blank position, determines which numbers could be
+--legally written into that position
+candidates :: Sudoku -> Pos -> [Int]
+candidates sud (k,l) = filter (\x -> isOkayEntry (Just x)) [ x | x <- [1..9]]
+  where isOkayEntry :: Maybe Int -> Bool
+        isOkayEntry e = all (/= e) (rows sud !! k) &&
+                        all (/= e) ((transpose $ rows sud) !! l ) &&
+                        all (/= e) (getBlock (rows sud) k l)
+        getBlock rs i j | i<3 && j<3 = foldr (++) [] $ take 3 $ map (take 3) rs
+                        | i>=3       = getBlock (drop 3 rs) (i-3) j
+                        | j>=3       = getBlock (map (drop 3) rs) i (j-3)
+
+--prop_candidates :: Sudoku -> Pos -> Bool
