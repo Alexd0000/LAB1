@@ -137,4 +137,9 @@ candidates sud (k,l) = filter (\x -> isOkayEntry (Just x)) [ x | x <- [1..9]]
                         | i>=3       = getBlock (drop 3 rs) (i-3) j
                         | j>=3       = getBlock (map (drop 3) rs) i (j-3)
 
---prop_candidates :: Sudoku -> Pos -> Bool
+prop_candidates :: Sudoku -> Pos -> Bool
+prop_candidates sud p = and [checkOkay sud p (Just x) |x <- candidates sud p]
+                        && not (and [checkOkay sud p (Just x) |x <- notCand sud p])
+  where notCand sud p = [x | x <- [1..9]] \\ candidates sud p
+        checkOkay sud p val = isOkay (update sud p val) &&
+                              isSudoku (update sud p val)
