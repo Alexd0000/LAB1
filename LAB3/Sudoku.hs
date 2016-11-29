@@ -121,6 +121,7 @@ prop_updateValue oldList (index, value) = old1 == new1 && old2 == new2 &&
 --given a Sudoku, a position, and a new cell value, updates the given Sudoku at
 --the given position with the new value
 update :: Sudoku -> Pos -> Maybe Int -> Sudoku
+update _ (k,l) _ | k<0 || l<0 = error "no negative positions"
 update sud (k,l) val = Sudoku (rows sud !!= (k, updatedRow))
   where updatedRow = rows sud !! k !!= (l,val)
 
@@ -130,14 +131,14 @@ prop_update sud (k,l) val = rows (update sud (k,l) val) !! k !! l == val
 --given a Sudoku, and a blank position, determines which numbers could be
 --legally written into that position
 candidates :: Sudoku -> Pos -> [Int]
-candidates sud (k,l) = filter (\x -> isOkayEntry (Just x)) [ x | x <- [1..9]]
+candidates sud (k,l) | e /= Nothing = [fromJust e]
+  where e = (rows sud !! k) !! l
+candidates sud (k,l) = [ x | x <- [1..9], isOkayEntry (Just x)]
   where isOkayEntry :: Maybe Int -> Bool
         isOkayEntry e = all (/= e) (rows sud !! k) &&
                         all (/= e) ((transpose $ rows sud) !! l ) &&
-                        all (/= e) (getBlock (rows sud) k l)
-        getBlock rs i j | i<3 && j<3 = foldr (++) [] $ take 3 $ map (take 3) rs
-                        | i>=3       = getBlock (drop 3 rs) (i-3) j
-                        | j>=3       = getBlock (map (drop 3) rs) i (j-3)
+                        all (/= e) (getBlock sud k l)
+        getBlock s i j = (drop 18 $ blocks s) !! (3*(i `div` 3)+j)
 
 prop_candidates :: Sudoku -> Pos -> Bool
 prop_candidates sud p = and [checkOkay sud p (Just x) |x <- candidates sud p]
@@ -145,3 +146,16 @@ prop_candidates sud p = and [checkOkay sud p (Just x) |x <- candidates sud p]
   where notCand sud p = [x | x <- [1..9]] \\ candidates sud p
         checkOkay sud p val = isOkay (update sud p val) &&
                               isSudoku (update sud p val)
+
+-------------------------------------------------------------------------
+
+--returns the solution to a Sudoku or else Nothing
+solve :: Sudoku -> Maybe Sudoku
+solve sud | not (isSudoku sud) || not (isOkay sud) = Nothing
+          | isSolved sud                           = Just sud
+          | otherwise                              = head (solve' sud )
+
+  where solve' s | isSolved s = [Just s]
+                 | otherwise  = [solution | c <- candidates s (k,l)
+                                  , solution <- solve' $ update s (k,l) (Just c)]
+         where (k,l) = head (blanks s)
