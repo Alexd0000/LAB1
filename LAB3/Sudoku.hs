@@ -105,11 +105,13 @@ blanks sud = foldr (++) [] [ index (((rows sud)!!i)!!j) i j| i <- [0..8], j <- [
 --given a list, and a tuple containing an index in the list and a new value,
 --updates the given list with the new value at the given index
 (!!=) :: [a] -> (Int,a) -> [a]
+(!!=) [] (_, value) = [value]
 (!!=) (x:xs) (0, value) = value:xs
 (!!=) (x:xs) (index, value) = x:(xs !!= (index-1, value))
 
 --property to test (!!=)
-prop_updateValue :: Eq(a) => [a] -> (Int,a) -> Bool
+prop_updateValue :: [Maybe Int] -> (Int,Maybe Int) -> Bool
+prop_updateValue [] (index, value) = [value] == [] !!= (index,value)
 prop_updateValue oldList (index, value) = old1 == new1 && old2 == new2 &&
                                           newElement == value
   where newList = oldList !!= (index,value)
