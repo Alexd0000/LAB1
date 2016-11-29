@@ -108,9 +108,13 @@ blanks sud = foldr (++) [] [ index (((rows sud)!!i)!!j) i j| i <- [0..8], j <- [
 (!!=) (x:xs) (0, value) = value:xs
 (!!=) (x:xs) (index, value) = x:(xs !!= (index-1, value))
 
---prop_updateValue :: [a] -> (Int,a) -> Bool
-
-
+--property to test (!!=)
+prop_updateValue :: Eq(a) => [a] -> (Int,a) -> Bool
+prop_updateValue oldList (index, value) = old1 == new1 && old2 == new2 &&
+                                          newElement == value
+  where newList = oldList !!= (index,value)
+        (old1, _:old2) = splitAt index oldList
+        (new1, newElement:new2) = splitAt index newList
 
 --given a Sudoku, a position, and a new cell value, updates the given Sudoku at
 --the given position with the new value
