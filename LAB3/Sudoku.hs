@@ -5,6 +5,35 @@ import Data.Char
 import Data.List
 import Data.Maybe
 
+
+example :: Sudoku
+example =
+  Sudoku
+    [ [Just 3, Just 6, Nothing,Nothing,Just 7, Just 1, Just 2, Nothing,Nothing]
+    , [Nothing,Just 5, Nothing,Nothing,Nothing,Nothing,Just 1, Just 8, Nothing]
+    , [Nothing,Nothing,Just 9, Just 2, Nothing,Just 4, Just 7, Nothing,Nothing]
+    , [Nothing,Nothing,Nothing,Nothing,Just 1, Just 3, Nothing,Just 2, Just 8]
+    , [Just 4, Nothing,Nothing,Just 5, Nothing,Just 2, Nothing,Nothing,Just 9]
+    , [Just 2, Just 7, Nothing,Just 4, Just 6, Nothing,Nothing,Nothing,Nothing]
+    , [Nothing,Nothing,Just 5, Just 3, Nothing,Just 8, Just 9, Nothing,Nothing]
+    , [Nothing,Just 8, Just 3, Nothing,Nothing,Nothing,Nothing,Just 6, Nothing]
+    , [Nothing,Nothing,Just 7, Just 6, Just 9, Nothing,Nothing,Just 4, Just 3]
+    ]
+
+exampleBis :: Sudoku
+exampleBis =
+  Sudoku
+    [ [Just 3, Just 6, Just 3,Just 3,Just 7, Just 1, Just 2, Just 6,Just 6]
+    , [Just 6,Just 5, Just 6,Just 6,Just 6,Just 1, Just 8, Just 6, Just 6]
+    , [Just 6,Just 6,Just 9, Just 2, Just 6,Just 4, Just 7, Just 6,Just 6]
+    , [Just 6,Just 6,Just 6,Just 6,Just 1, Just 3, Just 6,Just 2, Just 8]
+    , [Just 4, Just 6,Just 6,Just 5, Just 6,Just 2, Just 6,Just 6,Just 9]
+    , [Just 2, Just 7, Just 6,Just 4, Just 6, Just 6,Just 6,Just 6,Just 6]
+    , [Just 6,Just 6,Just 5, Just 3, Just 6,Just 8, Just 9, Just 6,Just 6]
+    , [Just 6,Just 8, Just 3, Just 6,Just 6,Just 6,Just 6,Just 6, Just 6]
+    , [Just 6,Just 6,Just 7, Just 6, Just 9, Just 6,Just 6,Just 4, Just 3]
+    ]
+
 -------------------------------------------------------------------------
 
 data Sudoku = Sudoku { rows :: [[Maybe Int]] }
@@ -96,16 +125,21 @@ isOkay sud = all (\x -> isOkayBlock x) (blocks sud)
 
 type Pos = (Int,Int)
 
---given a Sudoku returns a list of the positions in the Sudoku that are still blank
+-- Function that given a Sudoku returns a list of the positions in the Sudoku that are still blank
 blanks :: Sudoku -> [Pos]
-blanks sud = foldr (++) [] [ index (((rows sud)!!i)!!j) i j| i <- [0..8], j <- [0..8]]
-  where index Nothing k l = [(k,l)]
-        index r _ _ = []
+blanks (Sudoku sud) = [(i,j) | i <- [0..8], j<-[0..8], (sud!!i!!j) == Nothing]
 
---given a list, and a tuple containing an index in the list and a new value,
---updates the given list with the new value at the given index
+-- Property that states that all cells in the blanks list are actually blank
+prop_blanks:: Sudoku -> Bool
+prop_blanks sud = all (\tuple -> (rows sud)!!(fst tuple)!!(snd tuple) == Nothing ) (blanks sud)
+
+
+--Function that given a list, and a tuple containing an index in the list and a new value,
+--updates the given list with the new value at the given index.
+-- If the initial list is empty we throw an error or same if the index is negative or higher than its length
 (!!=) :: [a] -> (Int,a) -> [a]
-(!!=) [] (_, value) = [value]
+(!!=) [] (_,_) = error "The list is empty"
+(!!=) (x:xs) (index,value) | index<0 || index > (length (x:xs)-1) = error "Invalid index"
 (!!=) (x:xs) (0, value) = value:xs
 (!!=) (x:xs) (index, value) = x:(xs !!= (index-1, value))
 
@@ -120,10 +154,11 @@ prop_updateValue oldList (index, value) = old1 == new1 && old2 == new2 &&
 
 --given a Sudoku, a position, and a new cell value, updates the given Sudoku at
 --the given position with the new value
+
 update :: Sudoku -> Pos -> Maybe Int -> Sudoku
 update _ (k,l) _ | k<0 || l<0 = error "no negative positions"
-update sud (k,l) val = Sudoku (rows sud !!= (k, updatedRow))
-  where updatedRow = rows sud !! k !!= (l,val)
+update (Sudoku sud) (k,l) val = Sudoku (sud !!= (k, updatedRow))
+  where updatedRow = (sud!!k) !!= (l,val)
 
 prop_update :: Sudoku -> Pos -> Maybe Int -> Bool
 prop_update sud (k,l) val = rows (update sud (k,l) val) !! k !! l == val
