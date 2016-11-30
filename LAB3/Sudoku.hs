@@ -166,7 +166,7 @@ prop_update sud (k,l) val = rows (update sud (k,l) val) !! k !! l == val
 --given a Sudoku, and a blank position, determines which numbers could be
 --legally written into that position
 candidates :: Sudoku -> Pos -> [Int]
-candidates sud (k,l) | e /= Nothing = [fromJust e]
+candidates sud (k,l) | e /= Nothing = error "not a blank position"
   where e = (rows sud !! k) !! l
 candidates sud (k,l) = [ x | x <- [1..9], isOkayEntry (Just x)]
   where isOkayEntry :: Maybe Int -> Bool
