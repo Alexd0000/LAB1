@@ -132,6 +132,7 @@ handToList (Add card hand) = [Add card Empty] ++ handToList hand
 -- Function that moves the nth card of an hand
 -- It returns a tuple containing the deck withouth the nth card
 -- and the card removed
+--Beware: might change the order of the cards on the hand
 removeNthCard :: Hand -> Hand -> Integer -> (Hand, Card)
 removeNthCard (Add card part1Deck) part2Deck 1 = (part1Deck<+part2Deck,card)
 removeNthCard (Add card part1Deck) part2Deck nth = removeNthCard part1Deck (Add card part2Deck) (nth-1)
@@ -165,7 +166,7 @@ implementation = Interface
   , iFullDeck = fullDeck
   , iValue    = value
   , iGameOver = gameOver
-  , iWinner   = winner 
+  , iWinner   = winner
   , iDraw     = draw
   , iPlayBank = playBank
   , iShuffle  = BlackJack.shuffle

@@ -5,27 +5,39 @@ import Data.Char
 import Data.List
 import Data.Maybe
 
+
+example :: Sudoku
+example =
+  Sudoku
+    [ [Just 3, Just 6, Nothing,Nothing,Just 7, Just 1, Just 2, Nothing,Nothing]
+    , [Nothing,Just 5, Nothing,Nothing,Nothing,Nothing,Just 1, Just 8, Nothing]
+    , [Nothing,Nothing,Just 9, Just 2, Nothing,Just 4, Just 7, Nothing,Nothing]
+    , [Nothing,Nothing,Nothing,Nothing,Just 1, Just 3, Nothing,Just 2, Just 8]
+    , [Just 4, Nothing,Nothing,Just 5, Nothing,Just 2, Nothing,Nothing,Just 9]
+    , [Just 2, Just 7, Nothing,Just 4, Just 6, Nothing,Nothing,Nothing,Nothing]
+    , [Nothing,Nothing,Just 5, Just 3, Nothing,Just 8, Just 9, Nothing,Nothing]
+    , [Nothing,Just 8, Just 3, Nothing,Nothing,Nothing,Nothing,Just 6, Nothing]
+    , [Nothing,Nothing,Just 7, Just 6, Just 9, Nothing,Nothing,Just 4, Just 3]
+    ]
+
+exampleBis :: Sudoku
+exampleBis =
+  Sudoku
+    [ [Just 3, Just 6, Just 3,Just 3,Just 7, Just 1, Just 2, Just 6,Just 6]
+    , [Just 6,Just 5, Just 6,Just 6,Just 6,Just 1, Just 8, Just 6, Just 6]
+    , [Just 6,Just 6,Just 9, Just 2, Just 6,Just 4, Just 7, Just 6,Just 6]
+    , [Just 6,Just 6,Just 6,Just 6,Just 1, Just 3, Just 6,Just 2, Just 8]
+    , [Just 4, Just 6,Just 6,Just 5, Just 6,Just 2, Just 6,Just 6,Just 9]
+    , [Just 2, Just 7, Just 6,Just 4, Just 6, Just 6,Just 6,Just 6,Just 6]
+    , [Just 6,Just 6,Just 5, Just 3, Just 6,Just 8, Just 9, Just 6,Just 6]
+    , [Just 6,Just 8, Just 3, Just 6,Just 6,Just 6,Just 6,Just 6, Just 6]
+    , [Just 6,Just 6,Just 7, Just 6, Just 9, Just 6,Just 6,Just 4, Just 3]
+    ]
+
 -------------------------------------------------------------------------
 
 data Sudoku = Sudoku { rows :: [[Maybe Int]] }
  deriving ( Show, Eq )
-
-example :: Sudoku
-example =
-     Sudoku
-       [ [j 3,j 6,n  ,n  ,j 7,j 1,j 2,n  ,n  ]
-       , [n  ,j 5,n  ,n  ,n  ,n  ,j 1,j 8,n  ]
-       , [n  ,n  ,j 9,j 2,n  ,j 4,j 7,n  ,n  ]
-       , [n  ,n  ,n  ,n  ,j 1,j 3,n  ,j 2,j 8]
-       , [j 4,n  ,n  ,j 5,n  ,j 2,n  ,n  ,j 9]
-       , [j 2,j 7,n  ,j 4,j 6,n  ,n  ,n  ,n  ]
-       , [n  ,n  ,j 5,j 3,n  ,j 8,j 9,n  ,n  ]
-       , [n  ,j 8,j 3,n  ,n  ,n  ,n  ,j 6,n  ]
-       , [n  ,n  ,j 7,j 6,j 9,n  ,n  ,j 4,j 3]
-       ]
-   where
-     n = Nothing
-     j = Just
 
 -- allBlankSudoku is a sudoku with just blanks
 allBlankSudoku :: Sudoku
@@ -36,7 +48,8 @@ allBlankSudoku = Sudoku [[Nothing | x<-[1..9]] | y<-[1..9]]
 isSudoku :: Sudoku -> Bool
 isSudoku (Sudoku matrix) = length matrix == 9 &&
                            all (\x -> length x == 9) matrix &&
-                           all (\x -> all (\y -> ((Just 1<=y) && (y<=Just 9)) || (y==Nothing)) x) matrix
+                           all (\x -> all (\y -> ((Just 1<=y) && (y<=Just 9))
+                            || (y==Nothing)) x) matrix
 
 
 
@@ -69,7 +82,8 @@ readSudoku :: FilePath -> IO Sudoku
 readSudoku path = do
                   s <- readFile path
                   let sud = Sudoku (map (map convertCharToSudokuEntry) (lines(s)))
-                  if (isSudoku sud) then return (sud) else  error "error: This is not a Sudoku"
+                  if (isSudoku sud) then return (sud)
+                    else  error "error: This is not a Sudoku"
 
 -------------------------------------------------------------------------
 
@@ -89,23 +103,94 @@ instance Arbitrary Sudoku where
 prop_Sudoku :: Sudoku -> Bool
 prop_Sudoku sud = isSudoku sud
 -------------------------------------------------------------------------
--- A block is either a row or a column or a 3x3 block. A block therefore contains 9 cells
 type Block = [Maybe Int]
 
--- Function that, given a block, checks if that block does not contain the same digit twice
+--given a block, checks if that block does not contain the same digit twice
 isOkayBlock :: Block -> Bool
-isOkayBlock block = length (noNothing block) == length (nub (noNothing block))
-  where
-    noNothing block = filter isJust block
-    --The isJust function returns True iff its argument is of the form Just _.                    
+isOkayBlock b = length (nonothing b) == length (nub (nonothing b))
+  where nonothing b = filter isJust b
 
-
--- Function that, given a Sudoku, creates a list of all blocks of that Sudoku
+--given a Sudoku, creates a list of all blocks of that Sudoku
 blocks :: Sudoku -> [Block]
-blocks (Sudoku matrix) = r ++ c ++ b
+blocks sud =  [ getBlocks (rows sud) j i | i <- [0..2], j <- [0..2]] ++
+              rows sud ++ (transpose $ rows sud)
+  where getBlocks r x y = foldr (++) [] (map (take 3 . drop (3*x)) (take 3 $ drop (3*y) (rows sud)))
 
--- Function that, given a Sudoku, checks that all rows, colums and 3x3 blocks do not contain the same digit twice.
+--given a Soduko, checks that all rows, colums and 3x3 blocks do not contain
+--the same digit twice
 isOkay :: Sudoku -> Bool
-isOkay (Sudoku matrix) = all isOkayBlock (blocks matrix)
-        
-         
+isOkay sud = all (\x -> isOkayBlock x) (blocks sud)
+
+-------------------------------------------------------------------------
+
+type Pos = (Int,Int)
+
+-- Function that given a Sudoku returns a list of the positions in the Sudoku that are still blank
+blanks :: Sudoku -> [Pos]
+blanks (Sudoku sud) = [(i,j) | i <- [0..8], j<-[0..8], (sud!!i!!j) == Nothing]
+
+-- Property that states that all cells in the blanks list are actually blank
+prop_blanks:: Sudoku -> Bool
+prop_blanks sud = all (\tuple -> (rows sud)!!(fst tuple)!!(snd tuple) == Nothing ) (blanks sud)
+
+
+--Function that given a list, and a tuple containing an index in the list and a new value,
+--updates the given list with the new value at the given index.
+-- If the initial list is empty we throw an error or same if the index is negative or higher than its length
+(!!=) :: [a] -> (Int,a) -> [a]
+(!!=) [] (_,_) = error "The list is empty"
+(!!=) (x:xs) (index,value) | index<0 || index > (length (x:xs)-1) = error "Invalid index"
+(!!=) (x:xs) (0, value) = value:xs
+(!!=) (x:xs) (index, value) = x:(xs !!= (index-1, value))
+
+--property to test (!!=)
+prop_updateValue :: [Maybe Int] -> (Int,Maybe Int) -> Bool
+prop_updateValue [] (index, value) = [value] == [] !!= (index,value)
+prop_updateValue oldList (index, value) = old1 == new1 && old2 == new2 &&
+                                          newElement == value
+  where newList = oldList !!= (index,value)
+        (old1, _:old2) = splitAt index oldList
+        (new1, newElement:new2) = splitAt index newList
+
+--given a Sudoku, a position, and a new cell value, updates the given Sudoku at
+--the given position with the new value
+
+update :: Sudoku -> Pos -> Maybe Int -> Sudoku
+update _ (k,l) _ | k<0 || l<0 = error "no negative positions"
+update (Sudoku sud) (k,l) val = Sudoku (sud !!= (k, updatedRow))
+  where updatedRow = (sud!!k) !!= (l,val)
+
+prop_update :: Sudoku -> Pos -> Maybe Int -> Bool
+prop_update sud (k,l) val = rows (update sud (k,l) val) !! k !! l == val
+
+--given a Sudoku, and a blank position, determines which numbers could be
+--legally written into that position
+candidates :: Sudoku -> Pos -> [Int]
+candidates sud (k,l) | e /= Nothing = [fromJust e]
+  where e = (rows sud !! k) !! l
+candidates sud (k,l) = [ x | x <- [1..9], isOkayEntry (Just x)]
+  where isOkayEntry :: Maybe Int -> Bool
+        isOkayEntry e = all (/= e) (rows sud !! k) &&
+                        all (/= e) ((transpose $ rows sud) !! l ) &&
+                        all (/= e) (getBlock sud k l)
+        getBlock s i j = (drop 18 $ blocks s) !! (3*(i `div` 3)+j)
+
+prop_candidates :: Sudoku -> Pos -> Bool
+prop_candidates sud p = and [checkOkay sud p (Just x) |x <- candidates sud p]
+                        && not (and [checkOkay sud p (Just x) |x <- notCand sud p])
+  where notCand sud p = [x | x <- [1..9]] \\ candidates sud p
+        checkOkay sud p val = isOkay (update sud p val) &&
+                              isSudoku (update sud p val)
+
+-------------------------------------------------------------------------
+
+--returns the solution to a Sudoku or else Nothing
+solve :: Sudoku -> Maybe Sudoku
+solve sud | not (isSudoku sud) || not (isOkay sud) = Nothing
+          | isSolved sud                           = Just sud
+          | otherwise                              = head (solve' sud )
+
+  where solve' s | isSolved s = [Just s]
+                 | otherwise  = [solution | c <- candidates s (k,l)
+                                  , solution <- solve' $ update s (k,l) (Just c)]
+         where (k,l) = head (blanks s)
