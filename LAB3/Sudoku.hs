@@ -23,15 +23,15 @@ example =
 exampleBis :: Sudoku
 exampleBis =
   Sudoku
-    [ [Just 3, Just 6, Just 3,Just 3,Just 7, Just 1, Just 2, Just 6,Just 6]
-    , [Just 6,Just 5, Just 6,Just 6,Just 6,Just 1, Just 8, Just 6, Just 6]
-    , [Just 6,Just 6,Just 9, Just 2, Just 6,Just 4, Just 7, Just 6,Just 6]
-    , [Just 6,Just 6,Just 6,Just 6,Just 1, Just 3, Just 6,Just 2, Just 8]
-    , [Just 4, Just 6,Just 6,Just 5, Just 6,Just 2, Just 6,Just 6,Just 9]
-    , [Just 2, Just 7, Just 6,Just 4, Just 6, Just 6,Just 6,Just 6,Just 6]
-    , [Just 6,Just 6,Just 5, Just 3, Just 6,Just 8, Just 9, Just 6,Just 6]
-    , [Just 6,Just 8, Just 3, Just 6,Just 6,Just 6,Just 6,Just 6, Just 6]
-    , [Just 6,Just 6,Just 7, Just 6, Just 9, Just 6,Just 6,Just 4, Just 3]
+    [ [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
     ]
 
 -------------------------------------------------------------------------
@@ -186,11 +186,27 @@ prop_candidates sud p = and [checkOkay sud p (Just x) |x <- candidates sud p]
 
 --returns the solution to a Sudoku or else Nothing
 solve :: Sudoku -> Maybe Sudoku
-solve sud | not (isSudoku sud) || not (isOkay sud) = Nothing
-          | isSolved sud                           = Just sud
-          | otherwise                              = head (solve' sud )
+solve sud | (not (isSudoku sud)) || (not (isOkay sud)) = Nothing
+          | otherwise = solve' sud (blanks sud)
 
-  where solve' s | isSolved s = [Just s]
-                 | otherwise  = [solution | c <- candidates s (k,l)
-                                  , solution <- solve' $ update s (k,l) (Just c)]
-         where (k,l) = head (blanks s)
+-- Solve helper filling in all the blanks
+solve' :: Sudoku -> [Pos] -> Maybe Sudoku
+solve' sud [] = Just sud
+solve' sud (x:xs) = tryToSolveCell sud x can
+  where can = candidates sud x
+
+
+
+-- Solves a cell at a position with a candidate
+tryToSolveCell :: Sudoku -> Pos -> [Int] -> Maybe Sudoku
+tryToSolveCell _ _ [] = Nothing
+tryToSolveCell sud pos (x:xs) | isNothing solveNext = tryToSolveCell sud pos xs
+                            | otherwise = solveNext
+  where updated = update sud pos (Just x)
+        solveNext = solve updated
+
+
+
+
+
+
