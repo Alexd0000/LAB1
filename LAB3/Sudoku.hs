@@ -195,3 +195,26 @@ solve sud | not (isSudoku sud) || not (isOkay sud) = Nothing
                  | otherwise  = [solution | c <- candidates s (k,l)
                                   , solution <- solve' $ update s (k,l) (Just c)]
          where (k,l) = head (blanks s)
+
+
+-- produces instructions for reading the Sudoku from the given file, solving it,
+-- and printing the answer
+readAndSolve :: FilePath -> IO ()
+readAndSolve path = do
+                    sud <- readSudoku path
+                    let solution = solve sud
+                    if isJust solution then printSudoku $ fromJust solution
+                      else putStrLn "(no solution)"
+
+--checks, given two Sudokus, whether the first one is a solution (i.e. all
+--blocks are okay, there are no blanks), and also whether the first one is a
+--solution of the second one (i.e. all digits in the second sudoku are
+--maintained in the first one).
+isSolutionOf :: Sudoku -> Sudoku -> Bool
+isSolutionOf s p = isSolved s && isOkay s && solves (rows s) (rows p)
+  where solves x y = and [ (x!!i!!j) == (y!!i!!j) | i <- [1..9],
+                                                j <- [1..9], isJust (y!!i!!j) ]
+
+--check if the function solve is sound
+prop_SolveSound :: Sudoku -> Property
+prop_SolveSound sud = isOkay sud ==> isSolutionOf (fromJust $ solve sud) sud
