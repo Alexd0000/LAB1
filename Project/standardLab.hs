@@ -1,6 +1,9 @@
 module StandardLab where
 
 import Test.QuickCheck
+import Parsing
+import Data.Maybe
+import Data.Char
 
 data Expr = Num Double | Add Expr Expr | Mul Expr Expr | X | Function Name Expr
 
@@ -55,6 +58,54 @@ eval (Mul e1 e2) valueVar = (eval e1 valueVar) * (eval e2 valueVar)
 
 -- Function that, given a string, tries to interpret the string as an expression, and returns Just of that expression if it succeeds. 
 -- Otherwise, Nothing will be returned.
-
 readExpr :: String -> Maybe Expr
+readExpr = undefined
+
+{- BNF:
+expr   ::= term "+" expr | term.
+term   ::= factor "*" term | factor.
+factor ::= unit | "(" expr ")".
+unit ::= number | var
+
+-}
+
+-- | Parse a number
+number :: Parser Double
+number = do s <- oneOrMore digit
+            return (read s :: Double)
+
+-- | Parse a name of a function
+funcName :: Parser String
+funcName = do s <- oneOrMore (sat isLower)
+              char ' '
+              return (s)
+
+expr, term, factor, unit :: Parser Expr
+
+expr = expr' <|> term
+  where
+    expr' = do t <- term
+               char '+'
+               e <- expr
+               return (Add t e)
+
+term = term' <|> factor
+  where
+    term' = do f <- factor
+               char '*'
+               t <- term
+               return (Mul f t)
+
+factor = factor' <|> unit 
+  where 
+    factor' = do  char '('
+                  e <- expr
+                  char ')'
+                  return e
+
+unit = (do n <- number 
+           return (Num n))
+	   <|>
+	   (do v <- (char 'x') 
+	       return X )
 

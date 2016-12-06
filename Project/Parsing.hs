@@ -33,7 +33,7 @@ module Parsing
   , return
  ) 
 
-{----------------------
+{-
 
 Aim: reusable Parser combinators including 
  a new type for the Parser, 
@@ -57,7 +57,8 @@ readsP :: Read a => Parser a
 -- satisfies 
 -- parse readsP s == listToMaybe (reads s)
 
-----------------------}
+-}
+
 where
 
 import Data.Char
