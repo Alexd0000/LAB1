@@ -61,18 +61,39 @@ eval (Mul e1 e2) valueVar = (eval e1 valueVar) * (eval e2 valueVar)
 readExpr :: String -> Maybe Expr
 readExpr = undefined
 
+
+
+-- ======================================== TEST ZONE HAHAHAHAHAHHAHAHA =================================================
+
 {- BNF:
+test   ::= expr "name" test | expr
+
+
+
 expr   ::= term "+" expr | term.
 term   ::= factor "*" term | factor.
-factor ::= unit | "(" expr ")".
+factor ::= "name" expr | factor'
+factor' ::= unit | "(" expr ")".
 unit ::= number | var
 
 -}
 
+-- | Parse a number which is integer (eg : 1 | 2 | 3)
+numberWithoutDot :: Parser Double
+numberWithoutDot = do s <- oneOrMore digit
+                      return (read s :: Double)
+
+-- | Parse a number which is double (eg : 1.9 | 23.8 | 5.333)
+numberWithDot :: Parser Double
+numberWithDot = do s1 <- oneOrMore digit
+                   char '.'
+                   s2 <- oneOrMore digit
+                   return (read (s1++"."++s2) :: Double)
+
 -- | Parse a number
 number :: Parser Double
-number = do s <- oneOrMore digit
-            return (read s :: Double)
+number = numberWithDot <|> numberWithoutDot
+
 
 -- | Parse a name of a function
 funcName :: Parser String
@@ -80,7 +101,8 @@ funcName = do s <- oneOrMore (sat isLower)
               char ' '
               return (s)
 
-expr, term, factor, unit :: Parser Expr
+test, expr, term, factor, unit :: Parser Expr
+
 
 expr = expr' <|> term
   where
@@ -91,10 +113,16 @@ expr = expr' <|> term
 
 term = term' <|> factor
   where
-    term' = do f <- factor
+    term' = do f <- test --f <- factor
                char '*'
                t <- term
                return (Mul f t)
+
+test = test' <|> factor
+  where
+  	test' = do name <- funcName
+  	           e <- expr
+  	           return (Function name e)
 
 factor = factor' <|> unit 
   where 
