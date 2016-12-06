@@ -165,6 +165,7 @@ prop_update sud (k,l) val = rows (update sud (k,l) val) !! k !! l == val
 
 --given a Sudoku, and a blank position, determines which numbers could be
 --legally written into that position
+--an error will be returned if the position is not a blank
 candidates :: Sudoku -> Pos -> [Int]
 candidates sud (k,l) | e /= Nothing = error "not a blank position"
   where e = (rows sud !! k) !! l
@@ -186,27 +187,35 @@ prop_candidates sud p = and [checkOkay sud p (Just x) |x <- candidates sud p]
 
 --returns the solution to a Sudoku or else Nothing
 solve :: Sudoku -> Maybe Sudoku
-solve sud | (not (isSudoku sud)) || (not (isOkay sud)) = Nothing
-          | otherwise = solve' sud (blanks sud)
+solve sud | not (isSudoku sud) || not (isOkay sud) = Nothing
+          | isSolved sud                           = Just sud
+          | otherwise                              = head (solve' sud )
 
--- Solve helper filling in all the blanks
-solve' :: Sudoku -> [Pos] -> Maybe Sudoku
-solve' sud [] = Just sud
-solve' sud (x:xs) = tryToSolveCell sud x can
-  where can = candidates sud x
-
-
-
--- Solves a cell at a position with a candidate
-tryToSolveCell :: Sudoku -> Pos -> [Int] -> Maybe Sudoku
-tryToSolveCell _ _ [] = Nothing
-tryToSolveCell sud pos (x:xs) | isNothing solveNext = tryToSolveCell sud pos xs
-                            | otherwise = solveNext
-  where updated = update sud pos (Just x)
-        solveNext = solve updated
+  where solve' s | isSolved s = [Just s]
+                 | otherwise  = [solution | c <- candidates s (k,l)
+                                  , solution <- solve' $ update s (k,l) (Just c)]
+         where (k,l) = head (blanks s)
 
 
+-- produces instructions for reading the Sudoku from the given file, solving it,
+-- and printing the answer
+readAndSolve :: FilePath -> IO ()
+readAndSolve path = do
+                    sud <- readSudoku path
+                    let solution = solve sud
+                    if isJust solution then printSudoku $ fromJust solution
+                      else putStrLn "(no solution)"
 
+--checks, given two Sudokus, whether the first one is a solution (i.e. all
+--blocks are okay, there are no blanks), and also whether the first one is a
+--solution of the second one (i.e. all digits in the second sudoku are
+--maintained in the first one).
+isSolutionOf :: Sudoku -> Sudoku -> Bool
+isSolutionOf s p = isSolved s && isOkay s && solves (rows s) (rows p)
+  where solves x y = and [ (x!!i!!j) == (y!!i!!j) | i <- [1..9],
+                                                j <- [1..9], isJust (y!!i!!j) ]
 
-
+--check if the function solve is sound
+prop_SolveSound :: Sudoku -> Property
+prop_SolveSound sud = isOkay sud ==> isSolutionOf (fromJust $ solve sud) sud
 
