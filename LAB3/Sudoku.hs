@@ -19,21 +19,6 @@ example =
     , [Nothing,Just 8, Just 3, Nothing,Nothing,Nothing,Nothing,Just 6, Nothing]
     , [Nothing,Nothing,Just 7, Just 6, Just 9, Nothing,Nothing,Just 4, Just 3]
     ]
-
-exampleBis :: Sudoku
-exampleBis =
-  Sudoku
-    [ [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
-    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
-    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
-    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
-    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
-    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
-    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
-    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
-    , [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
-    ]
-
 -------------------------------------------------------------------------
 
 data Sudoku = Sudoku { rows :: [[Maybe Int]] }
@@ -143,11 +128,14 @@ prop_blanks sud = all (\tuple -> (rows sud)!!(fst tuple)!!(snd tuple) == Nothing
 (!!=) (x:xs) (0, value) = value:xs
 (!!=) (x:xs) (index, value) = x:(xs !!= (index-1, value))
 
+--Returns True if value is between min and max
+between :: Ord a => a -> a -> a -> Bool
+between value min max = value >= min && value <= max
+
 --property to test (!!=)
-prop_updateValue :: [Maybe Int] -> (Int,Maybe Int) -> Bool
-prop_updateValue [] (index, value) = [value] == [] !!= (index,value)
-prop_updateValue oldList (index, value) = old1 == new1 && old2 == new2 &&
-                                          newElement == value
+prop_updateValue :: [Maybe Int] -> (Int,Maybe Int) -> Property
+prop_updateValue oldList (index, value) = (oldList /= [] && between index 0 (length oldList -1))
+                    ==> old1 == new1 && old2 == new2 && newElement == value
   where newList = oldList !!= (index,value)
         (old1, _:old2) = splitAt index oldList
         (new1, newElement:new2) = splitAt index newList
@@ -160,8 +148,9 @@ update _ (k,l) _ | k<0 || l<0 = error "no negative positions"
 update (Sudoku sud) (k,l) val = Sudoku (sud !!= (k, updatedRow))
   where updatedRow = (sud!!k) !!= (l,val)
 
-prop_update :: Sudoku -> Pos -> Maybe Int -> Bool
-prop_update sud (k,l) val = rows (update sud (k,l) val) !! k !! l == val
+prop_update :: Sudoku -> Pos -> Maybe Int -> Property
+prop_update sud (k,l) val = (between k 0 8 && between l 0 8) ==>
+                            rows (update sud (k,l) val) !! k !! l == val
 
 --given a Sudoku, and a blank position, determines which numbers could be
 --legally written into that position
@@ -174,14 +163,14 @@ candidates sud (k,l) = [ x | x <- [1..9], isOkayEntry (Just x)]
         isOkayEntry e = all (/= e) (rows sud !! k) &&
                         all (/= e) ((transpose $ rows sud) !! l ) &&
                         all (/= e) (getBlock sud k l)
-        getBlock s i j = (drop 18 $ blocks s) !! (3*(i `div` 3)+j)
+        getBlock s i j = blocks s !! (3*(i `div` 3)+j `div`3)
 
-prop_candidates :: Sudoku -> Pos -> Bool
-prop_candidates sud p = and [checkOkay sud p (Just x) |x <- candidates sud p]
-                        && not (and [checkOkay sud p (Just x) |x <- notCand sud p])
+prop_candidates :: Sudoku -> Pos -> Property
+prop_candidates sud p = (isOkay sud && fst p >= 0 && snd p >= 0 && elem p (blanks sud))  ==>
+                      and [checkOkay sud p (Just x) |x <- candidates sud p]
+                      && [] == filter (==True) [checkOkay sud p (Just x) |x <- notCand sud p]
   where notCand sud p = [x | x <- [1..9]] \\ candidates sud p
-        checkOkay sud p val = isOkay (update sud p val) &&
-                              isSudoku (update sud p val)
+        checkOkay sud p val = isOkay (update sud p val)
 
 -------------------------------------------------------------------------
 
@@ -212,8 +201,8 @@ readAndSolve path = do
 --maintained in the first one).
 isSolutionOf :: Sudoku -> Sudoku -> Bool
 isSolutionOf s p = isSolved s && isOkay s && solves (rows s) (rows p)
-  where solves x y = and [ (x!!i!!j) == (y!!i!!j) | i <- [1..9],
-                                                j <- [1..9], isJust (y!!i!!j) ]
+  where solves x y = and [ (x!!i!!j) == (y!!i!!j) | i <- [0..8],
+                                                j <- [0..8], isJust (y!!i!!j) ]
 
 --check if the function solve is sound
 prop_SolveSound :: Sudoku -> Property
