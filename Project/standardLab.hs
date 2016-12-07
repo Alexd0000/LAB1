@@ -19,6 +19,8 @@ exExpr4 = Mul (Add (Num 3) X) (Add (Num 2) (Num 2.5)) 	-- (3+x)*(2+2.5)
 
 exExpr5 = Mul (Add (Mul (Num 2) (Function "sin" (Add (Num 2.3) X))) (Num 9.1)) (Add (Num 2.3) X) -- (2*sin(2.3+x)+9.1)*(2.3+x)
 
+exExpr6 = Function "sin" (Function "cos" X)   -- sin cos x
+
 -- Function that converts any expression to string
 {-
    Parentheses are required only in the following cases:
@@ -36,6 +38,7 @@ showExpr (Mul e1 e2) = showFactorMul e1 ++ "*" ++ showFactorMul e2
 showFactorSin::Expr -> String
 showFactorSin (Add e1 e2) = "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
 showFactorSin (Mul e1 e2) = "(" ++ showFactorMul e1 ++ "*" ++ showFactorMul e2 ++")"
+showFactorSin e = showExpr e
 
 -- Helper function that add parenthesis for case 2 above
 showFactorMul:: Expr -> String
