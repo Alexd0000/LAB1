@@ -139,3 +139,61 @@ factor = ((factor' <|> func) <|> num)  <|> var
 --  result as the expression we started with.
 --prop_ShowReadExpr :: Expr -> Bool
 --prop_ShowReadExpr e = e== (fromJust (readExpr (showExpr e)))
+
+
+-- Defining a generator for expressions
+arbExpr :: Int -> Gen Expr
+arbExpr size = frequency[(1,rNum),(size,rOp),(1,rVar),(size,rFunc)]
+  where
+  	rNum = do r <- arbitrary::Gen Double
+  	          return (Num r)
+
+  	rVar  = elements [X]
+
+  	rFunc = do name <- elements ["sin","cos"]
+  	           e <- arbExpr (size-1)
+  	           return (Function name e)
+
+  	rOp = do op <- elements [Add,Mul]
+  	         let size'= size `div` 2
+  	         e1 <- arbExpr size'
+  	         e2 <- arbExpr size'
+  	         return (op e1 e2)
+
+instance Arbitrary Expr where
+  arbitrary = sized arbExpr
+
+
+
+-- Function that simplifies expressions so that :
+--      - subexpressions not involving variables are always simplified to their smallest representation
+--      - (sub)expressions representing x + 0 , 0 * x and 1 * x and similar terms are always simplified
+
+--simplify :: Expr -> Expr
+--simplify e | (not (hasVariable e) == True) = (Num (eval e 0))
+--           | otherwise
+
+
+
+
+simplify :: Expr -> Expr
+simplify (Add e1 e2) | ((e1 == X) && e2 == (Num 0)) || ((e2 == X) && e1 == (Num 0)) = X
+                     | otherwise = (Add (simplify e1) (simplify e2))
+simplify (Mul e1 e2) | ((e1 == X) && e2 == (Num 0)) || ((e2 == X) && e1 == (Num 0)) = (Num 0)
+                     | ((e1 == X) && e2 == (Num 1)) || ((e2 == X) && e1 == (Num 1)) = X
+                     | otherwise = (Mul (simplify e1) (simplify e2))
+simplify (Function name e) = (Function name (simplify e))
+simplify (Num n) = (Num n)
+simplify X = X
+
+--simplifyWithoutVariable :: Expr -> Expr
+--simplifyWithoutVariable e | (not (hasVariable e) == True) = (Num (eval e 0))
+--                          | otherwise = simplify e               
+
+-- Helper function that search if an expression contain a variable
+hasVariable :: Expr -> Bool
+hasVariable (Num n) = False
+hasVariable X = True
+hasVariable (Function name e) = hasVariable e
+hasVariable (Add e1 e2) = hasVariable e1 || hasVariable e2
+hasVariable (Mul e1 e2) = hasVariable e1 || hasVariable e2
