@@ -103,7 +103,6 @@ funcName = do s <- oneOrMore (sat isLower)
 
 test, expr, term, factor, unit :: Parser Expr
 
-
 expr = expr' <|> term
   where
     expr' = do t <- term
