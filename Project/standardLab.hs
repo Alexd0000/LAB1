@@ -113,7 +113,7 @@ expr = expr' <|> term
                e <- expr
                return (Add t e)
 
-term = term' <|> factor
+term = term' <|> test --factor
   where
     term' = do f <- test --f <- factor
                char '*'
@@ -123,7 +123,7 @@ term = term' <|> factor
 test = test' <|> factor
   where
   	test' = do name <- funcName
-  	           e <- expr
+  	           e <- factor
   	           return (Function name e)
 
 factor = factor' <|> unit 
