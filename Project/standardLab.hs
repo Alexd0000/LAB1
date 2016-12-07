@@ -6,7 +6,7 @@ import Data.Maybe
 import Data.Char
 
 data Expr = Num Double | Add Expr Expr | Mul Expr Expr | X | Function Name Expr
- deriving (Eq)
+ deriving (Eq,Show)
 
 type Name = String
 
@@ -47,8 +47,8 @@ showFactorMul (Add e1 e2) =  "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
 showFactorMul e = showExpr e
 
 -- Default show function by making Expr an instance of the class Show
-instance Show Expr where
-  show = showExpr
+--instance Show Expr where
+--  show = showExpr
 
 -- Function that, given an expression, and the value for the variable x, calculates the value of the expression
 eval :: Expr -> Double -> Double
@@ -168,12 +168,6 @@ instance Arbitrary Expr where
 -- Function that simplifies expressions so that :
 --      - subexpressions not involving variables are always simplified to their smallest representation
 --      - (sub)expressions representing x + 0 , 0 * x and 1 * x and similar terms are always simplified
-
---simplify :: Expr -> Expr
---simplify e | (not (hasVariable e) == True) = (Num (eval e 0))
---           | otherwise
-
-
 
 
 simplify :: Expr -> Expr
