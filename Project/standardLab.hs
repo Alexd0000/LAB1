@@ -22,6 +22,8 @@ exExpr5 = Mul (Add (Mul (Num 2) (Function "sin" (Add (Num 2.3) X))) (Num 9.1)) (
 
 exExpr6 = Function "sin" (Function "cos" X)   -- sin cos x
 
+exExpr7 = Add (Function "sin" (Add X (Mul (Num 3) (Num 0)))) (Add (Mul X (Num 1)) (Num 0))-- sin(x+(3*0))+ X*1*0*1+0 + 0
+
 -- Function that converts any expression to string
 {-
    Parentheses are required only in the following cases:
@@ -60,8 +62,10 @@ eval (Function name e) valueVar | name=="sin" = sin (eval e valueVar)
 eval (Add e1 e2) valueVar = (eval e1 valueVar) + (eval e2 valueVar)
 eval (Mul e1 e2) valueVar = (eval e1 valueVar) * (eval e2 valueVar)
 
--- Function that, given a string, tries to interpret the string as an expression, and returns Just of that expression if it succeeds. 
--- Otherwise, Nothing will be returned. If the string is not completely parsed as an expression we return Nothing.
+-- Function that, given a string, tries to interpret the string as an expression,
+-- and returns Just of that expression if it succeeds.
+-- Otherwise, Nothing will be returned. If the string is not completely parsed
+--as an expression we return Nothing.
 
 readExpr :: String -> Maybe Expr
 readExpr s | (parsingRes == Nothing) = Nothing
@@ -119,7 +123,7 @@ term = term' <|> factor
                return (Mul f t)
 
 factor = ((factor' <|> func) <|> num)  <|> var
-  where 
+  where
     factor' = do  char '('
                   e <- expr
                   char ')'
@@ -128,13 +132,13 @@ factor = ((factor' <|> func) <|> num)  <|> var
               e <-expr
               return (Function name e)
 
-    num = do n <- number 
+    num = do n <- number
              return (Num n)
 
     var = do v <- (char 'x')
              return X
 
--- Property that says that first showing and then reading an expression 
+-- Property that says that first showing and then reading an expression
 -- (using your functions showExpr and readExpr) should produce "the same"
 --  result as the expression we started with.
 --prop_ShowReadExpr :: Expr -> Bool
@@ -171,18 +175,21 @@ instance Arbitrary Expr where
 
 
 simplify :: Expr -> Expr
-simplify (Add e1 e2) | ((e1 == X) && e2 == (Num 0)) || ((e2 == X) && e1 == (Num 0)) = X
-                     | otherwise = (Add (simplify e1) (simplify e2))
-simplify (Mul e1 e2) | ((e1 == X) && e2 == (Num 0)) || ((e2 == X) && e1 == (Num 0)) = (Num 0)
-                     | ((e1 == X) && e2 == (Num 1)) || ((e2 == X) && e1 == (Num 1)) = X
-                     | otherwise = (Mul (simplify e1) (simplify e2))
-simplify (Function name e) = (Function name (simplify e))
-simplify (Num n) = (Num n)
-simplify X = X
+simplify e | hasVariable e == False = (Num (eval e 0))
+           | otherwise = simplify' e
 
---simplifyWithoutVariable :: Expr -> Expr
---simplifyWithoutVariable e | (not (hasVariable e) == True) = (Num (eval e 0))
---                          | otherwise = simplify e               
+
+simplify' :: Expr -> Expr
+simplify' (Add e1 e2) | e1 == (Num 0) = e2
+                      | e2 == (Num 0) = e1
+                      | otherwise = (Add (simplify e1) (simplify e2))
+simplify' (Mul e1 e2) | e1 == (Num 0) || e2 == (Num 0) = (Num 0)
+                      | e1 == (Num 1) = e2
+                      | e2 == (Num 1) = e1
+                      | otherwise = (Mul (simplify e1) (simplify e2))
+simplify' (Function name e) = (Function name (simplify e))
+simplify' (Num n) = (Num n)
+simplify' X = X
 
 -- Helper function that search if an expression contain a variable
 hasVariable :: Expr -> Bool
