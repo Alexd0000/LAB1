@@ -6,6 +6,7 @@ import Data.Maybe
 import Data.Char
 
 data Expr = Num Double | Add Expr Expr | Mul Expr Expr | X | Function Name Expr
+ deriving (Eq)
 
 type Name = String
 
@@ -60,26 +61,17 @@ eval (Add e1 e2) valueVar = (eval e1 valueVar) + (eval e2 valueVar)
 eval (Mul e1 e2) valueVar = (eval e1 valueVar) * (eval e2 valueVar)
 
 -- Function that, given a string, tries to interpret the string as an expression, and returns Just of that expression if it succeeds. 
--- Otherwise, Nothing will be returned.
+-- Otherwise, Nothing will be returned. If the string is not completely parsed as an expression we return Nothing.
+
 readExpr :: String -> Maybe Expr
-readExpr = undefined
-
-
-
--- ======================================== TEST ZONE HAHAHAHAHAHHAHAHA =================================================
-
-{- BNF:
-test   ::= expr "name" test | expr
-
-
-
-expr   ::= term "+" expr | term.
-term   ::= factor "*" term | factor.
-factor ::= "name" expr | factor'
-factor' ::= unit | "(" expr ")".
-unit ::= number | var
-
--}
+readExpr s | (parsingRes == Nothing) = Nothing
+           | (stringLeft /= "") = Nothing
+           | otherwise = mExp
+  where
+     parsingRes = parse expr s
+     tmp = fromJust(parsingRes)
+     stringLeft = snd(tmp)
+     mExp = Just (fst(tmp))
 
 -- | Parse a number which is integer (eg : 1 | 2 | 3)
 numberWithoutDot :: Parser Double
@@ -104,7 +96,13 @@ funcName = do s <- oneOrMore (sat isLower)
               char ' '
               return (s)
 
-test, expr, term, factor, unit :: Parser Expr
+
+leftAssoc :: (t->t->t) -> Parser t -> Parser sep -> Parser t
+leftAssoc op item sep = do is <- chain item sep
+                           return (foldl1 op is)
+
+
+expr, term, factor :: Parser Expr
 
 expr = expr' <|> term
   where
@@ -113,29 +111,31 @@ expr = expr' <|> term
                e <- expr
                return (Add t e)
 
-term = term' <|> test --factor
+term = term' <|> factor
   where
-    term' = do f <- test --f <- factor
+    term' = do f <- factor
                char '*'
                t <- term
                return (Mul f t)
 
-test = test' <|> factor
-  where
-  	test' = do name <- funcName
-  	           e <- factor
-  	           return (Function name e)
-
-factor = factor' <|> unit 
+factor = ((factor' <|> func) <|> num)  <|> var
   where 
     factor' = do  char '('
                   e <- expr
                   char ')'
                   return e
+    func = do name <- funcName
+              e <-expr
+              return (Function name e)
 
-unit = (do n <- number 
-           return (Num n))
-	   <|>
-	   (do v <- (char 'x') 
-	       return X )
+    num = do n <- number 
+             return (Num n)
 
+    var = do v <- (char 'x')
+             return X
+
+-- Property that says that first showing and then reading an expression 
+-- (using your functions showExpr and readExpr) should produce "the same"
+--  result as the expression we started with.
+--prop_ShowReadExpr :: Expr -> Bool
+--prop_ShowReadExpr e = e== (fromJust (readExpr (showExpr e)))
