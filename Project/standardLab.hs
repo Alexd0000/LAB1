@@ -14,7 +14,7 @@ exExpr1 = Num 7											-- 7
 
 exExpr2 = Add (Add X (Mul (Num 2) (Num 5))) (Num 2.7)   --  x + 2*5 + 2.7
 
-exExpr3 = Mul (Num 2) (Function "sin" (Add (Num 2.3) X))				-- 2*sin(2.3+x)
+exExpr3 = Mul (Num 2) (Function "cos" (Add (Num 2.3) X))				-- 2*sin(2.3+x)
 
 exExpr4 = Mul (Add (Num 3) X) (Add (Num 2) (Num 2.5)) 	-- (3+x)*(2+2.5)
 
@@ -24,6 +24,8 @@ exExpr6 = Function "sin" (Function "cos" X)   -- sin cos x
 
 exExpr7 = Add (Function "sin" (Add X (Mul (Num 3) (Num 0)))) (Add (Mul X (Num 1)) (Num 0))-- sin(x+(3*0))+ X*1*0*1+0 + 0
 
+exExpr8 = Function "cos" X
+
 -- Function that converts any expression to string
 {-
    Parentheses are required only in the following cases:
@@ -31,7 +33,8 @@ exExpr7 = Add (Function "sin" (Add X (Mul (Num 3) (Num 0)))) (Add (Mul X (Num 1)
 		2- When the argument of sin or cos uses * or +. For example: sin (3.2*x)
 -}
 showExpr :: Expr -> String
-showExpr (Num f) = show f
+showExpr (Num f) | f<0 = "("++show f++")"
+                 | otherwise = show f 
 showExpr X = "x"
 showExpr (Function name e) = name++" "++ showFactorSin e
 showExpr (Add e1 e2) = showExpr e1 ++ "+" ++ showExpr e2
@@ -141,6 +144,7 @@ factor = ((factor' <|> func) <|> num)  <|> var
 -- Property that says that first showing and then reading an expression
 -- (using your functions showExpr and readExpr) should produce "the same"
 --  result as the expression we started with.
+
 --prop_ShowReadExpr :: Expr -> Bool
 --prop_ShowReadExpr e = e== (fromJust (readExpr (showExpr e)))
 
@@ -173,6 +177,7 @@ instance Arbitrary Expr where
 --      - subexpressions not involving variables are always simplified to their smallest representation
 --      - (sub)expressions representing x + 0 , 0 * x and 1 * x and similar terms are always simplified
 
+-- !!!!!!!!! PROBELM -> simplify exExpr 2 is x+10+2.7 and it should be x+12.7
 
 simplify :: Expr -> Expr
 simplify e | hasVariable e == False = (Num (eval e 0))
@@ -191,6 +196,8 @@ simplify' (Function name e) = (Function name (simplify e))
 simplify' (Num n) = (Num n)
 simplify' X = X
 
+--Simlpify on sin and cos values
+
 -- Helper function that search if an expression contain a variable
 hasVariable :: Expr -> Bool
 hasVariable (Num n) = False
@@ -198,3 +205,15 @@ hasVariable X = True
 hasVariable (Function name e) = hasVariable e
 hasVariable (Add e1 e2) = hasVariable e1 || hasVariable e2
 hasVariable (Mul e1 e2) = hasVariable e1 || hasVariable e2
+
+-- Function that differentiates the expression (with respect to x).
+differentiate :: Expr -> Expr
+differentiate e = simplify (differentiate' e)
+  where
+        differentiate' :: Expr -> Expr
+        differentiate' (Num n) = (Num 0)
+        differentiate' (X) = (Num 1)
+        differentiate' (Add e1 e2) = Add (differentiate e1) (differentiate e2)
+        differentiate' (Mul e1 e2) = Add (Mul (differentiate e1) e2) (Mul e1 (differentiate e2))
+        differentiate' (Function "sin" e) = Mul (differentiate e) (Function "cos" e)
+        differentiate' (Function "cos" e) = Mul  (Num(-1)) (Mul (differentiate e) (Function "sin" e))
