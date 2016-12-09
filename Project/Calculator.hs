@@ -17,7 +17,13 @@ canWidth  = 300
 canHeight = 300
 
 readAndDraw :: Elem -> Canvas -> IO ()
-readAndDraw = undefined
+readAndDraw input can = do
+                         stringExpr <- getProp input "value"
+                         case (readExpr stringExpr) of
+                            Just expr  -> render can (stroke (path (points expr 0.04 (canWidth, canHeight))))
+                            Nothing -> setProp input "value" "Err : Wrong expression"
+-- render : Clear a canvas, then draw a picture onto it.
+-- stroke : Draw the contours of a shape.
 
 main = do
     -- Elements
@@ -49,5 +55,20 @@ main = do
     onEvent input KeyUp $ \code -> when (code==13) $ readAndDraw input can
       -- "Enter" key has code 13
 
+
+-- type Point = (Double, Double)
+-- We assume that our canvas is a square
 points :: Expr -> Double -> (Int,Int) -> [Point]
-points = undefined
+points exp scale (width,height) = [(fromIntegral x,realToPix(eval exp (pixToReal (fromIntegral x)))) | x<-[0..width] ]
+	where
+  doubleWidth = fromIntegral width 
+  realWidth = (scale*doubleWidth)/2
+  realRatio =2*realWidth/doubleWidth
+  -- converts a pixel x-coordinate to a real x-coordinate
+  pixToReal :: Double -> Double
+  pixToReal x = (x*realRatio)-realWidth
+  -- converts a real y-coordinate to a pixel y-coordinate
+  realToPix :: Double -> Double
+  realToPix y = (-y+realWidth)/realRatio
+
+-- fromIntegral :: Int -> Double
