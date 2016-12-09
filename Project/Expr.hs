@@ -33,7 +33,7 @@ exExpr8 = Function "cos" X
 -}
 showExpr :: Expr -> String
 showExpr (Num f) | f<0 = "("++show f++")"
-                 | otherwise = show f 
+                 | otherwise = show f
 showExpr X = "x"
 showExpr (Function name e) = name++" "++ showFactorSin e
 showExpr (Add e1 e2) = showExpr e1 ++ "+" ++ showExpr e2
@@ -158,29 +158,29 @@ factor = ((factor' <|> func) <|> num)  <|> var
 simplify :: Expr -> Expr
 simplify e | hasVariable e == False = (Num (eval e 0))
            | otherwise = simplify' e
-
-
-simplify' :: Expr -> Expr
-simplify' (Add e1 e2) | e1 == (Num 0) = e2
-                      | e2 == (Num 0) = e1
-                      | otherwise = (Add (simplify e1) (simplify e2))
-simplify' (Mul e1 e2) | e1 == (Num 0) || e2 == (Num 0) = (Num 0)
-                      | e1 == (Num 1) = e2
-                      | e2 == (Num 1) = e1
-                      | otherwise = (Mul (simplify e1) (simplify e2))
-simplify' (Function name e) = (Function name (simplify e))
-simplify' (Num n) = (Num n)
-simplify' X = X
-
---Simlpify on sin and cos values
-
--- Helper function that search if an expression contain a variable
-hasVariable :: Expr -> Bool
-hasVariable (Num n) = False
-hasVariable X = True
-hasVariable (Function name e) = hasVariable e
-hasVariable (Add e1 e2) = hasVariable e1 || hasVariable e2
-hasVariable (Mul e1 e2) = hasVariable e1 || hasVariable e2
+  where
+    simplify' :: Expr -> Expr
+    simplify' (Add X X) = Mul (Num 2) X
+    simplify' (Add (Mul (Num m) X) X) = Mul (Num(m+1)) X
+    simplify' (Add X (Mul (Num m) X)) = Mul (Num(m+1)) X
+    simplify' (Add (Mul (Num m) X) (Mul (Num n) X)) = Mul (Num (m+n)) X
+    simplify' (Add e1 e2) | e1 == (Num 0) = e2
+                          | e2 == (Num 0) = e1
+                          | otherwise = (Add (simplify e1) (simplify e2))
+    simplify' (Mul e1 e2) | e1 == (Num 0) || e2 == (Num 0) = (Num 0)
+                          | e1 == (Num 1) = e2
+                          | e2 == (Num 1) = e1
+                          | otherwise = (Mul (simplify e1) (simplify e2))
+    simplify' (Function name e) = (Function name (simplify e))
+    simplify' (Num n) = (Num n)
+    simplify' X = X
+    -- Helper function that search if an expression contain a variable
+    hasVariable :: Expr -> Bool
+    hasVariable (Num n) = False
+    hasVariable X = True
+    hasVariable (Function name e) = hasVariable e
+    hasVariable (Add e1 e2) = hasVariable e1 || hasVariable e2
+    hasVariable (Mul e1 e2) = hasVariable e1 || hasVariable e2
 
 
 -- Function that differentiates the expression (with respect to x).
@@ -194,4 +194,3 @@ differentiate e = simplify (differentiate' e)
         differentiate' (Mul e1 e2) = Add (Mul (differentiate e1) e2) (Mul e1 (differentiate e2))
         differentiate' (Function "sin" e) = Mul (differentiate e) (Function "cos" e)
         differentiate' (Function "cos" e) = Mul  (Num(-1)) (Mul (differentiate e) (Function "sin" e))
-
