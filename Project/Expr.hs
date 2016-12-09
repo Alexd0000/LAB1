@@ -50,10 +50,6 @@ showFactorMul:: Expr -> String
 showFactorMul (Add e1 e2) =  "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
 showFactorMul e = showExpr e
 
--- Default show function by making Expr an instance of the class Show
---instance Show Expr where
---  show = showExpr
-
 -- Function that, given an expression, and the value for the variable x, calculates the value of the expression
 eval :: Expr -> Double -> Double
 eval X valueVar = valueVar

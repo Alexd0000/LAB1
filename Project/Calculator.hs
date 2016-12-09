@@ -35,12 +35,14 @@ showAndDrawDiff input can = do
                                 Nothing -> setProp input "value" "Err : Wrong expression"
 main = do
     -- Elements
-    canvas  <- mkCanvas canWidth canHeight   -- The drawing area
-    fx      <- mkHTML "<i>f</i>(<i>x</i>)="  -- The text "f(x)="
-    input   <- mkInput 20 "x"                -- The formula input
-    draw    <- mkButton "Draw graph"         -- The draw button
+    canvas   <- mkCanvas canWidth canHeight   -- The drawing area
+    fx       <- mkHTML "<i>f</i>(<i>x</i>)="  -- The text "f(x)="
+    input    <- mkInput 20 "x"                -- The formula input
+    draw     <- mkButton "Draw graph"         -- The draw button
+    space1   <- mkHTML "<br/>"
+    space2   <- mkHTML "<br/>"
     -- Implement a "differentiate" button which displays the differentiated expression and its graph.
-    diff    <- mkButton "Differentiate"
+    diff     <- mkButton "Differentiate"
 
       -- The markup "<i>...</i>" means that the text inside should be rendered
       -- in italics.
@@ -48,10 +50,10 @@ main = do
     -- Layout
     formula <- mkDiv
     row formula [fx,input]
-    column documentBody [canvas,formula,draw,diff]
+    column documentBody [canvas,formula,space1,draw,space2,diff]
 
     -- Styling
-    setStyle documentBody "backgroundColor" "lightblue"
+    setStyle documentBody "backgroundColor" "rgb(229,172,182)"
     setStyle documentBody "textAlign" "center"
     setStyle input "fontSize" "14pt"
     focus input
