@@ -1,6 +1,5 @@
-module StandardLab where
+module Expr where
 
-import Test.QuickCheck
 import Parsing
 import Data.Maybe
 import Data.Char
@@ -104,11 +103,6 @@ funcName = do s <- oneOrMore (sat isLower)
               return (s)
 
 
-leftAssoc :: (t->t->t) -> Parser t -> Parser sep -> Parser t
-leftAssoc op item sep = do is <- chain item sep
-                           return (foldl1 op is)
-
-
 expr, term, factor :: Parser Expr
 
 expr = expr' <|> term
@@ -131,46 +125,32 @@ factor = ((factor' <|> func) <|> num)  <|> var
                   e <- expr
                   char ')'
                   return e
-    func = do name <- funcName
-              e <-expr
-              return (Function name e)
+
+    -- Parse a function
+    func = (func1 <|> func2) <|> func3
+
+    -- Case sin 2 or sin x
+    func1 = do name <- funcName
+               n <- num <|> var
+               return (Function name n)
+
+    -- Case sin cos ....
+    func2 = do name <- funcName
+               f <- func
+               return (Function name f)
+
+    -- Case sin (...)
+    func3 = do name <- funcName
+               char '('
+               e <- expr
+               char ')'
+               return (Function name e)
 
     num = do n <- number
              return (Num n)
 
     var = do v <- (char 'x')
              return X
-
--- Property that says that first showing and then reading an expression
--- (using your functions showExpr and readExpr) should produce "the same"
---  result as the expression we started with.
-
---prop_ShowReadExpr :: Expr -> Bool
---prop_ShowReadExpr e = e== (fromJust (readExpr (showExpr e)))
-
-
--- Defining a generator for expressions
-arbExpr :: Int -> Gen Expr
-arbExpr size = frequency[(1,rNum),(size,rOp),(1,rVar),(size,rFunc)]
-  where
-  	rNum = do r <- arbitrary::Gen Double
-  	          return (Num r)
-
-  	rVar  = elements [X]
-
-  	rFunc = do name <- elements ["sin","cos"]
-  	           e <- arbExpr (size-1)
-  	           return (Function name e)
-
-  	rOp = do op <- elements [Add,Mul]
-  	         let size'= size `div` 2
-  	         e1 <- arbExpr size'
-  	         e2 <- arbExpr size'
-  	         return (op e1 e2)
-
-instance Arbitrary Expr where
-  arbitrary = sized arbExpr
-
 
 
 -- Function that simplifies expressions so that :
@@ -206,6 +186,7 @@ hasVariable (Function name e) = hasVariable e
 hasVariable (Add e1 e2) = hasVariable e1 || hasVariable e2
 hasVariable (Mul e1 e2) = hasVariable e1 || hasVariable e2
 
+
 -- Function that differentiates the expression (with respect to x).
 differentiate :: Expr -> Expr
 differentiate e = simplify (differentiate' e)
@@ -217,3 +198,4 @@ differentiate e = simplify (differentiate' e)
         differentiate' (Mul e1 e2) = Add (Mul (differentiate e1) e2) (Mul e1 (differentiate e2))
         differentiate' (Function "sin" e) = Mul (differentiate e) (Function "cos" e)
         differentiate' (Function "cos" e) = Mul  (Num(-1)) (Mul (differentiate e) (Function "sin" e))
+
