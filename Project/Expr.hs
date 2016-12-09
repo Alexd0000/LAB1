@@ -56,7 +56,6 @@ eval X valueVar = valueVar
 eval (Num n) valueVar = n
 eval (Function name e) valueVar | name=="sin" = sin (eval e valueVar)
                                 | name== "cos" = cos (eval e valueVar)
-                                | name== "tan" = tan (eval e valueVar)
                                 | otherwise = error "Unknown function"
 eval (Add e1 e2) valueVar = (eval e1 valueVar) + (eval e2 valueVar)
 eval (Mul e1 e2) valueVar = (eval e1 valueVar) * (eval e2 valueVar)
