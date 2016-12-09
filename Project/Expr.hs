@@ -89,7 +89,7 @@ numberWithDot = do s1 <- oneOrMore digit
 
 -- | Parse a number
 number :: Parser Double
-number = numberWithDot <|> numberWithoutDot
+number = readsP
 
 
 -- | Parse a name of a function
@@ -152,8 +152,6 @@ factor = ((factor' <|> func) <|> num)  <|> var
 -- Function that simplifies expressions so that :
 --      - subexpressions not involving variables are always simplified to their smallest representation
 --      - (sub)expressions representing x + 0 , 0 * x and 1 * x and similar terms are always simplified
-
--- !!!!!!!!! PROBELM -> simplify exExpr 2 is x+10+2.7 and it should be x+12.7
 
 simplify :: Expr -> Expr
 simplify e | hasVariable e == False = (Num (eval e 0))
