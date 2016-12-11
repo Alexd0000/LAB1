@@ -21,7 +21,7 @@ readAndDraw :: Elem -> Canvas -> IO ()
 readAndDraw input can = do
                          stringExpr <- getProp input "value"
                          case (readExpr stringExpr) of
-                            Just expr  -> render can (stroke (path (points expr 0.04 (canWidth, canHeight))))
+                            Just expr  -> render can (stroke (path (points expr 0.08 (canWidth, canHeight))))
                             Nothing -> setProp input "value" "Err : Wrong expression"
 -- render : Clear a canvas, then draw a picture onto it.
 -- stroke : Draw the contours of a shape.
@@ -64,6 +64,10 @@ main = do
     onEvent draw  Click $ \_    -> readAndDraw input can
     onEvent input KeyUp $ \code -> when (code==13) $ readAndDraw input can
     onEvent diff Click $ \_ -> showAndDrawDiff input can
+    --canvas `onEvent` Click $ \mouse -> do
+    --  let (x,y) = mouseCoords mouse
+    --      pos   = (fromIntegral x, fromIntegral y)
+
       -- "Enter" key has code 13
 
 
