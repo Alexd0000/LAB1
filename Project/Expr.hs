@@ -9,22 +9,6 @@ data Expr = Num Double | Add Expr Expr | Mul Expr Expr | X | Function Name Expr
 
 type Name = String
 
-exExpr1 = Num 7											-- 7
-
-exExpr2 = Add (Add X (Mul (Num 2) (Num 5))) (Num 2.7)   --  x + 2*5 + 2.7
-
-exExpr3 = Mul (Num 2) (Function "cos" (Add (Num 2.3) X))				-- 2*sin(2.3+x)
-
-exExpr4 = Mul (Add (Num 3) X) (Add (Num 2) (Num 2.5)) 	-- (3+x)*(2+2.5)
-
-exExpr5 = Mul (Add (Mul (Num 2) (Function "sin" (Add (Num 2.3) X))) (Num 9.1)) (Add (Num 2.3) X) -- (2*sin(2.3+x)+9.1)*(2.3+x)
-
-exExpr6 = Function "sin" (Function "cos" X)   -- sin cos x
-
-exExpr7 = Add (Function "sin" (Add X (Mul (Num 3) (Num 0)))) (Add (Mul X (Num 1)) (Num 0))-- sin(x+(3*0))+ X*1*0*1+0 + 0
-
-exExpr8 = Function "cos" X
-
 -- Function that converts any expression to string
 {-
    Parentheses are required only in the following cases:

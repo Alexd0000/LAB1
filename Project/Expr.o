@@ -1,4 +1,4 @@
-{-# LINE 1 "C:\Users\Allll\AppData\Local\Temp\ghc5944_0\ghc_3.s" #-}
+{-# LINE 1 "C:\Users\Allll\AppData\Local\Temp\ghc4272_0\ghc_3.s" #-}
 .data
 	.align 4
 .align 1
@@ -17,44 +17,44 @@ Expr_factor2_closure:
 	.long	15
 .globl Expr_factor2_info
 Expr_factor2_info:
-.Lc516:
+.Lc4VC:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc517
-.Lc518:
-	movl $c50W_info,-4(%ebp)
+	jb .Lc4VD
+.Lc4VE:
+	movl $c4Vs_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc50W
-.Lc50X:
+	jne .Lc4Vs
+.Lc4Vt:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c50W_info:
-.Lc50W:
+c4Vs_info:
+.Lc4Vs:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc514
-.Lc515:
+	jae .Lc4VA
+.Lc4VB:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc514:
-	movl $c51e_info,-4(%ebp)
+.Lc4VA:
+	movl $c4VK_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc51e
-.Lc51g:
+	jne .Lc4VK
+.Lc4VM:
 	jmp *(%esi)
-.Lc517:
+.Lc4VD:
 	movl %eax,8(%ebx)
 	movl $Expr_factor2_closure,%esi
 	jmp *-8(%ebx)
@@ -62,15 +62,15 @@ c50W_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c51e_info:
-.Lc51e:
+c4VK_info:
+.Lc4VK:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc51m
-.Lc51l:
+	ja .Lc4VS
+.Lc4VR:
 	cmpl $120,3(%esi)
-	jne .Lc51p
-.Lc51u:
+	jne .Lc4VV
+.Lc4W0:
 	movl $ghczmprim_GHCziTuple_Z2T_con_info,-16(%edi)
 	movl $Expr_X_closure+4,-12(%edi)
 	movl 4(%ebp),%eax
@@ -81,10 +81,10 @@ c51e_info:
 	leal -2(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc51m:
+.Lc4VS:
 	movl $20,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc51p:
+.Lc4VV:
 	addl $-20,%edi
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $8,%ebp
@@ -102,44 +102,44 @@ Expr_funcName3_closure:
 	.long	15
 .globl Expr_funcName3_info
 Expr_funcName3_info:
-.Lc527:
+.Lc4WD:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc528
-.Lc529:
-	movl $c51X_info,-4(%ebp)
+	jb .Lc4WE
+.Lc4WF:
+	movl $c4Wt_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc51X
-.Lc51Y:
+	jne .Lc4Wt
+.Lc4Wu:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c51X_info:
-.Lc51X:
+c4Wt_info:
+.Lc4Wt:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc525
-.Lc526:
+	jae .Lc4WB
+.Lc4WC:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc525:
-	movl $c52f_info,-4(%ebp)
+.Lc4WB:
+	movl $c4WL_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc52f
-.Lc52h:
+	jne .Lc4WL
+.Lc4WN:
 	jmp *(%esi)
-.Lc528:
+.Lc4WE:
 	movl %eax,8(%ebx)
 	movl $Expr_funcName3_closure,%esi
 	jmp *-8(%ebx)
@@ -147,12 +147,12 @@ c51X_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c52f_info:
-.Lc52f:
+c4WL_info:
+.Lc4WL:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc52n
-.Lc52m:
+	ja .Lc4WT
+.Lc4WS:
 	movl 4(%ebp),%eax
 	subl $8,%esp
 	pushl 3(%esi)
@@ -160,16 +160,16 @@ c52f_info:
 	call u_iswlower
 	addl $12,%esp
 	testl %eax,%eax
-	jne .Lc52y
-.Lc52z:
+	jne .Lc4X4
+.Lc4X5:
 	addl $-20,%edi
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc52n:
+.Lc4WT:
 	movl $20,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc52y:
+.Lc4X4:
 	movl $ghczmprim_GHCziTuple_Z2T_con_info,-16(%edi)
 	movl %esi,-12(%edi)
 	movl 64(%esp),%eax
@@ -193,40 +193,40 @@ Expr_funcName2_closure:
 	.long	15
 .globl Expr_funcName2_info
 Expr_funcName2_info:
-.Lc53f:
+.Lc4XL:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc53g
-.Lc53h:
-	movl $c535_info,-4(%ebp)
+	jb .Lc4XM
+.Lc4XN:
+	movl $c4XB_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc535
-.Lc536:
+	jne .Lc4XB
+.Lc4XC:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c535_info:
-.Lc535:
+c4XB_info:
+.Lc4XB:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc53R
-.Lc53d:
-	movl $c53n_info,-4(%ebp)
+	jb .Lc4Yn
+.Lc4XJ:
+	movl $c4XT_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc53n
-.Lc53p:
+	jne .Lc4XT
+.Lc4XV:
 	jmp *(%esi)
-.Lc53g:
+.Lc4XM:
 	movl %eax,8(%ebx)
 	movl $Expr_funcName2_closure,%esi
 	jmp *-8(%ebx)
@@ -234,8 +234,8 @@ c535_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c53n_info:
-.Lc53n:
+c4XT_info:
+.Lc4XT:
 	movl 4(%ebp),%eax
 	subl $8,%esp
 	pushl 3(%esi)
@@ -243,10 +243,10 @@ c53n_info:
 	call u_iswlower
 	addl $12,%esp
 	testl %eax,%eax
-	jne .Lc53M
-.Lu53S:
+	jne .Lc4Yi
+.Lu4Yo:
 	addl $4,%ebp
-.Lc53R:
+.Lc4Yn:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
@@ -254,23 +254,23 @@ c53n_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c53B_info:
-.Lc53B:
-	movl $c53D_info,(%ebp)
+c4Y7_info:
+.Lc4Y7:
+	movl $c4Y9_info,(%ebp)
 	testw $7,%si
-	jne .Lc53D
-.Lc53E:
+	jne .Lc4Y9
+.Lc4Ya:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c53D_info:
-.Lc53D:
+c4Y9_info:
+.Lc4Y9:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc53Q
-.Lc53P:
+	ja .Lc4Ym
+.Lc4Yl:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-28(%edi)
@@ -287,14 +287,14 @@ c53D_info:
 	leal -2(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc53M:
-	movl $c53B_info,(%ebp)
+.Lc4Yi:
+	movl $c4Y7_info,(%ebp)
 	movl 64(%esp),%eax
 	movl %eax,16(%ebx)
 	movl $Expr_funcName3_closure+1,8(%ebx)
 	movl %esi,4(%ebp)
 	jmp Parsing_zdwa_info
-.Lc53Q:
+.Lc4Ym:
 	movl $32,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
@@ -308,24 +308,24 @@ Expr_factor5_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_factor5_info)+0
+	.long	S4YI_srt-(Expr_factor5_info)+0
 	.long	0
 	.long	196630
 .globl Expr_factor5_info
 Expr_factor5_info:
-.Lc549:
+.Lc4YF:
 	leal -20(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc54a
-.Lc54b:
+	jb .Lc4YG
+.Lc4YH:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc548
-.Lc547:
+	je .Lc4YE
+.Lc4YD:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl $base_TextziParserCombinatorsziReadPrec_minPrec_closure,16(%ebx)
@@ -334,9 +334,9 @@ Expr_factor5_info:
 	movl $base_TextziParserCombinatorsziReadP_zdfApplicativePzuzdcreturn_closure+1,-16(%ebp)
 	addl $-20,%ebp
 	jmp base_GHCziRead_zdfReadDouble9_info
-.Lc548:
+.Lc4YE:
 	jmp *(%esi)
-.Lc54a:
+.Lc4YG:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -347,19 +347,19 @@ Expr_number1_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_number1_info)+8
+	.long	S4YI_srt-(Expr_number1_info)+8
 	.long	65541
 	.long	0
 	.long	196623
 .globl Expr_number1_info
 Expr_number1_info:
-.Lc54z:
+.Lc4Z5:
 	movl 8(%ebx),%eax
 	leal -4(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc54A
-.Lc54B:
-	movl $c54q_info,-4(%ebp)
+	jb .Lc4Z6
+.Lc4Z7:
+	movl $c4YW_info,-4(%ebp)
 	movl %eax,16(%ebx)
 	movl $Expr_factor5_closure,8(%ebx)
 	addl $-4,%ebp
@@ -368,32 +368,32 @@ Expr_number1_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c54q_info:
-.Lc54q:
+c4YW_info:
+.Lc4YW:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc54x
-.Lc54y:
+	jae .Lc4Z3
+.Lc4Z4:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc54x:
+.Lc4Z3:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc54K
-.Lc54J:
+	ja .Lc4Zg
+.Lc4Zf:
 	movl 2(%esi),%eax
 	movl $base_GHCziBase_Just_con_info,-4(%edi)
 	movl %eax,(%edi)
 	leal -2(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc54A:
+.Lc4Z6:
 	movl %eax,8(%ebx)
 	movl $Expr_number1_closure,%esi
 	jmp *-8(%ebx)
-.Lc54K:
+.Lc4Zg:
 	movl $8,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
@@ -405,19 +405,19 @@ Expr_factor8_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_factor8_info)+12
+	.long	S4YI_srt-(Expr_factor8_info)+12
 	.long	65541
 	.long	0
 	.long	196623
 .globl Expr_factor8_info
 Expr_factor8_info:
-.Lc55c:
+.Lc4ZI:
 	movl 8(%ebx),%eax
 	leal -4(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc55d
-.Lc55e:
-	movl $c553_info,-4(%ebp)
+	jb .Lc4ZJ
+.Lc4ZK:
+	movl $c4Zz_info,-4(%ebp)
 	movl %eax,16(%ebx)
 	movl $Expr_factor5_closure,8(%ebx)
 	addl $-4,%ebp
@@ -426,24 +426,24 @@ Expr_factor8_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c553_info:
-.Lc553:
+c4Zz_info:
+.Lc4Zz:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc55a
-.Lc55b:
+	jae .Lc4ZG
+.Lc4ZH:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc55a:
-	movl $c55k_info,(%ebp)
+.Lc4ZG:
+	movl $c4ZQ_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc55k
-.Lc55l:
+	jne .Lc4ZQ
+.Lc4ZR:
 	jmp *(%esi)
-.Lc55d:
+.Lc4ZJ:
 	movl %eax,8(%ebx)
 	movl $Expr_factor8_closure,%esi
 	jmp *-8(%ebx)
@@ -451,12 +451,12 @@ c553_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c55k_info:
-.Lc55k:
+c4ZQ_info:
+.Lc4ZQ:
 	addl $28,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc55v
-.Lc55u:
+	ja .Lc501
+.Lc500:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
 	movl $Expr_Num_con_info,-24(%edi)
@@ -471,22 +471,21 @@ c55k_info:
 	leal -2(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc55v:
+.Lc501:
 	movl $28,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
 	.align 4
 .align 1
-.globl Expr_exExpr36_closure
-Expr_exExpr36_closure:
-	.long	Expr_exExpr36_info
+r4jm_closure:
+	.long	r4jm_info
 	.long	0
 	.long	0
 	.long	0
 .section .rodata
 	.align 4
 .align 1
-c55L_str:
+c50h_str:
 	.byte	115
 	.byte	105
 	.byte	110
@@ -495,34 +494,33 @@ c55L_str:
 	.align 4,0x90
 	.long	0
 	.long	22
-.globl Expr_exExpr36_info
-Expr_exExpr36_info:
-.Lc55M:
+r4jm_info:
+.Lc50i:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc55N
-.Lc55O:
+	jb .Lc50j
+.Lc50k:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc55K
-.Lc55J:
+	je .Lc50g
+.Lc50f:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c55L_str,8(%ebx)
+	movl $c50h_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc55K:
+.Lc50g:
 	jmp *(%esi)
-.Lc55N:
+.Lc50j:
 	jmp *-16(%ebx)
 .data
 	.align 4
 .align 1
-r4op_closure:
+r4jn_closure:
 	.long	ghczmprim_GHCziTypes_Dzh_static_info
 	.byte	0
 	.byte	0
@@ -535,23 +533,22 @@ r4op_closure:
 .data
 	.align 4
 .align 1
-r4oq_closure:
+r4jo_closure:
 	.long	Expr_Num_static_info
-	.long	r4op_closure+1
+	.long	r4jn_closure+1
 	.long	1
 .data
 	.align 4
 .align 1
-.globl Expr_exExpr24_closure
-Expr_exExpr24_closure:
-	.long	Expr_exExpr24_info
+r4jp_closure:
+	.long	r4jp_info
 	.long	0
 	.long	0
 	.long	0
 .section .rodata
 	.align 4
 .align 1
-c565_str:
+c50B_str:
 	.byte	99
 	.byte	111
 	.byte	115
@@ -560,42 +557,41 @@ c565_str:
 	.align 4,0x90
 	.long	0
 	.long	22
-.globl Expr_exExpr24_info
-Expr_exExpr24_info:
-.Lc566:
+r4jp_info:
+.Lc50C:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc567
-.Lc568:
+	jb .Lc50D
+.Lc50E:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc564
-.Lc563:
+	je .Lc50A
+.Lc50z:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c565_str,8(%ebx)
+	movl $c50B_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc564:
+.Lc50A:
 	jmp *(%esi)
-.Lc567:
+.Lc50D:
 	jmp *-16(%ebx)
 .data
 	.align 4
 .align 1
-r4or_closure:
-	.long	r4or_info
+r4jq_closure:
+	.long	r4jq_info
 	.long	0
 	.long	0
 	.long	0
 .section .rodata
 	.align 4
 .align 1
-c56l_str:
+c50R_str:
 	.byte	69
 	.byte	120
 	.byte	112
@@ -606,16 +602,16 @@ c56l_str:
 	.byte	58
 	.byte	40
 	.byte	49
-	.byte	56
-	.byte	57
+	.byte	55
+	.byte	51
 	.byte	44
 	.byte	57
 	.byte	41
 	.byte	45
 	.byte	40
 	.byte	49
-	.byte	57
-	.byte	52
+	.byte	55
+	.byte	56
 	.byte	44
 	.byte	49
 	.byte	48
@@ -648,37 +644,36 @@ c56l_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(r4or_info)+20
+	.long	S4YI_srt-(r4jq_info)+20
 	.long	0
 	.long	65558
-r4or_info:
-.Lc56m:
+r4jq_info:
+.Lc50S:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc56n
-.Lc56o:
+	jb .Lc50T
+.Lc50U:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc56k
-.Lc56j:
+	je .Lc50Q
+.Lc50P:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c56l_str,8(%ebx)
+	movl $c50R_str,8(%ebx)
 	addl $-12,%ebp
 	jmp base_ControlziExceptionziBase_patError_info
-.Lc56k:
+.Lc50Q:
 	jmp *(%esi)
-.Lc56n:
+.Lc50T:
 	jmp *-16(%ebx)
 .data
 	.align 4
 .align 1
-.globl Expr_exExpr42_closure
-Expr_exExpr42_closure:
+r4jr_closure:
 	.long	ghczmprim_GHCziTypes_Dzh_static_info
 	.byte	0
 	.byte	0
@@ -691,16 +686,14 @@ Expr_exExpr42_closure:
 .data
 	.align 4
 .align 1
-.globl Expr_exExpr41_closure
-Expr_exExpr41_closure:
+r4js_closure:
 	.long	Expr_Num_static_info
-	.long	Expr_exExpr42_closure+1
+	.long	r4jr_closure+1
 	.long	1
 .data
 	.align 4
 .align 1
-.globl Expr_exExpr39_closure
-Expr_exExpr39_closure:
+r4jt_closure:
 	.long	ghczmprim_GHCziTypes_Dzh_static_info
 	.byte	0
 	.byte	0
@@ -713,16 +706,14 @@ Expr_exExpr39_closure:
 .data
 	.align 4
 .align 1
-.globl Expr_exExpr38_closure
-Expr_exExpr38_closure:
+r4ju_closure:
 	.long	Expr_Num_static_info
-	.long	Expr_exExpr39_closure+1
+	.long	r4jt_closure+1
 	.long	1
 .data
 	.align 4
 .align 1
-.globl Expr_exExpr19_closure
-Expr_exExpr19_closure:
+r4jv_closure:
 	.long	ghczmprim_GHCziTypes_Dzh_static_info
 	.byte	0
 	.byte	0
@@ -735,138 +726,137 @@ Expr_exExpr19_closure:
 .data
 	.align 4
 .align 1
-.globl Expr_exExpr18_closure
-Expr_exExpr18_closure:
+r4jw_closure:
 	.long	Expr_Num_static_info
-	.long	Expr_exExpr19_closure+1
+	.long	r4jv_closure+1
 	.long	1
 .data
 	.align 4
 .align 1
-r4os_closure:
+r4jx_closure:
 	.long	Expr_Mul_static_info
-	.long	Expr_exExpr18_closure+1
+	.long	r4jw_closure+1
 	.long	Expr_X_closure+4
 	.long	1
 .data
 	.align 4
 .align 1
-r4ot_closure:
-	.long	r4ot_info
+r4jy_closure:
+	.long	r4jy_info
 .text
 	.align 4,0x90
 	.long	65541
 	.long	0
 	.long	15
-r4ot_info:
-.Lc57e:
+r4jy_info:
+.Lc51K:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jae .Lc571
-.Lc57f:
+	jae .Lc51x
+.Lc51L:
 	movl %eax,8(%ebx)
-	movl $r4ot_closure,%esi
+	movl $r4jy_closure,%esi
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c57E_info:
-.Lc57E:
+c52a_info:
+.Lc52a:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lu581
-.Lc57T:
+	jae .Lu52x
+.Lc52p:
 	movl 4(%ebp),%eax
 	addl $8,%ebp
-.Lc571:
-	movl $c574_info,-4(%ebp)
+.Lc51x:
+	movl $c51A_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc574
-.Lc575:
+	jne .Lc51A
+.Lc51B:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c57m_info:
-.Lc57m:
+c51S_info:
+.Lc51S:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lu583
-.Lc57B:
+	jae .Lu52z
+.Lc527:
 	movl 4(%ebp),%eax
 	addl $8,%ebp
-	jmp .Lc571
-.Lc57c:
+	jmp .Lc51x
+.Lc51I:
 	addl $4,%ebp
 	movl 3(%esi),%eax
-	jmp .Lc571
+	jmp .Lc51x
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c574_info:
-.Lc574:
+c51A_info:
+.Lc51A:
 	movl %esi,%eax
 	andl $7,%eax
 	decl %eax
-	jmp *.Ln58b(,%eax,4)
-.Lc578:
+	jmp *.Ln52H(,%eax,4)
+.Lc51E:
 	movl $ghczmprim_GHCziTypes_False_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc579:
-	movl $c57m_info,-4(%ebp)
+.Lc51F:
+	movl $c51S_info,-4(%ebp)
 	movl 2(%esi),%eax
 	movl %eax,8(%ebx)
 	movl 6(%esi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
-	jmp r4ot_info
-.Lc57a:
-	movl $c57E_info,-4(%ebp)
+	jmp r4jy_info
+.Lc51G:
+	movl $c52a_info,-4(%ebp)
 	movl 1(%esi),%eax
 	movl %eax,8(%ebx)
 	movl 5(%esi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
-	jmp r4ot_info
-.Lu583:
+	jmp r4jy_info
+.Lu52z:
 	addl $4,%ebp
-.Lc57b:
+.Lc51H:
 	movl $ghczmprim_GHCziTypes_True_closure+2,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lu581:
+.Lu52x:
 	addl $4,%ebp
-	jmp .Lc57b
+	jmp .Lc51H
 .section .rodata
 	.align 4
 .align 1
-.Ln58b:
-	.long	.Lc578
-	.long	.Lc579
-	.long	.Lc57a
-	.long	.Lc57b
-	.long	.Lc57c
+.Ln52H:
+	.long	.Lc51E
+	.long	.Lc51F
+	.long	.Lc51G
+	.long	.Lc51H
+	.long	.Lc51I
 .data
 	.align 4
 .align 1
-r4ou_closure:
-	.long	r4ou_info
+r4jz_closure:
+	.long	r4jz_info
 	.long	0
 	.long	0
 	.long	0
 .section .rodata
 	.align 4
 .align 1
-c58s_str:
+c52Y_str:
 	.byte	85
 	.byte	110
 	.byte	107
@@ -888,105 +878,105 @@ c58s_str:
 	.align 4,0x90
 	.long	0
 	.long	22
-r4ou_info:
-.Lc58t:
+r4jz_info:
+.Lc52Z:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc58u
-.Lc58v:
+	jb .Lc530
+.Lc531:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc58r
-.Lc58q:
+	je .Lc52X
+.Lc52W:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c58s_str,8(%ebx)
+	movl $c52Y_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc58r:
+.Lc52X:
 	jmp *(%esi)
-.Lc58u:
+.Lc530:
 	jmp *-16(%ebx)
 .data
 	.align 4
 .align 1
-r4ov_closure:
-	.long	r4ov_info
+r4jA_closure:
+	.long	r4jA_info
 	.long	0
 	.long	0
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(r4ov_info)+24
+	.long	S4YI_srt-(r4jA_info)+24
 	.long	0
 	.long	196630
-r4ov_info:
-.Lc58I:
+r4jA_info:
+.Lc53e:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc58J
-.Lc58K:
+	jb .Lc53f
+.Lc53g:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc58H
-.Lc58G:
+	je .Lc53d
+.Lc53c:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $r4ou_closure,8(%ebx)
+	movl $r4jz_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziErr_error_info
-.Lc58H:
+.Lc53d:
 	jmp *(%esi)
-.Lc58J:
+.Lc53f:
 	jmp *-16(%ebx)
 .data
 	.align 4
 .align 1
-r4ow_closure:
-	.long	r4ow_info
+r4jB_closure:
+	.long	r4jB_info
 	.long	0
 	.long	0
 	.long	0
 .section .rodata
 	.align 4
 .align 1
-c58W_str:
+c53s_str:
 	.byte	120
 	.byte	0
 .text
 	.align 4,0x90
 	.long	0
 	.long	22
-r4ow_info:
-.Lc58X:
+r4jB_info:
+.Lc53t:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc58Y
-.Lc58Z:
+	jb .Lc53u
+.Lc53v:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc58V
-.Lc58U:
+	je .Lc53r
+.Lc53q:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c58W_str,8(%ebx)
+	movl $c53s_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc58V:
+.Lc53r:
 	jmp *(%esi)
-.Lc58Y:
+.Lc53u:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -1000,7 +990,7 @@ Expr_zdfShowExpr3_closure:
 .section .rodata
 	.align 4
 .align 1
-c59c_str:
+c53I_str:
 	.byte	70
 	.byte	117
 	.byte	110
@@ -1017,27 +1007,27 @@ c59c_str:
 	.long	22
 .globl Expr_zdfShowExpr3_info
 Expr_zdfShowExpr3_info:
-.Lc59d:
+.Lc53J:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc59e
-.Lc59f:
+	jb .Lc53K
+.Lc53L:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc59b
-.Lc59a:
+	je .Lc53H
+.Lc53G:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c59c_str,8(%ebx)
+	movl $c53I_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc59b:
+.Lc53H:
 	jmp *(%esi)
-.Lc59e:
+.Lc53K:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -1051,7 +1041,7 @@ Expr_zdfShowExpr5_closure:
 .section .rodata
 	.align 4
 .align 1
-c59s_str:
+c53Y_str:
 	.byte	88
 	.byte	0
 .text
@@ -1060,27 +1050,27 @@ c59s_str:
 	.long	22
 .globl Expr_zdfShowExpr5_info
 Expr_zdfShowExpr5_info:
-.Lc59t:
+.Lc53Z:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc59u
-.Lc59v:
+	jb .Lc540
+.Lc541:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc59r
-.Lc59q:
+	je .Lc53X
+.Lc53W:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c59s_str,8(%ebx)
+	movl $c53Y_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc59r:
+.Lc53X:
 	jmp *(%esi)
-.Lc59u:
+.Lc540:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -1091,13 +1081,13 @@ Expr_zdfShowExpr4_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_zdfShowExpr4_info)+32
+	.long	S4YI_srt-(Expr_zdfShowExpr4_info)+32
 	.long	65541
 	.long	0
 	.long	65551
 .globl Expr_zdfShowExpr4_info
 Expr_zdfShowExpr4_info:
-.Lc59G:
+.Lc54c:
 	movl 8(%ebx),%eax
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr5_closure,8(%ebx)
@@ -1114,7 +1104,7 @@ Expr_zdfShowExpr6_closure:
 .section .rodata
 	.align 4
 .align 1
-c59U_str:
+c54q_str:
 	.byte	77
 	.byte	117
 	.byte	108
@@ -1126,27 +1116,27 @@ c59U_str:
 	.long	22
 .globl Expr_zdfShowExpr6_info
 Expr_zdfShowExpr6_info:
-.Lc59V:
+.Lc54r:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc59W
-.Lc59X:
+	jb .Lc54s
+.Lc54t:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc59T
-.Lc59S:
+	je .Lc54p
+.Lc54o:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c59U_str,8(%ebx)
+	movl $c54q_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc59T:
+.Lc54p:
 	jmp *(%esi)
-.Lc59W:
+.Lc54s:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -1160,7 +1150,7 @@ Expr_zdfShowExpr7_closure:
 .section .rodata
 	.align 4
 .align 1
-c5aa_str:
+c54G_str:
 	.byte	65
 	.byte	100
 	.byte	100
@@ -1172,27 +1162,27 @@ c5aa_str:
 	.long	22
 .globl Expr_zdfShowExpr7_info
 Expr_zdfShowExpr7_info:
-.Lc5ab:
+.Lc54H:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5ac
-.Lc5ad:
+	jb .Lc54I
+.Lc54J:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc5a9
-.Lc5a8:
+	je .Lc54F
+.Lc54E:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c5aa_str,8(%ebx)
+	movl $c54G_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc5a9:
+.Lc54F:
 	jmp *(%esi)
-.Lc5ac:
+.Lc54I:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -1206,7 +1196,7 @@ Expr_zdfShowExpr8_closure:
 .section .rodata
 	.align 4
 .align 1
-c5aq_str:
+c54W_str:
 	.byte	78
 	.byte	117
 	.byte	109
@@ -1218,27 +1208,27 @@ c5aq_str:
 	.long	22
 .globl Expr_zdfShowExpr8_info
 Expr_zdfShowExpr8_info:
-.Lc5ar:
+.Lc54X:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5as
-.Lc5at:
+	jb .Lc54Y
+.Lc54Z:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc5ap
-.Lc5ao:
+	je .Lc54V
+.Lc54U:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c5aq_str,8(%ebx)
+	movl $c54W_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc5ap:
+.Lc54V:
 	jmp *(%esi)
-.Lc5as:
+.Lc54Y:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -1251,32 +1241,32 @@ Expr_numberWithDot3_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_numberWithDot3_info)+24
+	.long	S4YI_srt-(Expr_numberWithDot3_info)+24
 	.long	0
 	.long	589846
 .globl Expr_numberWithDot3_info
 Expr_numberWithDot3_info:
-.Lc5aG:
+.Lc55c:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5aH
-.Lc5aI:
+	jb .Lc55d
+.Lc55e:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc5aF
-.Lc5aE:
+	je .Lc55b
+.Lc55a:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl $base_TextziRead_readEither4_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziErr_error_info
-.Lc5aF:
+.Lc55b:
 	jmp *(%esi)
-.Lc5aH:
+.Lc55d:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -1289,32 +1279,32 @@ Expr_numberWithDot2_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_numberWithDot2_info)+24
+	.long	S4YI_srt-(Expr_numberWithDot2_info)+24
 	.long	0
 	.long	1114134
 .globl Expr_numberWithDot2_info
 Expr_numberWithDot2_info:
-.Lc5aU:
+.Lc55q:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5aV
-.Lc5aW:
+	jb .Lc55r
+.Lc55s:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc5aT
-.Lc5aS:
+	je .Lc55p
+.Lc55o:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl $base_TextziRead_readEither2_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziErr_error_info
-.Lc5aT:
+.Lc55p:
 	jmp *(%esi)
-.Lc5aV:
+.Lc55r:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -1327,24 +1317,24 @@ Expr_numberWithDot4_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_numberWithDot4_info)+0
+	.long	S4YI_srt-(Expr_numberWithDot4_info)+0
 	.long	0
 	.long	196630
 .globl Expr_numberWithDot4_info
 Expr_numberWithDot4_info:
-.Lc5b8:
+.Lc55E:
 	leal -20(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5b9
-.Lc5ba:
+	jb .Lc55F
+.Lc55G:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc5b7
-.Lc5b6:
+	je .Lc55D
+.Lc55C:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl $base_TextziParserCombinatorsziReadPrec_minPrec_closure,16(%ebx)
@@ -1353,9 +1343,9 @@ Expr_numberWithDot4_info:
 	movl $base_TextziRead_readEither5_closure+1,-16(%ebp)
 	addl $-20,%ebp
 	jmp base_GHCziRead_zdfReadDouble9_info
-.Lc5b7:
+.Lc55D:
 	jmp *(%esi)
-.Lc5b9:
+.Lc55F:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -1377,13 +1367,13 @@ Expr_funcName1_closure:
 	.long	15
 .globl Expr_funcName1_info
 Expr_funcName1_info:
-.Lc5bN:
+.Lc56j:
 	movl 8(%ebx),%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5bO
-.Lc5bP:
-	movl $c5bE_info,-4(%ebp)
+	jb .Lc56k
+.Lc56l:
+	movl $c56a_info,-4(%ebp)
 	movl %eax,8(%ebx)
 	addl $-4,%ebp
 	jmp Expr_funcName2_info
@@ -1391,20 +1381,20 @@ Expr_funcName1_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5bE_info:
-.Lc5bE:
+c56a_info:
+.Lc56a:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc5cm
-.Lc5bL:
-	movl $c5bV_info,(%ebp)
+	jb .Lc56S
+.Lc56h:
+	movl $c56r_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc5bV
-.Lc5bX:
+	jne .Lc56r
+.Lc56t:
 	jmp *(%esi)
-.Lc5bO:
+.Lc56k:
 	movl %eax,8(%ebx)
 	movl $Expr_funcName1_closure,%esi
 	jmp *-8(%ebx)
@@ -1412,30 +1402,30 @@ c5bE_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5bV_info:
-.Lc5bV:
-	movl $c5c1_info,-4(%ebp)
+c56r_info:
+.Lc56r:
+	movl $c56x_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl 7(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5c1
-.Lc5c3:
+	jne .Lc56x
+.Lc56z:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c5c1_info:
-.Lc5c1:
+c56x_info:
+.Lc56x:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5cq
-.Lu5cs:
+	jae .Lc56W
+.Lu56Y:
 	addl $4,%ebp
-.Lc5cm:
+.Lc56S:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
@@ -1443,30 +1433,30 @@ c5c1_info:
 	.align 4,0x90
 	.long	2
 	.long	32
-c5cc_info:
-.Lc5cc:
+c56I_info:
+.Lc56I:
 	cmpl $32,3(%esi)
-	jne .Lu5ct
-.Lc5cn:
+	jne .Lu56Z
+.Lc56T:
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl 8(%ebp),%eax
 	movl %eax,8(%ebx)
 	addl $12,%ebp
 	jmp Parsing_zdfAlternativeParser4_info
-.Lc5cq:
-	movl $c5cc_info,-4(%ebp)
+.Lc56W:
+	movl $c56I_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5cc
-.Lc5cf:
+	jne .Lc56I
+.Lc56L:
 	jmp *(%esi)
-.Lu5ct:
+.Lu56Z:
 	addl $8,%ebp
-	jmp .Lc5cm
+	jmp .Lc56S
 .data
 	.align 4
 .align 1
@@ -1476,20 +1466,20 @@ Expr_numberWithoutDot1_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4R7_info)+44
+	.long	S4YI_srt-(s4LD_info)+44
 	.long	2
 	.long	458771
-s4R7_info:
-.Lc5e1:
+s4LD_info:
+.Lc58x:
 	movl %esi,%eax
 	leal -20(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5e2
-.Lc5e3:
+	jb .Lc58y
+.Lc58z:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5e5
-.Lc5e4:
+	ja .Lc58B
+.Lc58A:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -1497,7 +1487,7 @@ s4R7_info:
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
-	movl $c5dZ_info,-16(%ebp)
+	movl $c58v_info,-16(%ebp)
 	leal -6(%edi),%eax
 	movl %eax,16(%ebx)
 	movl $Expr_numberWithDot4_closure,8(%ebx)
@@ -1505,149 +1495,149 @@ s4R7_info:
 	jmp base_TextziParserCombinatorsziReadP_run_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5dZ_info)+44
+	.long	S4YI_srt-(c58v_info)+44
 	.long	0
 	.long	196640
-c5dZ_info:
-.Lc5dZ:
-	movl $c5e8_info,(%ebp)
+c58v_info:
+.Lc58v:
+	movl $c58E_info,(%ebp)
 	movl %esi,8(%ebx)
 	jmp base_TextziRead_readEither6_info
-.Lc5e5:
+.Lc58B:
 	movl $12,904(%ebx)
-.Lc5e2:
+.Lc58y:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5e8_info)+44
+	.long	S4YI_srt-(c58E_info)+44
 	.long	0
 	.long	196640
-c5e8_info:
-.Lc5e8:
+c58E_info:
+.Lc58E:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5eC
-.Lc5eD:
+	jae .Lc598
+.Lc599:
 	movl $Expr_numberWithDot3_closure,%esi
 	addl $4,%ebp
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5ei_info)+44
+	.long	S4YI_srt-(c58O_info)+44
 	.long	1
 	.long	65568
-c5ei_info:
-.Lc5ei:
+c58O_info:
+.Lc58O:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5ey
-.Lc5ez:
+	jae .Lc594
+.Lc595:
 	movl 4(%ebp),%esi
 	andl $-8,%esi
 	addl $8,%ebp
 	jmp *(%esi)
-.Lc5eC:
-	movl $c5ei_info,-4(%ebp)
+.Lc598:
+	movl $c58O_info,-4(%ebp)
 	movl 2(%esi),%eax
 	movl 6(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5ei
-.Lc5el:
+	jne .Lc58O
+.Lc58R:
 	jmp *(%esi)
-.Lc5ey:
+.Lc594:
 	movl $Expr_numberWithDot2_closure,%esi
 	addl $8,%ebp
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_numberWithoutDot1_info)+44
+	.long	S4YI_srt-(Expr_numberWithoutDot1_info)+44
 	.long	65541
 	.long	0
 	.long	983055
 .globl Expr_numberWithoutDot1_info
 Expr_numberWithoutDot1_info:
-.Lc5eL:
+.Lc59h:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5eM
-.Lc5eN:
-	movl $c5dn_info,-4(%ebp)
+	jb .Lc59i
+.Lc59j:
+	movl $c57T_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5dn
-.Lc5do:
+	jne .Lc57T
+.Lc57U:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5dn_info)+44
+	.long	S4YI_srt-(c57T_info)+44
 	.long	0
 	.long	458784
-c5dn_info:
-.Lc5dn:
+c57T_info:
+.Lc57T:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc5f3
-.Lc5eJ:
-	movl $c5dt_info,-4(%ebp)
+	jb .Lc59z
+.Lc59f:
+	movl $c57Z_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5dt
-.Lc5du:
+	jne .Lc57Z
+.Lc580:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5dt_info)+44
+	.long	S4YI_srt-(c57Z_info)+44
 	.long	1
 	.long	458784
-c5dt_info:
-.Lc5dt:
+c57Z_info:
+.Lc57Z:
 	movl 3(%esi),%eax
 	addl $-48,%eax
 	cmpl $9,%eax
-	jbe .Lc5f2
-.Lu5f4:
+	jbe .Lc59y
+.Lu59A:
 	addl $4,%ebp
-.Lc5f3:
+.Lc59z:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5dN_info)+44
+	.long	S4YI_srt-(c58j_info)+44
 	.long	1
 	.long	458784
-c5dN_info:
-.Lc5dN:
-	movl $c5dP_info,(%ebp)
+c58j_info:
+.Lc58j:
+	movl $c58l_info,(%ebp)
 	testw $7,%si
-	jne .Lc5dP
-.Lc5dQ:
+	jne .Lc58l
+.Lc58m:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5dP_info)+44
+	.long	S4YI_srt-(c58l_info)+44
 	.long	1
 	.long	458784
-c5dP_info:
-.Lc5dP:
+c58l_info:
+.Lc58l:
 	addl $40,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5f0
-.Lc5eZ:
+	ja .Lc59w
+.Lc59v:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
-	movl $s4R7_info,-36(%edi)
+	movl $s4LD_info,-36(%edi)
 	movl 4(%ebp),%edx
 	movl %edx,-24(%edi)
 	movl %eax,-20(%edi)
@@ -1661,15 +1651,15 @@ c5dP_info:
 	leal -2(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5eM:
+.Lc59i:
 	movl %eax,8(%ebx)
 	movl $Expr_numberWithoutDot1_closure,%esi
 	jmp *-8(%ebx)
-.Lc5f0:
+.Lc59w:
 	movl $40,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc5f2:
-	movl $c5dN_info,(%ebp)
+.Lc59y:
+	movl $c58j_info,(%ebp)
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl $Parsing_digit1_closure+1,8(%ebx)
@@ -1685,19 +1675,19 @@ Expr_numberWithDot1_closure:
 .section .rodata
 	.align 4
 .align 1
-c5ig_str:
+c5cM_str:
 	.byte	46
 	.byte	0
 .text
 	.align 4,0x90
 	.long	2
 	.long	19
-s4RM_info:
-.Lc5ih:
+s4Mi_info:
+.Lc5cN:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5il
-.Lc5ik:
+	ja .Lc5cR
+.Lc5cQ:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -1705,26 +1695,26 @@ s4RM_info:
 	movl %ecx,(%edi)
 	leal -6(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5ig_str,8(%ebx)
+	movl $c5cM_str,8(%ebx)
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5il:
+.Lc5cR:
 	movl $12,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	4
 	.long	16
-s4RN_info:
-.Lc5in:
+s4Mj_info:
+.Lc5cT:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5io
-.Lc5ip:
+	jb .Lc5cU
+.Lc5cV:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5ir
-.Lc5iq:
+	ja .Lc5cX
+.Lc5cW:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -1732,7 +1722,7 @@ s4RN_info:
 	movl %ecx,64(%esp)
 	movl 20(%eax),%ecx
 	movl 24(%eax),%eax
-	movl $s4RM_info,-28(%edi)
+	movl $s4Mi_info,-28(%edi)
 	movl %ecx,-16(%edi)
 	movl %eax,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -1745,27 +1735,27 @@ s4RN_info:
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5ir:
+.Lc5cX:
 	movl $32,904(%ebx)
-.Lc5io:
+.Lc5cU:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4RV_info)+44
+	.long	S4YI_srt-(s4Mr_info)+44
 	.long	4
 	.long	458768
-s4RV_info:
-.Lc5iu:
+s4Mr_info:
+.Lc5d0:
 	movl %esi,%eax
 	leal -20(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5iv
-.Lc5iw:
+	jb .Lc5d1
+.Lc5d2:
 	addl $28,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5iy
-.Lc5ix:
+	ja .Lc5d4
+.Lc5d3:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -1773,7 +1763,7 @@ s4RV_info:
 	movl %ecx,64(%esp)
 	movl 20(%eax),%ecx
 	movl 24(%eax),%eax
-	movl $s4RN_info,-24(%edi)
+	movl $s4Mj_info,-24(%edi)
 	movl %edx,76(%esp)
 	movl 64(%esp),%edx
 	movl %edx,-12(%edi)
@@ -1781,7 +1771,7 @@ s4RV_info:
 	movl %edx,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
-	movl $c5is_info,-16(%ebp)
+	movl $c5cY_info,-16(%ebp)
 	leal -24(%edi),%eax
 	movl %eax,16(%ebx)
 	movl $Expr_numberWithDot4_closure,8(%ebx)
@@ -1789,257 +1779,257 @@ s4RV_info:
 	jmp base_TextziParserCombinatorsziReadP_run_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5is_info)+44
+	.long	S4YI_srt-(c5cY_info)+44
 	.long	0
 	.long	196640
-c5is_info:
-.Lc5is:
-	movl $c5iB_info,(%ebp)
+c5cY_info:
+.Lc5cY:
+	movl $c5d7_info,(%ebp)
 	movl %esi,8(%ebx)
 	jmp base_TextziRead_readEither6_info
-.Lc5iy:
+.Lc5d4:
 	movl $28,904(%ebx)
-.Lc5iv:
+.Lc5d1:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5iB_info)+44
+	.long	S4YI_srt-(c5d7_info)+44
 	.long	0
 	.long	196640
-c5iB_info:
-.Lc5iB:
+c5d7_info:
+.Lc5d7:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5j5
-.Lc5j6:
+	jae .Lc5dB
+.Lc5dC:
 	movl $Expr_numberWithDot3_closure,%esi
 	addl $4,%ebp
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5iL_info)+44
+	.long	S4YI_srt-(c5dh_info)+44
 	.long	1
 	.long	65568
-c5iL_info:
-.Lc5iL:
+c5dh_info:
+.Lc5dh:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5j1
-.Lc5j2:
+	jae .Lc5dx
+.Lc5dy:
 	movl 4(%ebp),%esi
 	andl $-8,%esi
 	addl $8,%ebp
 	jmp *(%esi)
-.Lc5j5:
-	movl $c5iL_info,-4(%ebp)
+.Lc5dB:
+	movl $c5dh_info,-4(%ebp)
 	movl 2(%esi),%eax
 	movl 6(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5iL
-.Lc5iO:
+	jne .Lc5dh
+.Lc5dk:
 	jmp *(%esi)
-.Lc5j1:
+.Lc5dx:
 	movl $Expr_numberWithDot2_closure,%esi
 	addl $8,%ebp
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_numberWithDot1_info)+44
+	.long	S4YI_srt-(Expr_numberWithDot1_info)+44
 	.long	65541
 	.long	0
 	.long	1507343
 .globl Expr_numberWithDot1_info
 Expr_numberWithDot1_info:
-.Lc5je:
+.Lc5dK:
 	movl 8(%ebx),%eax
 	leal -16(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5jf
-.Lc5jg:
-	movl $c5gL_info,-4(%ebp)
+	jb .Lc5dL
+.Lc5dM:
+	movl $c5bh_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5gL
-.Lc5gM:
+	jne .Lc5bh
+.Lc5bi:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5gL_info)+44
+	.long	S4YI_srt-(c5bh_info)+44
 	.long	0
 	.long	458784
-c5gL_info:
-.Lc5gL:
+c5bh_info:
+.Lc5bh:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc5jy
-.Lc5jc:
-	movl $c5gR_info,-4(%ebp)
+	jb .Lc5e4
+.Lc5dI:
+	movl $c5bn_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5gR
-.Lc5gS:
+	jne .Lc5bn
+.Lc5bo:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5gR_info)+44
+	.long	S4YI_srt-(c5bn_info)+44
 	.long	1
 	.long	458784
-c5gR_info:
-.Lc5gR:
+c5bn_info:
+.Lc5bn:
 	movl 3(%esi),%eax
 	addl $-48,%eax
 	cmpl $9,%eax
-	jbe .Lc5k2
-.Lu5k4:
+	jbe .Lc5ey
+.Lu5eA:
 	addl $4,%ebp
-.Lc5jy:
+.Lc5e4:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5hb_info)+44
+	.long	S4YI_srt-(c5bH_info)+44
 	.long	1
 	.long	458784
-c5hb_info:
-.Lc5hb:
-	movl $c5hd_info,(%ebp)
+c5bH_info:
+.Lc5bH:
+	movl $c5bJ_info,(%ebp)
 	testw $7,%si
-	jne .Lc5hd
-.Lc5he:
+	jne .Lc5bJ
+.Lc5bK:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5hd_info)+44
+	.long	S4YI_srt-(c5bJ_info)+44
 	.long	1
 	.long	458784
-c5hd_info:
-.Lc5hd:
-	movl $c5hi_info,-4(%ebp)
+c5bJ_info:
+.Lc5bJ:
+	movl $c5bO_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl 7(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5hi
-.Lc5hj:
+	jne .Lc5bO
+.Lc5bP:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5hi_info)+44
+	.long	S4YI_srt-(c5bO_info)+44
 	.long	2
 	.long	458784
-c5hi_info:
-.Lc5hi:
+c5bO_info:
+.Lc5bO:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5jZ
-.Lu5k5:
+	jae .Lc5ev
+.Lu5eB:
 	addl $8,%ebp
-	jmp .Lc5jy
+	jmp .Lc5e4
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5ho_info)+44
+	.long	S4YI_srt-(c5bU_info)+44
 	.long	3
 	.long	458784
-c5ho_info:
-.Lc5ho:
+c5bU_info:
+.Lc5bU:
 	cmpl $46,3(%esi)
-	jne .Lu5k6
-.Lc5jz:
+	jne .Lu5eC
+.Lc5e5:
 	movl 4(%ebp),%eax
-	movl $c5hw_info,4(%ebp)
+	movl $c5c2_info,4(%ebp)
 	movl %eax,%esi
 	addl $4,%ebp
 	testw $7,%si
-	jne .Lc5hw
-.Lc5hx:
+	jne .Lc5c2
+.Lc5c3:
 	jmp *(%esi)
-.Lc5jZ:
-	movl $c5ho_info,-4(%ebp)
+.Lc5ev:
+	movl $c5bU_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5ho
-.Lc5hp:
+	jne .Lc5bU
+.Lc5bV:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5hw_info)+44
+	.long	S4YI_srt-(c5c2_info)+44
 	.long	2
 	.long	458784
-c5hw_info:
-.Lc5hw:
+c5c2_info:
+.Lc5c2:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5jV
-.Lu5k7:
+	jae .Lc5er
+.Lu5eD:
 	addl $8,%ebp
-	jmp .Lc5jy
+	jmp .Lc5e4
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5hC_info)+44
+	.long	S4YI_srt-(c5c8_info)+44
 	.long	3
 	.long	458784
-c5hC_info:
-.Lc5hC:
+c5c8_info:
+.Lc5c8:
 	movl 3(%esi),%eax
 	addl $-48,%eax
 	cmpl $9,%eax
-	jbe .Lc5jR
-.Lu5k8:
+	jbe .Lc5en
+.Lu5eE:
 	addl $12,%ebp
-	jmp .Lc5jy
-.Lc5jV:
-	movl $c5hC_info,-4(%ebp)
+	jmp .Lc5e4
+.Lc5er:
+	movl $c5c8_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5hC
-.Lc5hD:
+	jne .Lc5c8
+.Lc5c9:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5hW_info)+44
+	.long	S4YI_srt-(c5cs_info)+44
 	.long	3
 	.long	458784
-c5hW_info:
-.Lc5hW:
-	movl $c5hY_info,(%ebp)
+c5cs_info:
+.Lc5cs:
+	movl $c5cu_info,(%ebp)
 	testw $7,%si
-	jne .Lc5hY
-.Lc5hZ:
+	jne .Lc5cu
+.Lc5cv:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5hY_info)+44
+	.long	S4YI_srt-(c5cu_info)+44
 	.long	3
 	.long	458784
-c5hY_info:
-.Lc5hY:
+c5cu_info:
+.Lc5cu:
 	addl $48,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5jP
-.Lc5jO:
+	ja .Lc5el
+.Lc5ek:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
-	movl $s4RV_info,-44(%edi)
+	movl $s4Mr_info,-44(%edi)
 	movl 12(%ebp),%edx
 	movl %edx,-32(%edi)
 	movl 8(%ebp),%edx
@@ -2057,311 +2047,30 @@ c5hY_info:
 	leal -2(%edi),%esi
 	addl $16,%ebp
 	jmp *(%ebp)
-.Lc5jf:
+.Lc5dL:
 	movl %eax,8(%ebx)
 	movl $Expr_numberWithDot1_closure,%esi
 	jmp *-8(%ebx)
-.Lu5k6:
+.Lu5eC:
 	addl $12,%ebp
-	jmp .Lc5jy
-.Lc5jP:
+	jmp .Lc5e4
+.Lc5el:
 	movl $48,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc5jR:
-	movl $c5hW_info,(%ebp)
+.Lc5en:
+	movl $c5cs_info,(%ebp)
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl $Parsing_digit1_closure+1,8(%ebx)
 	movl %esi,4(%ebp)
 	jmp Parsing_zdwa_info
-.Lc5k2:
-	movl $c5hb_info,(%ebp)
+.Lc5ey:
+	movl $c5bH_info,(%ebp)
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl $Parsing_digit1_closure+1,8(%ebx)
 	movl %esi,4(%ebp)
 	jmp Parsing_zdwa_info
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr40_closure
-Expr_exExpr40_closure:
-	.long	Expr_Mul_static_info
-	.long	Expr_X_closure+4
-	.long	Expr_exExpr41_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr37_closure
-Expr_exExpr37_closure:
-	.long	Expr_Add_static_info
-	.long	Expr_exExpr40_closure+3
-	.long	Expr_exExpr38_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr30_closure
-Expr_exExpr30_closure:
-	.long	ghczmprim_GHCziTypes_Dzh_static_info
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	8
-	.byte	64
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr29_closure
-Expr_exExpr29_closure:
-	.long	Expr_Num_static_info
-	.long	Expr_exExpr30_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr45_closure
-Expr_exExpr45_closure:
-	.long	Expr_Mul_static_info
-	.long	Expr_exExpr29_closure+1
-	.long	Expr_exExpr38_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr44_closure
-Expr_exExpr44_closure:
-	.long	Expr_Add_static_info
-	.long	Expr_X_closure+4
-	.long	Expr_exExpr45_closure+3
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr43_closure
-Expr_exExpr43_closure:
-	.long	Expr_Function_static_info
-	.long	Expr_exExpr36_closure
-	.long	Expr_exExpr44_closure+2
-	.long	0
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr8_closure
-Expr_exExpr8_closure:
-	.long	Expr_Function_static_info
-	.long	Expr_exExpr24_closure
-	.long	Expr_X_closure+4
-	.long	0
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr23_closure
-Expr_exExpr23_closure:
-	.long	ghczmprim_GHCziTypes_Dzh_static_info
-	.byte	102
-	.byte	102
-	.byte	102
-	.byte	102
-	.byte	102
-	.byte	102
-	.byte	2
-	.byte	64
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr22_closure
-Expr_exExpr22_closure:
-	.long	Expr_Num_static_info
-	.long	Expr_exExpr23_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr21_closure
-Expr_exExpr21_closure:
-	.long	Expr_Add_static_info
-	.long	Expr_exExpr22_closure+1
-	.long	Expr_X_closure+4
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr33_closure
-Expr_exExpr33_closure:
-	.long	ghczmprim_GHCziTypes_Dzh_static_info
-	.byte	51
-	.byte	51
-	.byte	51
-	.byte	51
-	.byte	51
-	.byte	51
-	.byte	34
-	.byte	64
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr32_closure
-Expr_exExpr32_closure:
-	.long	Expr_Num_static_info
-	.long	Expr_exExpr33_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr35_closure
-Expr_exExpr35_closure:
-	.long	Expr_Function_static_info
-	.long	Expr_exExpr36_closure
-	.long	Expr_exExpr21_closure+2
-	.long	0
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr34_closure
-Expr_exExpr34_closure:
-	.long	Expr_Mul_static_info
-	.long	Expr_exExpr18_closure+1
-	.long	Expr_exExpr35_closure+5
-	.long	0
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr31_closure
-Expr_exExpr31_closure:
-	.long	Expr_Add_static_info
-	.long	Expr_exExpr34_closure+3
-	.long	Expr_exExpr32_closure+1
-	.long	0
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr27_closure
-Expr_exExpr27_closure:
-	.long	ghczmprim_GHCziTypes_Dzh_static_info
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	4
-	.byte	64
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr26_closure
-Expr_exExpr26_closure:
-	.long	Expr_Num_static_info
-	.long	Expr_exExpr27_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr25_closure
-Expr_exExpr25_closure:
-	.long	Expr_Add_static_info
-	.long	Expr_exExpr18_closure+1
-	.long	Expr_exExpr26_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr28_closure
-Expr_exExpr28_closure:
-	.long	Expr_Add_static_info
-	.long	Expr_exExpr29_closure+1
-	.long	Expr_X_closure+4
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr20_closure
-Expr_exExpr20_closure:
-	.long	Expr_Function_static_info
-	.long	Expr_exExpr24_closure
-	.long	Expr_exExpr21_closure+2
-	.long	0
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr13_closure
-Expr_exExpr13_closure:
-	.long	ghczmprim_GHCziTypes_Dzh_static_info
-	.byte	154
-	.byte	153
-	.byte	153
-	.byte	153
-	.byte	153
-	.byte	153
-	.byte	5
-	.byte	64
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr12_closure
-Expr_exExpr12_closure:
-	.long	Expr_Num_static_info
-	.long	Expr_exExpr13_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr17_closure
-Expr_exExpr17_closure:
-	.long	ghczmprim_GHCziTypes_Dzh_static_info
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	20
-	.byte	64
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr16_closure
-Expr_exExpr16_closure:
-	.long	Expr_Num_static_info
-	.long	Expr_exExpr17_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr15_closure
-Expr_exExpr15_closure:
-	.long	Expr_Mul_static_info
-	.long	Expr_exExpr18_closure+1
-	.long	Expr_exExpr16_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr14_closure
-Expr_exExpr14_closure:
-	.long	Expr_Add_static_info
-	.long	Expr_X_closure+4
-	.long	Expr_exExpr15_closure+3
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr11_closure
-Expr_exExpr11_closure:
-	.long	ghczmprim_GHCziTypes_Dzh_static_info
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	28
-	.byte	64
 .data
 	.align 4
 .align 1
@@ -2371,50 +2080,50 @@ Expr_eval_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_eval_info)+64
+	.long	S4YI_srt-(Expr_eval_info)+64
 	.long	131087
 	.long	0
 	.long	983055
 .globl Expr_eval_info
 Expr_eval_info:
-.Lc5mG:
+.Lc5gi:
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	leal -16(%ebp),%edx
 	cmpl 840(%ebx),%edx
-	jb .Lc5mH
-.Lc5mI:
-	movl $c5mw_info,-8(%ebp)
+	jb .Lc5gj
+.Lc5gk:
+	movl $c5g8_info,-8(%ebp)
 	movl %ecx,%esi
 	movl %eax,-4(%ebp)
 	addl $-8,%ebp
 	testw $7,%si
-	jne .Lc5mw
-.Lc5mx:
+	jne .Lc5g8
+.Lc5g9:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5mw_info)+64
+	.long	S4YI_srt-(c5g8_info)+64
 	.long	1
 	.long	983072
-c5mw_info:
-.Lc5mw:
+c5g8_info:
+.Lc5g8:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	decl %ecx
-	jmp *.Ln5os(,%ecx,4)
-.Lc5mA:
+	jmp *.Ln5i4(,%ecx,4)
+.Lc5gc:
 	movl 3(%esi),%esi
 	andl $-8,%esi
 	addl $8,%ebp
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
-.Lc5mB:
-	movl $c5mO_info,-4(%ebp)
+.Lc5gd:
+	movl $c5gq_info,-4(%ebp)
 	movl %eax,16(%ebx)
 	movl 2(%esi),%eax
 	movl %eax,8(%ebx)
@@ -2424,8 +2133,8 @@ c5mw_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp Expr_eval_info
-.Lc5mC:
-	movl $c5n7_info,-4(%ebp)
+.Lc5ge:
+	movl $c5gJ_info,-4(%ebp)
 	movl %eax,16(%ebx)
 	movl 1(%esi),%eax
 	movl %eax,8(%ebx)
@@ -2435,16 +2144,16 @@ c5mw_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp Expr_eval_info
-.Lc5mD:
+.Lc5gf:
 	movl %eax,%esi
 	andl $-8,%esi
 	addl $8,%ebp
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
-.Lc5mE:
-	movl $c5nt_info,-8(%ebp)
-	movl $Expr_exExpr36_closure,16(%ebx)
+.Lc5gg:
+	movl $c5h5_info,-8(%ebp)
+	movl $r4jm_closure,16(%ebx)
 	movl -1(%esi),%eax
 	movl %eax,8(%ebx)
 	movl 3(%esi),%ecx
@@ -2454,7 +2163,7 @@ c5mw_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp base_GHCziBase_eqString_info
-.Lc5mH:
+.Lc5gj:
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
 	movl $Expr_eval_closure,%esi
@@ -2463,12 +2172,12 @@ c5mw_info:
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5mO_info)+72
+	.long	S4YI_srt-(c5gq_info)+64
 	.long	2
 	.long	65568
-c5mO_info:
-.Lc5mO:
-	movl $c5mS_info,(%ebp)
+c5gq_info:
+.Lc5gq:
+	movl $c5gu_info,(%ebp)
 	movl 8(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl 4(%ebp),%eax
@@ -2484,12 +2193,12 @@ c5mO_info:
 	.align 4,0x90
 	.long	194
 	.long	32
-c5mS_info:
-.Lc5mS:
+c5gu_info:
+.Lc5gu:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5n4
-.Lc5n3:
+	ja .Lc5gG
+.Lc5gF:
 #	gldsd 4(%ebp),%fake0
 	fldl 4(%ebp) ; fstp %st(1)
 #	gldsd 3(%esi),%fake1
@@ -2505,19 +2214,19 @@ c5mS_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%ebp)
-.Lc5n4:
+.Lc5gG:
 	movl $12,904(%ebx)
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp stg_gc_unpt_r1
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5n7_info)+72
+	.long	S4YI_srt-(c5gJ_info)+64
 	.long	2
 	.long	65568
-c5n7_info:
-.Lc5n7:
-	movl $c5nb_info,(%ebp)
+c5gJ_info:
+.Lc5gJ:
+	movl $c5gN_info,(%ebp)
 	movl 8(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl 4(%ebp),%eax
@@ -2533,12 +2242,12 @@ c5n7_info:
 	.align 4,0x90
 	.long	194
 	.long	32
-c5nb_info:
-.Lc5nb:
+c5gN_info:
+.Lc5gN:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5nn
-.Lc5nm:
+	ja .Lc5gZ
+.Lc5gY:
 #	gldsd 4(%ebp),%fake0
 	fldl 4(%ebp) ; fstp %st(1)
 #	gldsd 3(%esi),%fake1
@@ -2554,25 +2263,25 @@ c5nb_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%ebp)
-.Lc5nn:
+.Lc5gZ:
 	movl $12,904(%ebx)
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp stg_gc_unpt_r1
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5nt_info)+68
+	.long	S4YI_srt-(c5h5_info)+64
 	.long	3
-	.long	458784
-c5nt_info:
-.Lc5nt:
+	.long	852000
+c5h5_info:
+.Lc5h5:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5ok
-.Lc5ol:
-	movl $c5ny_info,(%ebp)
-	movl $Expr_exExpr24_closure,16(%ebx)
+	jae .Lc5hW
+.Lc5hX:
+	movl $c5ha_info,(%ebp)
+	movl $r4jp_closure,16(%ebx)
 	movl 8(%ebp),%eax
 	movl %eax,8(%ebx)
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
@@ -2580,17 +2289,17 @@ c5nt_info:
 	jmp base_GHCziBase_eqString_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5ny_info)+72
+	.long	S4YI_srt-(c5ha_info)+64
 	.long	131
-	.long	196640
-c5ny_info:
-.Lc5ny:
+	.long	589856
+c5ha_info:
+.Lc5ha:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5o0
-.Lc5o1:
-	movl $r4ov_closure,%esi
+	jae .Lc5hC
+.Lc5hD:
+	movl $r4jA_closure,%esi
 	addl $16,%ebp
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
@@ -2599,12 +2308,12 @@ c5ny_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5nK_info:
-.Lc5nK:
+c5hm_info:
+.Lc5hm:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5nX
-.Lc5nW:
+	ja .Lc5hz
+.Lc5hy:
 #	gldsd 3(%esi),%fake0
 	fldl 3(%esi) ; fstp %st(1)
 #	gcossd %fake0,%fake0
@@ -2612,18 +2321,18 @@ c5nK_info:
 fld %st(0); fcos
 	fnstsw %ax
 	test   $0x400,%eax
-	je     .Ln5oO
+	je     .Ln5iq
 	ffree %st(7); fldpi
 	fadd   %st(0),%st
 	fxch   %st(1)
-.Ln5oP:
+.Ln5ir:
 	fprem1
 	fnstsw %ax
 	test   $0x400,%eax
-	jne    .Ln5oP
+	jne    .Ln5ir
 	fstp   %st(1)
 	fcos
-.Ln5oO:
+.Ln5iq:
 	popl %eax;
 	fstp %st(1)
 	movl $ghczmprim_GHCziTypes_Dzh_con_info,-8(%edi)
@@ -2634,14 +2343,14 @@ fld %st(0); fcos
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%ebp)
-.Lc5nX:
+.Lc5hz:
 	movl $12,904(%ebx)
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp stg_gc_unpt_r1
-.Lc5o0:
+.Lc5hC:
 	movl 12(%ebp),%eax
-	movl $c5nK_info,12(%ebp)
+	movl $c5hm_info,12(%ebp)
 	movl %eax,16(%ebx)
 	movl 4(%ebp),%eax
 	movl %eax,8(%ebx)
@@ -2653,12 +2362,12 @@ fld %st(0); fcos
 	.align 4,0x90
 	.long	0
 	.long	32
-c5o4_info:
-.Lc5o4:
+c5hG_info:
+.Lc5hG:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5oh
-.Lc5og:
+	ja .Lc5hT
+.Lc5hS:
 #	gldsd 3(%esi),%fake0
 	fldl 3(%esi) ; fstp %st(1)
 #	gsinsd %fake0,%fake0
@@ -2666,18 +2375,18 @@ c5o4_info:
 fld %st(0); fsin
 	fnstsw %ax
 	test   $0x400,%eax
-	je     .Ln5oS
+	je     .Ln5iu
 	ffree %st(7); fldpi
 	fadd   %st(0),%st
 	fxch   %st(1)
-.Ln5oT:
+.Ln5iv:
 	fprem1
 	fnstsw %ax
 	test   $0x400,%eax
-	jne    .Ln5oT
+	jne    .Ln5iv
 	fstp   %st(1)
 	fsin
-.Ln5oS:
+.Ln5iu:
 	popl %eax;
 	fstp %st(1)
 	movl $ghczmprim_GHCziTypes_Dzh_con_info,-8(%edi)
@@ -2688,14 +2397,14 @@ fld %st(0); fsin
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%ebp)
-.Lc5oh:
+.Lc5hT:
 	movl $12,904(%ebx)
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp stg_gc_unpt_r1
-.Lc5ok:
+.Lc5hW:
 	movl 12(%ebp),%eax
-	movl $c5o4_info,12(%ebp)
+	movl $c5hG_info,12(%ebp)
 	movl %eax,16(%ebx)
 	movl 4(%ebp),%eax
 	movl %eax,8(%ebx)
@@ -2706,74 +2415,12 @@ fld %st(0); fsin
 .section .rodata
 	.align 4
 .align 1
-.Ln5os:
-	.long	.Lc5mA
-	.long	.Lc5mB
-	.long	.Lc5mC
-	.long	.Lc5mD
-	.long	.Lc5mE
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr1_closure
-Expr_exExpr1_closure:
-	.long	Expr_Num_static_info
-	.long	Expr_exExpr11_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr2_closure
-Expr_exExpr2_closure:
-	.long	Expr_Add_static_info
-	.long	Expr_exExpr14_closure+2
-	.long	Expr_exExpr12_closure+1
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr3_closure
-Expr_exExpr3_closure:
-	.long	Expr_Mul_static_info
-	.long	Expr_exExpr18_closure+1
-	.long	Expr_exExpr20_closure+5
-	.long	0
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr4_closure
-Expr_exExpr4_closure:
-	.long	Expr_Mul_static_info
-	.long	Expr_exExpr28_closure+2
-	.long	Expr_exExpr25_closure+2
-	.long	1
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr5_closure
-Expr_exExpr5_closure:
-	.long	Expr_Mul_static_info
-	.long	Expr_exExpr31_closure+2
-	.long	Expr_exExpr21_closure+2
-	.long	0
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr6_closure
-Expr_exExpr6_closure:
-	.long	Expr_Function_static_info
-	.long	Expr_exExpr36_closure
-	.long	Expr_exExpr8_closure+5
-	.long	0
-.data
-	.align 4
-.align 1
-.globl Expr_exExpr7_closure
-Expr_exExpr7_closure:
-	.long	Expr_Add_static_info
-	.long	Expr_exExpr43_closure+5
-	.long	Expr_exExpr37_closure+2
-	.long	0
+.Ln5i4:
+	.long	.Lc5gc
+	.long	.Lc5gd
+	.long	.Lc5ge
+	.long	.Lc5gf
+	.long	.Lc5gg
 .data
 	.align 4
 .align 1
@@ -2787,7 +2434,7 @@ Expr_funcName_closure:
 	.long	15
 .globl Expr_funcName_info
 Expr_funcName_info:
-.Lc5ph:
+.Lc5iF:
 	movl 8(%ebx),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_funcName1_info
@@ -2800,13 +2447,13 @@ Expr_number_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_number_info)+80
+	.long	S4YI_srt-(Expr_number_info)+80
 	.long	65541
 	.long	0
 	.long	65551
 .globl Expr_number_info
 Expr_number_info:
-.Lc5pt:
+.Lc5iR:
 	movl 8(%ebx),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_number1_info
@@ -2819,13 +2466,13 @@ Expr_numberWithDot_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_numberWithDot_info)+60
+	.long	S4YI_srt-(Expr_numberWithDot_info)+60
 	.long	65541
 	.long	0
 	.long	65551
 .globl Expr_numberWithDot_info
 Expr_numberWithDot_info:
-.Lc5pF:
+.Lc5j3:
 	movl 8(%ebx),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_numberWithDot1_info
@@ -2838,56 +2485,56 @@ Expr_numberWithoutDot_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_numberWithoutDot_info)+56
+	.long	S4YI_srt-(Expr_numberWithoutDot_info)+56
 	.long	65541
 	.long	0
 	.long	65551
 .globl Expr_numberWithoutDot_info
 Expr_numberWithoutDot_info:
-.Lc5pR:
+.Lc5jf:
 	movl 8(%ebx),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_numberWithoutDot1_info
 .data
 	.align 4
 .align 1
-r4ox_closure:
-	.long	r4ox_info
+r4jC_closure:
+	.long	r4jC_info
 	.long	0
 	.long	0
 	.long	0
 .section .rodata
 	.align 4
 .align 1
-c5q5_str:
+c5jt_str:
 	.byte	41
 	.byte	0
 .text
 	.align 4,0x90
 	.long	0
 	.long	22
-r4ox_info:
-.Lc5q6:
+r4jC_info:
+.Lc5ju:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5q7
-.Lc5q8:
+	jb .Lc5jv
+.Lc5jw:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc5q4
-.Lc5q3:
+	je .Lc5js
+.Lc5jr:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c5q5_str,8(%ebx)
+	movl $c5jt_str,8(%ebx)
 	addl $-12,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc5q4:
+.Lc5js:
 	jmp *(%esi)
-.Lc5q7:
+.Lc5jv:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -2898,18 +2545,18 @@ Expr_showExpr_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4SH_info)+84
+	.long	S4YI_srt-(s4Nd_info)+84
 	.long	131072
 	.long	65557
-s4SH_info:
-.Lc5rq:
+s4Nd_info:
+.Lc5kO:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5rr
-.Lc5rs:
+	jb .Lc5kP
+.Lc5kQ:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $c5rm_info,-16(%ebp)
+	movl $c5kK_info,-16(%ebp)
 	addl $-16,%ebp
 #	gldsd 12(%esi),%fake0
 	fldl 12(%esi) ; fstp %st(1)
@@ -3005,221 +2652,221 @@ s4SH_info:
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5rm_info)+84
+	.long	S4YI_srt-(c5kK_info)+84
 	.long	0
 	.long	65568
-c5rm_info:
-.Lc5rm:
-	movl $c5ro_info,(%ebp)
+c5kK_info:
+.Lc5kK:
+	movl $c5kM_info,(%ebp)
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp fromJSStr
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5ro_info)+84
+	.long	S4YI_srt-(c5kM_info)+84
 	.long	0
 	.long	65568
-c5ro_info:
-.Lc5ro:
-	movl $r4ox_closure,16(%ebx)
+c5kM_info:
+.Lc5kM:
+	movl $r4jC_closure,16(%ebx)
 	movl %esi,8(%ebx)
 	addl $4,%ebp
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp base_GHCziBase_zpzp_info
-.Lc5rr:
+.Lc5kP:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5sW_str:
+c5mk_str:
 	.byte	40
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4SL_info)+88
+	.long	S4YI_srt-(s4Nh_info)+88
 	.long	1
 	.long	65553
-s4SL_info:
-.Lc5rP:
+s4Nh_info:
+.Lc5ld:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5rQ
-.Lc5rR:
+	jb .Lc5le
+.Lc5lf:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_showExpr_info
-.Lc5rQ:
+.Lc5le:
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5rS_str:
+c5lg_str:
 	.byte	43
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4SM_info)+88
+	.long	S4YI_srt-(s4Ni_info)+88
 	.long	1
 	.long	65553
-s4SM_info:
-.Lc5rT:
+s4Ni_info:
+.Lc5lh:
 	addl $16,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5rX
-.Lc5rW:
+	ja .Lc5ll
+.Lc5lk:
 	movl 12(%esi),%eax
-	movl $s4SL_info,-12(%edi)
+	movl $s4Nh_info,-12(%edi)
 	movl %eax,(%edi)
 	leal -12(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5rS_str,8(%ebx)
+	movl $c5lg_str,8(%ebx)
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5rX:
+.Lc5ll:
 	movl $16,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4SQ_info)+92
+	.long	S4YI_srt-(s4Nm_info)+92
 	.long	1
 	.long	65553
-s4SQ_info:
-.Lc5s8:
+s4Nm_info:
+.Lc5lw:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5s9
-.Lc5sa:
+	jb .Lc5lx
+.Lc5ly:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_showFactorMul_info
-.Lc5s9:
+.Lc5lx:
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5sb_str:
+c5lz_str:
 	.byte	42
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4SR_info)+92
+	.long	S4YI_srt-(s4Nn_info)+92
 	.long	1
 	.long	65553
-s4SR_info:
-.Lc5sc:
+s4Nn_info:
+.Lc5lA:
 	addl $16,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5sg
-.Lc5sf:
+	ja .Lc5lE
+.Lc5lD:
 	movl 12(%esi),%eax
-	movl $s4SQ_info,-12(%edi)
+	movl $s4Nm_info,-12(%edi)
 	movl %eax,(%edi)
 	leal -12(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5sb_str,8(%ebx)
+	movl $c5lz_str,8(%ebx)
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5sg:
+.Lc5lE:
 	movl $16,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4SU_info)+96
+	.long	S4YI_srt-(s4Nq_info)+96
 	.long	1
 	.long	65553
-s4SU_info:
-.Lc5ss:
+s4Nq_info:
+.Lc5lQ:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5st
-.Lc5su:
+	jb .Lc5lR
+.Lc5lS:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_showFactorSin_info
-.Lc5st:
+.Lc5lR:
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5sv_str:
+c5lT_str:
 	.byte	32
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4SV_info)+96
+	.long	S4YI_srt-(s4Nr_info)+96
 	.long	1
 	.long	65553
-s4SV_info:
-.Lc5sw:
+s4Nr_info:
+.Lc5lU:
 	addl $16,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5sA
-.Lc5sz:
+	ja .Lc5lY
+.Lc5lX:
 	movl 12(%esi),%eax
-	movl $s4SU_info,-12(%edi)
+	movl $s4Nq_info,-12(%edi)
 	movl %eax,(%edi)
 	leal -12(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5sv_str,8(%ebx)
+	movl $c5lT_str,8(%ebx)
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5sA:
+.Lc5lY:
 	movl $16,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_showExpr_info)+84
+	.long	S4YI_srt-(Expr_showExpr_info)+84
 	.long	65541
 	.long	0
 	.long	2031631
 .globl Expr_showExpr_info
 Expr_showExpr_info:
-.Lc5sI:
+.Lc5m6:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5sJ
-.Lc5sK:
-	movl $c5r0_info,-4(%ebp)
+	jb .Lc5m7
+.Lc5m8:
+	movl $c5ko_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5r0
-.Lc5r1:
+	jne .Lc5ko
+.Lc5kp:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5r0_info)+84
+	.long	S4YI_srt-(c5ko_info)+84
 	.long	0
 	.long	2031648
-c5r0_info:
-.Lc5r0:
+c5ko_info:
+.Lc5ko:
 	movl %esi,%eax
 	andl $7,%eax
 	decl %eax
-	jmp *.Ln5xp(,%eax,4)
+	jmp *.Ln5qN(,%eax,4)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5r5_info)+84
+	.long	S4YI_srt-(c5kt_info)+84
 	.long	0
 	.long	65568
-c5r5_info:
-.Lc5r5:
+c5kt_info:
+.Lc5kt:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5sO
-.Lc5sN:
+	ja .Lc5mc
+.Lc5mb:
 #	gldsd 3(%esi),%fake0
 	fldl 3(%esi) ; fstp %st(1)
 #	gldzsd %fake1
@@ -3228,9 +2875,9 @@ c5r5_info:
 	pushl %eax ; fld %st(0)
 	fcomp %st(2); fstsw %ax ; sahf ;  setpo %ah
 	setb %al ;  andb %ah,%al ;  decb %al ;  popl %eax
-	je .Lc5sZ
-.Lc5t0:
-	movl $c5sT_info,(%ebp)
+	je .Lc5mn
+.Lc5mo:
+	movl $c5mh_info,(%ebp)
 	movl 872(%ebx),%eax
 	movl 20(%eax),%ecx
 	movl %ebp,12(%ecx)
@@ -3321,26 +2968,26 @@ c5r5_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%ebp)
-.Lc5sC:
-	movl $c5r5_info,(%ebp)
+.Lc5m0:
+	movl $c5kt_info,(%ebp)
 	movl 3(%esi),%esi
 	testw $7,%si
-	jne .Lc5r5
-.Lc5r6:
+	jne .Lc5kt
+.Lc5ku:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
-.Lc5sD:
+.Lc5m1:
 	addl $16,%edi
 	movl %esi,%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5tl
-.Lc5t3:
+	ja .Lc5mJ
+.Lc5mr:
 	movl 2(%eax),%ecx
 	movl 6(%eax),%eax
-	movl $s4SM_info,-12(%edi)
+	movl $s4Ni_info,-12(%edi)
 	movl %eax,(%edi)
-	movl $c5t1_info,-4(%ebp)
+	movl $c5mp_info,-4(%ebp)
 	movl %ecx,8(%ebx)
 	leal -12(%edi),%eax
 	movl %eax,(%ebp)
@@ -3348,17 +2995,17 @@ c5r5_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp Expr_showExpr_info
-.Lc5sE:
+.Lc5m2:
 	addl $16,%edi
 	movl %esi,%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5tl
-.Lc5tb:
+	ja .Lc5mJ
+.Lc5mz:
 	movl 1(%eax),%ecx
 	movl 5(%eax),%eax
-	movl $s4SR_info,-12(%edi)
+	movl $s4Nn_info,-12(%edi)
 	movl %eax,(%edi)
-	movl $c5t9_info,-4(%ebp)
+	movl $c5mx_info,-4(%ebp)
 	movl %ecx,8(%ebx)
 	leal -12(%edi),%eax
 	movl %eax,(%ebp)
@@ -3366,21 +3013,21 @@ c5r5_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp Expr_showFactorMul_info
-.Lc5sF:
-	movl $r4ow_closure,%esi
+.Lc5m3:
+	movl $r4jB_closure,%esi
 	addl $4,%ebp
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
-.Lc5sG:
+.Lc5m4:
 	addl $16,%edi
 	movl %esi,%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5tl
-.Lc5tk:
+	ja .Lc5mJ
+.Lc5mI:
 	movl -1(%eax),%ecx
 	movl 3(%eax),%eax
-	movl $s4SV_info,-12(%edi)
+	movl $s4Nr_info,-12(%edi)
 	movl %eax,(%edi)
 	leal -12(%edi),%eax
 	movl %eax,16(%ebx)
@@ -3389,13 +3036,13 @@ c5r5_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp base_GHCziBase_zpzp_info
-.Lc5sJ:
+.Lc5m7:
 	movl %eax,8(%ebx)
 	movl $Expr_showExpr_closure,%esi
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *-8(%ebx)
-.Lc5sO:
+.Lc5mc:
 	movl $20,904(%ebx)
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
@@ -3404,19 +3051,19 @@ c5r5_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5sT_info:
-.Lc5sT:
+c5mh_info:
+.Lc5mh:
 	addl $4,%ebp
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp fromJSStr
-.Lc5sZ:
-	movl $s4SH_info,-16(%edi)
+.Lc5mn:
+	movl $s4Nd_info,-16(%edi)
 #	gstsd %fake0,-4(%edi)
 	fstl -4(%edi)
 	leal -16(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5sW_str,8(%ebx)
+	movl $c5mk_str,8(%ebx)
 	addl $4,%ebp
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
@@ -3425,8 +3072,8 @@ c5sT_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c5t1_info:
-.Lc5t1:
+c5mp_info:
+.Lc5mp:
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl %esi,8(%ebx)
@@ -3438,8 +3085,8 @@ c5t1_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c5t9_info:
-.Lc5t9:
+c5mx_info:
+.Lc5mx:
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl %esi,8(%ebx)
@@ -3447,7 +3094,7 @@ c5t9_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp base_GHCziBase_zpzp_info
-.Lc5tl:
+.Lc5mJ:
 	movl $16,904(%ebx)
 	movl %eax,%esi
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
@@ -3456,12 +3103,12 @@ c5t9_info:
 .section .rodata
 	.align 4
 .align 1
-.Ln5xp:
-	.long	.Lc5sC
-	.long	.Lc5sD
-	.long	.Lc5sE
-	.long	.Lc5sF
-	.long	.Lc5sG
+.Ln5qN:
+	.long	.Lc5m0
+	.long	.Lc5m1
+	.long	.Lc5m2
+	.long	.Lc5m3
+	.long	.Lc5m4
 .data
 	.align 4
 .align 1
@@ -3471,85 +3118,85 @@ Expr_showFactorMul_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4T2_info)+84
+	.long	S4YI_srt-(s4Ny_info)+84
 	.long	1
 	.long	196625
-s4T2_info:
-.Lc5u1:
+s4Ny_info:
+.Lc5np:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5u2
-.Lc5u3:
+	jb .Lc5nq
+.Lc5nr:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $c5tZ_info,-16(%ebp)
+	movl $c5nn_info,-16(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-16,%ebp
 	jmp Expr_showExpr_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5tZ_info)+84
+	.long	S4YI_srt-(c5nn_info)+84
 	.long	0
 	.long	65568
-c5tZ_info:
-.Lc5tZ:
-	movl $r4ox_closure,16(%ebx)
+c5nn_info:
+.Lc5nn:
+	movl $r4jC_closure,16(%ebx)
 	movl %esi,8(%ebx)
 	addl $4,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5u2:
+.Lc5nq:
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5u7_str:
+c5nv_str:
 	.byte	43
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4T3_info)+84
+	.long	S4YI_srt-(s4Nz_info)+84
 	.long	1
 	.long	196625
-s4T3_info:
-.Lc5u8:
+s4Nz_info:
+.Lc5nw:
 	addl $16,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5uc
-.Lc5ub:
+	ja .Lc5nA
+.Lc5nz:
 	movl 12(%esi),%eax
-	movl $s4T2_info,-12(%edi)
+	movl $s4Ny_info,-12(%edi)
 	movl %eax,(%edi)
 	leal -12(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5u7_str,8(%ebx)
+	movl $c5nv_str,8(%ebx)
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5uc:
+.Lc5nA:
 	movl $16,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4T4_info)+84
+	.long	S4YI_srt-(s4NA_info)+84
 	.long	2
 	.long	196627
-s4T4_info:
-.Lc5uf:
+s4NA_info:
+.Lc5nD:
 	movl %esi,%eax
 	leal -20(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5ug
-.Lc5uh:
+	jb .Lc5nE
+.Lc5nF:
 	addl $16,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5uj
-.Lc5ui:
+	ja .Lc5nH
+.Lc5nG:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
 	movl 16(%eax),%eax
-	movl $s4T3_info,-12(%edi)
+	movl $s4Nz_info,-12(%edi)
 	movl %eax,(%edi)
-	movl $c5ud_info,-20(%ebp)
+	movl $c5nB_info,-20(%ebp)
 	movl %ecx,8(%ebx)
 	leal -12(%edi),%eax
 	movl %eax,-16(%ebp)
@@ -3559,80 +3206,80 @@ s4T4_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c5ud_info:
-.Lc5ud:
+c5nB_info:
+.Lc5nB:
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl %esi,8(%ebx)
 	addl $8,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5uj:
+.Lc5nH:
 	movl $16,904(%ebx)
-.Lc5ug:
+.Lc5nE:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5uw_str:
+c5nU_str:
 	.byte	40
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_showFactorMul_info)+84
+	.long	S4YI_srt-(Expr_showFactorMul_info)+84
 	.long	65541
 	.long	0
 	.long	458767
 .globl Expr_showFactorMul_info
 Expr_showFactorMul_info:
-.Lc5ur:
+.Lc5nP:
 	movl 8(%ebx),%eax
 	leal -4(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5us
-.Lc5ut:
-	movl $c5tH_info,-4(%ebp)
+	jb .Lc5nQ
+.Lc5nR:
+	movl $c5n5_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5tH
-.Lc5tI:
+	jne .Lc5n5
+.Lc5n6:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5tH_info)+84
+	.long	S4YI_srt-(c5n5_info)+84
 	.long	0
 	.long	196640
-c5tH_info:
-.Lc5tH:
+c5n5_info:
+.Lc5n5:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jne .Lc5uo
-.Lc5up:
+	jne .Lc5nM
+.Lc5nN:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5uz
-.Lc5uy:
+	ja .Lc5nX
+.Lc5nW:
 	movl 2(%esi),%eax
 	movl 6(%esi),%ecx
-	movl $s4T4_info,-16(%edi)
+	movl $s4NA_info,-16(%edi)
 	movl %eax,-4(%edi)
 	movl %ecx,(%edi)
 	leal -16(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5uw_str,8(%ebx)
+	movl $c5nU_str,8(%ebx)
 	addl $4,%ebp
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5uo:
+.Lc5nM:
 	movl %esi,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_showExpr_info
-.Lc5us:
+.Lc5nQ:
 	movl %eax,8(%ebx)
 	movl $Expr_showFactorMul_closure,%esi
 	jmp *-8(%ebx)
-.Lc5uz:
+.Lc5nX:
 	movl $20,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
@@ -3644,85 +3291,85 @@ Expr_showFactorSin_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Tb_info)+84
+	.long	S4YI_srt-(s4NH_info)+84
 	.long	1
 	.long	196625
-s4Tb_info:
-.Lc5v7:
+s4NH_info:
+.Lc5ov:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5v8
-.Lc5v9:
+	jb .Lc5ow
+.Lc5ox:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $c5v5_info,-16(%ebp)
+	movl $c5ot_info,-16(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-16,%ebp
 	jmp Expr_showExpr_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5v5_info)+84
+	.long	S4YI_srt-(c5ot_info)+84
 	.long	0
 	.long	65568
-c5v5_info:
-.Lc5v5:
-	movl $r4ox_closure,16(%ebx)
+c5ot_info:
+.Lc5ot:
+	movl $r4jC_closure,16(%ebx)
 	movl %esi,8(%ebx)
 	addl $4,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5v8:
+.Lc5ow:
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5vd_str:
+c5oB_str:
 	.byte	43
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Tc_info)+84
+	.long	S4YI_srt-(s4NI_info)+84
 	.long	1
 	.long	196625
-s4Tc_info:
-.Lc5ve:
+s4NI_info:
+.Lc5oC:
 	addl $16,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5vi
-.Lc5vh:
+	ja .Lc5oG
+.Lc5oF:
 	movl 12(%esi),%eax
-	movl $s4Tb_info,-12(%edi)
+	movl $s4NH_info,-12(%edi)
 	movl %eax,(%edi)
 	leal -12(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5vd_str,8(%ebx)
+	movl $c5oB_str,8(%ebx)
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5vi:
+.Lc5oG:
 	movl $16,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Td_info)+84
+	.long	S4YI_srt-(s4NJ_info)+84
 	.long	2
 	.long	196627
-s4Td_info:
-.Lc5vl:
+s4NJ_info:
+.Lc5oJ:
 	movl %esi,%eax
 	leal -20(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5vm
-.Lc5vn:
+	jb .Lc5oK
+.Lc5oL:
 	addl $16,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5vp
-.Lc5vo:
+	ja .Lc5oN
+.Lc5oM:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
 	movl 16(%eax),%eax
-	movl $s4Tc_info,-12(%edi)
+	movl $s4NI_info,-12(%edi)
 	movl %eax,(%edi)
-	movl $c5vj_info,-20(%ebp)
+	movl $c5oH_info,-20(%ebp)
 	movl %ecx,8(%ebx)
 	leal -12(%edi),%eax
 	movl %eax,-16(%ebp)
@@ -3732,105 +3379,105 @@ s4Td_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c5vj_info:
-.Lc5vj:
+c5oH_info:
+.Lc5oH:
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl %esi,8(%ebx)
 	addl $8,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5vp:
+.Lc5oN:
 	movl $16,904(%ebx)
-.Lc5vm:
+.Lc5oK:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5wu_str:
+c5pS_str:
 	.byte	40
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Ti_info)+84
+	.long	S4YI_srt-(s4NO_info)+84
 	.long	1
 	.long	327697
-s4Ti_info:
-.Lc5vS:
+s4NO_info:
+.Lc5pg:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5vT
-.Lc5vU:
+	jb .Lc5ph
+.Lc5pi:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $c5vQ_info,-16(%ebp)
+	movl $c5pe_info,-16(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-16,%ebp
 	jmp Expr_showFactorMul_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5vQ_info)+84
+	.long	S4YI_srt-(c5pe_info)+84
 	.long	0
 	.long	65568
-c5vQ_info:
-.Lc5vQ:
-	movl $r4ox_closure,16(%ebx)
+c5pe_info:
+.Lc5pe:
+	movl $r4jC_closure,16(%ebx)
 	movl %esi,8(%ebx)
 	addl $4,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5vT:
+.Lc5ph:
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5vY_str:
+c5pm_str:
 	.byte	42
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Tj_info)+84
+	.long	S4YI_srt-(s4NP_info)+84
 	.long	1
 	.long	327697
-s4Tj_info:
-.Lc5vZ:
+s4NP_info:
+.Lc5pn:
 	addl $16,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5w3
-.Lc5w2:
+	ja .Lc5pr
+.Lc5pq:
 	movl 12(%esi),%eax
-	movl $s4Ti_info,-12(%edi)
+	movl $s4NO_info,-12(%edi)
 	movl %eax,(%edi)
 	leal -12(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5vY_str,8(%ebx)
+	movl $c5pm_str,8(%ebx)
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5w3:
+.Lc5pr:
 	movl $16,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Tk_info)+84
+	.long	S4YI_srt-(s4NQ_info)+84
 	.long	2
 	.long	327699
-s4Tk_info:
-.Lc5w6:
+s4NQ_info:
+.Lc5pu:
 	movl %esi,%eax
 	leal -20(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5w7
-.Lc5w8:
+	jb .Lc5pv
+.Lc5pw:
 	addl $16,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5wa
-.Lc5w9:
+	ja .Lc5py
+.Lc5px:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
 	movl 16(%eax),%eax
-	movl $s4Tj_info,-12(%edi)
+	movl $s4NP_info,-12(%edi)
 	movl %eax,(%edi)
-	movl $c5w4_info,-20(%ebp)
+	movl $c5ps_info,-20(%ebp)
 	movl %ecx,8(%ebx)
 	leal -12(%edi),%eax
 	movl %eax,-16(%ebp)
@@ -3840,102 +3487,102 @@ s4Tk_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c5w4_info:
-.Lc5w4:
+c5ps_info:
+.Lc5ps:
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl %esi,8(%ebx)
 	addl $8,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5wa:
+.Lc5py:
 	movl $16,904(%ebx)
-.Lc5w7:
+.Lc5pv:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .section .rodata
 	.align 4
 .align 1
-c5wy_str:
+c5pW_str:
 	.byte	40
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_showFactorSin_info)+84
+	.long	S4YI_srt-(Expr_showFactorSin_info)+84
 	.long	65541
 	.long	0
 	.long	983055
 .globl Expr_showFactorSin_info
 Expr_showFactorSin_info:
-.Lc5wp:
+.Lc5pN:
 	movl 8(%ebx),%eax
 	leal -4(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5wq
-.Lc5wr:
-	movl $c5uN_info,-4(%ebp)
+	jb .Lc5pO
+.Lc5pP:
+	movl $c5ob_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5uN
-.Lc5uO:
+	jne .Lc5ob
+.Lc5oc:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5uN_info)+84
+	.long	S4YI_srt-(c5ob_info)+84
 	.long	0
 	.long	458784
-c5uN_info:
-.Lc5uN:
+c5ob_info:
+.Lc5ob:
 	movl %esi,%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $3,%ecx
-	ja .Lc5wf
-.Lc5wo:
+	ja .Lc5pD
+.Lc5pM:
 	cmpl $3,%ecx
-	jae .Lc5wk
-.Lc5wl:
+	jae .Lc5pI
+.Lc5pJ:
 	cmpl $2,%ecx
-	jne .Lc5wf
-.Lc5wg:
+	jne .Lc5pD
+.Lc5pE:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5wB
-.Lc5ww:
+	ja .Lc5pZ
+.Lc5pU:
 	movl 2(%eax),%ecx
 	movl 6(%eax),%eax
-	movl $s4Td_info,-16(%edi)
+	movl $s4NJ_info,-16(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
 	leal -16(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5wu_str,8(%ebx)
+	movl $c5pS_str,8(%ebx)
 	addl $4,%ebp
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5wf:
+.Lc5pD:
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_showExpr_info
-.Lc5wk:
+.Lc5pI:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5wB
-.Lc5wA:
+	ja .Lc5pZ
+.Lc5pY:
 	movl 1(%eax),%ecx
 	movl 5(%eax),%eax
-	movl $s4Tk_info,-16(%edi)
+	movl $s4NQ_info,-16(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
 	leal -16(%edi),%eax
 	movl %eax,16(%ebx)
-	movl $c5wy_str,8(%ebx)
+	movl $c5pW_str,8(%ebx)
 	addl $4,%ebp
 	jmp ghczmprim_GHCziCString_unpackAppendCStringzh_info
-.Lc5wq:
+.Lc5pO:
 	movl %eax,8(%ebx)
 	movl $Expr_showFactorSin_closure,%esi
 	jmp *-8(%ebx)
-.Lc5wB:
+.Lc5pZ:
 	movl $20,904(%ebx)
 	movl %eax,%esi
 	jmp stg_gc_unpt_r1
@@ -3950,20 +3597,20 @@ Expr_zdfShowExprzuzdszdcshowsPrec_closure:
 	.align 4,0x90
 	.long	1
 	.long	17
-s4Tp_info:
-.Lc5zJ:
+s4NV_info:
+.Lc5t7:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5zK
-.Lc5zL:
+	jb .Lc5t8
+.Lc5t9:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $c5zG_info,-16(%ebp)
+	movl $c5t4_info,-16(%ebp)
 	movl 12(%esi),%esi
 	addl $-16,%ebp
 	testw $7,%si
-	jne .Lc5zG
-.Lc5zH:
+	jne .Lc5t4
+.Lc5t5:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
@@ -3971,9 +3618,9 @@ s4Tp_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5zG_info:
-.Lc5zG:
-	movl $c5zR_info,(%ebp)
+c5t4_info:
+.Lc5t4:
+	movl $c5tf_info,(%ebp)
 #	gldsd 3(%esi),%fake0
 	fldl 3(%esi) ; fstp %st(1)
 	movl 872(%ebx),%eax
@@ -4066,7 +3713,7 @@ c5zG_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%ebp)
-.Lc5zK:
+.Lc5t8:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *-16(%ebx)
@@ -4074,8 +3721,8 @@ c5zG_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5zR_info:
-.Lc5zR:
+c5tf_info:
+.Lc5tf:
 	addl $4,%ebp
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
@@ -4084,8 +3731,8 @@ c5zR_info:
 	.align 4,0x90
 	.long	2
 	.long	19
-s4TA_info:
-.Lc5Ag:
+s4O6_info:
+.Lc5tE:
 	movl 16(%esi),%eax
 	movl %eax,16(%ebx)
 	movl 12(%esi),%eax
@@ -4093,26 +3740,26 @@ s4TA_info:
 	jmp base_GHCziBase_zpzp_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4TB_info)+104
+	.long	S4YI_srt-(s4O7_info)+104
 	.long	65541
 	.long	1
 	.long	65546
-s4TB_info:
-.Lc5Aj:
+s4O7_info:
+.Lc5tH:
 	addl $20,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5An
-.Lc5Am:
+	ja .Lc5tL
+.Lc5tK:
 	movl 3(%esi),%ecx
-	movl $s4TA_info,-16(%edi)
+	movl $s4O6_info,-16(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
 	leal -16(%edi),%eax
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr8_closure,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5An:
+.Lc5tL:
 	movl $20,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
@@ -4120,12 +3767,12 @@ s4TB_info:
 	.align 4,0x90
 	.long	2
 	.long	19
-s4TE_info:
-.Lc5AD:
+s4Oa_info:
+.Lc5u1:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5AH
-.Lc5AG:
+	ja .Lc5u5
+.Lc5u4:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -4135,30 +3782,30 @@ s4TE_info:
 	movl %ecx,16(%ebx)
 	movl %eax,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5AH:
+.Lc5u5:
 	movl $12,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4TF_info)+104
+	.long	S4YI_srt-(s4Ob_info)+104
 	.long	2
 	.long	65555
-s4TF_info:
-.Lc5AI:
+s4Ob_info:
+.Lc5u6:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5AJ
-.Lc5AK:
+	jb .Lc5u7
+.Lc5u8:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5AM
-.Lc5AL:
+	ja .Lc5ua
+.Lc5u9:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
 	movl 16(%eax),%eax
-	movl $s4TE_info,-16(%edi)
+	movl $s4Oa_info,-16(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
 	leal -16(%edi),%eax
@@ -4166,26 +3813,26 @@ s4TF_info:
 	movl $Expr_zdfShowExpr8_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5AM:
+.Lc5ua:
 	movl $20,904(%ebx)
-.Lc5AJ:
+.Lc5u7:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4TG_info)+104
+	.long	S4YI_srt-(s4Oc_info)+104
 	.long	65541
 	.long	1
 	.long	65546
-s4TG_info:
-.Lc5AO:
+s4Oc_info:
+.Lc5uc:
 	addl $32,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5AS
-.Lc5AR:
+	ja .Lc5ug
+.Lc5uf:
 	movl 3(%esi),%ecx
-	movl $s4TF_info,-28(%edi)
+	movl $s4Ob_info,-28(%edi)
 	movl %ecx,-16(%edi)
 	movl %eax,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -4194,21 +3841,21 @@ s4TG_info:
 	movl %eax,(%edi)
 	leal -6(%edi),%esi
 	jmp *(%ebp)
-.Lc5AS:
+.Lc5ug:
 	movl $32,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4TJ_info)+108
+	.long	S4YI_srt-(s4Of_info)+108
 	.long	1
 	.long	65553
-s4TJ_info:
-.Lc5AZ:
+s4Of_info:
+.Lc5un:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5B0
-.Lc5B1:
+	jb .Lc5uo
+.Lc5up:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -4216,19 +3863,19 @@ s4TJ_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5B0:
+.Lc5uo:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4TK_info)+108
+	.long	S4YI_srt-(s4Og_info)+108
 	.long	1
 	.long	65553
-s4TK_info:
-.Lc5B6:
+s4Og_info:
+.Lc5uu:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5B7
-.Lc5B8:
+	jb .Lc5uv
+.Lc5uw:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -4236,18 +3883,18 @@ s4TK_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5B7:
+.Lc5uv:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	3
 	.long	16
-s4TQ_info:
-.Lc5Bp:
+s4Om_info:
+.Lc5uN:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Bt
-.Lc5Bs:
+	ja .Lc5uR
+.Lc5uQ:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl 20(%esi),%edx
@@ -4262,25 +3909,25 @@ s4TQ_info:
 	movl %ecx,8(%ebx)
 	movl %eax,%esi
 	jmp stg_ap_p_fast
-.Lc5Bt:
+.Lc5uR:
 	movl $32,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4TR_info)+112
+	.long	S4YI_srt-(s4On_info)+112
 	.long	65541
 	.long	2
 	.long	65548
-s4TR_info:
-.Lc5Bu:
+s4On_info:
+.Lc5uS:
 	addl $24,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5By
-.Lc5Bx:
+	ja .Lc5uW
+.Lc5uV:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4TQ_info,-20(%edi)
+	movl $s4Om_info,-20(%edi)
 	movl %ecx,-8(%edi)
 	movl %edx,-4(%edi)
 	movl %eax,(%edi)
@@ -4288,7 +3935,7 @@ s4TR_info:
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr7_closure,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5By:
+.Lc5uW:
 	movl $24,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
@@ -4296,17 +3943,17 @@ s4TR_info:
 	.align 4,0x90
 	.long	2
 	.long	19
-s4TU_info:
-.Lc5BS:
+s4Oq_info:
+.Lc5vg:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5BT
-.Lc5BU:
+	jb .Lc5vh
+.Lc5vi:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5BW
-.Lc5BV:
+	ja .Lc5vk
+.Lc5vj:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -4319,25 +3966,25 @@ s4TU_info:
 	movl %ecx,%esi
 	addl $-12,%ebp
 	jmp stg_ap_p_fast
-.Lc5BW:
+.Lc5vk:
 	movl $12,904(%ebx)
-.Lc5BT:
+.Lc5vh:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	3
 	.long	16
-s4TW_info:
-.Lc5BY:
+s4Os_info:
+.Lc5vm:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5C2
-.Lc5C1:
+	ja .Lc5vq
+.Lc5vp:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl 20(%esi),%edx
-	movl $s4TU_info,-28(%edi)
+	movl $s4Oq_info,-28(%edi)
 	movl %ecx,-16(%edi)
 	movl %edx,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -4348,31 +3995,31 @@ s4TW_info:
 	movl %ecx,8(%ebx)
 	movl %eax,%esi
 	jmp stg_ap_p_fast
-.Lc5C2:
+.Lc5vq:
 	movl $32,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4TX_info)+112
+	.long	S4YI_srt-(s4Ot_info)+112
 	.long	3
 	.long	65552
-s4TX_info:
-.Lc5C3:
+s4Ot_info:
+.Lc5vr:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5C4
-.Lc5C5:
+	jb .Lc5vs
+.Lc5vt:
 	addl $24,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5C7
-.Lc5C6:
+	ja .Lc5vv
+.Lc5vu:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
 	movl 16(%eax),%edx
 	movl 20(%eax),%eax
-	movl $s4TW_info,-20(%edi)
+	movl $s4Os_info,-20(%edi)
 	movl %ecx,-8(%edi)
 	movl %edx,-4(%edi)
 	movl %eax,(%edi)
@@ -4381,27 +4028,27 @@ s4TX_info:
 	movl $Expr_zdfShowExpr7_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5C7:
+.Lc5vv:
 	movl $24,904(%ebx)
-.Lc5C4:
+.Lc5vs:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4TY_info)+112
+	.long	S4YI_srt-(s4Ou_info)+112
 	.long	65541
 	.long	2
 	.long	65548
-s4TY_info:
-.Lc5C9:
+s4Ou_info:
+.Lc5vx:
 	addl $36,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5Cd
-.Lc5Cc:
+	ja .Lc5vB
+.Lc5vA:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4TX_info,-32(%edi)
+	movl $s4Ot_info,-32(%edi)
 	movl %ecx,-20(%edi)
 	movl %edx,-16(%edi)
 	movl %eax,-12(%edi)
@@ -4411,21 +4058,21 @@ s4TY_info:
 	movl %eax,(%edi)
 	leal -6(%edi),%esi
 	jmp *(%ebp)
-.Lc5Cd:
+.Lc5vB:
 	movl $36,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4U1_info)+108
+	.long	S4YI_srt-(s4Ox_info)+108
 	.long	1
 	.long	65553
-s4U1_info:
-.Lc5Ck:
+s4Ox_info:
+.Lc5vI:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5Cl
-.Lc5Cm:
+	jb .Lc5vJ
+.Lc5vK:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -4433,19 +4080,19 @@ s4U1_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5Cl:
+.Lc5vJ:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4U2_info)+108
+	.long	S4YI_srt-(s4Oy_info)+108
 	.long	1
 	.long	65553
-s4U2_info:
-.Lc5Cr:
+s4Oy_info:
+.Lc5vP:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5Cs
-.Lc5Ct:
+	jb .Lc5vQ
+.Lc5vR:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -4453,18 +4100,18 @@ s4U2_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5Cs:
+.Lc5vQ:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	3
 	.long	16
-s4U8_info:
-.Lc5CK:
+s4OE_info:
+.Lc5w8:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5CO
-.Lc5CN:
+	ja .Lc5wc
+.Lc5wb:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl 20(%esi),%edx
@@ -4479,25 +4126,25 @@ s4U8_info:
 	movl %ecx,8(%ebx)
 	movl %eax,%esi
 	jmp stg_ap_p_fast
-.Lc5CO:
+.Lc5wc:
 	movl $32,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4U9_info)+116
+	.long	S4YI_srt-(s4OF_info)+116
 	.long	65541
 	.long	2
 	.long	65548
-s4U9_info:
-.Lc5CP:
+s4OF_info:
+.Lc5wd:
 	addl $24,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5CT
-.Lc5CS:
+	ja .Lc5wh
+.Lc5wg:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4U8_info,-20(%edi)
+	movl $s4OE_info,-20(%edi)
 	movl %ecx,-8(%edi)
 	movl %edx,-4(%edi)
 	movl %eax,(%edi)
@@ -4505,7 +4152,7 @@ s4U9_info:
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr6_closure,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5CT:
+.Lc5wh:
 	movl $24,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
@@ -4513,17 +4160,17 @@ s4U9_info:
 	.align 4,0x90
 	.long	2
 	.long	19
-s4Uc_info:
-.Lc5Dd:
+s4OI_info:
+.Lc5wB:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5De
-.Lc5Df:
+	jb .Lc5wC
+.Lc5wD:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Dh
-.Lc5Dg:
+	ja .Lc5wF
+.Lc5wE:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -4536,25 +4183,25 @@ s4Uc_info:
 	movl %ecx,%esi
 	addl $-12,%ebp
 	jmp stg_ap_p_fast
-.Lc5Dh:
+.Lc5wF:
 	movl $12,904(%ebx)
-.Lc5De:
+.Lc5wC:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	3
 	.long	16
-s4Ue_info:
-.Lc5Dj:
+s4OK_info:
+.Lc5wH:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Dn
-.Lc5Dm:
+	ja .Lc5wL
+.Lc5wK:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl 20(%esi),%edx
-	movl $s4Uc_info,-28(%edi)
+	movl $s4OI_info,-28(%edi)
 	movl %ecx,-16(%edi)
 	movl %edx,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -4565,31 +4212,31 @@ s4Ue_info:
 	movl %ecx,8(%ebx)
 	movl %eax,%esi
 	jmp stg_ap_p_fast
-.Lc5Dn:
+.Lc5wL:
 	movl $32,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Uf_info)+116
+	.long	S4YI_srt-(s4OL_info)+116
 	.long	3
 	.long	65552
-s4Uf_info:
-.Lc5Do:
+s4OL_info:
+.Lc5wM:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5Dp
-.Lc5Dq:
+	jb .Lc5wN
+.Lc5wO:
 	addl $24,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Ds
-.Lc5Dr:
+	ja .Lc5wQ
+.Lc5wP:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
 	movl 16(%eax),%edx
 	movl 20(%eax),%eax
-	movl $s4Ue_info,-20(%edi)
+	movl $s4OK_info,-20(%edi)
 	movl %ecx,-8(%edi)
 	movl %edx,-4(%edi)
 	movl %eax,(%edi)
@@ -4598,27 +4245,27 @@ s4Uf_info:
 	movl $Expr_zdfShowExpr6_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5Ds:
+.Lc5wQ:
 	movl $24,904(%ebx)
-.Lc5Dp:
+.Lc5wN:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Ug_info)+116
+	.long	S4YI_srt-(s4OM_info)+116
 	.long	65541
 	.long	2
 	.long	65548
-s4Ug_info:
-.Lc5Du:
+s4OM_info:
+.Lc5wS:
 	addl $36,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5Dy
-.Lc5Dx:
+	ja .Lc5wW
+.Lc5wV:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4Uf_info,-32(%edi)
+	movl $s4OL_info,-32(%edi)
 	movl %ecx,-20(%edi)
 	movl %edx,-16(%edi)
 	movl %eax,-12(%edi)
@@ -4628,21 +4275,21 @@ s4Ug_info:
 	movl %eax,(%edi)
 	leal -6(%edi),%esi
 	jmp *(%ebp)
-.Lc5Dy:
+.Lc5wW:
 	movl $36,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Uj_info)+108
+	.long	S4YI_srt-(s4OP_info)+108
 	.long	1
 	.long	65553
-s4Uj_info:
-.Lc5DG:
+s4OP_info:
+.Lc5x4:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5DH
-.Lc5DI:
+	jb .Lc5x5
+.Lc5x6:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -4650,24 +4297,24 @@ s4Uj_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5DH:
+.Lc5x5:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Up_info)+120
+	.long	S4YI_srt-(s4OV_info)+120
 	.long	3
 	.long	65552
-s4Up_info:
-.Lc5DV:
+s4OV_info:
+.Lc5xj:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5DW
-.Lc5DX:
+	jb .Lc5xk
+.Lc5xl:
 	addl $44,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5DZ
-.Lc5DY:
+	ja .Lc5xn
+.Lc5xm:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -4689,27 +4336,27 @@ s4Up_info:
 	movl %ecx,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziShow_showLitString_info
-.Lc5DZ:
+.Lc5xn:
 	movl $44,904(%ebx)
-.Lc5DW:
+.Lc5xk:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Uk_info)+120
+	.long	S4YI_srt-(s4OQ_info)+120
 	.long	65541
 	.long	2
 	.long	196620
-s4Uk_info:
-.Lc5E1:
+s4OQ_info:
+.Lc5xp:
 	addl $36,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5E5
-.Lc5E4:
+	ja .Lc5xt
+.Lc5xs:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4Up_info,-32(%edi)
+	movl $s4OV_info,-32(%edi)
 	movl %ecx,-20(%edi)
 	movl %edx,-16(%edi)
 	movl %eax,-12(%edi)
@@ -4721,26 +4368,26 @@ s4Uk_info:
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr3_closure,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5E5:
+.Lc5xt:
 	movl $36,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Uv_info)+120
+	.long	S4YI_srt-(s4P1_info)+120
 	.long	2
 	.long	196627
-s4Uv_info:
-.Lc5Em:
+s4P1_info:
+.Lc5xK:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5En
-.Lc5Eo:
+	jb .Lc5xL
+.Lc5xM:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Eq
-.Lc5Ep:
+	ja .Lc5xO
+.Lc5xN:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -4752,27 +4399,27 @@ s4Uv_info:
 	movl %eax,8(%ebx)
 	movl %ecx,%esi
 	addl $-12,%ebp
-	jmp s4Uk_info
-.Lc5Eq:
+	jmp s4OQ_info
+.Lc5xO:
 	movl $12,904(%ebx)
-.Lc5En:
+.Lc5xL:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Uw_info)+120
+	.long	S4YI_srt-(s4P2_info)+120
 	.long	65541
 	.long	1
 	.long	196618
-s4Uw_info:
-.Lc5Es:
+s4P2_info:
+.Lc5xQ:
 	addl $32,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5Ew
-.Lc5Ev:
+	ja .Lc5xU
+.Lc5xT:
 	movl 3(%esi),%ecx
-	movl $s4Uv_info,-28(%edi)
+	movl $s4P1_info,-28(%edi)
 	movl %ecx,-16(%edi)
 	movl %eax,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -4781,170 +4428,170 @@ s4Uw_info:
 	movl %eax,(%edi)
 	leal -6(%edi),%esi
 	jmp *(%ebp)
-.Lc5Ew:
+.Lc5xU:
 	movl $32,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_zdfShowExprzuzdszdcshowsPrec_info)+104
+	.long	S4YI_srt-(Expr_zdfShowExprzuzdszdcshowsPrec_info)+104
 	.long	131085
 	.long	0
 	.long	8323087
 .globl Expr_zdfShowExprzuzdszdcshowsPrec_info
 Expr_zdfShowExprzuzdszdcshowsPrec_info:
-.Lc5EE:
+.Lc5y2:
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	leal -8(%ebp),%edx
 	cmpl 840(%ebx),%edx
-	jb .Lc5EF
-.Lc5EG:
-	movl $c5zx_info,-8(%ebp)
+	jb .Lc5y3
+.Lc5y4:
+	movl $c5sV_info,-8(%ebp)
 	movl %eax,%esi
 	movl %ecx,-4(%ebp)
 	addl $-8,%ebp
 	testw $7,%si
-	jne .Lc5zx
-.Lc5zy:
+	jne .Lc5sV
+.Lc5sW:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5zx_info)+104
+	.long	S4YI_srt-(c5sV_info)+104
 	.long	65
 	.long	8323104
-c5zx_info:
-.Lc5zx:
+c5sV_info:
+.Lc5sV:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	decl %ecx
-	jmp *.Ln5Hh(,%ecx,4)
-.Lc5Ey:
+	jmp *.Ln5AF(,%ecx,4)
+.Lc5xW:
 	addl $24,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5EJ
-.Lc5EI:
+	ja .Lc5y7
+.Lc5y6:
 	movl 3(%esi),%ecx
-	movl $s4Tp_info,-20(%edi)
+	movl $s4NV_info,-20(%edi)
 	movl %ecx,-8(%edi)
 	leal -20(%edi),%ecx
 	cmpl $11,%eax
-	jge .Lc5EO
-.Lc5EP:
-	movl $s4TB_info,-4(%edi)
+	jge .Lc5yc
+.Lc5yd:
+	movl $s4O7_info,-4(%edi)
 	movl %ecx,(%edi)
 	leal -3(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5Ez:
+.Lc5xX:
 	addl $44,%edi
 	movl %esi,%ecx
 	cmpl 856(%ebx),%edi
-	ja .Lc5F1
-.Lc5ER:
+	ja .Lc5yp
+.Lc5yf:
 	movl 2(%ecx),%edx
 	movl 6(%ecx),%ecx
-	movl $s4TJ_info,-40(%edi)
+	movl $s4Of_info,-40(%edi)
 	movl %edx,-28(%edi)
-	movl $s4TK_info,-24(%edi)
+	movl $s4Og_info,-24(%edi)
 	movl %ecx,-12(%edi)
 	leal -40(%edi),%ecx
 	leal -24(%edi),%edx
 	cmpl $11,%eax
-	jge .Lc5EX
-.Lc5EY:
-	movl $s4TR_info,-8(%edi)
+	jge .Lc5yl
+.Lc5ym:
+	movl $s4On_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %edx,(%edi)
 	leal -7(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5EA:
+.Lc5xY:
 	addl $44,%edi
 	movl %esi,%ecx
 	cmpl 856(%ebx),%edi
-	ja .Lc5F1
-.Lc5F0:
+	ja .Lc5yp
+.Lc5yo:
 	movl 1(%ecx),%edx
 	movl 5(%ecx),%ecx
-	movl $s4U1_info,-40(%edi)
+	movl $s4Ox_info,-40(%edi)
 	movl %edx,-28(%edi)
-	movl $s4U2_info,-24(%edi)
+	movl $s4Oy_info,-24(%edi)
 	movl %ecx,-12(%edi)
 	leal -40(%edi),%ecx
 	leal -24(%edi),%edx
 	cmpl $11,%eax
-	jge .Lc5F6
-.Lc5F7:
-	movl $s4U9_info,-8(%edi)
+	jge .Lc5yu
+.Lc5yv:
+	movl $s4OF_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %edx,(%edi)
 	leal -7(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5EB:
+.Lc5xZ:
 	movl $Expr_zdfShowExpr4_closure+1,%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5EC:
+.Lc5y0:
 	addl $36,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Fc
-.Lc5Fb:
+	ja .Lc5yA
+.Lc5yz:
 	movl -1(%esi),%ecx
 	movl 3(%esi),%edx
-	movl $s4Uj_info,-32(%edi)
+	movl $s4OP_info,-32(%edi)
 	movl %edx,-20(%edi)
-	movl $s4Uk_info,-16(%edi)
+	movl $s4OQ_info,-16(%edi)
 	movl %ecx,-12(%edi)
 	leal -32(%edi),%ecx
 	movl %ecx,-8(%edi)
 	leal -15(%edi),%ecx
 	cmpl $11,%eax
-	jge .Lc5Fh
-.Lc5Fi:
+	jge .Lc5yF
+.Lc5yG:
 	addl $-8,%edi
 	movl %ecx,%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5EF:
+.Lc5y3:
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
 	movl $Expr_zdfShowExprzuzdszdcshowsPrec_closure,%esi
 	jmp *-8(%ebx)
-.Lc5EJ:
+.Lc5y7:
 	movl $24,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc5EO:
-	movl $s4TG_info,-4(%edi)
+.Lc5yc:
+	movl $s4Oc_info,-4(%edi)
 	movl %ecx,(%edi)
 	leal -3(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5EX:
-	movl $s4TY_info,-8(%edi)
+.Lc5yl:
+	movl $s4Ou_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %edx,(%edi)
 	leal -7(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5F1:
+.Lc5yp:
 	movl $44,904(%ebx)
 	movl %ecx,%esi
 	jmp stg_gc_unpt_r1
-.Lc5F6:
-	movl $s4Ug_info,-8(%edi)
+.Lc5yu:
+	movl $s4OM_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %edx,(%edi)
 	leal -7(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5Fc:
+.Lc5yA:
 	movl $36,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc5Fh:
-	movl $s4Uw_info,-4(%edi)
+.Lc5yF:
+	movl $s4P2_info,-4(%edi)
 	movl %ecx,(%edi)
 	leal -3(%edi),%esi
 	addl $8,%ebp
@@ -4952,12 +4599,12 @@ c5zx_info:
 .section .rodata
 	.align 4
 .align 1
-.Ln5Hh:
-	.long	.Lc5Ey
-	.long	.Lc5Ez
-	.long	.Lc5EA
-	.long	.Lc5EB
-	.long	.Lc5EC
+.Ln5AF:
+	.long	.Lc5xW
+	.long	.Lc5xX
+	.long	.Lc5xY
+	.long	.Lc5xZ
+	.long	.Lc5y0
 .data
 	.align 4
 .align 1
@@ -4969,20 +4616,20 @@ Expr_zdfShowExprzuzdcshowsPrec_closure:
 	.align 4,0x90
 	.long	1
 	.long	17
-s4UD_info:
-.Lc5IB:
+s4P9_info:
+.Lc5BZ:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5IC
-.Lc5ID:
+	jb .Lc5C0
+.Lc5C1:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $c5Iy_info,-16(%ebp)
+	movl $c5BW_info,-16(%ebp)
 	movl 12(%esi),%esi
 	addl $-16,%ebp
 	testw $7,%si
-	jne .Lc5Iy
-.Lc5Iz:
+	jne .Lc5BW
+.Lc5BX:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
@@ -4990,9 +4637,9 @@ s4UD_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5Iy_info:
-.Lc5Iy:
-	movl $c5IJ_info,(%ebp)
+c5BW_info:
+.Lc5BW:
+	movl $c5C7_info,(%ebp)
 #	gldsd 3(%esi),%fake0
 	fldl 3(%esi) ; fstp %st(1)
 	movl 872(%ebx),%eax
@@ -5085,7 +4732,7 @@ c5Iy_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%ebp)
-.Lc5IC:
+.Lc5C0:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *-16(%ebx)
@@ -5093,8 +4740,8 @@ c5Iy_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5IJ_info:
-.Lc5IJ:
+c5C7_info:
+.Lc5C7:
 	addl $4,%ebp
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
@@ -5103,8 +4750,8 @@ c5IJ_info:
 	.align 4,0x90
 	.long	2
 	.long	19
-s4UO_info:
-.Lc5J8:
+s4Pk_info:
+.Lc5Cw:
 	movl 16(%esi),%eax
 	movl %eax,16(%ebx)
 	movl 12(%esi),%eax
@@ -5112,26 +4759,26 @@ s4UO_info:
 	jmp base_GHCziBase_zpzp_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4UP_info)+104
+	.long	S4YI_srt-(s4Pl_info)+104
 	.long	65541
 	.long	1
 	.long	65546
-s4UP_info:
-.Lc5Jb:
+s4Pl_info:
+.Lc5Cz:
 	addl $20,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5Jf
-.Lc5Je:
+	ja .Lc5CD
+.Lc5CC:
 	movl 3(%esi),%ecx
-	movl $s4UO_info,-16(%edi)
+	movl $s4Pk_info,-16(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
 	leal -16(%edi),%eax
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr8_closure,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5Jf:
+.Lc5CD:
 	movl $20,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
@@ -5139,12 +4786,12 @@ s4UP_info:
 	.align 4,0x90
 	.long	2
 	.long	19
-s4US_info:
-.Lc5Jv:
+s4Po_info:
+.Lc5CT:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Jz
-.Lc5Jy:
+	ja .Lc5CX
+.Lc5CW:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -5154,30 +4801,30 @@ s4US_info:
 	movl %ecx,16(%ebx)
 	movl %eax,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5Jz:
+.Lc5CX:
 	movl $12,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4UT_info)+104
+	.long	S4YI_srt-(s4Pp_info)+104
 	.long	2
 	.long	65555
-s4UT_info:
-.Lc5JA:
+s4Pp_info:
+.Lc5CY:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5JB
-.Lc5JC:
+	jb .Lc5CZ
+.Lc5D0:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5JE
-.Lc5JD:
+	ja .Lc5D2
+.Lc5D1:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
 	movl 16(%eax),%eax
-	movl $s4US_info,-16(%edi)
+	movl $s4Po_info,-16(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
 	leal -16(%edi),%eax
@@ -5185,26 +4832,26 @@ s4UT_info:
 	movl $Expr_zdfShowExpr8_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5JE:
+.Lc5D2:
 	movl $20,904(%ebx)
-.Lc5JB:
+.Lc5CZ:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4UU_info)+104
+	.long	S4YI_srt-(s4Pq_info)+104
 	.long	65541
 	.long	1
 	.long	65546
-s4UU_info:
-.Lc5JG:
+s4Pq_info:
+.Lc5D4:
 	addl $32,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5JK
-.Lc5JJ:
+	ja .Lc5D8
+.Lc5D7:
 	movl 3(%esi),%ecx
-	movl $s4UT_info,-28(%edi)
+	movl $s4Pp_info,-28(%edi)
 	movl %ecx,-16(%edi)
 	movl %eax,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -5213,21 +4860,21 @@ s4UU_info:
 	movl %eax,(%edi)
 	leal -6(%edi),%esi
 	jmp *(%ebp)
-.Lc5JK:
+.Lc5D8:
 	movl $32,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4UZ_info)+108
+	.long	S4YI_srt-(s4Pv_info)+108
 	.long	1
 	.long	65553
-s4UZ_info:
-.Lc5JW:
+s4Pv_info:
+.Lc5Dk:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5JX
-.Lc5JY:
+	jb .Lc5Dl
+.Lc5Dm:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -5235,19 +4882,19 @@ s4UZ_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5JX:
+.Lc5Dl:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4V0_info)+108
+	.long	S4YI_srt-(s4Pw_info)+108
 	.long	1
 	.long	65553
-s4V0_info:
-.Lc5K3:
+s4Pw_info:
+.Lc5Dr:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5K4
-.Lc5K5:
+	jb .Lc5Ds
+.Lc5Dt:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -5255,18 +4902,18 @@ s4V0_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5K4:
+.Lc5Ds:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	3
 	.long	16
-s4V6_info:
-.Lc5Km:
+s4PC_info:
+.Lc5DK:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Kq
-.Lc5Kp:
+	ja .Lc5DO
+.Lc5DN:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl 20(%esi),%edx
@@ -5281,25 +4928,25 @@ s4V6_info:
 	movl %ecx,8(%ebx)
 	movl %eax,%esi
 	jmp stg_ap_p_fast
-.Lc5Kq:
+.Lc5DO:
 	movl $32,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4V7_info)+112
+	.long	S4YI_srt-(s4PD_info)+112
 	.long	65541
 	.long	2
 	.long	65548
-s4V7_info:
-.Lc5Kr:
+s4PD_info:
+.Lc5DP:
 	addl $24,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5Kv
-.Lc5Ku:
+	ja .Lc5DT
+.Lc5DS:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4V6_info,-20(%edi)
+	movl $s4PC_info,-20(%edi)
 	movl %ecx,-8(%edi)
 	movl %edx,-4(%edi)
 	movl %eax,(%edi)
@@ -5307,7 +4954,7 @@ s4V7_info:
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr7_closure,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5Kv:
+.Lc5DT:
 	movl $24,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
@@ -5315,17 +4962,17 @@ s4V7_info:
 	.align 4,0x90
 	.long	2
 	.long	19
-s4Va_info:
-.Lc5KP:
+s4PG_info:
+.Lc5Ed:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5KQ
-.Lc5KR:
+	jb .Lc5Ee
+.Lc5Ef:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5KT
-.Lc5KS:
+	ja .Lc5Eh
+.Lc5Eg:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -5338,25 +4985,25 @@ s4Va_info:
 	movl %ecx,%esi
 	addl $-12,%ebp
 	jmp stg_ap_p_fast
-.Lc5KT:
+.Lc5Eh:
 	movl $12,904(%ebx)
-.Lc5KQ:
+.Lc5Ee:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	3
 	.long	16
-s4Vc_info:
-.Lc5KV:
+s4PI_info:
+.Lc5Ej:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5KZ
-.Lc5KY:
+	ja .Lc5En
+.Lc5Em:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl 20(%esi),%edx
-	movl $s4Va_info,-28(%edi)
+	movl $s4PG_info,-28(%edi)
 	movl %ecx,-16(%edi)
 	movl %edx,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -5367,31 +5014,31 @@ s4Vc_info:
 	movl %ecx,8(%ebx)
 	movl %eax,%esi
 	jmp stg_ap_p_fast
-.Lc5KZ:
+.Lc5En:
 	movl $32,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Vd_info)+112
+	.long	S4YI_srt-(s4PJ_info)+112
 	.long	3
 	.long	65552
-s4Vd_info:
-.Lc5L0:
+s4PJ_info:
+.Lc5Eo:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5L1
-.Lc5L2:
+	jb .Lc5Ep
+.Lc5Eq:
 	addl $24,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5L4
-.Lc5L3:
+	ja .Lc5Es
+.Lc5Er:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
 	movl 16(%eax),%edx
 	movl 20(%eax),%eax
-	movl $s4Vc_info,-20(%edi)
+	movl $s4PI_info,-20(%edi)
 	movl %ecx,-8(%edi)
 	movl %edx,-4(%edi)
 	movl %eax,(%edi)
@@ -5400,27 +5047,27 @@ s4Vd_info:
 	movl $Expr_zdfShowExpr7_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5L4:
+.Lc5Es:
 	movl $24,904(%ebx)
-.Lc5L1:
+.Lc5Ep:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Ve_info)+112
+	.long	S4YI_srt-(s4PK_info)+112
 	.long	65541
 	.long	2
 	.long	65548
-s4Ve_info:
-.Lc5L6:
+s4PK_info:
+.Lc5Eu:
 	addl $36,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5La
-.Lc5L9:
+	ja .Lc5Ey
+.Lc5Ex:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4Vd_info,-32(%edi)
+	movl $s4PJ_info,-32(%edi)
 	movl %ecx,-20(%edi)
 	movl %edx,-16(%edi)
 	movl %eax,-12(%edi)
@@ -5430,21 +5077,21 @@ s4Ve_info:
 	movl %eax,(%edi)
 	leal -6(%edi),%esi
 	jmp *(%ebp)
-.Lc5La:
+.Lc5Ey:
 	movl $36,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Vj_info)+108
+	.long	S4YI_srt-(s4PP_info)+108
 	.long	1
 	.long	65553
-s4Vj_info:
-.Lc5Lm:
+s4PP_info:
+.Lc5EK:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5Ln
-.Lc5Lo:
+	jb .Lc5EL
+.Lc5EM:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -5452,19 +5099,19 @@ s4Vj_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5Ln:
+.Lc5EL:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Vk_info)+108
+	.long	S4YI_srt-(s4PQ_info)+108
 	.long	1
 	.long	65553
-s4Vk_info:
-.Lc5Lt:
+s4PQ_info:
+.Lc5ER:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5Lu
-.Lc5Lv:
+	jb .Lc5ES
+.Lc5ET:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -5472,18 +5119,18 @@ s4Vk_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5Lu:
+.Lc5ES:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	3
 	.long	16
-s4Vq_info:
-.Lc5LM:
+s4PW_info:
+.Lc5Fa:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5LQ
-.Lc5LP:
+	ja .Lc5Fe
+.Lc5Fd:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl 20(%esi),%edx
@@ -5498,25 +5145,25 @@ s4Vq_info:
 	movl %ecx,8(%ebx)
 	movl %eax,%esi
 	jmp stg_ap_p_fast
-.Lc5LQ:
+.Lc5Fe:
 	movl $32,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Vr_info)+116
+	.long	S4YI_srt-(s4PX_info)+116
 	.long	65541
 	.long	2
 	.long	65548
-s4Vr_info:
-.Lc5LR:
+s4PX_info:
+.Lc5Ff:
 	addl $24,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5LV
-.Lc5LU:
+	ja .Lc5Fj
+.Lc5Fi:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4Vq_info,-20(%edi)
+	movl $s4PW_info,-20(%edi)
 	movl %ecx,-8(%edi)
 	movl %edx,-4(%edi)
 	movl %eax,(%edi)
@@ -5524,7 +5171,7 @@ s4Vr_info:
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr6_closure,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5LV:
+.Lc5Fj:
 	movl $24,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
@@ -5532,17 +5179,17 @@ s4Vr_info:
 	.align 4,0x90
 	.long	2
 	.long	19
-s4Vu_info:
-.Lc5Mf:
+s4Q0_info:
+.Lc5FD:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5Mg
-.Lc5Mh:
+	jb .Lc5FE
+.Lc5FF:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Mj
-.Lc5Mi:
+	ja .Lc5FH
+.Lc5FG:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -5555,25 +5202,25 @@ s4Vu_info:
 	movl %ecx,%esi
 	addl $-12,%ebp
 	jmp stg_ap_p_fast
-.Lc5Mj:
+.Lc5FH:
 	movl $12,904(%ebx)
-.Lc5Mg:
+.Lc5FE:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	3
 	.long	16
-s4Vw_info:
-.Lc5Ml:
+s4Q2_info:
+.Lc5FJ:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Mp
-.Lc5Mo:
+	ja .Lc5FN
+.Lc5FM:
 	movl 12(%esi),%eax
 	movl 16(%esi),%ecx
 	movl 20(%esi),%edx
-	movl $s4Vu_info,-28(%edi)
+	movl $s4Q0_info,-28(%edi)
 	movl %ecx,-16(%edi)
 	movl %edx,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -5584,31 +5231,31 @@ s4Vw_info:
 	movl %ecx,8(%ebx)
 	movl %eax,%esi
 	jmp stg_ap_p_fast
-.Lc5Mp:
+.Lc5FN:
 	movl $32,904(%ebx)
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Vx_info)+116
+	.long	S4YI_srt-(s4Q3_info)+116
 	.long	3
 	.long	65552
-s4Vx_info:
-.Lc5Mq:
+s4Q3_info:
+.Lc5FO:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5Mr
-.Lc5Ms:
+	jb .Lc5FP
+.Lc5FQ:
 	addl $24,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Mu
-.Lc5Mt:
+	ja .Lc5FS
+.Lc5FR:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
 	movl 16(%eax),%edx
 	movl 20(%eax),%eax
-	movl $s4Vw_info,-20(%edi)
+	movl $s4Q2_info,-20(%edi)
 	movl %ecx,-8(%edi)
 	movl %edx,-4(%edi)
 	movl %eax,(%edi)
@@ -5617,27 +5264,27 @@ s4Vx_info:
 	movl $Expr_zdfShowExpr6_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziBase_zpzp_info
-.Lc5Mu:
+.Lc5FS:
 	movl $24,904(%ebx)
-.Lc5Mr:
+.Lc5FP:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Vy_info)+116
+	.long	S4YI_srt-(s4Q4_info)+116
 	.long	65541
 	.long	2
 	.long	65548
-s4Vy_info:
-.Lc5Mw:
+s4Q4_info:
+.Lc5FU:
 	addl $36,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5MA
-.Lc5Mz:
+	ja .Lc5FY
+.Lc5FX:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4Vx_info,-32(%edi)
+	movl $s4Q3_info,-32(%edi)
 	movl %ecx,-20(%edi)
 	movl %edx,-16(%edi)
 	movl %eax,-12(%edi)
@@ -5647,21 +5294,21 @@ s4Vy_info:
 	movl %eax,(%edi)
 	leal -6(%edi),%esi
 	jmp *(%ebp)
-.Lc5MA:
+.Lc5FY:
 	movl $36,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4VD_info)+108
+	.long	S4YI_srt-(s4Q9_info)+108
 	.long	1
 	.long	65553
-s4VD_info:
-.Lc5MN:
+s4Q9_info:
+.Lc5Gb:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5MO
-.Lc5MP:
+	jb .Lc5Gc
+.Lc5Gd:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -5669,24 +5316,24 @@ s4VD_info:
 	movl $11,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5MO:
+.Lc5Gc:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4VJ_info)+120
+	.long	S4YI_srt-(s4Qf_info)+120
 	.long	3
 	.long	65552
-s4VJ_info:
-.Lc5N2:
+s4Qf_info:
+.Lc5Gq:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5N3
-.Lc5N4:
+	jb .Lc5Gr
+.Lc5Gs:
 	addl $44,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5N6
-.Lc5N5:
+	ja .Lc5Gu
+.Lc5Gt:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -5708,27 +5355,27 @@ s4VJ_info:
 	movl %ecx,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziShow_showLitString_info
-.Lc5N6:
+.Lc5Gu:
 	movl $44,904(%ebx)
-.Lc5N3:
+.Lc5Gr:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4VE_info)+120
+	.long	S4YI_srt-(s4Qa_info)+120
 	.long	65541
 	.long	2
 	.long	196620
-s4VE_info:
-.Lc5N8:
+s4Qa_info:
+.Lc5Gw:
 	addl $36,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5Nc
-.Lc5Nb:
+	ja .Lc5GA
+.Lc5Gz:
 	movl 3(%esi),%ecx
 	movl 7(%esi),%edx
-	movl $s4VJ_info,-32(%edi)
+	movl $s4Qf_info,-32(%edi)
 	movl %ecx,-20(%edi)
 	movl %edx,-16(%edi)
 	movl %eax,-12(%edi)
@@ -5740,26 +5387,26 @@ s4VE_info:
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr3_closure,8(%ebx)
 	jmp base_GHCziBase_zpzp_info
-.Lc5Nc:
+.Lc5GA:
 	movl $36,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4VP_info)+120
+	.long	S4YI_srt-(s4Ql_info)+120
 	.long	2
 	.long	196627
-s4VP_info:
-.Lc5Nt:
+s4Ql_info:
+.Lc5GR:
 	movl %esi,%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5Nu
-.Lc5Nv:
+	jb .Lc5GS
+.Lc5GT:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Nx
-.Lc5Nw:
+	ja .Lc5GV
+.Lc5GU:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl 12(%eax),%ecx
@@ -5771,27 +5418,27 @@ s4VP_info:
 	movl %eax,8(%ebx)
 	movl %ecx,%esi
 	addl $-12,%ebp
-	jmp s4VE_info
-.Lc5Nx:
+	jmp s4Qa_info
+.Lc5GV:
 	movl $12,904(%ebx)
-.Lc5Nu:
+.Lc5GS:
 	movl %eax,%esi
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4VQ_info)+120
+	.long	S4YI_srt-(s4Qm_info)+120
 	.long	65541
 	.long	1
 	.long	196618
-s4VQ_info:
-.Lc5Nz:
+s4Qm_info:
+.Lc5GX:
 	addl $32,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc5ND
-.Lc5NC:
+	ja .Lc5H1
+.Lc5H0:
 	movl 3(%esi),%ecx
-	movl $s4VP_info,-28(%edi)
+	movl $s4Ql_info,-28(%edi)
 	movl %ecx,-16(%edi)
 	movl %eax,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
@@ -5800,109 +5447,109 @@ s4VQ_info:
 	movl %eax,(%edi)
 	leal -6(%edi),%esi
 	jmp *(%ebp)
-.Lc5ND:
+.Lc5H1:
 	movl $32,904(%ebx)
 	movl %eax,8(%ebx)
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_zdfShowExprzuzdcshowsPrec_info)+104
+	.long	S4YI_srt-(Expr_zdfShowExprzuzdcshowsPrec_info)+104
 	.long	131087
 	.long	0
 	.long	16711695
 .globl Expr_zdfShowExprzuzdcshowsPrec_info
 Expr_zdfShowExprzuzdcshowsPrec_info:
-.Lc5NL:
+.Lc5H9:
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	leal -12(%ebp),%edx
 	cmpl 840(%ebx),%edx
-	jb .Lc5NM
-.Lc5NN:
-	movl $c5Ik_info,-8(%ebp)
+	jb .Lc5Ha
+.Lc5Hb:
+	movl $c5BI_info,-8(%ebp)
 	movl %eax,%esi
 	movl %ecx,-4(%ebp)
 	addl $-8,%ebp
 	testw $7,%si
-	jne .Lc5Ik
-.Lc5Il:
+	jne .Lc5BI
+.Lc5BJ:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Ik_info)+104
+	.long	S4YI_srt-(c5BI_info)+104
 	.long	1
 	.long	8323104
-c5Ik_info:
-.Lc5Ik:
+c5BI_info:
+.Lc5BI:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	decl %ecx
-	jmp *.Ln5Qs(,%ecx,4)
+	jmp *.Ln5JQ(,%ecx,4)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Ip_info)+104
+	.long	S4YI_srt-(c5BN_info)+104
 	.long	1
 	.long	65568
-c5Ip_info:
-.Lc5Ip:
+c5BN_info:
+.Lc5BN:
 	addl $24,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5NR
-.Lc5NQ:
+	ja .Lc5Hf
+.Lc5He:
 	movl 3(%esi),%eax
-	movl $s4UD_info,-20(%edi)
+	movl $s4P9_info,-20(%edi)
 	movl 4(%ebp),%ecx
 	movl %ecx,-8(%edi)
 	leal -20(%edi),%ecx
 	cmpl $11,%eax
-	jge .Lc5NW
-.Lc5NX:
-	movl $s4UP_info,-4(%edi)
+	jge .Lc5Hk
+.Lc5Hl:
+	movl $s4Pl_info,-4(%edi)
 	movl %ecx,(%edi)
 	leal -3(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5NF:
-	movl $c5Ip_info,(%ebp)
+.Lc5H3:
+	movl $c5BN_info,(%ebp)
 	movl 3(%esi),%ecx
 	movl %eax,%esi
 	movl %ecx,4(%ebp)
 	testw $7,%si
-	jne .Lc5Ip
-.Lc5Iq:
+	jne .Lc5BN
+.Lc5BO:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5JN_info)+108
+	.long	S4YI_srt-(c5Db_info)+108
 	.long	2
 	.long	196640
-c5JN_info:
-.Lc5JN:
+c5Db_info:
+.Lc5Db:
 	addl $44,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5O1
-.Lc5O0:
+	ja .Lc5Hp
+.Lc5Ho:
 	movl 3(%esi),%eax
-	movl $s4UZ_info,-40(%edi)
+	movl $s4Pv_info,-40(%edi)
 	movl 8(%ebp),%ecx
 	movl %ecx,-28(%edi)
-	movl $s4V0_info,-24(%edi)
+	movl $s4Pw_info,-24(%edi)
 	movl 4(%ebp),%ecx
 	movl %ecx,-12(%edi)
 	leal -40(%edi),%ecx
 	leal -24(%edi),%edx
 	cmpl $11,%eax
-	jge .Lc5O6
-.Lc5O7:
-	movl $s4V7_info,-8(%edi)
+	jge .Lc5Hu
+.Lc5Hv:
+	movl $s4PD_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %edx,(%edi)
 	leal -7(%edi),%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc5NG:
-	movl $c5JN_info,-4(%ebp)
+.Lc5H4:
+	movl $c5Db_info,-4(%ebp)
 	movl 2(%esi),%ecx
 	movl 6(%esi),%edx
 	movl %eax,%esi
@@ -5910,40 +5557,40 @@ c5JN_info:
 	movl %ecx,4(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5JN
-.Lc5JO:
+	jne .Lc5Db
+.Lc5Dc:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Ld_info)+108
+	.long	S4YI_srt-(c5EB_info)+108
 	.long	2
 	.long	327712
-c5Ld_info:
-.Lc5Ld:
+c5EB_info:
+.Lc5EB:
 	addl $44,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Ob
-.Lc5Oa:
+	ja .Lc5Hz
+.Lc5Hy:
 	movl 3(%esi),%eax
-	movl $s4Vj_info,-40(%edi)
+	movl $s4PP_info,-40(%edi)
 	movl 8(%ebp),%ecx
 	movl %ecx,-28(%edi)
-	movl $s4Vk_info,-24(%edi)
+	movl $s4PQ_info,-24(%edi)
 	movl 4(%ebp),%ecx
 	movl %ecx,-12(%edi)
 	leal -40(%edi),%ecx
 	leal -24(%edi),%edx
 	cmpl $11,%eax
-	jge .Lc5Og
-.Lc5Oh:
-	movl $s4Vr_info,-8(%edi)
+	jge .Lc5HE
+.Lc5HF:
+	movl $s4PX_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %edx,(%edi)
 	leal -7(%edi),%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc5NH:
-	movl $c5Ld_info,-4(%ebp)
+.Lc5H5:
+	movl $c5EB_info,-4(%ebp)
 	movl 1(%esi),%ecx
 	movl 5(%esi),%edx
 	movl %eax,%esi
@@ -5951,39 +5598,39 @@ c5Ld_info:
 	movl %ecx,4(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5Ld
-.Lc5Le:
+	jne .Lc5EB
+.Lc5EC:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5ME_info)+108
+	.long	S4YI_srt-(c5G2_info)+108
 	.long	2
 	.long	1638432
-c5ME_info:
-.Lc5ME:
+c5G2_info:
+.Lc5G2:
 	addl $36,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5On
-.Lc5Om:
+	ja .Lc5HL
+.Lc5HK:
 	movl 3(%esi),%eax
-	movl $s4VD_info,-32(%edi)
+	movl $s4Q9_info,-32(%edi)
 	movl 4(%ebp),%ecx
 	movl %ecx,-20(%edi)
-	movl $s4VE_info,-16(%edi)
+	movl $s4Qa_info,-16(%edi)
 	movl 8(%ebp),%ecx
 	movl %ecx,-12(%edi)
 	leal -32(%edi),%ecx
 	movl %ecx,-8(%edi)
 	leal -15(%edi),%ecx
 	cmpl $11,%eax
-	jge .Lc5Os
-.Lc5Ot:
+	jge .Lc5HQ
+.Lc5HR:
 	addl $-8,%edi
 	movl %ecx,%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc5NJ:
-	movl $c5ME_info,-4(%ebp)
+.Lc5H7:
+	movl $c5G2_info,-4(%ebp)
 	movl -1(%esi),%ecx
 	movl 3(%esi),%edx
 	movl %eax,%esi
@@ -5991,52 +5638,52 @@ c5ME_info:
 	movl %ecx,4(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5ME
-.Lc5MF:
+	jne .Lc5G2
+.Lc5G3:
 	jmp *(%esi)
-.Lc5NI:
+.Lc5H6:
 	movl $Expr_zdfShowExpr4_closure+1,%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5NM:
+.Lc5Ha:
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
 	movl $Expr_zdfShowExprzuzdcshowsPrec_closure,%esi
 	jmp *-8(%ebx)
-.Lc5NR:
+.Lc5Hf:
 	movl $24,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc5NW:
-	movl $s4UU_info,-4(%edi)
+.Lc5Hk:
+	movl $s4Pq_info,-4(%edi)
 	movl %ecx,(%edi)
 	leal -3(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc5O1:
+.Lc5Hp:
 	movl $44,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc5O6:
-	movl $s4Ve_info,-8(%edi)
+.Lc5Hu:
+	movl $s4PK_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %edx,(%edi)
 	leal -7(%edi),%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc5Ob:
+.Lc5Hz:
 	movl $44,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc5Og:
-	movl $s4Vy_info,-8(%edi)
+.Lc5HE:
+	movl $s4Q4_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %edx,(%edi)
 	leal -7(%edi),%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc5On:
+.Lc5HL:
 	movl $36,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc5Os:
-	movl $s4VQ_info,-4(%edi)
+.Lc5HQ:
+	movl $s4Qm_info,-4(%edi)
 	movl %ecx,(%edi)
 	leal -3(%edi),%esi
 	addl $12,%ebp
@@ -6044,12 +5691,12 @@ c5ME_info:
 .section .rodata
 	.align 4
 .align 1
-.Ln5Qs:
-	.long	.Lc5NF
-	.long	.Lc5NG
-	.long	.Lc5NH
-	.long	.Lc5NI
-	.long	.Lc5NJ
+.Ln5JQ:
+	.long	.Lc5H3
+	.long	.Lc5H4
+	.long	.Lc5H5
+	.long	.Lc5H6
+	.long	.Lc5H7
 .data
 	.align 4
 .align 1
@@ -6059,25 +5706,25 @@ Expr_zdfShowExprzuzdcshow_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_zdfShowExprzuzdcshow_info)+108
+	.long	S4YI_srt-(Expr_zdfShowExprzuzdcshow_info)+108
 	.long	65541
 	.long	0
 	.long	8454159
 .globl Expr_zdfShowExprzuzdcshow_info
 Expr_zdfShowExprzuzdcshow_info:
-.Lc5QH:
+.Lc5K5:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc5QI
-.Lc5QJ:
+	jb .Lc5K6
+.Lc5K7:
 	movl %eax,16(%ebx)
 	movl $0,8(%ebx)
 	movl $stg_ap_p_info,-8(%ebp)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,-4(%ebp)
 	addl $-8,%ebp
 	jmp Expr_zdfShowExprzuzdszdcshowsPrec_info
-.Lc5QI:
+.Lc5K6:
 	movl %eax,8(%ebx)
 	movl $Expr_zdfShowExprzuzdcshow_closure,%esi
 	jmp *-8(%ebx)
@@ -6090,13 +5737,13 @@ Expr_zdfShowExpr1_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_zdfShowExpr1_info)+132
+	.long	S4YI_srt-(Expr_zdfShowExpr1_info)+132
 	.long	65541
 	.long	0
 	.long	65551
 .globl Expr_zdfShowExpr1_info
 Expr_zdfShowExpr1_info:
-.Lc5QT:
+.Lc5Kh:
 	movl 8(%ebx),%eax
 	movl %eax,16(%ebx)
 	movl $Expr_zdfShowExpr2_closure+1,8(%ebx)
@@ -6110,13 +5757,13 @@ Expr_zdfShowExprzuzdcshowList_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_zdfShowExprzuzdcshowList_info)+140
+	.long	S4YI_srt-(Expr_zdfShowExprzuzdcshowList_info)+140
 	.long	131087
 	.long	0
 	.long	65551
 .globl Expr_zdfShowExprzuzdcshowList_info
 Expr_zdfShowExprzuzdcshowList_info:
-.Lc5R5:
+.Lc5Kt:
 	movl 16(%ebx),%eax
 	movl %eax,24(%ebx)
 	movl 8(%ebx),%eax
@@ -6146,13 +5793,13 @@ Expr_zdfEqExprzuzdczeze_closure:
 	.long	15
 .globl Expr_zdfEqExprzuzdczeze_info
 Expr_zdfEqExprzuzdczeze_info:
-.Lc5S9:
+.Lc5Lx:
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	leal -12(%ebp),%edx
 	cmpl 840(%ebx),%edx
-	jae .Lc5RW
-.Lc5Sa:
+	jae .Lc5Lk
+.Lc5Ly:
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
 	movl $Expr_zdfEqExprzuzdczeze_closure,%esi
@@ -6161,77 +5808,77 @@ Expr_zdfEqExprzuzdczeze_info:
 	.align 4,0x90
 	.long	2
 	.long	32
-c5TR_info:
-.Lc5TR:
+c5Nf_info:
+.Lc5Nf:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc5TO
-.Lc5U6:
+	jb .Lc5Nc
+.Lc5Nu:
 	movl 8(%ebp),%eax
 	movl 4(%ebp),%ecx
 	addl $12,%ebp
-.Lc5RW:
-	movl $c5RZ_info,-8(%ebp)
+.Lc5Lk:
+	movl $c5Ln_info,-8(%ebp)
 	movl %ecx,%esi
 	movl %eax,-4(%ebp)
 	addl $-8,%ebp
 	testw $7,%si
-	jne .Lc5RZ
-.Lc5S0:
+	jne .Lc5Ln
+.Lc5Lo:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	2
 	.long	32
-c5T8_info:
-.Lc5T8:
+c5Mw_info:
+.Lc5Mw:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc5TO
-.Lc5Tn:
+	jb .Lc5Nc
+.Lc5ML:
 	movl 8(%ebp),%eax
 	movl 4(%ebp),%ecx
 	addl $12,%ebp
-	jmp .Lc5RW
+	jmp .Lc5Lk
 .text
 	.align 4,0x90
 	.long	2
 	.long	32
-c5SE_info:
-.Lc5SE:
+c5M2_info:
+.Lc5M2:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc5TO
-.Lc5ST:
+	jb .Lc5Nc
+.Lc5Mh:
 	movl 8(%ebp),%eax
 	movl 4(%ebp),%ecx
 	addl $12,%ebp
-	jmp .Lc5RW
+	jmp .Lc5Lk
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c5RZ_info:
-.Lc5RZ:
+c5Ln_info:
+.Lc5Ln:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	decl %ecx
-	jmp *.Ln5Uo(,%ecx,4)
-.Lc5S3:
-	movl $c5Se_info,(%ebp)
+	jmp *.Ln5NM(,%ecx,4)
+.Lc5Lr:
+	movl $c5LC_info,(%ebp)
 	movl 3(%esi),%ecx
 	movl %eax,%esi
 	movl %ecx,4(%ebp)
 	testw $7,%si
-	jne .Lc5Se
-.Lc5Sg:
+	jne .Lc5LC
+.Lc5LE:
 	jmp *(%esi)
-.Lc5S4:
-	movl $c5St_info,-4(%ebp)
+.Lc5Ls:
+	movl $c5LR_info,-4(%ebp)
 	movl 2(%esi),%ecx
 	movl 6(%esi),%edx
 	movl %eax,%esi
@@ -6239,11 +5886,11 @@ c5RZ_info:
 	movl %ecx,4(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5St
-.Lc5Sv:
+	jne .Lc5LR
+.Lc5LT:
 	jmp *(%esi)
-.Lc5S5:
-	movl $c5SX_info,-4(%ebp)
+.Lc5Lt:
+	movl $c5Ml_info,-4(%ebp)
 	movl 1(%esi),%ecx
 	movl 5(%esi),%edx
 	movl %eax,%esi
@@ -6251,19 +5898,19 @@ c5RZ_info:
 	movl %ecx,4(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5SX
-.Lc5SZ:
+	jne .Lc5Ml
+.Lc5Mn:
 	jmp *(%esi)
-.Lc5S6:
-	movl $c5Tr_info,4(%ebp)
+.Lc5Lu:
+	movl $c5MP_info,4(%ebp)
 	movl %eax,%esi
 	addl $4,%ebp
 	testw $7,%si
-	jne .Lc5Tr
-.Lc5Tt:
+	jne .Lc5MP
+.Lc5MR:
 	jmp *(%esi)
-.Lc5S7:
-	movl $c5TG_info,-4(%ebp)
+.Lc5Lv:
+	movl $c5N4_info,-4(%ebp)
 	movl -1(%esi),%ecx
 	movl 3(%esi),%edx
 	movl %eax,%esi
@@ -6271,20 +5918,20 @@ c5RZ_info:
 	movl %ecx,4(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5TG
-.Lc5TI:
+	jne .Lc5N4
+.Lc5N6:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c5Se_info:
-.Lc5Se:
+c5LC_info:
+.Lc5LC:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $1,%eax
-	jne .Lu5Uh
-.Lc5Sq:
+	jne .Lu5NF
+.Lc5LO:
 	movl 3(%esi),%eax
 	movl %eax,16(%ebx)
 	movl 4(%ebp),%eax
@@ -6295,14 +5942,14 @@ c5Se_info:
 	.align 4,0x90
 	.long	2
 	.long	32
-c5St_info:
-.Lc5St:
+c5LR_info:
+.Lc5LR:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jne .Lc5TO
-.Lc5SG:
-	movl $c5SE_info,(%ebp)
+	jne .Lc5Nc
+.Lc5M4:
+	movl $c5M2_info,(%ebp)
 	movl 2(%esi),%eax
 	movl %eax,16(%ebx)
 	movl 8(%ebp),%eax
@@ -6314,14 +5961,14 @@ c5St_info:
 	.align 4,0x90
 	.long	2
 	.long	32
-c5SX_info:
-.Lc5SX:
+c5Ml_info:
+.Lc5Ml:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $3,%eax
-	jne .Lc5TO
-.Lc5Ta:
-	movl $c5T8_info,(%ebp)
+	jne .Lc5Nc
+.Lc5My:
+	movl $c5Mw_info,(%ebp)
 	movl 1(%esi),%eax
 	movl %eax,16(%ebx)
 	movl 8(%ebp),%eax
@@ -6333,13 +5980,13 @@ c5SX_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5Tr_info:
-.Lc5Tr:
+c5MP_info:
+.Lc5MP:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $4,%eax
-	jne .Lu5Ue
-.Lc5TD:
+	jne .Lu5NC
+.Lc5N1:
 	movl $ghczmprim_GHCziTypes_True_closure+2,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
@@ -6347,14 +5994,14 @@ c5Tr_info:
 	.align 4,0x90
 	.long	2
 	.long	32
-c5TG_info:
-.Lc5TG:
+c5N4_info:
+.Lc5N4:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $5,%eax
-	jne .Lc5TO
-.Lc5TT:
-	movl $c5TR_info,(%ebp)
+	jne .Lc5Nc
+.Lc5Nh:
+	movl $c5Nf_info,(%ebp)
 	movl -1(%esi),%eax
 	movl %eax,16(%ebx)
 	movl 8(%ebp),%eax
@@ -6362,24 +6009,24 @@ c5TG_info:
 	movl 3(%esi),%eax
 	movl %eax,8(%ebp)
 	jmp base_GHCziBase_eqString_info
-.Lu5Uh:
+.Lu5NF:
 	addl $-4,%ebp
-.Lc5TO:
+.Lc5Nc:
 	movl $ghczmprim_GHCziTypes_False_closure+1,%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lu5Ue:
+.Lu5NC:
 	addl $-8,%ebp
-	jmp .Lc5TO
+	jmp .Lc5Nc
 .section .rodata
 	.align 4
 .align 1
-.Ln5Uo:
-	.long	.Lc5S3
-	.long	.Lc5S4
-	.long	.Lc5S5
-	.long	.Lc5S6
-	.long	.Lc5S7
+.Ln5NM:
+	.long	.Lc5Lr
+	.long	.Lc5Ls
+	.long	.Lc5Lt
+	.long	.Lc5Lu
+	.long	.Lc5Lv
 .data
 	.align 4
 .align 1
@@ -6393,14 +6040,14 @@ Expr_zdfEqExprzuzdczsze_closure:
 	.long	15
 .globl Expr_zdfEqExprzuzdczsze_info
 Expr_zdfEqExprzuzdczsze_info:
-.Lc5V9:
+.Lc5Ox:
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	leal -4(%ebp),%edx
 	cmpl 840(%ebx),%edx
-	jb .Lc5Va
-.Lc5Vb:
-	movl $c5V0_info,-4(%ebp)
+	jb .Lc5Oy
+.Lc5Oz:
+	movl $c5Oo_info,-4(%ebp)
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
 	addl $-4,%ebp
@@ -6409,21 +6056,21 @@ Expr_zdfEqExprzuzdczsze_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5V0_info:
-.Lc5V0:
+c5Oo_info:
+.Lc5Oo:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc5V7
-.Lc5V8:
+	jae .Lc5Ov
+.Lc5Ow:
 	movl $ghczmprim_GHCziTypes_True_closure+2,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc5V7:
+.Lc5Ov:
 	movl $ghczmprim_GHCziTypes_False_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc5Va:
+.Lc5Oy:
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
 	movl $Expr_zdfEqExprzuzdczsze_closure,%esi
@@ -6446,72 +6093,72 @@ Expr_simplify_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Wm_info)+144
+	.long	S4YI_srt-(s4QS_info)+144
 	.long	1
 	.long	65553
-s4Wm_info:
-.Lc5X6:
+s4QS_info:
+.Lc5Qu:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5X7
-.Lc5X8:
+	jb .Lc5Qv
+.Lc5Qw:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $Expr_exExpr39_closure+1,16(%ebx)
+	movl $r4jt_closure+1,16(%ebx)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_eval_info
-.Lc5X7:
+.Lc5Qv:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Ww_info)+148
+	.long	S4YI_srt-(s4R2_info)+148
 	.long	1
 	.long	65553
-s4Ww_info:
-.Lc5Xy:
+s4R2_info:
+.Lc5QW:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5Xz
-.Lc5XA:
+	jb .Lc5QX
+.Lc5QY:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_simplify_info
-.Lc5Xz:
+.Lc5QX:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Wv_info)+148
+	.long	S4YI_srt-(s4R1_info)+148
 	.long	1
 	.long	65553
-s4Wv_info:
-.Lc5XF:
+s4R1_info:
+.Lc5R3:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5XG
-.Lc5XH:
+	jb .Lc5R4
+.Lc5R5:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_simplify_info
-.Lc5XG:
+.Lc5R4:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	2
 	.long	19
-s4WJ_info:
-.Lc5Ym:
+s4Rf_info:
+.Lc5RK:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5Yn
-.Lc5Yo:
+	jb .Lc5RL
+.Lc5RM:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 16(%esi),%eax
@@ -6520,26 +6167,26 @@ s4WJ_info:
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp base_GHCziFloat_plusDouble_info
-.Lc5Yn:
+.Lc5RL:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	1
 	.long	17
-s4WO_info:
-.Lc5Yy:
+s4Rk_info:
+.Lc5RW:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5YF
-.Lc5YG:
+	jb .Lc5S3
+.Lc5S4:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $c5Yv_info,-16(%ebp)
+	movl $c5RT_info,-16(%ebp)
 	movl 12(%esi),%esi
 	addl $-16,%ebp
 	testw $7,%si
-	jne .Lc5Yv
-.Lc5Yw:
+	jne .Lc5RT
+.Lc5RU:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
@@ -6547,12 +6194,12 @@ s4WO_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5Yv_info:
-.Lc5Yv:
+c5RT_info:
+.Lc5RT:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5YJ
-.Lc5YI:
+	ja .Lc5S7
+.Lc5S6:
 #	gldsd 3(%esi),%fake0
 	fldl 3(%esi) ; fstp %st(1)
 #	gld1sd %fake1
@@ -6568,11 +6215,11 @@ c5Yv_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%ebp)
-.Lc5YF:
+.Lc5S3:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *-16(%ebx)
-.Lc5YJ:
+.Lc5S7:
 	movl $12,904(%ebx)
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
@@ -6581,20 +6228,20 @@ c5Yv_info:
 	.align 4,0x90
 	.long	1
 	.long	17
-s4WZ_info:
-.Lc5Zb:
+s4Rv_info:
+.Lc5Sz:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5Zi
-.Lc5Zj:
+	jb .Lc5SG
+.Lc5SH:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $c5Z8_info,-16(%ebp)
+	movl $c5Sw_info,-16(%ebp)
 	movl 12(%esi),%esi
 	addl $-16,%ebp
 	testw $7,%si
-	jne .Lc5Z8
-.Lc5Z9:
+	jne .Lc5Sw
+.Lc5Sx:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%esi)
@@ -6602,12 +6249,12 @@ s4WZ_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c5Z8_info:
-.Lc5Z8:
+c5Sw_info:
+.Lc5Sw:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc5Zm
-.Lc5Zl:
+	ja .Lc5SK
+.Lc5SJ:
 #	gldsd 3(%esi),%fake0
 	fldl 3(%esi) ; fstp %st(1)
 #	gld1sd %fake1
@@ -6623,109 +6270,109 @@ c5Z8_info:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *(%ebp)
-.Lc5Zi:
+.Lc5SG:
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp *-16(%ebx)
-.Lc5Zm:
+.Lc5SK:
 	movl $12,904(%ebx)
 	ffree %st(0) ;ffree %st(1) ;ffree %st(2) ;ffree %st(3)
 	ffree %st(4) ;ffree %st(5)
 	jmp stg_gc_unpt_r1
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4X8_info)+148
+	.long	S4YI_srt-(s4RE_info)+148
 	.long	1
 	.long	65553
-s4X8_info:
-.Lc5ZJ:
+s4RE_info:
+.Lc5T7:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5ZK
-.Lc5ZL:
+	jb .Lc5T8
+.Lc5T9:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_simplify_info
-.Lc5ZK:
+.Lc5T8:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4X7_info)+148
+	.long	S4YI_srt-(s4RD_info)+148
 	.long	1
 	.long	65553
-s4X7_info:
-.Lc5ZQ:
+s4RD_info:
+.Lc5Te:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc5ZR
-.Lc5ZS:
+	jb .Lc5Tf
+.Lc5Tg:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_simplify_info
-.Lc5ZR:
+.Lc5Tf:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Xb_info)+148
+	.long	S4YI_srt-(s4RH_info)+148
 	.long	1
 	.long	65553
-s4Xb_info:
-.Lc600:
+s4RH_info:
+.Lc5To:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc601
-.Lc602:
+	jb .Lc5Tp
+.Lc5Tq:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_simplify_info
-.Lc601:
+.Lc5Tp:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_simplify_info)+144
+	.long	S4YI_srt-(Expr_simplify_info)+144
 	.long	65541
 	.long	0
 	.long	196623
 .globl Expr_simplify_info
 Expr_simplify_info:
-.Lc60a:
+.Lc5Ty:
 	movl 8(%ebx),%eax
 	leal -20(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc60b
-.Lc60c:
-	movl $c5WY_info,-8(%ebp)
+	jb .Lc5Tz
+.Lc5TA:
+	movl $c5Qm_info,-8(%ebp)
 	movl %eax,8(%ebx)
 	movl %eax,-4(%ebp)
 	addl $-8,%ebp
-	jmp r4ot_info
+	jmp r4jy_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5WY_info)+144
+	.long	S4YI_srt-(c5Qm_info)+144
 	.long	1
 	.long	196640
-c5WY_info:
-.Lc5WY:
+c5Qm_info:
+.Lc5Qm:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jae .Lc608
-.Lc609:
+	jae .Lc5Tw
+.Lc5Tx:
 	addl $24,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc60g
-.Lc60f:
-	movl $s4Wm_info,-20(%edi)
+	ja .Lc5TE
+.Lc5TD:
+	movl $s4QS_info,-20(%edi)
 	movl %eax,-8(%edi)
 	movl $Expr_Num_con_info,-4(%edi)
 	leal -20(%edi),%eax
@@ -6735,61 +6382,61 @@ c5WY_info:
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Xb_info)+148
+	.long	S4YI_srt-(c5Qz_info)+148
 	.long	0
 	.long	65568
-c5Xb_info:
-.Lc5Xb:
+c5Qz_info:
+.Lc5Qz:
 	movl %esi,%eax
 	andl $7,%eax
 	decl %eax
-	jmp *.Ln64g(,%eax,4)
-.Lc608:
-	movl $c5Xb_info,4(%ebp)
+	jmp *.Ln5XE(,%eax,4)
+.Lc5Tw:
+	movl $c5Qz_info,4(%ebp)
 	movl %eax,%esi
 	addl $4,%ebp
 	testw $7,%si
-	jne .Lc5Xb
-.Lc5Xc:
+	jne .Lc5Qz
+.Lc5QA:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Xm_info)+148
+	.long	S4YI_srt-(c5QK_info)+148
 	.long	2
 	.long	65568
-c5Xm_info:
-.Lc5Xm:
+c5QK_info:
+.Lc5QK:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jae .Lc60L
-.Lc60M:
-	movl $c5Xq_info,(%ebp)
-	movl $Expr_exExpr38_closure+1,16(%ebx)
+	jae .Lc5U9
+.Lc5Ua:
+	movl $c5QO_info,(%ebp)
+	movl $r4ju_closure+1,16(%ebx)
 	movl %eax,8(%ebx)
 	jmp Expr_zdfEqExprzuzdczeze_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Xq_info)+148
+	.long	S4YI_srt-(c5QO_info)+148
 	.long	2
 	.long	65568
-c5Xq_info:
-.Lc5Xq:
+c5QO_info:
+.Lc5QO:
 	movl 8(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jae .Lc60D
-.Lc60E:
+	jae .Lc5U1
+.Lc5U2:
 	addl $44,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc60w
-.Lc60v:
-	movl $s4Ww_info,-40(%edi)
+	ja .Lc5TU
+.Lc5TT:
+	movl $s4R2_info,-40(%edi)
 	movl 4(%ebp),%ecx
 	movl %ecx,-28(%edi)
-	movl $s4Wv_info,-24(%edi)
+	movl $s4R1_info,-24(%edi)
 	movl %eax,-12(%edi)
 	movl $Expr_Add_con_info,-8(%edi)
 	leal -24(%edi),%eax
@@ -6801,31 +6448,31 @@ c5Xq_info:
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5XI_info)+148
+	.long	S4YI_srt-(c5R6_info)+148
 	.long	2
 	.long	65568
-c5XI_info:
-.Lc5XI:
+c5R6_info:
+.Lc5R6:
 	movl 8(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $3,%ecx
-	jb .Ls4Wr
-.Lc62k:
+	jb .Ls4QX
+.Lc5VI:
 	cmpl $4,%ecx
-	jae .Lc62g
-.Lc62h:
-	movl $c5XO_info,-4(%ebp)
+	jae .Lc5VE
+.Lc5VF:
+	movl $c5Rc_info,-4(%ebp)
 	movl 5(%esi),%eax
 	movl 1(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5XO
-.Lc5XP:
+	jne .Lc5Rc
+.Lc5Rd:
 	jmp *(%esi)
-.Lc60N:
-	movl $c5XI_info,-8(%ebp)
+.Lc5Ub:
+	movl $c5R6_info,-8(%ebp)
 	movl 2(%esi),%eax
 	movl 6(%esi),%ecx
 	movl %eax,%esi
@@ -6833,109 +6480,109 @@ c5XI_info:
 	movl %eax,(%ebp)
 	addl $-8,%ebp
 	testw $7,%si
-	jne .Lc5XI
-.Lc5XJ:
+	jne .Lc5R6
+.Lc5R7:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5XO_info)+148
+	.long	S4YI_srt-(c5Rc_info)+148
 	.long	3
 	.long	65568
-c5XO_info:
-.Lc5XO:
+c5Rc_info:
+.Lc5Rc:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $1,%eax
-	jne .Lu63p
-.Lc60Z:
-	movl $c5XU_info,(%ebp)
+	jne .Lu5WN
+.Lc5Un:
+	movl $c5Ri_info,(%ebp)
 	movl 3(%esi),%eax
 	movl 4(%ebp),%esi
 	movl %eax,4(%ebp)
 	testw $7,%si
-	jne .Lc5XU
-.Lc5XV:
+	jne .Lc5Ri
+.Lc5Rj:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5XU_info)+148
+	.long	S4YI_srt-(c5Ri_info)+148
 	.long	3
 	.long	65568
-c5XU_info:
-.Lc5XU:
+c5Ri_info:
+.Lc5Ri:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $4,%eax
-	jne .Lu63q
-.Lc615:
-	movl $c5Y0_info,(%ebp)
+	jne .Lu5WO
+.Lc5Ut:
+	movl $c5Ro_info,(%ebp)
 	movl 8(%ebp),%esi
 	testw $7,%si
-	jne .Lc5Y0
-.Lc5Y1:
+	jne .Lc5Ro
+.Lc5Rp:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Y0_info)+148
+	.long	S4YI_srt-(c5Ro_info)+148
 	.long	3
 	.long	65568
-c5Y0_info:
-.Lc5Y0:
+c5Ro_info:
+.Lc5Ro:
 	movl 12(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $3,%ecx
-	jb .Lu63r
-.Lc61E:
+	jb .Lu5WP
+.Lc5V2:
 	cmpl $4,%ecx
-	jae .Lc61A
-.Lc61B:
-	movl $c5Y6_info,-4(%ebp)
+	jae .Lc5UY
+.Lc5UZ:
+	movl $c5Ru_info,-4(%ebp)
 	movl 5(%esi),%eax
 	movl 1(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5Y6
-.Lc5Y7:
+	jne .Lc5Ru
+.Lc5Rv:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Y6_info)+148
+	.long	S4YI_srt-(c5Ru_info)+148
 	.long	4
 	.long	65568
-c5Y6_info:
-.Lc5Y6:
+c5Ru_info:
+.Lc5Ru:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $1,%eax
-	jne .Lu63t
-.Lc61h:
-	movl $c5Yc_info,(%ebp)
+	jne .Lu5WR
+.Lc5UF:
+	movl $c5RA_info,(%ebp)
 	movl 3(%esi),%eax
 	movl 4(%ebp),%esi
 	movl %eax,4(%ebp)
 	testw $7,%si
-	jne .Lc5Yc
-.Lc5Yd:
+	jne .Lc5RA
+.Lc5RB:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Yc_info)+148
+	.long	S4YI_srt-(c5RA_info)+148
 	.long	4
 	.long	65568
-c5Yc_info:
-.Lc5Yc:
+c5RA_info:
+.Lc5RA:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $4,%eax
-	jne .Lu63u
-.Lc61o:
+	jne .Lu5WS
+.Lc5UM:
 	addl $40,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc61r
-.Lc61q:
-	movl $s4WJ_info,-36(%edi)
+	ja .Lc5UP
+.Lc5UO:
+	movl $s4Rf_info,-36(%edi)
 	movl 8(%ebp),%eax
 	movl %eax,-24(%edi)
 	movl 4(%ebp),%eax
@@ -6952,76 +6599,76 @@ c5Yc_info:
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5YM_info)+148
+	.long	S4YI_srt-(c5Sa_info)+148
 	.long	2
 	.long	65568
-c5YM_info:
-.Lc5YM:
+c5Sa_info:
+.Lc5Sa:
 	movl 8(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $3,%ecx
-	jb .Ls4Wr
-.Lc62d:
+	jb .Ls4QX
+.Lc5VB:
 	cmpl $4,%ecx
-	jae .Lc629
-.Lc62a:
-	movl $c5YS_info,-4(%ebp)
+	jae .Lc5Vx
+.Lc5Vy:
+	movl $c5Sg_info,-4(%ebp)
 	movl 5(%esi),%eax
 	movl 1(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc5YS
-.Lc5YT:
+	jne .Lc5Sg
+.Lc5Sh:
 	jmp *(%esi)
-.Lc62g:
+.Lc5VE:
 	cmpl $4,%ecx
-	jne .Ls4Wr
-.Lc61G:
-	movl $c5YM_info,(%ebp)
+	jne .Ls4QX
+.Lc5V4:
+	movl $c5Sa_info,(%ebp)
 	movl 4(%ebp),%esi
 	testw $7,%si
-	jne .Lc5YM
-.Lc5YN:
+	jne .Lc5Sa
+.Lc5Sb:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5YS_info)+148
+	.long	S4YI_srt-(c5Sg_info)+148
 	.long	3
 	.long	65568
-c5YS_info:
-.Lc5YS:
+c5Sg_info:
+.Lc5Sg:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $1,%eax
-	jne .Lu63n
-.Lc61S:
-	movl $c5YY_info,(%ebp)
+	jne .Lu5WL
+.Lc5Vg:
+	movl $c5Sm_info,(%ebp)
 	movl 3(%esi),%eax
 	movl 4(%ebp),%esi
 	movl %eax,4(%ebp)
 	testw $7,%si
-	jne .Lc5YY
-.Lc5YZ:
+	jne .Lc5Sm
+.Lc5Sn:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5YY_info)+148
+	.long	S4YI_srt-(c5Sm_info)+148
 	.long	3
 	.long	65568
-c5YY_info:
-.Lc5YY:
+c5Sm_info:
+.Lc5Sm:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $4,%eax
-	jne .Lu63o
-.Lc61Z:
+	jne .Lu5WM
+.Lc5Vn:
 	addl $36,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc622
-.Lc621:
-	movl $s4WZ_info,-32(%edi)
+	ja .Lc5Vq
+.Lc5Vp:
+	movl $s4Rv_info,-32(%edi)
 	movl 4(%ebp),%eax
 	movl %eax,-20(%edi)
 	movl $Expr_Num_con_info,-16(%edi)
@@ -7036,76 +6683,76 @@ c5YY_info:
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Zp_info)+148
+	.long	S4YI_srt-(c5SN_info)+148
 	.long	2
 	.long	65568
-c5Zp_info:
-.Lc5Zp:
+c5SN_info:
+.Lc5SN:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc636
-.Lc637:
-	movl $c5Zt_info,(%ebp)
-	movl $Expr_exExpr38_closure+1,16(%ebx)
+	jae .Lc5Wu
+.Lc5Wv:
+	movl $c5SR_info,(%ebp)
+	movl $r4ju_closure+1,16(%ebx)
 	movl 4(%ebp),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_zdfEqExprzuzdczeze_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Zt_info)+148
+	.long	S4YI_srt-(c5SR_info)+148
 	.long	2
 	.long	65568
-c5Zt_info:
-.Lc5Zt:
+c5SR_info:
+.Lc5SR:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc636
-.Lc62Z:
-	movl $c5Zx_info,(%ebp)
-	movl $Expr_exExpr41_closure+1,16(%ebx)
+	jae .Lc5Wu
+.Lc5Wn:
+	movl $c5SV_info,(%ebp)
+	movl $r4js_closure+1,16(%ebx)
 	movl 8(%ebp),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_zdfEqExprzuzdczeze_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5Zx_info)+148
+	.long	S4YI_srt-(c5SV_info)+148
 	.long	2
 	.long	65568
-c5Zx_info:
-.Lc5Zx:
+c5SV_info:
+.Lc5SV:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jae .Lc62Q
-.Lc62R:
-	movl $c5ZB_info,(%ebp)
-	movl $Expr_exExpr41_closure+1,16(%ebx)
+	jae .Lc5We
+.Lc5Wf:
+	movl $c5SZ_info,(%ebp)
+	movl $r4js_closure+1,16(%ebx)
 	movl %eax,8(%ebx)
 	jmp Expr_zdfEqExprzuzdczeze_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c5ZB_info)+148
+	.long	S4YI_srt-(c5SZ_info)+148
 	.long	2
 	.long	65568
-c5ZB_info:
-.Lc5ZB:
+c5SZ_info:
+.Lc5SZ:
 	movl 8(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jae .Lc62I
-.Lc62J:
+	jae .Lc5W6
+.Lc5W7:
 	addl $44,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc62B
-.Lc62A:
-	movl $s4X8_info,-40(%edi)
+	ja .Lc5VZ
+.Lc5VY:
+	movl $s4RE_info,-40(%edi)
 	movl 4(%ebp),%ecx
 	movl %ecx,-28(%edi)
-	movl $s4X7_info,-24(%edi)
+	movl $s4RD_info,-24(%edi)
 	movl %eax,-12(%edi)
 	movl $Expr_Mul_con_info,-8(%edi)
 	leal -24(%edi),%eax
@@ -7115,42 +6762,42 @@ c5ZB_info:
 	leal -5(%edi),%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc60b:
+.Lc5Tz:
 	movl %eax,8(%ebx)
 	movl $Expr_simplify_closure,%esi
 	jmp *-8(%ebx)
-.Lc60g:
+.Lc5TE:
 	movl $24,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc60l:
+.Lc5TJ:
 	andl $-8,%esi
 	addl $4,%ebp
 	jmp *(%esi)
-.Lc60w:
+.Lc5TU:
 	movl $44,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc60D:
+.Lc5U1:
 	movl %eax,%esi
 	andl $-8,%esi
 	addl $12,%ebp
 	jmp *(%esi)
-.Lc60L:
+.Lc5U9:
 	movl %eax,%esi
 	andl $-8,%esi
 	addl $12,%ebp
 	jmp *(%esi)
-.Lc61r:
+.Lc5UP:
 	movl $40,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc61A:
+.Lc5UY:
 	cmpl $4,%ecx
-	jne .Lu63s
-.Lc61u:
+	jne .Lu5WQ
+.Lc5US:
 	addl $36,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc61x
-.Lc61w:
-	movl $s4WO_info,-32(%edi)
+	ja .Lc5UV
+.Lc5UU:
+	movl $s4Rk_info,-32(%edi)
 	movl 4(%ebp),%eax
 	movl %eax,-20(%edi)
 	movl $Expr_Num_con_info,-16(%edi)
@@ -7163,22 +6810,22 @@ c5ZB_info:
 	leal -5(%edi),%esi
 	addl $16,%ebp
 	jmp *(%ebp)
-.Lc61x:
+.Lc5UV:
 	movl $36,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc622:
+.Lc5Vq:
 	movl $36,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc629:
+.Lc5Vx:
 	cmpl $4,%ecx
-	jne .Ls4Wr
-.Lc626:
-	movl $r4os_closure+3,%esi
+	jne .Ls4QX
+.Lc5Vu:
+	movl $r4jx_closure+3,%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc62m:
-	movl $c5Zp_info,-8(%ebp)
-	movl $Expr_exExpr38_closure+1,16(%ebx)
+.Lc5VK:
+	movl $c5SN_info,-8(%ebp)
+	movl $r4ju_closure+1,16(%ebx)
 	movl 1(%esi),%eax
 	movl %eax,8(%ebx)
 	movl 5(%esi),%ecx
@@ -7186,35 +6833,35 @@ c5ZB_info:
 	movl %eax,(%ebp)
 	addl $-8,%ebp
 	jmp Expr_zdfEqExprzuzdczeze_info
-.Lc62B:
+.Lc5VZ:
 	movl $44,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc62I:
+.Lc5W6:
 	movl %eax,%esi
 	andl $-8,%esi
 	addl $12,%ebp
 	jmp *(%esi)
-.Lc62Q:
+.Lc5We:
 	movl %eax,%esi
 	andl $-8,%esi
 	addl $12,%ebp
 	jmp *(%esi)
-.Lc636:
-	movl $Expr_exExpr38_closure+1,%esi
+.Lc5Wu:
+	movl $r4ju_closure+1,%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc63a:
+.Lc5Wy:
 	movl $Expr_X_closure+4,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc63c:
+.Lc5WA:
 	addl $28,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc63f
-.Lc63e:
+	ja .Lc5WD
+.Lc5WC:
 	movl -1(%esi),%eax
 	movl 3(%esi),%ecx
-	movl $s4Xb_info,-24(%edi)
+	movl $s4RH_info,-24(%edi)
 	movl %ecx,-12(%edi)
 	movl $Expr_Function_con_info,-8(%edi)
 	movl %eax,-4(%edi)
@@ -7223,123 +6870,123 @@ c5ZB_info:
 	leal -3(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc63f:
+.Lc5WD:
 	movl $28,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lu63u:
+.Lu5WS:
 	movl 16(%ebp),%eax
 	addl $8,%ebp
-.Ls4Wr:
-	movl $c5Xm_info,(%ebp)
-	movl $Expr_exExpr38_closure+1,16(%ebx)
+.Ls4QX:
+	movl $c5QK_info,(%ebp)
+	movl $r4ju_closure+1,16(%ebx)
 	movl %eax,8(%ebx)
 	jmp Expr_zdfEqExprzuzdczeze_info
-.Lu63t:
+.Lu5WR:
 	movl 16(%ebp),%eax
 	addl $8,%ebp
-	jmp .Ls4Wr
-.Lu63s:
+	jmp .Ls4QX
+.Lu5WQ:
 	addl $4,%ebp
-	jmp .Ls4Wr
-.Lu63r:
+	jmp .Ls4QX
+.Lu5WP:
 	addl $4,%ebp
-	jmp .Ls4Wr
-.Lu63q:
+	jmp .Ls4QX
+.Lu5WO:
 	movl 12(%ebp),%eax
 	addl $4,%ebp
-	jmp .Ls4Wr
-.Lu63p:
+	jmp .Ls4QX
+.Lu5WN:
 	movl 12(%ebp),%eax
 	addl $4,%ebp
-	jmp .Ls4Wr
-.Lu63o:
+	jmp .Ls4QX
+.Lu5WM:
 	movl 12(%ebp),%eax
 	addl $4,%ebp
-	jmp .Ls4Wr
-.Lu63n:
+	jmp .Ls4QX
+.Lu5WL:
 	movl 12(%ebp),%eax
 	addl $4,%ebp
-	jmp .Ls4Wr
+	jmp .Ls4QX
 .section .rodata
 	.align 4
 .align 1
-.Ln64g:
-	.long	.Lc60l
-	.long	.Lc60N
-	.long	.Lc62m
-	.long	.Lc63a
-	.long	.Lc63c
+.Ln5XE:
+	.long	.Lc5TJ
+	.long	.Lc5Ub
+	.long	.Lc5VK
+	.long	.Lc5Wy
+	.long	.Lc5WA
 .data
 	.align 4
 .align 1
-r4oC_closure:
-	.long	r4oC_info
+r4jH_closure:
+	.long	r4jH_info
 	.long	0
 	.long	0
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(r4oC_info)+148
+	.long	S4YI_srt-(r4jH_info)+148
 	.long	0
 	.long	65558
-r4oC_info:
-.Lc65g:
+r4jH_info:
+.Lc5YE:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc65h
-.Lc65i:
+	jb .Lc5YF
+.Lc5YG:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc65f
-.Lc65e:
+	je .Lc5YD
+.Lc5YC:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $Expr_exExpr41_closure+1,8(%ebx)
+	movl $r4js_closure+1,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_simplify_info
-.Lc65f:
+.Lc5YD:
 	jmp *(%esi)
-.Lc65h:
+.Lc5YF:
 	jmp *-16(%ebx)
 .data
 	.align 4
 .align 1
-r4oD_closure:
-	.long	r4oD_info
+r4jI_closure:
+	.long	r4jI_info
 	.long	0
 	.long	0
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(r4oD_info)+148
+	.long	S4YI_srt-(r4jI_info)+148
 	.long	0
 	.long	65558
-r4oD_info:
-.Lc65u:
+r4jI_info:
+.Lc5YS:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc65v
-.Lc65w:
+	jb .Lc5YT
+.Lc5YU:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc65t
-.Lc65s:
+	je .Lc5YR
+.Lc5YQ:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $Expr_exExpr38_closure+1,8(%ebx)
+	movl $r4ju_closure+1,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_simplify_info
-.Lc65t:
+.Lc5YR:
 	jmp *(%esi)
-.Lc65v:
+.Lc5YT:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -7350,224 +6997,224 @@ Expr_differentiate_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Xi_info)+152
+	.long	S4YI_srt-(s4RO_info)+152
 	.long	1
 	.long	65553
-s4Xi_info:
-.Lc667:
+s4RO_info:
+.Lc5Zv:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc668
-.Lc669:
+	jb .Lc5Zw
+.Lc5Zx:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_differentiate_info
-.Lc668:
+.Lc5Zw:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Xh_info)+152
+	.long	S4YI_srt-(s4RN_info)+152
 	.long	1
 	.long	65553
-s4Xh_info:
-.Lc66e:
+s4RN_info:
+.Lc5ZC:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc66f
-.Lc66g:
+	jb .Lc5ZD
+.Lc5ZE:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_differentiate_info
-.Lc66f:
+.Lc5ZD:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Xo_info)+152
+	.long	S4YI_srt-(s4RU_info)+152
 	.long	1
 	.long	65553
-s4Xo_info:
-.Lc66n:
+s4RU_info:
+.Lc5ZL:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc66o
-.Lc66p:
+	jb .Lc5ZM
+.Lc5ZN:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_differentiate_info
-.Lc66o:
+.Lc5ZM:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Xm_info)+152
+	.long	S4YI_srt-(s4RS_info)+152
 	.long	1
 	.long	65553
-s4Xm_info:
-.Lc66v:
+s4RS_info:
+.Lc5ZT:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc66w
-.Lc66x:
+	jb .Lc5ZU
+.Lc5ZV:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_differentiate_info
-.Lc66w:
+.Lc5ZU:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Xv_info)+152
+	.long	S4YI_srt-(s4S1_info)+152
 	.long	1
 	.long	65553
-s4Xv_info:
-.Lc66P:
+s4S1_info:
+.Lc60d:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc66Q
-.Lc66R:
+	jb .Lc60e
+.Lc60f:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_differentiate_info
-.Lc66Q:
+.Lc60e:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(s4Xy_info)+152
+	.long	S4YI_srt-(s4S4_info)+152
 	.long	1
 	.long	65553
-s4Xy_info:
-.Lc66Z:
+s4S4_info:
+.Lc60n:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc670
-.Lc671:
+	jb .Lc60o
+.Lc60p:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_differentiate_info
-.Lc670:
+.Lc60o:
 	jmp *-16(%ebx)
 .section .data
 	.align 4
 .align 1
-u67Q_srtd:
-	.long	S54c_srt+64
-	.long	26
-	.long	65011715
+u61e_srtd:
+	.long	S4YI_srt+68
+	.long	25
+	.long	32505859
 .section .data
 	.align 4
 .align 1
-u67R_srtd:
-	.long	S54c_srt+64
-	.long	24
-	.long	14680067
-.section .data
-	.align 4
-.align 1
-u67S_srtd:
-	.long	S54c_srt+68
+u61f_srtd:
+	.long	S4YI_srt+68
 	.long	23
-	.long	7340033
+	.long	7340035
 .section .data
 	.align 4
 .align 1
-u67T_srtd:
-	.long	S54c_srt+64
-	.long	26
-	.long	65011715
+u61g_srtd:
+	.long	S4YI_srt+72
+	.long	22
+	.long	3670017
+.section .data
+	.align 4
+.align 1
+u61h_srtd:
+	.long	S4YI_srt+68
+	.long	25
+	.long	32505859
 .text
 	.align 4,0x90
-	.long	u67T_srtd-(Expr_differentiate_info)+0
+	.long	u61h_srtd-(Expr_differentiate_info)+0
 	.long	65541
 	.long	0
 	.long	-65521
 .globl Expr_differentiate_info
 Expr_differentiate_info:
-.Lc679:
+.Lc60x:
 	movl 8(%ebx),%eax
 	leal -12(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc67a
-.Lc67b:
-	movl $c65X_info,-4(%ebp)
+	jb .Lc60y
+.Lc60z:
+	movl $c5Zl_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc65X
-.Lc65Y:
+	jne .Lc5Zl
+.Lc5Zm:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	u67Q_srtd-(c65X_info)+0
+	.long	u61e_srtd-(c5Zl_info)+0
 	.long	0
 	.long	-65504
-c65X_info:
-.Lc65X:
+c5Zl_info:
+.Lc5Zl:
 	movl %esi,%eax
 	andl $7,%eax
 	decl %eax
-	jmp *.Ln68s(,%eax,4)
+	jmp *.Ln61Q(,%eax,4)
 .text
 	.align 4,0x90
-	.long	u67R_srtd-(c66B_info)+0
+	.long	u61f_srtd-(c5ZZ_info)+0
 	.long	2
 	.long	-65504
-c66B_info:
-.Lc66B:
+c5ZZ_info:
+.Lc5ZZ:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc67O
-.Lc67P:
-	movl $c66F_info,(%ebp)
-	movl $Expr_exExpr36_closure,16(%ebx)
+	jae .Lc61c
+.Lc61d:
+	movl $c603_info,(%ebp)
+	movl $r4jm_closure,16(%ebx)
 	movl 8(%ebp),%eax
 	movl %eax,8(%ebx)
 	jmp base_GHCziBase_eqString_info
 .text
 	.align 4,0x90
-	.long	u67S_srtd-(c66F_info)+0
+	.long	u61g_srtd-(c603_info)+0
 	.long	130
 	.long	-65504
-c66F_info:
-.Lc66F:
+c603_info:
+.Lc603:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc67E
-.Lc67F:
-	movl $r4or_closure,%esi
+	jae .Lc612
+.Lc613:
+	movl $r4jq_closure,%esi
 	addl $12,%ebp
 	jmp *(%esi)
-.Lc673:
-	movl $r4oD_closure,%esi
+.Lc60r:
+	movl $r4jI_closure,%esi
 	addl $4,%ebp
 	jmp *(%esi)
-.Lc674:
+.Lc60s:
 	addl $44,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc67h
-.Lc67g:
+	ja .Lc60F
+.Lc60E:
 	movl 2(%esi),%eax
 	movl 6(%esi),%ecx
-	movl $s4Xi_info,-40(%edi)
+	movl $s4RO_info,-40(%edi)
 	movl %ecx,-28(%edi)
-	movl $s4Xh_info,-24(%edi)
+	movl $s4RN_info,-24(%edi)
 	movl %eax,-12(%edi)
 	movl $Expr_Add_con_info,-8(%edi)
 	leal -24(%edi),%eax
@@ -7578,20 +7225,20 @@ c66F_info:
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_simplify_info
-.Lc675:
+.Lc60t:
 	addl $68,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc67m
-.Lc67l:
+	ja .Lc60K
+.Lc60J:
 	movl 1(%esi),%eax
 	movl 5(%esi),%ecx
-	movl $s4Xo_info,-64(%edi)
+	movl $s4RU_info,-64(%edi)
 	movl %ecx,-52(%edi)
 	movl $Expr_Mul_con_info,-48(%edi)
 	movl %eax,-44(%edi)
 	leal -64(%edi),%edx
 	movl %edx,-40(%edi)
-	movl $s4Xm_info,-36(%edi)
+	movl $s4RS_info,-36(%edi)
 	movl %eax,-24(%edi)
 	movl $Expr_Mul_con_info,-20(%edi)
 	leal -36(%edi),%eax
@@ -7606,13 +7253,13 @@ c66F_info:
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_simplify_info
-.Lc676:
-	movl $r4oC_closure,%esi
+.Lc60u:
+	movl $r4jH_closure,%esi
 	addl $4,%ebp
 	jmp *(%esi)
-.Lc677:
-	movl $c66B_info,-8(%ebp)
-	movl $Expr_exExpr24_closure,16(%ebx)
+.Lc60v:
+	movl $c5ZZ_info,-8(%ebp)
+	movl $r4jp_closure,16(%ebx)
 	movl -1(%esi),%eax
 	movl %eax,8(%ebx)
 	movl 3(%esi),%ecx
@@ -7620,26 +7267,26 @@ c66F_info:
 	movl %eax,(%ebp)
 	addl $-8,%ebp
 	jmp base_GHCziBase_eqString_info
-.Lc67a:
+.Lc60y:
 	movl %eax,8(%ebx)
 	movl $Expr_differentiate_closure,%esi
 	jmp *-8(%ebx)
-.Lc67h:
+.Lc60F:
 	movl $44,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc67m:
+.Lc60K:
 	movl $68,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc67E:
+.Lc612:
 	addl $40,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc67B
-.Lc67A:
+	ja .Lc60Z
+.Lc60Y:
 	movl $Expr_Function_con_info,-36(%edi)
-	movl $Expr_exExpr24_closure,-32(%edi)
+	movl $r4jp_closure,-32(%edi)
 	movl 4(%ebp),%eax
 	movl %eax,-28(%edi)
-	movl $s4Xv_info,-24(%edi)
+	movl $s4S1_info,-24(%edi)
 	movl %eax,-12(%edi)
 	movl $Expr_Mul_con_info,-8(%edi)
 	leal -24(%edi),%eax
@@ -7650,19 +7297,19 @@ c66F_info:
 	movl %eax,8(%ebx)
 	addl $12,%ebp
 	jmp Expr_simplify_info
-.Lc67B:
+.Lc60Z:
 	movl $40,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc67O:
+.Lc61c:
 	addl $52,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc67L
-.Lc67K:
+	ja .Lc619
+.Lc618:
 	movl $Expr_Function_con_info,-48(%edi)
-	movl $Expr_exExpr36_closure,-44(%edi)
+	movl $r4jm_closure,-44(%edi)
 	movl 4(%ebp),%eax
 	movl %eax,-40(%edi)
-	movl $s4Xy_info,-36(%edi)
+	movl $s4S4_info,-36(%edi)
 	movl %eax,-24(%edi)
 	movl $Expr_Mul_con_info,-20(%edi)
 	leal -36(%edi),%eax
@@ -7670,29 +7317,29 @@ c66F_info:
 	leal -43(%edi),%eax
 	movl %eax,-12(%edi)
 	movl $Expr_Mul_con_info,-8(%edi)
-	movl $r4oq_closure+1,-4(%edi)
+	movl $r4jo_closure+1,-4(%edi)
 	leal -17(%edi),%eax
 	movl %eax,(%edi)
 	leal -5(%edi),%eax
 	movl %eax,8(%ebx)
 	addl $12,%ebp
 	jmp Expr_simplify_info
-.Lc67L:
+.Lc619:
 	movl $52,904(%ebx)
 	jmp stg_gc_unpt_r1
 .section .rodata
 	.align 4
 .align 1
-.Ln68s:
-	.long	.Lc673
-	.long	.Lc674
-	.long	.Lc675
-	.long	.Lc676
-	.long	.Lc677
+.Ln61Q:
+	.long	.Lc60r
+	.long	.Lc60s
+	.long	.Lc60t
+	.long	.Lc60u
+	.long	.Lc60v
 .data
 	.align 4
 .align 1
-r4oE_closure:
+r4jJ_closure:
 	.long	ghczmprim_GHCziTuple_Z2T_static_info
 	.long	Expr_X_closure+4
 	.long	ghczmprim_GHCziTypes_ZMZN_closure+1
@@ -7700,9 +7347,9 @@ r4oE_closure:
 .data
 	.align 4
 .align 1
-r4oF_closure:
+r4jK_closure:
 	.long	base_GHCziBase_Just_static_info
-	.long	r4oE_closure+1
+	.long	r4jJ_closure+1
 	.long	1
 .data
 	.align 4
@@ -7715,66 +7362,66 @@ Expr_factor4_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_factor4_info)+168
+	.long	S4YI_srt-(Expr_factor4_info)+168
 	.long	0
 	.long	65558
 .globl Expr_factor4_info
 Expr_factor4_info:
-.Lc69g:
+.Lc62E:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc69h
-.Lc69i:
+	jb .Lc62F
+.Lc62G:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc696
-.Lc695:
+	je .Lc62u
+.Lc62t:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c697_info,-16(%ebp)
+	movl $c62v_info,-16(%ebp)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,16(%ebx)
 	movl $Expr_factor5_closure,8(%ebx)
 	addl $-16,%ebp
 	jmp base_TextziParserCombinatorsziReadP_run_info
-.Lc696:
+.Lc62u:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c697_info:
-.Lc697:
+c62v_info:
+.Lc62v:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc69e
-.Lc69f:
+	jae .Lc62C
+.Lc62D:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc69e:
-	movl $c69o_info,(%ebp)
+.Lc62C:
+	movl $c62M_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc69o
-.Lc69p:
+	jne .Lc62M
+.Lc62N:
 	jmp *(%esi)
-.Lc69h:
+.Lc62F:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c69o_info:
-.Lc69o:
+c62M_info:
+.Lc62M:
 	addl $28,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc69z
-.Lc69y:
+	ja .Lc62X
+.Lc62W:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
 	movl $Expr_Num_con_info,-24(%edi)
@@ -7789,7 +7436,7 @@ c69o_info:
 	leal -2(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc69z:
+.Lc62X:
 	movl $28,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
@@ -7803,91 +7450,91 @@ Expr_factor6_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_factor6_info)+172
+	.long	S4YI_srt-(Expr_factor6_info)+172
 	.long	0
 	.long	65558
 .globl Expr_factor6_info
 Expr_factor6_info:
-.Lc6cK:
+.Lc668:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc6cL
-.Lc6cM:
+	jb .Lc669
+.Lc66a:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc6cJ
-.Lc6cI:
+	je .Lc667
+.Lc666:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,8(%ebx)
 	addl $-12,%ebp
 	jmp Expr_factor7_info
-.Lc6cJ:
+.Lc667:
 	jmp *(%esi)
-.Lc6cL:
+.Lc669:
 	jmp *-16(%ebx)
 .data
 	.align 4
 .align 1
-r4oG_closure:
-	.long	r4oG_info
+r4jL_closure:
+	.long	r4jL_info
 	.long	0
 	.long	0
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(r4oG_info)+176
+	.long	S4YI_srt-(r4jL_info)+176
 	.long	0
 	.long	196630
-r4oG_info:
-.Lc6d3:
+r4jL_info:
+.Lc66r:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc6d4
-.Lc6d5:
+	jb .Lc66s
+.Lc66t:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc6cS
-.Lc6cR:
+	je .Lc66g
+.Lc66f:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c6cT_info,-16(%ebp)
+	movl $c66h_info,-16(%ebp)
 	movl $Expr_factor6_closure,%esi
 	addl $-16,%ebp
 	testw $7,%si
-	jne .Lc6cT
-.Lc6cU:
+	jne .Lc66h
+.Lc66i:
 	jmp *(%esi)
-.Lc6cS:
+.Lc66g:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6cT_info)+176
+	.long	S4YI_srt-(c66h_info)+176
 	.long	0
 	.long	65568
-c6cT_info:
-.Lc6cT:
+c66h_info:
+.Lc66h:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6d1
-.Lc6d2:
+	jae .Lc66p
+.Lc66q:
 	movl $Expr_factor4_closure,%esi
 	addl $4,%ebp
 	jmp *(%esi)
-.Lc6d1:
+.Lc66p:
 	andl $-8,%esi
 	addl $4,%ebp
 	jmp *(%esi)
-.Lc6d4:
+.Lc66s:
 	jmp *-16(%ebx)
 .data
 	.align 4
@@ -7898,44 +7545,44 @@ Expr_factorzuzdsa_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_factorzuzdsa_info)+176
+	.long	S4YI_srt-(Expr_factorzuzdsa_info)+176
 	.long	65539
 	.long	0
 	.long	458767
 .globl Expr_factorzuzdsa_info
 Expr_factorzuzdsa_info:
-.Lc6dq:
+.Lc66O:
 	leal -4(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc6dr
-.Lc6ds:
-	movl $c6dg_info,-4(%ebp)
+	jb .Lc66P
+.Lc66Q:
+	movl $c66E_info,-4(%ebp)
 	movl $Expr_factor6_closure,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6dg
-.Lc6dh:
+	jne .Lc66E
+.Lc66F:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6dg_info)+176
+	.long	S4YI_srt-(c66E_info)+176
 	.long	0
 	.long	65568
-c6dg_info:
-.Lc6dg:
+c66E_info:
+.Lc66E:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6do
-.Lc6dp:
+	jae .Lc66M
+.Lc66N:
 	movl $Expr_factor4_closure,%esi
 	addl $4,%ebp
 	jmp *(%esi)
-.Lc6do:
+.Lc66M:
 	andl $-8,%esi
 	addl $4,%ebp
 	jmp *(%esi)
-.Lc6dr:
+.Lc66P:
 	movl $Expr_factorzuzdsa_closure,%esi
 	jmp *-8(%ebx)
 .data
@@ -7948,68 +7595,68 @@ Expr_factor3_closure:
 .section .data
 	.align 4
 .align 1
-u6r7_srtd:
-	.long	S54c_srt+16
+u6kv_srtd:
+	.long	S4YI_srt+16
 	.long	44
 	.long	1
 	.long	2944
 .section .data
 	.align 4
 .align 1
-u6r8_srtd:
-	.long	S54c_srt+16
+u6kw_srtd:
+	.long	S4YI_srt+16
 	.long	45
 	.long	1
 	.long	7040
 .section .data
 	.align 4
 .align 1
-u6r9_srtd:
-	.long	S54c_srt+16
+u6kx_srtd:
+	.long	S4YI_srt+16
 	.long	44
 	.long	1
 	.long	2176
 .text
 	.align 4,0x90
-	.long	u6r8_srtd-(Expr_factor3_info)+0
+	.long	u6kw_srtd-(Expr_factor3_info)+0
 	.long	65541
 	.long	0
 	.long	-65521
 .globl Expr_factor3_info
 Expr_factor3_info:
-.Lc6dN:
+.Lc67b:
 	movl 8(%ebx),%eax
 	leal -16(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc6dO
-.Lc6dP:
-	movl $c6dD_info,-4(%ebp)
+	jb .Lc67c
+.Lc67d:
+	movl $c671_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6dD
-.Lc6dE:
+	jne .Lc671
+.Lc672:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	u6r7_srtd-(c6dD_info)+0
+	.long	u6kv_srtd-(c671_info)+0
 	.long	0
 	.long	-65504
-c6dD_info:
-.Lc6dD:
+c671_info:
+.Lc671:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6dL
-.Lc6dM:
-	movl $c6dS_info,(%ebp)
+	jae .Lc679
+.Lc67a:
+	movl $c67g_info,(%ebp)
 	movl $Expr_factor6_closure,%esi
 	testw $7,%si
-	jne .Lc6dS
-.Lc6dU:
+	jne .Lc67g
+.Lc67i:
 	jmp *(%esi)
-.Lc6dL:
-	movl $c6eb_info,-8(%ebp)
+.Lc679:
+	movl $c67z_info,-8(%ebp)
 	movl %esi,%eax
 	movl 6(%esi),%ecx
 	movl 2(%esi),%esi
@@ -8017,175 +7664,175 @@ c6dD_info:
 	movl %eax,(%ebp)
 	addl $-8,%ebp
 	testw $7,%si
-	jne .Lc6eb
-.Lc6ed:
+	jne .Lc67z
+.Lc67B:
 	jmp *(%esi)
-.Lc6dO:
+.Lc67c:
 	movl %eax,8(%ebx)
 	movl $Expr_factor3_closure,%esi
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6dS_info)+176
+	.long	S4YI_srt-(c67g_info)+176
 	.long	0
 	.long	65568
-c6dS_info:
-.Lc6dS:
+c67g_info:
+.Lc67g:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6e7
-.Lc6e8:
+	jae .Lc67v
+.Lc67w:
 	movl $Expr_factor4_closure,%esi
 	addl $4,%ebp
 	jmp *(%esi)
-.Lc6e7:
+.Lc67v:
 	andl $-8,%esi
 	addl $4,%ebp
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	u6r9_srtd-(c6eb_info)+0
+	.long	u6kx_srtd-(c67z_info)+0
 	.long	2
 	.long	-65504
-c6eb_info:
-.Lc6eb:
+c67z_info:
+.Lc67z:
 	cmpl $40,3(%esi)
-	jne .Lc6em
-.Lc6eD:
+	jne .Lc67K
+.Lc681:
 	movl 4(%ebp),%eax
-	movl $c6eC_info,4(%ebp)
+	movl $c680_info,4(%ebp)
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_expr1_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6ek_info)+196
+	.long	S4YI_srt-(c67I_info)+196
 	.long	1
 	.long	65568
-c6ek_info:
-.Lc6ek:
+c67I_info:
+.Lc67I:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Lc6eA
-.Lc6ez:
+	jb .Lc67Y
+.Lc67X:
 	andl $-8,%esi
 	addl $8,%ebp
 	jmp *(%esi)
-.Lc6em:
-	movl $c6ek_info,4(%ebp)
+.Lc67K:
+	movl $c67I_info,4(%ebp)
 	movl 8(%ebp),%eax
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_factor7_info
-.Lc6eA:
+.Lc67Y:
 	movl %eax,8(%ebx)
 	addl $8,%ebp
 	jmp Expr_factor8_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6eC_info)+172
+	.long	S4YI_srt-(c680_info)+172
 	.long	1
 	.long	4259872
-c6eC_info:
-.Lc6eC:
+c680_info:
+.Lc680:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6gb
-.Lc6gc:
-	movl $c6eH_info,(%ebp)
+	jae .Lc69z
+.Lc69A:
+	movl $c685_info,(%ebp)
 	movl 4(%ebp),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_factor7_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6eH_info)+196
+	.long	S4YI_srt-(c685_info)+196
 	.long	1
 	.long	65568
-c6eH_info:
-.Lc6eH:
+c685_info:
+.Lc685:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Lc6eA
-.Lc6eX:
+	jb .Lc67Y
+.Lc68l:
 	andl $-8,%esi
 	addl $8,%ebp
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6f1_info)+172
+	.long	S4YI_srt-(c68p_info)+172
 	.long	1
 	.long	4259872
-c6f1_info:
-.Lc6f1:
-	movl $c6f8_info,-4(%ebp)
+c68p_info:
+.Lc68p:
+	movl $c68w_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl 7(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6f8
-.Lc6fa:
+	jne .Lc68w
+.Lc68y:
 	jmp *(%esi)
-.Lc6gb:
-	movl $c6f1_info,(%ebp)
+.Lc69z:
+	movl $c68p_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc6f1
-.Lc6f4:
+	jne .Lc68p
+.Lc68s:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6f8_info)+172
+	.long	S4YI_srt-(c68w_info)+172
 	.long	2
 	.long	4259872
-c6f8_info:
-.Lc6f8:
+c68w_info:
+.Lc68w:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6g7
-.Lc6g8:
-	movl $c6fe_info,4(%ebp)
+	jae .Lc69v
+.Lc69w:
+	movl $c68C_info,4(%ebp)
 	movl 8(%ebp),%eax
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_factor7_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6fe_info)+196
+	.long	S4YI_srt-(c68C_info)+196
 	.long	1
 	.long	65568
-c6fe_info:
-.Lc6fe:
+c68C_info:
+.Lc68C:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Lc6eA
-.Lc6fu:
+	jb .Lc67Y
+.Lc68S:
 	andl $-8,%esi
 	addl $8,%ebp
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6fy_info)+172
+	.long	S4YI_srt-(c68W_info)+172
 	.long	3
 	.long	4259872
-c6fy_info:
-.Lc6fy:
+c68W_info:
+.Lc68W:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6fH
-.Lc6fG:
+	ja .Lc695
+.Lc694:
 	cmpl $41,3(%esi)
-	jne .Lc6fM
-.Lc6g4:
+	jne .Lc69a
+.Lc69s:
 	movl $ghczmprim_GHCziTuple_Z2T_con_info,-16(%edi)
 	movl 8(%ebp),%eax
 	movl %eax,-12(%edi)
@@ -8197,38 +7844,38 @@ c6fy_info:
 	leal -2(%edi),%esi
 	addl $16,%ebp
 	jmp *(%ebp)
-.Lc6g7:
-	movl $c6fy_info,-4(%ebp)
+.Lc69v:
+	movl $c68W_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6fy
-.Lc6fB:
+	jne .Lc68W
+.Lc68Z:
 	jmp *(%esi)
-.Lc6fH:
+.Lc695:
 	movl $20,904(%ebx)
 	jmp stg_gc_unpt_r1
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6fK_info)+196
+	.long	S4YI_srt-(c698_info)+196
 	.long	1
 	.long	65568
-c6fK_info:
-.Lc6fK:
+c698_info:
+.Lc698:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Lc6eA
-.Lc6fZ:
+	jb .Lc67Y
+.Lc69n:
 	andl $-8,%esi
 	addl $8,%ebp
 	jmp *(%esi)
-.Lc6fM:
+.Lc69a:
 	addl $-20,%edi
-	movl $c6fK_info,8(%ebp)
+	movl $c698_info,8(%ebp)
 	movl 12(%ebp),%eax
 	movl %eax,8(%ebx)
 	addl $8,%ebp
@@ -8242,140 +7889,140 @@ Expr_term1_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_term1_info)+192
+	.long	S4YI_srt-(Expr_term1_info)+192
 	.long	65541
 	.long	0
 	.long	851983
 .globl Expr_term1_info
 Expr_term1_info:
-.Lc6gq:
+.Lc69O:
 	movl 8(%ebx),%eax
 	leal -16(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc6gr
-.Lc6gs:
-	movl $c6gh_info,-8(%ebp)
+	jb .Lc69P
+.Lc69Q:
+	movl $c69F_info,-8(%ebp)
 	movl %eax,8(%ebx)
 	movl %eax,-4(%ebp)
 	addl $-8,%ebp
 	jmp Expr_factor3_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6gh_info)+200
+	.long	S4YI_srt-(c69F_info)+200
 	.long	1
 	.long	196640
-c6gh_info:
-.Lc6gh:
+c69F_info:
+.Lc69F:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6go
-.Lc6gp:
+	jae .Lc69M
+.Lc69N:
 	movl 4(%ebp),%eax
-	movl $c6gv_info,4(%ebp)
+	movl $c69T_info,4(%ebp)
 	movl %eax,%esi
 	addl $4,%ebp
 	testw $7,%si
-	jne .Lc6gv
-.Lc6gx:
+	jne .Lc69T
+.Lc69V:
 	jmp *(%esi)
-.Lc6go:
-	movl $c6i0_info,(%ebp)
+.Lc69M:
+	movl $c6bo_info,(%ebp)
 	movl %esi,%eax
 	movl 2(%esi),%esi
 	movl %eax,4(%ebp)
 	testw $7,%si
-	jne .Lc6i0
-.Lc6i2:
+	jne .Lc6bo
+.Lc6bq:
 	jmp *(%esi)
-.Lc6gr:
+.Lc69P:
 	movl %eax,8(%ebx)
 	movl $Expr_term1_closure,%esi
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6gv_info)+200
+	.long	S4YI_srt-(c69T_info)+200
 	.long	0
 	.long	196640
-c6gv_info:
-.Lc6gv:
+c69T_info:
+.Lc69T:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6hW
-.Lc6hX:
-	movl $r4oG_closure,%esi
+	jae .Lc6bk
+.Lc6bl:
+	movl $r4jL_closure,%esi
 	addl $4,%ebp
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6gG_info)+200
+	.long	S4YI_srt-(c6a4_info)+200
 	.long	1
 	.long	65568
-c6gG_info:
-.Lc6gG:
+c6a4_info:
+.Lc6a4:
 	cmpl $120,3(%esi)
-	jne .Lc6gQ
-.Lc6gU:
+	jne .Lc6ae
+.Lc6ai:
 	movl 4(%ebp),%eax
-	movl $c6gT_info,4(%ebp)
+	movl $c6ah_info,4(%ebp)
 	movl %eax,%esi
 	addl $4,%ebp
 	testw $7,%si
-	jne .Lc6gT
-.Lc6gV:
+	jne .Lc6ah
+.Lc6aj:
 	jmp *(%esi)
-.Lc6hW:
-	movl $c6gG_info,-4(%ebp)
+.Lc6bk:
+	movl $c6a4_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6gG
-.Lc6gJ:
+	jne .Lc6a4
+.Lc6a7:
 	jmp *(%esi)
-.Lc6gQ:
+.Lc6ae:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $8,%ebp
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6gT_info)+200
+	.long	S4YI_srt-(c6ah_info)+200
 	.long	0
 	.long	65568
-c6gT_info:
-.Lc6gT:
+c6ah_info:
+.Lc6ah:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6hS
-.Lc6hT:
-	movl $r4oF_closure+2,%esi
+	jae .Lc6bg
+.Lc6bh:
+	movl $r4jK_closure+2,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6h4_info)+200
+	.long	S4YI_srt-(c6as_info)+200
 	.long	2
 	.long	65568
-c6h4_info:
-.Lc6h4:
+c6as_info:
+.Lc6as:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6hd
-.Lc6hc:
+	ja .Lc6aB
+.Lc6aA:
 	cmpl $42,3(%esi)
-	jne .Lc6hj
-.Lc6hm:
+	jne .Lc6aH
+.Lc6aK:
 	addl $-20,%edi
 	movl 4(%ebp),%eax
-	movl $c6hl_info,4(%ebp)
+	movl $c6aJ_info,4(%ebp)
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_term1_info
-.Lc6hS:
-	movl $c6h4_info,-8(%ebp)
+.Lc6bg:
+	movl $c6as_info,-8(%ebp)
 	movl %esi,%eax
 	movl 6(%esi),%ecx
 	movl 2(%esi),%esi
@@ -8383,13 +8030,13 @@ c6h4_info:
 	movl %eax,(%ebp)
 	addl $-8,%ebp
 	testw $7,%si
-	jne .Lc6h4
-.Lc6h7:
+	jne .Lc6as
+.Lc6av:
 	jmp *(%esi)
-.Lc6hd:
+.Lc6aB:
 	movl $20,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc6hj:
+.Lc6aH:
 	movl $ghczmprim_GHCziTuple_Z2T_con_info,-16(%edi)
 	movl $Expr_X_closure+4,-12(%edi)
 	movl 8(%ebp),%eax
@@ -8404,17 +8051,17 @@ c6h4_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c6hl_info:
-.Lc6hl:
+c6aJ_info:
+.Lc6aJ:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6hO
-.Lc6hP:
+	jae .Lc6bc
+.Lc6bd:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6hw
-.Lc6hv:
+	ja .Lc6aU
+.Lc6aT:
 	movl $ghczmprim_GHCziTuple_Z2T_con_info,-16(%edi)
 	movl $Expr_X_closure+4,-12(%edi)
 	movl 4(%ebp),%eax
@@ -8425,19 +8072,19 @@ c6hl_info:
 	leal -2(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc6hw:
+.Lc6aU:
 	movl $20,904(%ebx)
 	jmp stg_gc_unpt_r1
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c6hz_info:
-.Lc6hz:
+c6aX_info:
+.Lc6aX:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6hL
-.Lc6hK:
+	ja .Lc6b9
+.Lc6b8:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
 	movl $Expr_Mul_con_info,-28(%edi)
@@ -8453,74 +8100,74 @@ c6hz_info:
 	leal -2(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc6hO:
-	movl $c6hz_info,4(%ebp)
+.Lc6bc:
+	movl $c6aX_info,4(%ebp)
 	movl 2(%esi),%esi
 	addl $4,%ebp
 	testw $7,%si
-	jne .Lc6hz
-.Lc6hA:
+	jne .Lc6aX
+.Lc6aY:
 	jmp *(%esi)
-.Lc6hL:
+.Lc6b9:
 	movl $32,904(%ebx)
 	jmp stg_gc_unpt_r1
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6i0_info)+200
+	.long	S4YI_srt-(c6bo_info)+200
 	.long	1
 	.long	65568
-c6i0_info:
-.Lc6i0:
-	movl $c6i6_info,-4(%ebp)
+c6bo_info:
+.Lc6bo:
+	movl $c6bu_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl 7(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6i6
-.Lc6i8:
+	jne .Lc6bu
+.Lc6bw:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6i6_info)+200
+	.long	S4YI_srt-(c6bu_info)+200
 	.long	2
 	.long	65568
-c6i6_info:
-.Lc6i6:
+c6bu_info:
+.Lc6bu:
 	movl 8(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Lc6ir
-.Lc6iX:
-	movl $c6ih_info,-4(%ebp)
+	jb .Lc6bP
+.Lc6cl:
+	movl $c6bF_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6ih
-.Lc6ik:
+	jne .Lc6bF
+.Lc6bI:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6ih_info)+200
+	.long	S4YI_srt-(c6bF_info)+200
 	.long	3
 	.long	65568
-c6ih_info:
-.Lc6ih:
+c6bF_info:
+.Lc6bF:
 	cmpl $42,3(%esi)
-	jne .Lu6iZ
-.Lc6iv:
+	jne .Lu6cn
+.Lc6bT:
 	movl 4(%ebp),%eax
-	movl $c6iu_info,4(%ebp)
+	movl $c6bS_info,4(%ebp)
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_term1_info
-.Lu6iZ:
+.Lu6cn:
 	movl 12(%ebp),%eax
 	addl $4,%ebp
-.Lc6ir:
+.Lc6bP:
 	movl %eax,%esi
 	andl $-8,%esi
 	addl $12,%ebp
@@ -8529,30 +8176,30 @@ c6ih_info:
 	.align 4,0x90
 	.long	2
 	.long	32
-c6iu_info:
-.Lc6iu:
+c6bS_info:
+.Lc6bS:
 	movl 8(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Lc6ir
-.Lc6iT:
-	movl $c6iE_info,(%ebp)
+	jb .Lc6bP
+.Lc6ch:
+	movl $c6c2_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc6iE
-.Lc6iF:
+	jne .Lc6c2
+.Lc6c3:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	130
 	.long	32
-c6iE_info:
-.Lc6iE:
+c6c2_info:
+.Lc6c2:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6iQ
-.Lc6iP:
+	ja .Lc6ce
+.Lc6cd:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
 	movl $Expr_Mul_con_info,-28(%edi)
@@ -8569,7 +8216,7 @@ c6iE_info:
 	leal -2(%edi),%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc6iQ:
+.Lc6ce:
 	movl $32,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
@@ -8581,108 +8228,108 @@ Expr_expr1_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_expr1_info)+188
+	.long	S4YI_srt-(Expr_expr1_info)+188
 	.long	65541
 	.long	0
 	.long	589839
 .globl Expr_expr1_info
 Expr_expr1_info:
-.Lc6jd:
+.Lc6cB:
 	movl 8(%ebx),%eax
 	leal -16(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc6je
-.Lc6jf:
-	movl $c6j4_info,-4(%ebp)
+	jb .Lc6cC
+.Lc6cD:
+	movl $c6cs_info,-4(%ebp)
 	movl %eax,8(%ebx)
 	addl $-4,%ebp
 	jmp Expr_term1_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6j4_info)+188
+	.long	S4YI_srt-(c6cs_info)+188
 	.long	0
 	.long	65568
-c6j4_info:
-.Lc6j4:
+c6cs_info:
+.Lc6cs:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6jb
-.Lc6jc:
+	jae .Lc6cz
+.Lc6cA:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc6jb:
-	movl $c6jl_info,-4(%ebp)
+.Lc6cz:
+	movl $c6cJ_info,-4(%ebp)
 	movl %esi,%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6jl
-.Lc6jn:
+	jne .Lc6cJ
+.Lc6cL:
 	jmp *(%esi)
-.Lc6je:
+.Lc6cC:
 	movl %eax,8(%ebx)
 	movl $Expr_expr1_closure,%esi
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6jl_info)+188
+	.long	S4YI_srt-(c6cJ_info)+188
 	.long	1
 	.long	65568
-c6jl_info:
-.Lc6jl:
-	movl $c6jr_info,-4(%ebp)
+c6cJ_info:
+.Lc6cJ:
+	movl $c6cP_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl 7(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6jr
-.Lc6jt:
+	jne .Lc6cP
+.Lc6cR:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6jr_info)+188
+	.long	S4YI_srt-(c6cP_info)+188
 	.long	2
 	.long	65568
-c6jr_info:
-.Lc6jr:
+c6cP_info:
+.Lc6cP:
 	movl 8(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Lc6jM
-.Lc6ki:
-	movl $c6jC_info,-4(%ebp)
+	jb .Lc6da
+.Lc6dG:
+	movl $c6d0_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6jC
-.Lc6jF:
+	jne .Lc6d0
+.Lc6d3:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6jC_info)+188
+	.long	S4YI_srt-(c6d0_info)+188
 	.long	3
 	.long	65568
-c6jC_info:
-.Lc6jC:
+c6d0_info:
+.Lc6d0:
 	cmpl $43,3(%esi)
-	jne .Lu6kk
-.Lc6jQ:
+	jne .Lu6dI
+.Lc6de:
 	movl 4(%ebp),%eax
-	movl $c6jP_info,4(%ebp)
+	movl $c6dd_info,4(%ebp)
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_expr1_info
-.Lu6kk:
+.Lu6dI:
 	movl 12(%ebp),%eax
 	addl $4,%ebp
-.Lc6jM:
+.Lc6da:
 	movl %eax,%esi
 	andl $-8,%esi
 	addl $12,%ebp
@@ -8691,30 +8338,30 @@ c6jC_info:
 	.align 4,0x90
 	.long	2
 	.long	32
-c6jP_info:
-.Lc6jP:
+c6dd_info:
+.Lc6dd:
 	movl 8(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Lc6jM
-.Lc6ke:
-	movl $c6jZ_info,(%ebp)
+	jb .Lc6da
+.Lc6dC:
+	movl $c6dn_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc6jZ
-.Lc6k0:
+	jne .Lc6dn
+.Lc6do:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	130
 	.long	32
-c6jZ_info:
-.Lc6jZ:
+c6dn_info:
+.Lc6dn:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6kb
-.Lc6ka:
+	ja .Lc6dz
+.Lc6dy:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
 	movl $Expr_Add_con_info,-28(%edi)
@@ -8731,7 +8378,7 @@ c6jZ_info:
 	leal -2(%edi),%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc6kb:
+.Lc6dz:
 	movl $32,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
@@ -8743,250 +8390,250 @@ Expr_factor7_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_factor7_info)+168
+	.long	S4YI_srt-(Expr_factor7_info)+168
 	.long	65541
 	.long	0
 	.long	2293775
 .globl Expr_factor7_info
 Expr_factor7_info:
-.Lc6lL:
+.Lc6f9:
 	movl 8(%ebx),%eax
 	leal -16(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc6lM
-.Lc6lN:
-	movl $c6lC_info,-8(%ebp)
+	jb .Lc6fa
+.Lc6fb:
+	movl $c6f0_info,-8(%ebp)
 	movl %eax,8(%ebx)
 	movl %eax,-4(%ebp)
 	addl $-8,%ebp
 	jmp Expr_funcName2_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6lC_info)+168
+	.long	S4YI_srt-(c6f0_info)+168
 	.long	1
 	.long	2293792
-c6lC_info:
-.Lc6lC:
+c6f0_info:
+.Lc6f0:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Ls4Zg
-.Lc6lJ:
-	movl $c6pn_info,(%ebp)
+	jb .Ls4TM
+.Lc6f7:
+	movl $c6iL_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc6pn
-.Lc6pp:
+	jne .Lc6iL
+.Lc6iN:
 	jmp *(%esi)
-.Lc6lM:
+.Lc6fa:
 	movl %eax,8(%ebx)
 	movl $Expr_factor7_closure,%esi
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6lT_info)+172
+	.long	S4YI_srt-(c6fh_info)+172
 	.long	1
 	.long	1114144
-c6lT_info:
-.Lc6lT:
+c6fh_info:
+.Lc6fh:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
 	andl $7,%ecx
 	cmpl $2,%ecx
-	jb .Ls4Zi
-.Lc6pg:
-	movl $c6oe_info,(%ebp)
+	jb .Ls4TO
+.Lc6iE:
+	movl $c6hC_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc6oe
-.Lc6oh:
+	jne .Lc6hC
+.Lc6hF:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6lY_info)+188
+	.long	S4YI_srt-(c6fm_info)+188
 	.long	0
 	.long	65568
-c6lY_info:
-.Lc6lY:
+c6fm_info:
+.Lc6fm:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc6mA
-.Lc6o4:
-	movl $c6m8_info,(%ebp)
+	jb .Lc6fY
+.Lc6hs:
+	movl $c6fw_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc6m8
-.Lc6mb:
+	jne .Lc6fw
+.Lc6fz:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6m8_info)+188
+	.long	S4YI_srt-(c6fw_info)+188
 	.long	0
 	.long	65568
-c6m8_info:
-.Lc6m8:
-	movl $c6mf_info,-4(%ebp)
+c6fw_info:
+.Lc6fw:
+	movl $c6fD_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl 7(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6mf
-.Lc6mh:
+	jne .Lc6fD
+.Lc6fF:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6mf_info)+188
+	.long	S4YI_srt-(c6fD_info)+188
 	.long	1
 	.long	65568
-c6mf_info:
-.Lc6mf:
+c6fD_info:
+.Lc6fD:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6o0
-.Lu6r1:
+	jae .Lc6ho
+.Lu6kp:
 	addl $4,%ebp
-.Lc6mA:
+.Lc6fY:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6mq_info)+188
+	.long	S4YI_srt-(c6fO_info)+188
 	.long	2
 	.long	65568
-c6mq_info:
-.Lc6mq:
+c6fO_info:
+.Lc6fO:
 	cmpl $32,3(%esi)
-	jne .Lu6r2
-.Lc6mE:
+	jne .Lu6kq
+.Lc6g2:
 	movl 4(%ebp),%eax
-	movl $c6mD_info,4(%ebp)
+	movl $c6g1_info,4(%ebp)
 	movl %eax,%esi
 	addl $4,%ebp
 	testw $7,%si
-	jne .Lc6mD
-.Lc6mF:
+	jne .Lc6g1
+.Lc6g3:
 	jmp *(%esi)
-.Lc6o0:
-	movl $c6mq_info,-4(%ebp)
+.Lc6ho:
+	movl $c6fO_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6mq
-.Lc6mt:
+	jne .Lc6fO
+.Lc6fR:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	2
 	.long	32
-c6ni_info:
-.Lc6ni:
+c6gG_info:
+.Lc6gG:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6nO
-.Lu6r6:
+	jae .Lc6hc
+.Lu6ku:
 	addl $8,%ebp
-	jmp .Lc6mA
+	jmp .Lc6fY
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c6n1_info:
-.Lc6n1:
+c6gp_info:
+.Lc6gp:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6nS
-.Lu6r5:
+	jae .Lc6hg
+.Lu6kt:
 	addl $4,%ebp
-	jmp .Lc6mA
-.Lu6r4:
+	jmp .Lc6fY
+.Lu6ks:
 	addl $8,%ebp
-	jmp .Lc6mA
+	jmp .Lc6fY
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6mD_info)+188
+	.long	S4YI_srt-(c6g1_info)+188
 	.long	1
 	.long	65568
-c6mD_info:
-.Lc6mD:
+c6g1_info:
+.Lc6g1:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6nW
-.Lu6r3:
+	jae .Lc6hk
+.Lu6kr:
 	addl $4,%ebp
-	jmp .Lc6mA
-.Lu6r2:
+	jmp .Lc6fY
+.Lu6kq:
 	addl $8,%ebp
-	jmp .Lc6mA
+	jmp .Lc6fY
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6mO_info)+188
+	.long	S4YI_srt-(c6gc_info)+188
 	.long	2
 	.long	65568
-c6mO_info:
-.Lc6mO:
+c6gc_info:
+.Lc6gc:
 	cmpl $40,3(%esi)
-	jne .Lu6r4
-.Lc6n2:
+	jne .Lu6ks
+.Lc6gq:
 	movl 4(%ebp),%eax
-	movl $c6n1_info,4(%ebp)
+	movl $c6gp_info,4(%ebp)
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_expr1_info
-.Lc6nW:
-	movl $c6mO_info,-4(%ebp)
+.Lc6hk:
+	movl $c6gc_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6mO
-.Lc6mR:
+	jne .Lc6gc
+.Lc6gf:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c6nb_info:
-.Lc6nb:
-	movl $c6ni_info,-4(%ebp)
+c6gz_info:
+.Lc6gz:
+	movl $c6gG_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl 7(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6ni
-.Lc6nk:
+	jne .Lc6gG
+.Lc6gI:
 	jmp *(%esi)
-.Lc6nS:
-	movl $c6nb_info,(%ebp)
+.Lc6hg:
+	movl $c6gz_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc6nb
-.Lc6ne:
+	jne .Lc6gz
+.Lc6gC:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	3
 	.long	32
-c6nt_info:
-.Lc6nt:
+c6gR_info:
+.Lc6gR:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6nC
-.Lc6nB:
+	ja .Lc6h0
+.Lc6gZ:
 	cmpl $41,3(%esi)
-	jne .Lc6nF
-.Lc6nL:
+	jne .Lc6h3
+.Lc6h9:
 	movl $Expr_Function_con_info,-28(%edi)
 	movl 12(%ebp),%eax
 	movl %eax,-24(%edi)
@@ -9003,104 +8650,104 @@ c6nt_info:
 	leal -2(%edi),%esi
 	addl $16,%ebp
 	jmp *(%ebp)
-.Lc6nO:
-	movl $c6nt_info,-4(%ebp)
+.Lc6hc:
+	movl $c6gR_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6nt
-.Lc6nw:
+	jne .Lc6gR
+.Lc6gU:
 	jmp *(%esi)
-.Lc6nC:
+.Lc6h0:
 	movl $32,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc6nF:
+.Lc6h3:
 	addl $-32,%edi
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $16,%ebp
 	jmp *(%ebp)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6oe_info)+172
+	.long	S4YI_srt-(c6hC_info)+172
 	.long	1
 	.long	1114144
-c6oe_info:
-.Lc6oe:
-	movl $c6ol_info,-4(%ebp)
+c6hC_info:
+.Lc6hC:
+	movl $c6hJ_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl 7(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6ol
-.Lc6on:
+	jne .Lc6hJ
+.Lc6hL:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6ol_info)+172
+	.long	S4YI_srt-(c6hJ_info)+172
 	.long	2
 	.long	1114144
-c6ol_info:
-.Lc6ol:
+c6hJ_info:
+.Lc6hJ:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lu6qY
-.Lc6pc:
-	movl $c6ow_info,-4(%ebp)
+	jb .Lu6km
+.Lc6iA:
+	movl $c6hU_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6ow
-.Lc6oz:
+	jne .Lc6hU
+.Lc6hX:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6ow_info)+172
+	.long	S4YI_srt-(c6hU_info)+172
 	.long	3
 	.long	1114144
-c6ow_info:
-.Lc6ow:
+c6hU_info:
+.Lc6hU:
 	cmpl $32,3(%esi)
-	jne .Lu6qZ
-.Lc6oK:
+	jne .Lu6kn
+.Lc6i8:
 	movl 4(%ebp),%eax
-	movl $c6oJ_info,4(%ebp)
+	movl $c6i7_info,4(%ebp)
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_factor7_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6oJ_info)+188
+	.long	S4YI_srt-(c6i7_info)+188
 	.long	2
 	.long	65568
-c6oJ_info:
-.Lc6oJ:
+c6i7_info:
+.Lc6i7:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lu6r0
-.Lc6p8:
-	movl $c6oT_info,(%ebp)
+	jb .Lu6ko
+.Lc6iw:
+	movl $c6ih_info,(%ebp)
 	movl 2(%esi),%esi
 	testw $7,%si
-	jne .Lc6oT
-.Lc6oU:
+	jne .Lc6ih
+.Lc6ii:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	130
 	.long	32
-c6oT_info:
-.Lc6oT:
+c6ih_info:
+.Lc6ih:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6p5
-.Lc6p4:
+	ja .Lc6it
+.Lc6is:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
 	movl $Expr_Function_con_info,-28(%edi)
@@ -9117,116 +8764,116 @@ c6oT_info:
 	leal -2(%edi),%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc6p5:
+.Lc6it:
 	movl $32,904(%ebx)
 	jmp stg_gc_unpt_r1
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6pn_info)+168
+	.long	S4YI_srt-(c6iL_info)+168
 	.long	1
 	.long	2293792
-c6pn_info:
-.Lc6pn:
-	movl $c6pt_info,-4(%ebp)
+c6iL_info:
+.Lc6iL:
+	movl $c6iR_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl 7(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6pt
-.Lc6pv:
+	jne .Lc6iR
+.Lc6iT:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6pt_info)+168
+	.long	S4YI_srt-(c6iR_info)+168
 	.long	2
 	.long	2293792
-c6pt_info:
-.Lc6pt:
+c6iR_info:
+.Lc6iR:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lu6qU
-.Lc6qS:
-	movl $c6pE_info,-4(%ebp)
+	jb .Lu6ki
+.Lc6kg:
+	movl $c6j2_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6pE
-.Lc6pH:
+	jne .Lc6j2
+.Lc6j5:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6pE_info)+168
+	.long	S4YI_srt-(c6j2_info)+168
 	.long	3
 	.long	2293792
-c6pE_info:
-.Lc6pE:
+c6j2_info:
+.Lc6j2:
 	cmpl $32,3(%esi)
-	jne .Lu6qV
-.Lc6pS:
-	movl $c6pR_info,(%ebp)
+	jne .Lu6kj
+.Lc6jg:
+	movl $c6jf_info,(%ebp)
 	movl 4(%ebp),%eax
 	movl %eax,16(%ebx)
 	movl $Expr_factor5_closure,8(%ebx)
 	jmp base_TextziParserCombinatorsziReadP_run_info
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6pR_info)+172
+	.long	S4YI_srt-(c6jf_info)+172
 	.long	3
 	.long	1114144
-c6pR_info:
-.Lc6pR:
+c6jf_info:
+.Lc6jf:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6qO
-.Lc6qP:
+	jae .Lc6kc
+.Lc6kd:
 	movl 4(%ebp),%eax
-	movl $c6pW_info,4(%ebp)
+	movl $c6jk_info,4(%ebp)
 	movl %eax,%esi
 	addl $4,%ebp
 	testw $7,%si
-	jne .Lc6pW
-.Lc6q0:
+	jne .Lc6jk
+.Lc6jo:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6pW_info)+172
+	.long	S4YI_srt-(c6jk_info)+172
 	.long	2
 	.long	1114144
-c6pW_info:
-.Lc6pW:
+c6jk_info:
+.Lc6jk:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lu6qW
-.Lc6qu:
-	movl $c6q9_info,-4(%ebp)
+	jb .Lu6kk
+.Lc6jS:
+	movl $c6jx_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc6q9
-.Lc6qc:
+	jne .Lc6jx
+.Lc6jA:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(c6q9_info)+172
+	.long	S4YI_srt-(c6jx_info)+172
 	.long	3
 	.long	1114144
-c6q9_info:
-.Lc6q9:
+c6jx_info:
+.Lc6jx:
 	addl $32,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6qi
-.Lc6qh:
+	ja .Lc6jG
+.Lc6jF:
 	cmpl $120,3(%esi)
-	jne .Lc6ql
-.Lc6qr:
+	jne .Lc6jJ
+.Lc6jP:
 	movl $Expr_Function_con_info,-28(%edi)
 	movl 8(%ebp),%eax
 	movl %eax,-24(%edi)
@@ -9242,27 +8889,27 @@ c6q9_info:
 	leal -2(%edi),%esi
 	addl $16,%ebp
 	jmp *(%ebp)
-.Lc6qi:
+.Lc6jG:
 	movl $32,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lc6ql:
+.Lc6jJ:
 	addl $-32,%edi
 	movl 12(%ebp),%eax
 	addl $8,%ebp
-.Ls4Zg:
-	movl $c6lT_info,(%ebp)
+.Ls4TM:
+	movl $c6fh_info,(%ebp)
 	movl %eax,8(%ebx)
 	jmp Expr_funcName2_info
 .text
 	.align 4,0x90
 	.long	130
 	.long	32
-c6qy_info:
-.Lc6qy:
+c6jW_info:
+.Lc6jW:
 	addl $40,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6qL
-.Lc6qK:
+	ja .Lc6k9
+.Lc6k8:
 	movl 3(%esi),%eax
 	movl 7(%esi),%ecx
 	movl $Expr_Num_con_info,-36(%edi)
@@ -9282,45 +8929,45 @@ c6qy_info:
 	leal -2(%edi),%esi
 	addl $12,%ebp
 	jmp *(%ebp)
-.Lc6qO:
-	movl $c6qy_info,4(%ebp)
+.Lc6kc:
+	movl $c6jW_info,4(%ebp)
 	movl 2(%esi),%esi
 	addl $4,%ebp
 	testw $7,%si
-	jne .Lc6qy
-.Lc6qz:
+	jne .Lc6jW
+.Lc6jX:
 	jmp *(%esi)
-.Lc6qL:
+.Lc6k9:
 	movl $40,904(%ebx)
 	jmp stg_gc_unpt_r1
-.Lu6qW:
+.Lu6kk:
 	movl 8(%ebp),%eax
 	addl $4,%ebp
-	jmp .Ls4Zg
-.Lu6qV:
+	jmp .Ls4TM
+.Lu6kj:
 	movl 12(%ebp),%eax
 	addl $8,%ebp
-	jmp .Ls4Zg
-.Lu6qU:
+	jmp .Ls4TM
+.Lu6ki:
 	movl 8(%ebp),%eax
 	addl $4,%ebp
-	jmp .Ls4Zg
-.Lu6r0:
+	jmp .Ls4TM
+.Lu6ko:
 	movl 8(%ebp),%eax
 	addl $4,%ebp
-.Ls4Zi:
-	movl $c6lY_info,4(%ebp)
+.Ls4TO:
+	movl $c6fm_info,4(%ebp)
 	movl %eax,8(%ebx)
 	addl $4,%ebp
 	jmp Expr_funcName2_info
-.Lu6qZ:
+.Lu6kn:
 	movl 12(%ebp),%eax
 	addl $8,%ebp
-	jmp .Ls4Zi
-.Lu6qY:
+	jmp .Ls4TO
+.Lu6km:
 	movl 8(%ebp),%eax
 	addl $4,%ebp
-	jmp .Ls4Zi
+	jmp .Ls4TO
 .data
 	.align 4
 .align 1
@@ -9330,13 +8977,13 @@ Expr_expr_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_expr_info)+188
+	.long	S4YI_srt-(Expr_expr_info)+188
 	.long	65541
 	.long	0
 	.long	65551
 .globl Expr_expr_info
 Expr_expr_info:
-.Lc6tt:
+.Lc6mR:
 	movl 8(%ebx),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_expr1_info
@@ -9349,13 +8996,13 @@ Expr_term_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_term_info)+200
+	.long	S4YI_srt-(Expr_term_info)+200
 	.long	65541
 	.long	0
 	.long	65551
 .globl Expr_term_info
 Expr_term_info:
-.Lc6tF:
+.Lc6n3:
 	movl 8(%ebx),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_term1_info
@@ -9368,19 +9015,19 @@ Expr_factor1_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_factor1_info)+192
+	.long	S4YI_srt-(Expr_factor1_info)+192
 	.long	65541
 	.long	0
 	.long	1114127
 .globl Expr_factor1_info
 Expr_factor1_info:
-.Lc6u4:
+.Lc6ns:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc6u5
-.Lc6u6:
-	movl $c6tV_info,-8(%ebp)
+	jb .Lc6nt
+.Lc6nu:
+	movl $c6nj_info,-8(%ebp)
 	movl %eax,8(%ebx)
 	movl %eax,-4(%ebp)
 	addl $-8,%ebp
@@ -9389,22 +9036,22 @@ Expr_factor1_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c6tV_info:
-.Lc6tV:
+c6nj_info:
+.Lc6nj:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6u2
-.Lc6u3:
+	jae .Lc6nq
+.Lc6nr:
 	movl 4(%ebp),%eax
 	movl %eax,8(%ebx)
 	addl $8,%ebp
 	jmp Expr_factor2_info
-.Lc6u2:
+.Lc6nq:
 	andl $-8,%esi
 	addl $8,%ebp
 	jmp *(%esi)
-.Lc6u5:
+.Lc6nt:
 	movl %eax,8(%ebx)
 	movl $Expr_factor1_closure,%esi
 	jmp *-8(%ebx)
@@ -9417,13 +9064,13 @@ Expr_factor_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_factor_info)+208
+	.long	S4YI_srt-(Expr_factor_info)+208
 	.long	65541
 	.long	0
 	.long	65551
 .globl Expr_factor_info
 Expr_factor_info:
-.Lc6uq:
+.Lc6nO:
 	movl 8(%ebx),%eax
 	movl %eax,8(%ebx)
 	jmp Expr_factor1_info
@@ -9438,35 +9085,35 @@ Expr_readExpr_closure:
 	.align 4,0x90
 	.long	1
 	.long	17
-s50G_info:
-.Lc6v5:
+s4Vc_info:
+.Lc6ot:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc6v6
-.Lc6v7:
+	jb .Lc6ou
+.Lc6ov:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp base_DataziTuple_fst_info
-.Lc6v6:
+.Lc6ou:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S54c_srt-(Expr_readExpr_info)+188
+	.long	S4YI_srt-(Expr_readExpr_info)+188
 	.long	65541
 	.long	0
 	.long	4259855
 .globl Expr_readExpr_info
 Expr_readExpr_info:
-.Lc6vf:
+.Lc6oD:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc6vg
-.Lc6vh:
-	movl $c6uN_info,-4(%ebp)
+	jb .Lc6oE
+.Lc6oF:
+	movl $c6ob_info,-4(%ebp)
 	movl %eax,8(%ebx)
 	addl $-4,%ebp
 	jmp Expr_expr1_info
@@ -9474,14 +9121,14 @@ Expr_readExpr_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c6uN_info:
-.Lc6uN:
+c6ob_info:
+.Lc6ob:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc6vy
-.Lc6vd:
-	movl $c6uS_info,-4(%ebp)
+	jb .Lc6oW
+.Lc6oB:
+	movl $c6og_info,-4(%ebp)
 	movl 2(%esi),%eax
 	movl %eax,8(%ebx)
 	movl %eax,(%ebp)
@@ -9491,9 +9138,9 @@ c6uN_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c6uS_info:
-.Lc6uS:
-	movl $c6uW_info,(%ebp)
+c6og_info:
+.Lc6og:
+	movl $c6ok_info,(%ebp)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,16(%ebx)
 	movl %esi,8(%ebx)
 	jmp ghczmprim_GHCziClasses_zdfEqZMZNzuzdszdczeze1_info
@@ -9501,28 +9148,28 @@ c6uS_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c6uW_info:
-.Lc6uW:
+c6ok_info:
+.Lc6ok:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc6vx
-.Lu6vz:
+	jae .Lc6oV
+.Lu6oX:
 	addl $4,%ebp
-.Lc6vy:
+.Lc6oW:
 	movl $base_GHCziBase_Nothing_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc6vg:
+.Lc6oE:
 	movl %eax,8(%ebx)
 	movl $Expr_readExpr_closure,%esi
 	jmp *-8(%ebx)
-.Lc6vx:
+.Lc6oV:
 	addl $24,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc6vu
-.Lc6vt:
-	movl $s50G_info,-20(%edi)
+	ja .Lc6oS
+.Lc6oR:
+	movl $s4Vc_info,-20(%edi)
 	movl 4(%ebp),%eax
 	movl %eax,-8(%edi)
 	movl $base_GHCziBase_Just_con_info,-4(%edi)
@@ -9531,7 +9178,7 @@ c6uW_info:
 	leal -2(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc6vu:
+.Lc6oS:
 	movl $24,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
@@ -9546,17 +9193,17 @@ Expr_Num_closure:
 	.long	0
 	.long	15
 Expr_Num_info:
-.Lc6vU:
+.Lc6pi:
 	addl $8,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc6vY
-.Lc6vX:
+	ja .Lc6pm
+.Lc6pl:
 	movl $Expr_Num_con_info,-4(%edi)
 	movl %eax,(%edi)
 	leal -3(%edi),%esi
 	jmp *(%ebp)
-.Lc6vY:
+.Lc6pm:
 	movl $8,904(%ebx)
 	movl %eax,8(%ebx)
 	movl $Expr_Num_closure,%esi
@@ -9573,19 +9220,19 @@ Expr_Add_closure:
 	.long	0
 	.long	15
 Expr_Add_info:
-.Lc6w8:
+.Lc6pw:
 	addl $12,%edi
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	cmpl 856(%ebx),%edi
-	ja .Lc6wc
-.Lc6wb:
+	ja .Lc6pA
+.Lc6pz:
 	movl $Expr_Add_con_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
 	leal -6(%edi),%esi
 	jmp *(%ebp)
-.Lc6wc:
+.Lc6pA:
 	movl $12,904(%ebx)
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
@@ -9603,19 +9250,19 @@ Expr_Mul_closure:
 	.long	0
 	.long	15
 Expr_Mul_info:
-.Lc6wm:
+.Lc6pK:
 	addl $12,%edi
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	cmpl 856(%ebx),%edi
-	ja .Lc6wq
-.Lc6wp:
+	ja .Lc6pO
+.Lc6pN:
 	movl $Expr_Mul_con_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
 	leal -5(%edi),%esi
 	jmp *(%ebp)
-.Lc6wq:
+.Lc6pO:
 	movl $12,904(%ebx)
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
@@ -9639,19 +9286,19 @@ Expr_Function_closure:
 	.long	0
 	.long	15
 Expr_Function_info:
-.Lc6wC:
+.Lc6q0:
 	addl $12,%edi
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	cmpl 856(%ebx),%edi
-	ja .Lc6wG
-.Lc6wF:
+	ja .Lc6q4
+.Lc6q3:
 	movl $Expr_Function_con_info,-8(%edi)
 	movl %ecx,-4(%edi)
 	movl %eax,(%edi)
 	leal -3(%edi),%esi
 	jmp *(%ebp)
-.Lc6wG:
+.Lc6q4:
 	movl $12,904(%ebx)
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
@@ -9660,7 +9307,7 @@ Expr_Function_info:
 .section .rodata
 	.align 4
 .align 1
-i6wN_str:
+i6qb_str:
 	.byte	109
 	.byte	97
 	.byte	105
@@ -9677,18 +9324,18 @@ i6wN_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	i6wN_str-(Expr_Num_con_info)+0
+	.long	i6qb_str-(Expr_Num_con_info)+0
 	.long	1
 	.long	2
 .globl Expr_Num_con_info
 Expr_Num_con_info:
-.Lc6wL:
+.Lc6q9:
 	incl %esi
 	jmp *(%ebp)
 .section .rodata
 	.align 4
 .align 1
-i6wO_str:
+i6qc_str:
 	.byte	109
 	.byte	97
 	.byte	105
@@ -9705,18 +9352,18 @@ i6wO_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	i6wO_str-(Expr_Num_static_info)+0
+	.long	i6qc_str-(Expr_Num_static_info)+0
 	.long	1
 	.long	7
 .globl Expr_Num_static_info
 Expr_Num_static_info:
-.Lc6wM:
+.Lc6qa:
 	incl %esi
 	jmp *(%ebp)
 .section .rodata
 	.align 4
 .align 1
-i6wX_str:
+i6ql_str:
 	.byte	109
 	.byte	97
 	.byte	105
@@ -9733,18 +9380,18 @@ i6wX_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	i6wX_str-(Expr_Add_con_info)+0
+	.long	i6ql_str-(Expr_Add_con_info)+0
 	.long	2
 	.long	65540
 .globl Expr_Add_con_info
 Expr_Add_con_info:
-.Lc6wV:
+.Lc6qj:
 	addl $2,%esi
 	jmp *(%ebp)
 .section .rodata
 	.align 4
 .align 1
-i6wY_str:
+i6qm_str:
 	.byte	109
 	.byte	97
 	.byte	105
@@ -9761,18 +9408,18 @@ i6wY_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	i6wY_str-(Expr_Add_static_info)+0
+	.long	i6qm_str-(Expr_Add_static_info)+0
 	.long	2
 	.long	65543
 .globl Expr_Add_static_info
 Expr_Add_static_info:
-.Lc6wW:
+.Lc6qk:
 	addl $2,%esi
 	jmp *(%ebp)
 .section .rodata
 	.align 4
 .align 1
-i6x7_str:
+i6qv_str:
 	.byte	109
 	.byte	97
 	.byte	105
@@ -9789,18 +9436,18 @@ i6x7_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	i6x7_str-(Expr_Mul_con_info)+0
+	.long	i6qv_str-(Expr_Mul_con_info)+0
 	.long	2
 	.long	131076
 .globl Expr_Mul_con_info
 Expr_Mul_con_info:
-.Lc6x5:
+.Lc6qt:
 	addl $3,%esi
 	jmp *(%ebp)
 .section .rodata
 	.align 4
 .align 1
-i6x8_str:
+i6qw_str:
 	.byte	109
 	.byte	97
 	.byte	105
@@ -9817,18 +9464,18 @@ i6x8_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	i6x8_str-(Expr_Mul_static_info)+0
+	.long	i6qw_str-(Expr_Mul_static_info)+0
 	.long	2
 	.long	131079
 .globl Expr_Mul_static_info
 Expr_Mul_static_info:
-.Lc6x6:
+.Lc6qu:
 	addl $3,%esi
 	jmp *(%ebp)
 .section .rodata
 	.align 4
 .align 1
-i6xg_str:
+i6qE_str:
 	.byte	109
 	.byte	97
 	.byte	105
@@ -9843,18 +9490,18 @@ i6xg_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	i6xg_str-(Expr_X_static_info)+0
+	.long	i6qE_str-(Expr_X_static_info)+0
 	.long	0
 	.long	196616
 .globl Expr_X_static_info
 Expr_X_static_info:
-.Lc6xf:
+.Lc6qD:
 	addl $4,%esi
 	jmp *(%ebp)
 .section .rodata
 	.align 4
 .align 1
-i6xm_str:
+i6qK_str:
 	.byte	109
 	.byte	97
 	.byte	105
@@ -9876,18 +9523,18 @@ i6xm_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	i6xm_str-(Expr_Function_con_info)+0
+	.long	i6qK_str-(Expr_Function_con_info)+0
 	.long	2
 	.long	262148
 .globl Expr_Function_con_info
 Expr_Function_con_info:
-.Lc6xk:
+.Lc6qI:
 	addl $5,%esi
 	jmp *(%ebp)
 .section .rodata
 	.align 4
 .align 1
-i6xn_str:
+i6qL_str:
 	.byte	109
 	.byte	97
 	.byte	105
@@ -9909,18 +9556,18 @@ i6xn_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	i6xn_str-(Expr_Function_static_info)+0
+	.long	i6qL_str-(Expr_Function_static_info)+0
 	.long	2
 	.long	262151
 .globl Expr_Function_static_info
 Expr_Function_static_info:
-.Lc6xl:
+.Lc6qJ:
 	addl $5,%esi
 	jmp *(%ebp)
 .section .data
 	.align 4
 .align 1
-S54c_srt:
+S4YI_srt:
 	.long	base_GHCziRead_zdfReadDoublezuzdsconvertFrac_closure
 	.long	base_GHCziRead_zdfReadDouble9_closure
 	.long	Expr_number1_closure
@@ -9928,7 +9575,7 @@ S54c_srt:
 	.long	Expr_factor8_closure
 	.long	base_ControlziExceptionziBase_patError_closure
 	.long	base_GHCziErr_error_closure
-	.long	r4ou_closure
+	.long	r4jz_closure
 	.long	Expr_zdfShowExpr5_closure
 	.long	base_TextziRead_readEither4_closure
 	.long	base_TextziRead_readEither2_closure
@@ -9937,16 +9584,16 @@ S54c_srt:
 	.long	Expr_numberWithDot4_closure
 	.long	Expr_numberWithoutDot1_closure
 	.long	Expr_numberWithDot1_closure
-	.long	Expr_exExpr36_closure
-	.long	Expr_exExpr24_closure
 	.long	Expr_eval_closure
-	.long	r4ov_closure
+	.long	r4jm_closure
+	.long	r4jp_closure
+	.long	r4jA_closure
 	.long	Expr_number1_closure
-	.long	r4ox_closure
+	.long	r4jC_closure
 	.long	Expr_showExpr_closure
 	.long	Expr_showFactorMul_closure
 	.long	Expr_showFactorSin_closure
-	.long	r4ow_closure
+	.long	r4jB_closure
 	.long	Expr_zdfShowExpr8_closure
 	.long	Expr_zdfShowExprzuzdszdcshowsPrec_closure
 	.long	Expr_zdfShowExpr7_closure
@@ -9960,9 +9607,9 @@ S54c_srt:
 	.long	Expr_eval_closure
 	.long	Expr_simplify_closure
 	.long	Expr_differentiate_closure
-	.long	r4or_closure
-	.long	r4oC_closure
-	.long	r4oD_closure
+	.long	r4jq_closure
+	.long	r4jH_closure
+	.long	r4jI_closure
 	.long	Expr_factor5_closure
 	.long	Expr_factor7_closure
 	.long	Expr_factor4_closure
@@ -9972,7 +9619,7 @@ S54c_srt:
 	.long	Expr_factor3_closure
 	.long	Expr_factor8_closure
 	.long	Expr_term1_closure
-	.long	r4oG_closure
+	.long	r4jL_closure
 	.long	Expr_factor1_closure
 	.long	Expr_readExpr_closure
 .ident "GHC 7.10.2"
