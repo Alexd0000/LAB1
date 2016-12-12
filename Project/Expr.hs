@@ -136,6 +136,7 @@ factor = ((factor' <|> func) <|> num)  <|> var
 -- Function that simplifies expressions so that :
 --      - subexpressions not involving variables are always simplified to their smallest representation
 --      - (sub)expressions representing x + 0 , 0 * x and 1 * x and similar terms are always simplified
+--      - sums of multiples of x are combined to one multiple
 
 simplify :: Expr -> Expr
 simplify e | hasVariable e == False = (Num (eval e 0))
@@ -156,7 +157,7 @@ simplify e | hasVariable e == False = (Num (eval e 0))
     simplify' (Function name e) = (Function name (simplify e))
     simplify' (Num n) = (Num n)
     simplify' X = X
-    -- Helper function that search if an expression contain a variable
+    -- Helper function that searches if an expression contains a variable
     hasVariable :: Expr -> Bool
     hasVariable (Num n) = False
     hasVariable X = True

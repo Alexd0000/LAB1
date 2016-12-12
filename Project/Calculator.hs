@@ -53,10 +53,10 @@ saveExpr input hidden = do
 	                        s <- getProp input "value"
 	                        -- instead of doing this we wanted to do nothing but we didn't find out how
 	                        old <- getProp hidden "value"
-	                        case (readExpr s) of 
+	                        case (readExpr s) of
 	                        	Just expr -> setProp hidden "value" s
 	                        	otherwise -> setProp hidden "value" old
-	                        
+
 
 
 
@@ -66,27 +66,26 @@ zoom input can v scale = do
                         stringExpr <- getProp input "value"
                         case (readExpr stringExpr) of
                           Just expr  -> render can (scale v (stroke (path (points expr scale (canWidth, canHeight)))))
-                          Nothing -> setProp input "value" "Err : Wrong expression"                         
+                          Nothing -> setProp input "value" "Err : Wrong expression"
 -}
 
 main = do
     -- Elements
     canvas   <- mkCanvas canWidth canHeight   -- The drawing area
-    fx       <- mkHTML "<i>f</i>(<i>x</i>)="  -- The text "f(x)="
+    fx       <- mkHTML "<i>f</i>(<i>x</i>) = "  -- The text "f(x)="
     input    <- mkInput 20 "x"                -- The formula input
     draw     <- mkButton "Draw graph"         -- The draw button
     space1   <- mkHTML "<br/>"
     space2   <- mkHTML "<br/>"
     space3   <- mkHTML "<br/>"
-    space4   <- mkHTML "<br/>"
-    scaleI    <- mkHTML "Scale ="
+    scaleI    <- mkHTML "Scale = "
 
     zoomScale  <- mkInput 20 "0.04"
     zoomB      <- mkButton "Zoom"
     deZoomB    <- mkButton "Dezoom"
 
     -- Hidden object that will store the input values in order to zoom even if the input field f(x) is empty
-    hidden     <- do 
+    hidden     <- do
                      s <- getProp input "value"
     	             newElem "input" `with` [attr "type"  =: "hidden", attr "value" =: s]
 
@@ -103,9 +102,11 @@ main = do
     formula2 <- mkDiv
     row formula [fx,input]
     row formula2 [scaleI, zoomScale]
+    drawButtons <- mkDiv
+    row drawButtons [draw, diff]
     zoomButtons <- mkDiv
     row zoomButtons [zoomB,deZoomB]
-    column documentBody [canvas,formula,space1,draw,space2,diff,space3,formula2,space4,zoomButtons,hidden]
+    column documentBody [canvas,formula,space1,drawButtons,space2,formula2,space3,zoomButtons,hidden]
 
     -- Styling
     setStyle documentBody "backgroundColor" "rgb(229,172,182)"
@@ -116,13 +117,13 @@ main = do
 
     -- Interaction
     Just can <- getCanvas canvas
-    onEvent draw  Click $ \_    -> do saveExpr input hidden 
+    onEvent draw  Click $ \_    -> do saveExpr input hidden
     	                              readAndDraw input can
 
-    onEvent input KeyUp $ \code -> when (code==13) $  do saveExpr input hidden 
+    onEvent input KeyUp $ \code -> when (code==13) $  do saveExpr input hidden
                                                          readAndDraw input can
 
-    onEvent diff Click $ \_ -> do saveExpr input hidden 
+    onEvent diff Click $ \_ -> do saveExpr input hidden
     	                          showAndDrawDiff input can
 {-
     canvas `onEvent` Click $ \mouse -> do
