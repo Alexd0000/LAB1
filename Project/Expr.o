@@ -1,4 +1,4 @@
-{-# LINE 1 "C:\Users\Allll\AppData\Local\Temp\ghc3008_0\ghc_3.s" #-}
+{-# LINE 1 "C:\Users\Allll\AppData\Local\Temp\ghc4728_0\ghc_3.s" #-}
 .data
 	.align 4
 .align 1
@@ -2374,7 +2374,9 @@ s5eY_info:
 	.align 4
 .align 1
 c5Nr_str:
+	.byte	32
 	.byte	43
+	.byte	32
 	.byte	0
 .text
 	.align 4,0x90
@@ -2844,7 +2846,9 @@ c5PD_info:
 	.align 4
 .align 1
 c5PL_str:
+	.byte	32
 	.byte	43
+	.byte	32
 	.byte	0
 .text
 	.align 4,0x90
@@ -3017,7 +3021,9 @@ c5QJ_info:
 	.align 4
 .align 1
 c5QR_str:
+	.byte	32
 	.byte	43
+	.byte	32
 	.byte	0
 .text
 	.align 4,0x90

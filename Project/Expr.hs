@@ -22,18 +22,18 @@ showExpr (Num f) | f<0 = "("++show f++")"
 showExpr X = "x"
 showExpr (Sin e) = "sin "++ showFactorSin e
 showExpr (Cos e) = "cos "++ showFactorSin e
-showExpr (Add e1 e2) = showExpr e1 ++ "+" ++ showExpr e2
+showExpr (Add e1 e2) = showExpr e1 ++ " + " ++ showExpr e2
 showExpr (Mul e1 e2) = showFactorMul e1 ++ "*" ++ showFactorMul e2
 
 -- Helper function that add parenthesis for case 1 above
 showFactorSin::Expr -> String
-showFactorSin (Add e1 e2) = "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
+showFactorSin (Add e1 e2) = "(" ++ showExpr e1 ++ " + " ++ showExpr e2 ++")"
 showFactorSin (Mul e1 e2) = "(" ++ showFactorMul e1 ++ "*" ++ showFactorMul e2 ++")"
 showFactorSin e = showExpr e
 
 -- Helper function that add parenthesis for case 2 above
 showFactorMul:: Expr -> String
-showFactorMul (Add e1 e2) =  "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
+showFactorMul (Add e1 e2) =  "(" ++ showExpr e1 ++ " + " ++ showExpr e2 ++")"
 showFactorMul e = showExpr e
 
 -- Function that, given an expression, and the value for the variable x, calculates the value of the expression
