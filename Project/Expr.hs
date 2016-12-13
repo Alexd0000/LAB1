@@ -22,17 +22,18 @@ showExpr (Num f) | f<0 = "("++show f++")"
 showExpr X = "x"
 showExpr (Sin e) = "sin "++ showFactorFunc e
 showExpr (Cos e) = "cos "++ showFactorFunc e
-showExpr (Add e1 e2) = showExpr e1 ++ "+" ++ showExpr e2
+showExpr (Add e1 e2) = showExpr e1 ++ " + " ++ showExpr e2
 showExpr (Mul e1 e2) = showFactorMul e1 ++ "*" ++ showFactorMul e2
 
 -- Helper function that add parenthesis for case 1 above
 showFactorFunc::Expr -> String
-showFactorFunc (Add e1 e2) = "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
+showFactorFunc (Add e1 e2) = "(" ++ showExpr e1 ++ " + " ++ showExpr e2 ++")"
 showFactorFunc (Mul e1 e2) = "(" ++ showFactorMul e1 ++ "*" ++ showFactorMul e2 ++")"
 showFactorFunc e = showExpr e
+
 -- Helper function that add parenthesis for case 2 above
 showFactorMul:: Expr -> String
-showFactorMul (Add e1 e2) =  "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
+showFactorMul (Add e1 e2) =  "(" ++ showExpr e1 ++ " + " ++ showExpr e2 ++")"
 showFactorMul e = showExpr e
 
 -- Function that, given an expression, and the value for the variable x,
@@ -89,7 +90,9 @@ expr, term, factor :: Parser Expr
 expr = expr' <|> term
   where
     expr' = do t <- term
+               char ' '
                char '+'
+               char ' '
                e <- expr
                return (Add t e)
 
