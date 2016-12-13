@@ -70,8 +70,8 @@ main = do
     scaleI    <- mkHTML "Scale = "
 
     zoomScale  <- mkInput 20 "0.04"
-    zoomB      <- mkButton "Zoom"
-    deZoomB    <- mkButton "Dezoom"
+    zoomB      <- mkButton "Rescale"
+    deZoomB    <- mkButton "Default scale"
 
     -- Hidden object that will store the input values in order to zoom even if the input field f(x) is empty
     hidden     <- do
@@ -113,13 +113,14 @@ main = do
                                                          readAndDraw input can
 
     onEvent diff Click $ \_ -> do showAndDrawDiff input hidden can
-    
+
     onEvent zoomB Click $ \_ -> do
                                   stringScale <- getProp zoomScale "value"
                                   zoom hidden can (read stringScale::Double)
 
     onEvent canvas DblClick $ \_ -> zoom hidden can 0.04
-    onEvent deZoomB Click $ \_ -> zoom hidden can 0.04
+    onEvent deZoomB Click $ \_ -> do setProp zoomScale "value" "0.04"
+                                     zoom hidden can 0.04
 
     --   "Enter" key has code 13
 
