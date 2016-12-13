@@ -20,23 +20,23 @@ showExpr :: Expr -> String
 showExpr (Num f) | f<0 = "("++show f++")"
                  | otherwise = show f
 showExpr X = "x"
-showExpr (Sin e) = "sin "++ showFactorSin e
-showExpr (Cos e) = "cos "++ showFactorSin e
+showExpr (Sin e) = "sin "++ showFactorFunc e
+showExpr (Cos e) = "cos "++ showFactorFunc e
 showExpr (Add e1 e2) = showExpr e1 ++ "+" ++ showExpr e2
 showExpr (Mul e1 e2) = showFactorMul e1 ++ "*" ++ showFactorMul e2
 
 -- Helper function that add parenthesis for case 1 above
-showFactorSin::Expr -> String
-showFactorSin (Add e1 e2) = "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
-showFactorSin (Mul e1 e2) = "(" ++ showFactorMul e1 ++ "*" ++ showFactorMul e2 ++")"
-showFactorSin e = showExpr e
-
+showFactorFunc::Expr -> String
+showFactorFunc (Add e1 e2) = "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
+showFactorFunc (Mul e1 e2) = "(" ++ showFactorMul e1 ++ "*" ++ showFactorMul e2 ++")"
+showFactorFunc e = showExpr e
 -- Helper function that add parenthesis for case 2 above
 showFactorMul:: Expr -> String
 showFactorMul (Add e1 e2) =  "(" ++ showExpr e1 ++ "+" ++ showExpr e2 ++")"
 showFactorMul e = showExpr e
 
--- Function that, given an expression, and the value for the variable x, calculates the value of the expression
+-- Function that, given an expression, and the value for the variable x,
+--calculates the value of the expression
 eval :: Expr -> Double -> Double
 eval X valueVar = valueVar
 eval (Num n) valueVar = n
@@ -137,7 +137,7 @@ factor = ((factor' <|> func) <|> num)  <|> var
                char 'i'
                char 'n'
                char ' '
-               return (Sin)      
+               return (Sin)
 
     num = do n <- number
              return (Num n)
