@@ -89,7 +89,9 @@ expr, term, factor :: Parser Expr
 expr = expr' <|> term
   where
     expr' = do t <- term
+               char ' '
                char '+'
+               char ' '
                e <- expr
                return (Add t e)
 
