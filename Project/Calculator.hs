@@ -26,12 +26,13 @@ readAndDraw input can = do
 -- stroke : Draw the contours of a shape.
 
 -- Function that reads the expression from the givent input element, differentiate it, show this differentiation
--- in  the input element and draw the graph
-showAndDrawDiff :: Elem -> Canvas -> IO()
-showAndDrawDiff input can = do
+-- in  the input element and draw the graph. It also save the differentiate value in the hidden element.
+showAndDrawDiff :: Elem -> Elem -> Canvas -> IO()
+showAndDrawDiff input hidden can = do
                               stringExpr <- getProp input "value"
                               case (readExpr stringExpr) of
                                 Just expr  -> let diffExpr = differentiate expr in do setProp input "value" (showExpr diffExpr)
+                                                                                      setProp hidden "value" (showExpr diffExpr)
                                                                                       render can (stroke (path (points diffExpr 0.04 (canWidth, canHeight))))
                                 Nothing -> setProp input "value" "Err : Wrong expression"
 
@@ -56,18 +57,6 @@ saveExpr input hidden = do
 	                        case (readExpr s) of
 	                        	Just expr -> setProp hidden "value" s
 	                        	otherwise -> setProp hidden "value" old
-
-
-
-
-{-
-zoom :: Elem -> Canvas -> Vector -> Double -> IO()
-zoom input can v scale = do
-                        stringExpr <- getProp input "value"
-                        case (readExpr stringExpr) of
-                          Just expr  -> render can (scale v (stroke (path (points expr scale (canWidth, canHeight)))))
-                          Nothing -> setProp input "value" "Err : Wrong expression"
--}
 
 main = do
     -- Elements
@@ -123,16 +112,8 @@ main = do
     onEvent input KeyUp $ \code -> when (code==13) $  do saveExpr input hidden
                                                          readAndDraw input can
 
-    onEvent diff Click $ \_ -> do saveExpr input hidden
-    	                          showAndDrawDiff input can
-{-
-    canvas `onEvent` Click $ \mouse -> do
-                                  stringScale <- getProp zoomScale "value"
-                                  let (x,y) = mouseCoords mouse
-                                  let pos = (150-(fromIntegral x),150-(fromIntegral y))
-                                  setProp zoomScale "value" (show (fst pos) ++ " " ++ show (snd pos))
-                                  zoom input can (2,2) 0.04--(read stringScale::Double)
--}
+    onEvent diff Click $ \_ -> do showAndDrawDiff input hidden can
+    
     onEvent zoomB Click $ \_ -> do
                                   stringScale <- getProp zoomScale "value"
                                   zoom hidden can (read stringScale::Double)

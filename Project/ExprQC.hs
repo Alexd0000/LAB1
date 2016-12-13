@@ -25,9 +25,9 @@ arbExpr size = frequency[(1,rNum),(size,rOp),(1,rVar),(size,rFunc)]
 
   	rVar  = elements [X]
 
-  	rFunc = do name <- elements ["sin","cos"]
+  	rFunc = do name <- elements [Sin,Cos]
   	           e <- arbExpr (size-1)
-  	           return (Function name e)
+  	           return (name e)
 
   	rOp = do op <- elements [Add,Mul]
   	         let size'= size `div` 2

@@ -4,8 +4,9 @@ import Parsing
 import Data.Maybe
 import Data.Char
 
-data Expr = Num Double | Add Expr Expr | Mul Expr Expr | X | Function Name Expr
+data Expr = Num Double | Add Expr Expr | Mul Expr Expr | X | Sin Expr | Cos Expr
  deriving (Eq,Show)
+
 
 type Name = String
 
@@ -19,7 +20,8 @@ showExpr :: Expr -> String
 showExpr (Num f) | f<0 = "("++show f++")"
                  | otherwise = show f
 showExpr X = "x"
-showExpr (Function name e) = name++" "++ showFactorSin e
+showExpr (Sin e) = "sin "++ showFactorSin e
+showExpr (Cos e) = "cos "++ showFactorSin e
 showExpr (Add e1 e2) = showExpr e1 ++ "+" ++ showExpr e2
 showExpr (Mul e1 e2) = showFactorMul e1 ++ "*" ++ showFactorMul e2
 
@@ -38,9 +40,8 @@ showFactorMul e = showExpr e
 eval :: Expr -> Double -> Double
 eval X valueVar = valueVar
 eval (Num n) valueVar = n
-eval (Function name e) valueVar | name=="sin" = sin (eval e valueVar)
-                                | name== "cos" = cos (eval e valueVar)
-                                | otherwise = error "Unknown function"
+eval (Sin e) valueVar = sin (eval e valueVar)
+eval (Cos e) valueVar = cos (eval e valueVar)
 eval (Add e1 e2) valueVar = (eval e1 valueVar) + (eval e2 valueVar)
 eval (Mul e1 e2) valueVar = (eval e1 valueVar) * (eval e2 valueVar)
 
@@ -110,21 +111,33 @@ factor = ((factor' <|> func) <|> num)  <|> var
     func = (func1 <|> func2) <|> func3
 
     -- Case sin 2 or sin x
-    func1 = do name <- funcName
+    func1 = do name <- cosinus <|> sinus
                n <- num <|> var
-               return (Function name n)
+               return (name n)
 
     -- Case sin cos ....
-    func2 = do name <- funcName
+    func2 = do name <- cosinus <|> sinus
                f <- func
-               return (Function name f)
+               return (name f)
 
     -- Case sin (...)
-    func3 = do name <- funcName
+    func3 = do name <- cosinus <|> sinus
                char '('
                e <- expr
                char ')'
-               return (Function name e)
+               return (name e)
+
+    cosinus = do char 'c'
+                 char 'o'
+                 char 's'
+                 char ' '
+                 return (Cos)
+
+    sinus = do char 's'
+               char 'i'
+               char 'n'
+               char ' '
+               return (Sin)      
 
     num = do n <- number
              return (Num n)
@@ -154,14 +167,16 @@ simplify e | hasVariable e == False = (Num (eval e 0))
                           | e1 == (Num 1) = e2
                           | e2 == (Num 1) = e1
                           | otherwise = (Mul (simplify e1) (simplify e2))
-    simplify' (Function name e) = (Function name (simplify e))
+    simplify' (Cos e) = (Cos (simplify e))
+    simplify' (Sin e) = (Sin (simplify e))
     simplify' (Num n) = (Num n)
     simplify' X = X
     -- Helper function that searches if an expression contains a variable
     hasVariable :: Expr -> Bool
     hasVariable (Num n) = False
     hasVariable X = True
-    hasVariable (Function name e) = hasVariable e
+    hasVariable (Sin e) = hasVariable e
+    hasVariable (Cos e) = hasVariable e
     hasVariable (Add e1 e2) = hasVariable e1 || hasVariable e2
     hasVariable (Mul e1 e2) = hasVariable e1 || hasVariable e2
 
@@ -175,5 +190,5 @@ differentiate e = simplify (differentiate' e)
         differentiate' (X) = (Num 1)
         differentiate' (Add e1 e2) = Add (differentiate e1) (differentiate e2)
         differentiate' (Mul e1 e2) = Add (Mul (differentiate e1) e2) (Mul e1 (differentiate e2))
-        differentiate' (Function "sin" e) = Mul (differentiate e) (Function "cos" e)
-        differentiate' (Function "cos" e) = Mul  (Num(-1)) (Mul (differentiate e) (Function "sin" e))
+        differentiate' (Sin e) = Mul (differentiate e) (Cos e)
+        differentiate' (Cos e) = Mul  (Num(-1)) (Mul (differentiate e) (Sin e))

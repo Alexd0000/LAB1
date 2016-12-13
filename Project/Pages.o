@@ -1,4 +1,4 @@
-{-# LINE 1 "C:\Users\Allll\AppData\Local\Temp\ghc8280_0\ghc_9.s" #-}
+{-# LINE 1 "C:\Users\Allll\AppData\Local\Temp\ghc6480_0\ghc_9.s" #-}
 .data
 	.align 4
 .align 1
@@ -17,7 +17,7 @@ Pages_zdsffi2_closure:
 	.long	15
 .globl Pages_zdsffi2_info
 Pages_zdsffi2_info:
-.Lc9Gf:
+.Lca3b:
 	movl 16(%ebx),%eax
 	movl %eax,24(%ebx)
 	movl 8(%ebx),%eax
@@ -36,7 +36,7 @@ Pages_selectzuf1_closure:
 .section .rodata
 	.align 4
 .align 1
-c9Gx_str:
+ca3t_str:
 	.byte	40
 	.byte	102
 	.byte	117
@@ -71,23 +71,23 @@ c9Gx_str:
 	.long	22
 .globl Pages_selectzuf1_info
 Pages_selectzuf1_info:
-.Lc9Gz:
+.Lca3v:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9GG
-.Lc9GH:
+	jb .Lca3C
+.Lca3D:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc9Gw
-.Lc9Gv:
+	je .Lca3s
+.Lca3r:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl c9Gx_str+3,%eax
-	movl $c9GD_info,-16(%ebp)
+	movl ca3t_str+3,%eax
+	movl $ca3z_info,-16(%ebp)
 	addl $-16,%ebp
 	movl 872(%ebx),%ecx
 	movl 20(%ecx),%edx
@@ -167,26 +167,26 @@ Pages_selectzuf1_info:
 	movl 136(%esp),%eax
 	movl %eax,%esi
 	jmp *(%ebp)
-.Lc9Gw:
+.Lca3s:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9GD_info:
-.Lc9GD:
+ca3z_info:
+.Lca3z:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9GK
-.Lc9GJ:
+	ja .Lca3G
+.Lca3F:
 	movl $base_GHCziPtr_Ptr_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc9GG:
+.Lca3C:
 	jmp *-16(%ebx)
-.Lc9GK:
+.Lca3G:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
 .data
@@ -198,13 +198,13 @@ Pages_select_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_select_info)+0
+	.long	Sa4h_srt-(Pages_select_info)+0
 	.long	65541
 	.long	0
 	.long	65551
 .globl Pages_select_info
 Pages_select_info:
-.Lc9Hi:
+.Lca4e:
 	movl 8(%ebx),%eax
 	movl %eax,40(%ebx)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,32(%ebx)
@@ -222,67 +222,67 @@ Pages_mkDiv1_closure:
 .section .rodata
 	.align 4
 .align 1
-c9HH_str:
+ca4D_str:
 	.byte	100
 	.byte	105
 	.byte	118
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_mkDiv1_info)+4
+	.long	Sa4h_srt-(Pages_mkDiv1_info)+4
 	.long	65539
 	.long	0
 	.long	196623
 .globl Pages_mkDiv1_info
 Pages_mkDiv1_info:
-.Lc9HK:
+.Lca4G:
 	leal -8(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9I8
-.Lc9I9:
-	movl $c9HI_info,-4(%ebp)
-	movl $c9HH_str,8(%ebx)
+	jb .Lca54
+.Lca55:
+	movl $ca4E_info,-4(%ebp)
+	movl $ca4D_str,8(%ebx)
 	addl $-4,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9HI_info)+4
+	.long	Sa4h_srt-(ca4E_info)+4
 	.long	0
 	.long	65568
-c9HI_info:
-.Lc9HI:
-	movl $c9HN_info,(%ebp)
+ca4E_info:
+.Lca4E:
+	movl $ca4J_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9HN_info)+4
+	.long	Sa4h_srt-(ca4J_info)+4
 	.long	0
 	.long	65568
-c9HN_info:
-.Lc9HN:
+ca4J_info:
+.Lca4J:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Id
-.Lc9Ic:
+	ja .Lca59
+.Lca58:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
-	movl $c9HX_info,-4(%ebp)
+	movl $ca4T_info,-4(%ebp)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziJSString_newElemzuf1_closure,%esi
 	movl (%edi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc9HX
-.Lc9HY:
+	jne .Lca4T
+.Lca4U:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	65
 	.long	32
-c9HX_info:
-.Lc9HX:
+ca4T_info:
+.Lca4T:
 	movl 4(%ebp),%eax
-	movl $c9I5_info,4(%ebp)
+	movl $ca51_info,4(%ebp)
 	addl $4,%ebp
 	movl 3(%esi),%ecx
 	movl 872(%ebx),%edx
@@ -370,24 +370,24 @@ c9HX_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c9I5_info:
-.Lc9I5:
+ca51_info:
+.Lca51:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Ii
-.Lc9Ih:
+	ja .Lca5e
+.Lca5d:
 	movl $base_GHCziPtr_Ptr_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc9I8:
+.Lca54:
 	movl $Pages_mkDiv1_closure,%esi
 	jmp *-8(%ebx)
-.Lc9Id:
+.Lca59:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9Ii:
+.Lca5e:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
 .data
@@ -399,13 +399,13 @@ Pages_mkDiv_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_mkDiv_info)+8
+	.long	Sa4h_srt-(Pages_mkDiv_info)+8
 	.long	65539
 	.long	0
 	.long	65551
 .globl Pages_mkDiv_info
 Pages_mkDiv_info:
-.Lc9IR:
+.Lca5N:
 	jmp Pages_mkDiv1_info
 .data
 	.align 4
@@ -417,7 +417,7 @@ Pages_mkHTML2_closure:
 .section .rodata
 	.align 4
 .align 1
-c9Je_str:
+ca6a_str:
 	.byte	115
 	.byte	112
 	.byte	97
@@ -425,60 +425,60 @@ c9Je_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_mkHTML2_info)+4
+	.long	Sa4h_srt-(Pages_mkHTML2_info)+4
 	.long	65539
 	.long	0
 	.long	327695
 .globl Pages_mkHTML2_info
 Pages_mkHTML2_info:
-.Lc9Jh:
+.Lca6d:
 	leal -8(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9JF
-.Lc9JG:
-	movl $c9Jf_info,-4(%ebp)
-	movl $c9Je_str,8(%ebx)
+	jb .Lca6B
+.Lca6C:
+	movl $ca6b_info,-4(%ebp)
+	movl $ca6a_str,8(%ebx)
 	addl $-4,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9Jf_info)+4
+	.long	Sa4h_srt-(ca6b_info)+4
 	.long	0
 	.long	65568
-c9Jf_info:
-.Lc9Jf:
-	movl $c9Jk_info,(%ebp)
+ca6b_info:
+.Lca6b:
+	movl $ca6g_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9Jk_info)+4
+	.long	Sa4h_srt-(ca6g_info)+4
 	.long	0
 	.long	65568
-c9Jk_info:
-.Lc9Jk:
+ca6g_info:
+.Lca6g:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9JK
-.Lc9JJ:
+	ja .Lca6G
+.Lca6F:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
-	movl $c9Ju_info,-4(%ebp)
+	movl $ca6q_info,-4(%ebp)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziJSString_newElemzuf1_closure,%esi
 	movl (%edi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc9Ju
-.Lc9Jv:
+	jne .Lca6q
+.Lca6r:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	65
 	.long	32
-c9Ju_info:
-.Lc9Ju:
+ca6q_info:
+.Lca6q:
 	movl 4(%ebp),%eax
-	movl $c9JC_info,4(%ebp)
+	movl $ca6y_info,4(%ebp)
 	addl $4,%ebp
 	movl 3(%esi),%ecx
 	movl 872(%ebx),%edx
@@ -566,24 +566,24 @@ c9Ju_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c9JC_info:
-.Lc9JC:
+ca6y_info:
+.Lca6y:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9JP
-.Lc9JO:
+	ja .Lca6L
+.Lca6K:
 	movl $base_GHCziPtr_Ptr_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc9JF:
+.Lca6B:
 	movl $Pages_mkHTML2_closure,%esi
 	jmp *-8(%ebx)
-.Lc9JK:
+.Lca6G:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9JP:
+.Lca6L:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
 .data
@@ -598,7 +598,7 @@ Pages_mkHTML1_closure:
 .section .rodata
 	.align 4
 .align 1
-c9Kz_str:
+ca7v_str:
 	.byte	105
 	.byte	110
 	.byte	110
@@ -615,53 +615,53 @@ c9Kz_str:
 	.long	22
 .globl Pages_mkHTML1_info
 Pages_mkHTML1_info:
-.Lc9KC:
+.Lca7y:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9KQ
-.Lc9KR:
+	jb .Lca7M
+.Lca7N:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc9Ky
-.Lc9Kx:
+	je .Lca7u
+.Lca7t:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c9KA_info,-16(%ebp)
-	movl $c9Kz_str,8(%ebx)
+	movl $ca7w_info,-16(%ebp)
+	movl $ca7v_str,8(%ebx)
 	addl $-16,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc9Ky:
+.Lca7u:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9KA_info:
-.Lc9KA:
-	movl $c9KF_info,(%ebp)
+ca7w_info:
+.Lca7w:
+	movl $ca7B_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9KF_info:
-.Lc9KF:
+ca7B_info:
+.Lca7B:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9KV
-.Lc9KU:
+	ja .Lca7R
+.Lca7Q:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%eax
-.Lc9KN:
+.Lca7J:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9KY
-.Lc9KX:
+	ja .Lca7U
+.Lca7T:
 	movl 3(%eax),%eax
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_PropName_con_info,-4(%edi)
 	movl %eax,(%edi)
@@ -672,18 +672,18 @@ c9KF_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c9KM_info:
-.Lc9KM:
+ca7I_info:
+.Lca7I:
 	movl %esi,%eax
-	jmp .Lc9KN
-.Lc9KQ:
+	jmp .Lca7J
+.Lca7M:
 	jmp *-16(%ebx)
-.Lc9KV:
+.Lca7R:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9KY:
+.Lca7U:
 	movl $8,904(%ebx)
-	movl $c9KM_info,(%ebp)
+	movl $ca7I_info,(%ebp)
 	movl %eax,%esi
 	jmp stg_gc_unpt_r1
 .data
@@ -695,15 +695,15 @@ Pages_mkHTML_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(s9CZ_info)+16
+	.long	Sa4h_srt-(s9ZV_info)+16
 	.long	1
 	.long	65553
-s9CZ_info:
-.Lc9Ld:
+s9ZV_info:
+.Lca89:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9Le
-.Lc9Lf:
+	jb .Lca8a
+.Lca8b:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -711,23 +711,23 @@ s9CZ_info:
 	movl $Pages_mkHTML1_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp FxthDgO5vhFC0dVxe1OwkF_HasteziDOM_zeZC_info
-.Lc9Le:
+.Lca8a:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_mkHTML_info)+12
+	.long	Sa4h_srt-(Pages_mkHTML_info)+12
 	.long	65541
 	.long	0
 	.long	2031631
 .globl Pages_mkHTML_info
 Pages_mkHTML_info:
-.Lc9Lh:
+.Lca8d:
 	addl $28,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc9Ll
-.Lc9Lk:
-	movl $s9CZ_info,-24(%edi)
+	ja .Lca8h
+.Lca8g:
+	movl $s9ZV_info,-24(%edi)
 	movl %eax,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
 	leal -24(%edi),%eax
@@ -739,7 +739,7 @@ Pages_mkHTML_info:
 	movl $LlHybR7LOSS7VAc0pG6N16_ControlziMonadziIOziClass_zdfMonadIOIO_closure,16(%ebx)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_zdfIsElemElem_closure,8(%ebx)
 	jmp FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_with_info
-.Lc9Ll:
+.Lca8h:
 	movl $28,904(%ebx)
 	movl %eax,8(%ebx)
 	movl $Pages_mkHTML_closure,%esi
@@ -754,7 +754,7 @@ Pages_mkButton2_closure:
 .section .rodata
 	.align 4
 .align 1
-c9LM_str:
+ca8I_str:
 	.byte	98
 	.byte	117
 	.byte	116
@@ -764,60 +764,60 @@ c9LM_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_mkButton2_info)+4
+	.long	Sa4h_srt-(Pages_mkButton2_info)+4
 	.long	65539
 	.long	0
 	.long	8454159
 .globl Pages_mkButton2_info
 Pages_mkButton2_info:
-.Lc9LP:
+.Lca8L:
 	leal -8(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9Md
-.Lc9Me:
-	movl $c9LN_info,-4(%ebp)
-	movl $c9LM_str,8(%ebx)
+	jb .Lca99
+.Lca9a:
+	movl $ca8J_info,-4(%ebp)
+	movl $ca8I_str,8(%ebx)
 	addl $-4,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9LN_info)+4
+	.long	Sa4h_srt-(ca8J_info)+4
 	.long	0
 	.long	65568
-c9LN_info:
-.Lc9LN:
-	movl $c9LS_info,(%ebp)
+ca8J_info:
+.Lca8J:
+	movl $ca8O_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9LS_info)+4
+	.long	Sa4h_srt-(ca8O_info)+4
 	.long	0
 	.long	65568
-c9LS_info:
-.Lc9LS:
+ca8O_info:
+.Lca8O:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Mi
-.Lc9Mh:
+	ja .Lca9e
+.Lca9d:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
-	movl $c9M2_info,-4(%ebp)
+	movl $ca8Y_info,-4(%ebp)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziJSString_newElemzuf1_closure,%esi
 	movl (%edi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc9M2
-.Lc9M3:
+	jne .Lca8Y
+.Lca8Z:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	65
 	.long	32
-c9M2_info:
-.Lc9M2:
+ca8Y_info:
+.Lca8Y:
 	movl 4(%ebp),%eax
-	movl $c9Ma_info,4(%ebp)
+	movl $ca96_info,4(%ebp)
 	addl $4,%ebp
 	movl 3(%esi),%ecx
 	movl 872(%ebx),%edx
@@ -905,24 +905,24 @@ c9M2_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c9Ma_info:
-.Lc9Ma:
+ca96_info:
+.Lca96:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Mn
-.Lc9Mm:
+	ja .Lca9j
+.Lca9i:
 	movl $base_GHCziPtr_Ptr_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc9Md:
+.Lca99:
 	movl $Pages_mkButton2_closure,%esi
 	jmp *-8(%ebx)
-.Lc9Mi:
+.Lca9e:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9Mn:
+.Lca9j:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
 .data
@@ -937,7 +937,7 @@ Pages_mkButton1_closure:
 .section .rodata
 	.align 4
 .align 1
-c9N7_str:
+caa3_str:
 	.byte	116
 	.byte	101
 	.byte	120
@@ -956,53 +956,53 @@ c9N7_str:
 	.long	22
 .globl Pages_mkButton1_info
 Pages_mkButton1_info:
-.Lc9Na:
+.Lcaa6:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9No
-.Lc9Np:
+	jb .Lcaak
+.Lcaal:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc9N6
-.Lc9N5:
+	je .Lcaa2
+.Lcaa1:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c9N8_info,-16(%ebp)
-	movl $c9N7_str,8(%ebx)
+	movl $caa4_info,-16(%ebp)
+	movl $caa3_str,8(%ebx)
 	addl $-16,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc9N6:
+.Lcaa2:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9N8_info:
-.Lc9N8:
-	movl $c9Nd_info,(%ebp)
+caa4_info:
+.Lcaa4:
+	movl $caa9_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9Nd_info:
-.Lc9Nd:
+caa9_info:
+.Lcaa9:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Nt
-.Lc9Ns:
+	ja .Lcaap
+.Lcaao:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%eax
-.Lc9Nl:
+.Lcaah:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Nw
-.Lc9Nv:
+	ja .Lcaas
+.Lcaar:
 	movl 3(%eax),%eax
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_PropName_con_info,-4(%edi)
 	movl %eax,(%edi)
@@ -1013,18 +1013,18 @@ c9Nd_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c9Nk_info:
-.Lc9Nk:
+caag_info:
+.Lcaag:
 	movl %esi,%eax
-	jmp .Lc9Nl
-.Lc9No:
+	jmp .Lcaah
+.Lcaak:
 	jmp *-16(%ebx)
-.Lc9Nt:
+.Lcaap:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9Nw:
+.Lcaas:
 	movl $8,904(%ebx)
-	movl $c9Nk_info,(%ebp)
+	movl $caag_info,(%ebp)
 	movl %eax,%esi
 	jmp stg_gc_unpt_r1
 .data
@@ -1036,15 +1036,15 @@ Pages_mkButton_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(s9Dk_info)+36
+	.long	Sa4h_srt-(sa0g_info)+36
 	.long	1
 	.long	65553
-s9Dk_info:
-.Lc9NL:
+sa0g_info:
+.LcaaH:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9NM
-.Lc9NN:
+	jb .LcaaI
+.LcaaJ:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -1052,23 +1052,23 @@ s9Dk_info:
 	movl $Pages_mkButton1_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp FxthDgO5vhFC0dVxe1OwkF_HasteziDOM_zeZC_info
-.Lc9NM:
+.LcaaI:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_mkButton_info)+20
+	.long	Sa4h_srt-(Pages_mkButton_info)+20
 	.long	65541
 	.long	0
 	.long	3997711
 .globl Pages_mkButton_info
 Pages_mkButton_info:
-.Lc9NP:
+.LcaaL:
 	addl $28,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc9NT
-.Lc9NS:
-	movl $s9Dk_info,-24(%edi)
+	ja .LcaaP
+.LcaaO:
+	movl $sa0g_info,-24(%edi)
 	movl %eax,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
 	leal -24(%edi),%eax
@@ -1080,7 +1080,7 @@ Pages_mkButton_info:
 	movl $LlHybR7LOSS7VAc0pG6N16_ControlziMonadziIOziClass_zdfMonadIOIO_closure,16(%ebx)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_zdfIsElemElem_closure,8(%ebx)
 	jmp FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_with_info
-.Lc9NT:
+.LcaaP:
 	movl $28,904(%ebx)
 	movl %eax,8(%ebx)
 	movl $Pages_mkButton_closure,%esi
@@ -1095,7 +1095,7 @@ Pages_mkInput4_closure:
 .section .rodata
 	.align 4
 .align 1
-c9Ok_str:
+cabg_str:
 	.byte	105
 	.byte	110
 	.byte	112
@@ -1104,60 +1104,60 @@ c9Ok_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_mkInput4_info)+4
+	.long	Sa4h_srt-(Pages_mkInput4_info)+4
 	.long	65539
 	.long	0
 	.long	67174415
 .globl Pages_mkInput4_info
 Pages_mkInput4_info:
-.Lc9On:
+.Lcabj:
 	leal -8(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9OL
-.Lc9OM:
-	movl $c9Ol_info,-4(%ebp)
-	movl $c9Ok_str,8(%ebx)
+	jb .LcabH
+.LcabI:
+	movl $cabh_info,-4(%ebp)
+	movl $cabg_str,8(%ebx)
 	addl $-4,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9Ol_info)+4
+	.long	Sa4h_srt-(cabh_info)+4
 	.long	0
 	.long	65568
-c9Ol_info:
-.Lc9Ol:
-	movl $c9Oq_info,(%ebp)
+cabh_info:
+.Lcabh:
+	movl $cabm_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9Oq_info)+4
+	.long	Sa4h_srt-(cabm_info)+4
 	.long	0
 	.long	65568
-c9Oq_info:
-.Lc9Oq:
+cabm_info:
+.Lcabm:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9OQ
-.Lc9OP:
+	ja .LcabM
+.LcabL:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
-	movl $c9OA_info,-4(%ebp)
+	movl $cabw_info,-4(%ebp)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziJSString_newElemzuf1_closure,%esi
 	movl (%edi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc9OA
-.Lc9OB:
+	jne .Lcabw
+.Lcabx:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	65
 	.long	32
-c9OA_info:
-.Lc9OA:
+cabw_info:
+.Lcabw:
 	movl 4(%ebp),%eax
-	movl $c9OI_info,4(%ebp)
+	movl $cabE_info,4(%ebp)
 	addl $4,%ebp
 	movl 3(%esi),%ecx
 	movl 872(%ebx),%edx
@@ -1245,24 +1245,24 @@ c9OA_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c9OI_info:
-.Lc9OI:
+cabE_info:
+.LcabE:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9OV
-.Lc9OU:
+	ja .LcabR
+.LcabQ:
 	movl $base_GHCziPtr_Ptr_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc9OL:
+.LcabH:
 	movl $Pages_mkInput4_closure,%esi
 	jmp *-8(%ebx)
-.Lc9OQ:
+.LcabM:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9OV:
+.LcabR:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
 .data
@@ -1277,7 +1277,7 @@ Pages_mkInput3_closure:
 .section .rodata
 	.align 4
 .align 1
-c9PO_str:
+cacK_str:
 	.byte	116
 	.byte	121
 	.byte	112
@@ -1286,7 +1286,7 @@ c9PO_str:
 .section .rodata
 	.align 4
 .align 1
-c9Q4_str:
+cad0_str:
 	.byte	116
 	.byte	101
 	.byte	120
@@ -1298,49 +1298,49 @@ c9Q4_str:
 	.long	22
 .globl Pages_mkInput3_info
 Pages_mkInput3_info:
-.Lc9PR:
+.LcacN:
 	leal -20(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9Ql
-.Lc9Qm:
+	jb .Lcadh
+.Lcadi:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc9PN
-.Lc9PM:
+	je .LcacJ
+.LcacI:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c9PP_info,-16(%ebp)
-	movl $c9PO_str,8(%ebx)
+	movl $cacL_info,-16(%ebp)
+	movl $cacK_str,8(%ebx)
 	addl $-16,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc9PN:
+.LcacJ:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9PP_info:
-.Lc9PP:
-	movl $c9PU_info,(%ebp)
+cacL_info:
+.LcacL:
+	movl $cacQ_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9PU_info:
-.Lc9PU:
+cacQ_info:
+.LcacQ:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Qq
-.Lc9Qp:
+	ja .Lcadm
+.Lcadl:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
-	movl $c9Q5_info,-4(%ebp)
-	movl $c9Q4_str,8(%ebx)
+	movl $cad1_info,-4(%ebp)
+	movl $cad0_str,8(%ebx)
 	movl (%edi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
@@ -1349,29 +1349,29 @@ c9PU_info:
 	.align 4,0x90
 	.long	65
 	.long	32
-c9Q5_info:
-.Lc9Q5:
-	movl $c9Q9_info,(%ebp)
+cad1_info:
+.Lcad1:
+	movl $cad5_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	65
 	.long	32
-c9Q9_info:
-.Lc9Q9:
+cad5_info:
+.Lcad5:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Qv
-.Lc9Qu:
+	ja .Lcadr
+.Lcadq:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	movl 4(%ebp),%eax
 	leal -3(%edi),%ecx
-.Lc9Qh:
+.Lcadd:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Qy
-.Lc9Qx:
+	ja .Lcadu
+.Lcadt:
 	movl 3(%ecx),%ecx
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_AttrName_con_info,-16(%edi)
 	movl %eax,-12(%edi)
@@ -1386,22 +1386,22 @@ c9Q9_info:
 	.align 4,0x90
 	.long	65
 	.long	32
-c9Qg_info:
-.Lc9Qg:
+cadc_info:
+.Lcadc:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
-	jmp .Lc9Qh
-.Lc9Ql:
+	jmp .Lcadd
+.Lcadh:
 	jmp *-16(%ebx)
-.Lc9Qq:
+.Lcadm:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9Qv:
+.Lcadr:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9Qy:
+.Lcadu:
 	movl $20,904(%ebx)
-	movl $c9Qg_info,(%ebp)
+	movl $cadc_info,(%ebp)
 	movl %ecx,%esi
 	jmp stg_gc_unpt_r1
 .data
@@ -1416,7 +1416,7 @@ Pages_mkInput2_closure:
 .section .rodata
 	.align 4
 .align 1
-c9QX_str:
+cadT_str:
 	.byte	115
 	.byte	105
 	.byte	122
@@ -1428,53 +1428,53 @@ c9QX_str:
 	.long	22
 .globl Pages_mkInput2_info
 Pages_mkInput2_info:
-.Lc9R0:
+.LcadW:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9Re
-.Lc9Rf:
+	jb .Lcaea
+.Lcaeb:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc9QW
-.Lc9QV:
+	je .LcadS
+.LcadR:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c9QY_info,-16(%ebp)
-	movl $c9QX_str,8(%ebx)
+	movl $cadU_info,-16(%ebp)
+	movl $cadT_str,8(%ebx)
 	addl $-16,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc9QW:
+.LcadS:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9QY_info:
-.Lc9QY:
-	movl $c9R3_info,(%ebp)
+cadU_info:
+.LcadU:
+	movl $cadZ_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9R3_info:
-.Lc9R3:
+cadZ_info:
+.LcadZ:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Rj
-.Lc9Ri:
+	ja .Lcaef
+.Lcaee:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%eax
-.Lc9Rb:
+.Lcae7:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Rm
-.Lc9Rl:
+	ja .Lcaei
+.Lcaeh:
 	movl 3(%eax),%eax
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_AttrName_con_info,-4(%edi)
 	movl %eax,(%edi)
@@ -1485,18 +1485,18 @@ c9R3_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c9Ra_info:
-.Lc9Ra:
+cae6_info:
+.Lcae6:
 	movl %esi,%eax
-	jmp .Lc9Rb
-.Lc9Re:
+	jmp .Lcae7
+.Lcaea:
 	jmp *-16(%ebx)
-.Lc9Rj:
+.Lcaef:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9Rm:
+.Lcaei:
 	movl $8,904(%ebx)
-	movl $c9Ra_info,(%ebp)
+	movl $cae6_info,(%ebp)
 	movl %eax,%esi
 	jmp stg_gc_unpt_r1
 .data
@@ -1511,7 +1511,7 @@ Pages_mkInput1_closure:
 .section .rodata
 	.align 4
 .align 1
-c9RI_str:
+caeE_str:
 	.byte	118
 	.byte	97
 	.byte	108
@@ -1524,53 +1524,53 @@ c9RI_str:
 	.long	22
 .globl Pages_mkInput1_info
 Pages_mkInput1_info:
-.Lc9RL:
+.LcaeH:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9RZ
-.Lc9S0:
+	jb .LcaeV
+.LcaeW:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lc9RH
-.Lc9RG:
+	je .LcaeD
+.LcaeC:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $c9RJ_info,-16(%ebp)
-	movl $c9RI_str,8(%ebx)
+	movl $caeF_info,-16(%ebp)
+	movl $caeE_str,8(%ebx)
 	addl $-16,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lc9RH:
+.LcaeD:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9RJ_info:
-.Lc9RJ:
-	movl $c9RO_info,(%ebp)
+caeF_info:
+.LcaeF:
+	movl $caeK_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9RO_info:
-.Lc9RO:
+caeK_info:
+.LcaeK:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9S4
-.Lc9S3:
+	ja .Lcaf0
+.LcaeZ:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%eax
-.Lc9RW:
+.LcaeS:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9S7
-.Lc9S6:
+	ja .Lcaf3
+.Lcaf2:
 	movl 3(%eax),%eax
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_AttrName_con_info,-4(%edi)
 	movl %eax,(%edi)
@@ -1581,18 +1581,18 @@ c9RO_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-c9RV_info:
-.Lc9RV:
+caeR_info:
+.LcaeR:
 	movl %esi,%eax
-	jmp .Lc9RW
-.Lc9RZ:
+	jmp .LcaeS
+.LcaeV:
 	jmp *-16(%ebx)
-.Lc9S4:
+.Lcaf0:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9S7:
+.Lcaf3:
 	movl $8,904(%ebx)
-	movl $c9RV_info,(%ebp)
+	movl $caeR_info,(%ebp)
 	movl %eax,%esi
 	jmp stg_gc_unpt_r1
 .data
@@ -1604,15 +1604,15 @@ Pages_mkInput_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(s9E5_info)+48
+	.long	Sa4h_srt-(sa11_info)+48
 	.long	1
 	.long	65553
-s9E5_info:
-.Lc9SE:
+sa11_info:
+.LcafA:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9SF
-.Lc9SG:
+	jb .LcafB
+.LcafC:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
@@ -1620,51 +1620,51 @@ s9E5_info:
 	movl $Pages_mkInput1_closure,8(%ebx)
 	addl $-12,%ebp
 	jmp FxthDgO5vhFC0dVxe1OwkF_HasteziDOM_zeZC_info
-.Lc9SF:
+.LcafB:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(s9E4_info)+52
+	.long	Sa4h_srt-(sa10_info)+52
 	.long	1
 	.long	65553
-s9E4_info:
-.Lc9SP:
+sa10_info:
+.LcafL:
 	leal -20(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9Tc
-.Lc9Td:
+	jb .Lcag8
+.Lcag9:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $c9SM_info,-20(%ebp)
+	movl $cafI_info,-20(%ebp)
 	movl 12(%esi),%eax
 	movl $Pages_mkInput2_closure,%esi
 	movl %eax,-16(%ebp)
 	addl $-20,%ebp
 	testw $7,%si
-	jne .Lc9SM
-.Lc9SN:
+	jne .LcafI
+.LcafJ:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c9SM_info:
-.Lc9SM:
-	movl $c9SS_info,(%ebp)
+cafI_info:
+.LcafI:
+	movl $cafO_info,(%ebp)
 	movl %esi,%eax
 	movl 4(%ebp),%esi
 	movl %eax,4(%ebp)
 	testw $7,%si
-	jne .Lc9SS
-.Lc9ST:
+	jne .LcafO
+.LcafP:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c9SS_info:
-.Lc9SS:
-	movl $c9SX_info,(%ebp)
+cafO_info:
+.LcafO:
+	movl $cafT_info,(%ebp)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,24(%ebx)
 	movl 3(%esi),%eax
 	movl %eax,16(%ebx)
@@ -1674,29 +1674,29 @@ c9SS_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c9SX_info:
-.Lc9SX:
-	movl $c9T1_info,(%ebp)
+cafT_info:
+.LcafT:
+	movl $cafX_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-c9T1_info:
-.Lc9T1:
+cafX_info:
+.LcafX:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Tj
-.Lc9Ti:
+	ja .Lcagf
+.Lcage:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	movl 4(%ebp),%eax
 	leal -3(%edi),%ecx
-.Lc9T9:
+.Lcag5:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9Tm
-.Lc9Tl:
+	ja .Lcagi
+.Lcagh:
 	movl 3(%ecx),%ecx
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_Attribute_con_info,-8(%edi)
 	movl %eax,-4(%edi)
@@ -1708,43 +1708,43 @@ c9T1_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c9T8_info:
-.Lc9T8:
+cag4_info:
+.Lcag4:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
-	jmp .Lc9T9
-.Lc9Tc:
+	jmp .Lcag5
+.Lcag8:
 	jmp *-16(%ebx)
-.Lc9Tj:
+.Lcagf:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lc9Tm:
+.Lcagi:
 	movl $12,904(%ebx)
-	movl $c9T8_info,(%ebp)
+	movl $cag4_info,(%ebp)
 	movl %ecx,%esi
 	jmp stg_gc_unpt_r1
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_mkInput_info)+20
+	.long	Sa4h_srt-(Pages_mkInput_info)+20
 	.long	131087
 	.long	0
 	.long	130351119
 .globl Pages_mkInput_info
 Pages_mkInput_info:
-.Lc9Tp:
+.Lcagl:
 	addl $68,%edi
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	cmpl 856(%ebx),%edi
-	ja .Lc9Tt
-.Lc9Ts:
-	movl $s9E5_info,-64(%edi)
+	ja .Lcagp
+.Lcago:
+	movl $sa11_info,-64(%edi)
 	movl %eax,-52(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-48(%edi)
 	leal -64(%edi),%eax
 	movl %eax,-44(%edi)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,-40(%edi)
-	movl $s9E4_info,-36(%edi)
+	movl $sa10_info,-36(%edi)
 	movl %ecx,-24(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-20(%edi)
 	leal -36(%edi),%eax
@@ -1761,7 +1761,7 @@ Pages_mkInput_info:
 	movl $LlHybR7LOSS7VAc0pG6N16_ControlziMonadziIOziClass_zdfMonadIOIO_closure,16(%ebx)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_zdfIsElemElem_closure,8(%ebx)
 	jmp FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_with_info
-.Lc9Tt:
+.Lcagp:
 	movl $68,904(%ebx)
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
@@ -1776,91 +1776,91 @@ Pages_appendChildren1_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_appendChildren1_info)+64
+	.long	Sa4h_srt-(Pages_appendChildren1_info)+64
 	.long	196623
 	.long	0
 	.long	196623
 .globl Pages_appendChildren1_info
 Pages_appendChildren1_info:
-.Lc9Un:
+.Lcahj:
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	leal -16(%ebp),%edx
 	cmpl 840(%ebx),%edx
-	jb .Lc9Uo
-.Lc9Up:
-	movl $c9Ud_info,-8(%ebp)
+	jb .Lcahk
+.Lcahl:
+	movl $cah9_info,-8(%ebp)
 	movl %eax,%esi
 	movl %ecx,-4(%ebp)
 	addl $-8,%ebp
 	testw $7,%si
-	jne .Lc9Ud
-.Lc9Ue:
+	jne .Lcah9
+.Lcaha:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9Ud_info)+64
+	.long	Sa4h_srt-(cah9_info)+64
 	.long	1
 	.long	65568
-c9Ud_info:
-.Lc9Ud:
+cah9_info:
+.Lcah9:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jb .Lc9Vt
-.Lc9Ul:
-	movl $c9Uv_info,-4(%ebp)
+	jb .Lcaip
+.Lcahh:
+	movl $cahr_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc9Uv
-.Lc9Uw:
+	jne .Lcahr
+.Lcahs:
 	jmp *(%esi)
-.Lc9Uo:
+.Lcahk:
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
 	movl $Pages_appendChildren1_closure,%esi
 	jmp *-8(%ebx)
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9Uv_info)+64
+	.long	Sa4h_srt-(cahr_info)+64
 	.long	2
 	.long	65568
-c9Uv_info:
-.Lc9Uv:
-	movl $c9UA_info,(%ebp)
+cahr_info:
+.Lcahr:
+	movl $cahw_info,(%ebp)
 	movl 3(%esi),%eax
 	movl 8(%ebp),%esi
 	movl %eax,8(%ebp)
 	testw $7,%si
-	jne .Lc9UA
-.Lc9UB:
+	jne .Lcahw
+.Lcahx:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9UA_info)+64
+	.long	Sa4h_srt-(cahw_info)+64
 	.long	130
 	.long	65568
-c9UA_info:
-.Lc9UA:
-	movl $c9UF_info,-4(%ebp)
+cahw_info:
+.Lcahw:
+	movl $cahB_info,-4(%ebp)
 	movl 3(%esi),%eax
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_appendChildzuf1_closure,%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc9UF
-.Lc9UJ:
+	jne .LcahB
+.LcahF:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	323
 	.long	32
-c9UF_info:
-.Lc9UF:
-	movl $c9US_info,(%ebp)
+cahB_info:
+.LcahB:
+	movl $cahO_info,(%ebp)
 	movl 3(%esi),%eax
 	movl 12(%ebp),%ecx
 	movl %eax,12(%ebp)
@@ -1952,37 +1952,37 @@ c9UF_info:
 	.align 4,0x90
 	.long	323
 	.long	32
-c9US_info:
-.Lc9US:
+cahO_info:
+.LcahO:
 	movl 8(%ebp),%eax
-.Lc9UY:
-	movl $c9V0_info,(%ebp)
+.LcahU:
+	movl $cahW_info,(%ebp)
 	movl %eax,%esi
 	testw $7,%si
-	jne .Lc9V0
-.Lc9V2:
+	jne .LcahW
+.LcahY:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	323
 	.long	32
-c9Vn_info:
-.Lc9Vn:
+caij_info:
+.Lcaij:
 	movl 8(%ebp),%eax
-	jmp .Lc9UY
+	jmp .LcahU
 .text
 	.align 4,0x90
 	.long	451
 	.long	32
-c9V0_info:
-.Lc9V0:
+cahW_info:
+.LcahW:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc9Vs
-.Lu9Vu:
+	jae .Lcaio
+.Luaiq:
 	addl $8,%ebp
-.Lc9Vt:
+.Lcaip:
 	movl $ghczmprim_GHCziTuple_Z0T_closure+1,%esi
 	addl $8,%ebp
 	jmp *(%ebp)
@@ -1990,9 +1990,9 @@ c9V0_info:
 	.align 4,0x90
 	.long	323
 	.long	32
-c9Vb_info:
-.Lc9Vb:
-	movl $c9Vn_info,(%ebp)
+cai7_info:
+.Lcai7:
+	movl $caij_info,(%ebp)
 	movl 12(%ebp),%eax
 	movl 3(%esi),%ecx
 	movl 4(%ebp),%edx
@@ -2079,14 +2079,14 @@ c9Vb_info:
 	movl 316(%esp),%eax
 	movl %eax,%esi
 	jmp *(%ebp)
-.Lc9Vs:
-	movl $c9Vb_info,(%ebp)
+.Lcaio:
+	movl $cai7_info,(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,8(%ebp)
 	testw $7,%si
-	jne .Lc9Vb
-.Lc9Ve:
+	jne .Lcai7
+.Lcaia:
 	jmp *(%esi)
 .data
 	.align 4
@@ -2097,13 +2097,13 @@ Pages_appendChildren_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_appendChildren_info)+68
+	.long	Sa4h_srt-(Pages_appendChildren_info)+68
 	.long	196623
 	.long	0
 	.long	65551
 .globl Pages_appendChildren_info
 Pages_appendChildren_info:
-.Lc9Ws:
+.Lcajo:
 	movl 16(%ebx),%eax
 	movl %eax,16(%ebx)
 	movl 8(%ebx),%eax
@@ -2118,13 +2118,13 @@ Pages_row_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_row_info)+68
+	.long	Sa4h_srt-(Pages_row_info)+68
 	.long	196623
 	.long	0
 	.long	65551
 .globl Pages_row_info
 Pages_row_info:
-.Lc9WF:
+.LcajB:
 	movl 16(%ebx),%eax
 	movl %eax,16(%ebx)
 	movl 8(%ebx),%eax
@@ -2140,24 +2140,24 @@ Pages_wrapDiv_closure:
 .section .data
 	.align 4
 .align 1
-u9X0_srtd:
-	.long	S9Hl_srt+8
+uajW_srtd:
+	.long	Sa4h_srt+8
 	.long	17
 	.long	65577
 .text
 	.align 4,0x90
-	.long	u9X0_srtd-(Pages_wrapDiv_info)+0
+	.long	uajW_srtd-(Pages_wrapDiv_info)+0
 	.long	65541
 	.long	0
 	.long	-65521
 .globl Pages_wrapDiv_info
 Pages_wrapDiv_info:
-.Lc9WV:
+.LcajR:
 	addl $32,%edi
 	movl 8(%ebx),%eax
 	cmpl 856(%ebx),%edi
-	ja .Lc9WZ
-.Lc9WY:
+	ja .LcajV
+.LcajU:
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-28(%edi)
 	movl %eax,-24(%edi)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,-20(%edi)
@@ -2174,7 +2174,7 @@ Pages_wrapDiv_info:
 	movl $LlHybR7LOSS7VAc0pG6N16_ControlziMonadziIOziClass_zdfMonadIOIO_closure,16(%ebx)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_zdfIsElemElem_closure,8(%ebx)
 	jmp FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_with_info
-.Lc9WZ:
+.LcajV:
 	movl $32,904(%ebx)
 	movl %eax,8(%ebx)
 	movl $Pages_wrapDiv_closure,%esi
@@ -2192,41 +2192,41 @@ Pages_column2_closure:
 	.long	15
 .globl Pages_column2_info
 Pages_column2_info:
-.Lc9Xt:
+.Lcakp:
 	movl 8(%ebx),%eax
 	leal -8(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc9Xu
-.Lc9Xv:
-	movl $c9Xj_info,-4(%ebp)
+	jb .Lcakq
+.Lcakr:
+	movl $cakf_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc9Xj
-.Lc9Xk:
+	jne .Lcakf
+.Lcakg:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-c9Xj_info:
-.Lc9Xj:
+cakf_info:
+.Lcakf:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc9Xr
-.Lc9Xs:
+	jae .Lcakn
+.Lcako:
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc9Xr:
-	movl $c9XB_info,-4(%ebp)
+.Lcakn:
+	movl $cakx_info,-4(%ebp)
 	movl 6(%esi),%eax
 	movl 2(%esi),%esi
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	jmp stg_ap_v_fast
-.Lc9Xu:
+.Lcakq:
 	movl %eax,8(%ebx)
 	movl $Pages_column2_closure,%esi
 	jmp *-8(%ebx)
@@ -2234,9 +2234,9 @@ c9Xj_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c9XB_info:
-.Lc9XB:
-	movl $c9XD_info,(%ebp)
+cakx_info:
+.Lcakx:
+	movl $cakz_info,(%ebp)
 	movl 4(%ebp),%eax
 	movl %eax,8(%ebx)
 	movl %esi,4(%ebp)
@@ -2245,12 +2245,12 @@ c9XB_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-c9XD_info:
-.Lc9XD:
+cakz_info:
+.Lcakz:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9XK
-.Lc9XJ:
+	ja .LcakG
+.LcakF:
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
 	movl 4(%ebp),%eax
 	movl %eax,-4(%edi)
@@ -2258,7 +2258,7 @@ c9XD_info:
 	leal -6(%edi),%esi
 	addl $8,%ebp
 	jmp *(%ebp)
-.Lc9XK:
+.LcakG:
 	movl $12,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
@@ -2270,88 +2270,88 @@ Pages_columnzugo_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(s9EW_info)+76
+	.long	Sa4h_srt-(sa1S_info)+76
 	.long	1
 	.long	65553
-s9EW_info:
-.Lc9Ye:
+sa1S_info:
+.Lcala:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9Yf
-.Lc9Yg:
+	jb .Lcalb
+.Lcalc:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Pages_columnzugo_info
-.Lc9Yf:
+.Lcalb:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(s9EV_info)+72
+	.long	Sa4h_srt-(sa1R_info)+72
 	.long	1
 	.long	65553
-s9EV_info:
-.Lc9Yl:
+sa1R_info:
+.Lcalh:
 	leal -12(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lc9Ym
-.Lc9Yn:
+	jb .Lcali
+.Lcalj:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
 	movl 12(%esi),%eax
 	movl %eax,8(%ebx)
 	addl $-12,%ebp
 	jmp Pages_wrapDiv_info
-.Lc9Ym:
+.Lcali:
 	jmp *-16(%ebx)
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_columnzugo_info)+72
+	.long	Sa4h_srt-(Pages_columnzugo_info)+72
 	.long	65541
 	.long	0
 	.long	196623
 .globl Pages_columnzugo_info
 Pages_columnzugo_info:
-.Lc9Yv:
+.Lcalr:
 	movl 8(%ebx),%eax
 	leal -4(%ebp),%ecx
 	cmpl 840(%ebx),%ecx
-	jb .Lc9Yw
-.Lc9Yx:
-	movl $c9Y4_info,-4(%ebp)
+	jb .Lcals
+.Lcalt:
+	movl $cal0_info,-4(%ebp)
 	movl %eax,%esi
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lc9Y4
-.Lc9Y5:
+	jne .Lcal0
+.Lcal1:
 	jmp *(%esi)
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9Y4_info)+72
+	.long	Sa4h_srt-(cal0_info)+72
 	.long	0
 	.long	196640
-c9Y4_info:
-.Lc9Y4:
+cal0_info:
+.Lcal0:
 	movl %esi,%eax
 	andl $7,%eax
 	cmpl $2,%eax
-	jae .Lc9Yt
-.Lc9Yu:
+	jae .Lcalp
+.Lcalq:
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc9Yt:
+.Lcalp:
 	addl $44,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lc9YD
-.Lc9YC:
+	ja .Lcalz
+.Lcaly:
 	movl 2(%esi),%eax
 	movl 6(%esi),%ecx
-	movl $s9EW_info,-40(%edi)
+	movl $sa1S_info,-40(%edi)
 	movl %ecx,-28(%edi)
-	movl $s9EV_info,-24(%edi)
+	movl $sa1R_info,-24(%edi)
 	movl %eax,-12(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-8(%edi)
 	leal -24(%edi),%eax
@@ -2361,11 +2361,11 @@ c9Y4_info:
 	leal -6(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lc9Yw:
+.Lcals:
 	movl %eax,8(%ebx)
 	movl $Pages_columnzugo_closure,%esi
 	jmp *-8(%ebx)
-.Lc9YD:
+.Lcalz:
 	movl $44,904(%ebx)
 	jmp stg_gc_unpt_r1
 .data
@@ -2377,47 +2377,47 @@ Pages_column1_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_column1_info)+68
+	.long	Sa4h_srt-(Pages_column1_info)+68
 	.long	196623
 	.long	0
 	.long	851983
 .globl Pages_column1_info
 Pages_column1_info:
-.Lc9Z4:
+.Lcam0:
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	leal -8(%ebp),%edx
 	cmpl 840(%ebx),%edx
-	jb .Lc9Z8
-.Lc9Z9:
-	movl $c9Z2_info,-8(%ebp)
+	jb .Lcam4
+.Lcam5:
+	movl $calY_info,-8(%ebp)
 	movl %eax,8(%ebx)
 	movl %ecx,-4(%ebp)
 	addl $-8,%ebp
 	jmp Pages_columnzugo_info
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9Z2_info)+68
+	.long	Sa4h_srt-(calY_info)+68
 	.long	1
 	.long	65568
-c9Z2_info:
-.Lc9Z2:
-	movl $c9Z7_info,(%ebp)
+calY_info:
+.LcalY:
+	movl $cam3_info,(%ebp)
 	movl %esi,8(%ebx)
 	jmp Pages_column2_info
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9Z7_info)+68
+	.long	Sa4h_srt-(cam3_info)+68
 	.long	1
 	.long	65568
-c9Z7_info:
-.Lc9Z7:
+cam3_info:
+.Lcam3:
 	movl %esi,16(%ebx)
 	movl 4(%ebp),%eax
 	movl %eax,8(%ebx)
 	addl $8,%ebp
 	jmp Pages_appendChildren1_info
-.Lc9Z8:
+.Lcam4:
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
 	movl $Pages_column1_closure,%esi
@@ -2431,13 +2431,13 @@ Pages_column_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_column_info)+80
+	.long	Sa4h_srt-(Pages_column_info)+80
 	.long	196623
 	.long	0
 	.long	65551
 .globl Pages_column_info
 Pages_column_info:
-.Lc9Zn:
+.Lcamj:
 	movl 16(%ebx),%eax
 	movl %eax,16(%ebx)
 	movl 8(%ebx),%eax
@@ -2453,7 +2453,7 @@ Pages_mkCanvas5_closure:
 .section .rodata
 	.align 4
 .align 1
-c9ZM_str:
+camI_str:
 	.byte	99
 	.byte	97
 	.byte	110
@@ -2463,60 +2463,60 @@ c9ZM_str:
 	.byte	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(Pages_mkCanvas5_info)+84
+	.long	Sa4h_srt-(Pages_mkCanvas5_info)+84
 	.long	65539
 	.long	0
 	.long	196623
 .globl Pages_mkCanvas5_info
 Pages_mkCanvas5_info:
-.Lc9ZP:
+.LcamL:
 	leal -8(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lca0d
-.Lca0e:
-	movl $c9ZN_info,-4(%ebp)
-	movl $c9ZM_str,8(%ebx)
+	jb .Lcan9
+.Lcana:
+	movl $camJ_info,-4(%ebp)
+	movl $camI_str,8(%ebx)
 	addl $-4,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9ZN_info)+84
+	.long	Sa4h_srt-(camJ_info)+84
 	.long	0
 	.long	65568
-c9ZN_info:
-.Lc9ZN:
-	movl $c9ZS_info,(%ebp)
+camJ_info:
+.LcamJ:
+	movl $camO_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(c9ZS_info)+84
+	.long	Sa4h_srt-(camO_info)+84
 	.long	0
 	.long	65568
-c9ZS_info:
-.Lc9ZS:
+camO_info:
+.LcamO:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca0i
-.Lca0h:
+	ja .Lcane
+.Lcand:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
-	movl $ca02_info,-4(%ebp)
+	movl $camY_info,-4(%ebp)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziJSString_newElemzuf1_closure,%esi
 	movl (%edi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
 	testw $7,%si
-	jne .Lca02
-.Lca03:
+	jne .LcamY
+.LcamZ:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	65
 	.long	32
-ca02_info:
-.Lca02:
+camY_info:
+.LcamY:
 	movl 4(%ebp),%eax
-	movl $ca0a_info,4(%ebp)
+	movl $can6_info,4(%ebp)
 	addl $4,%ebp
 	movl 3(%esi),%ecx
 	movl 872(%ebx),%edx
@@ -2604,24 +2604,24 @@ ca02_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-ca0a_info:
-.Lca0a:
+can6_info:
+.Lcan6:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca0n
-.Lca0m:
+	ja .Lcanj
+.Lcani:
 	movl $base_GHCziPtr_Ptr_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%esi
 	addl $4,%ebp
 	jmp *(%ebp)
-.Lca0d:
+.Lcan9:
 	movl $Pages_mkCanvas5_closure,%esi
 	jmp *-8(%ebx)
-.Lca0i:
+.Lcane:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lca0n:
+.Lcanj:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
 .data
@@ -2636,7 +2636,7 @@ Pages_mkCanvas4_closure:
 .section .rodata
 	.align 4
 .align 1
-ca1g_str:
+caoc_str:
 	.byte	98
 	.byte	111
 	.byte	114
@@ -2647,7 +2647,7 @@ ca1g_str:
 .section .rodata
 	.align 4
 .align 1
-ca1w_str:
+caos_str:
 	.byte	49
 	.byte	112
 	.byte	120
@@ -2670,49 +2670,49 @@ ca1w_str:
 	.long	22
 .globl Pages_mkCanvas4_info
 Pages_mkCanvas4_info:
-.Lca1j:
+.Lcaof:
 	leal -20(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lca1N
-.Lca1O:
+	jb .LcaoJ
+.LcaoK:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lca1f
-.Lca1e:
+	je .Lcaob
+.Lcaoa:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $ca1h_info,-16(%ebp)
-	movl $ca1g_str,8(%ebx)
+	movl $caod_info,-16(%ebp)
+	movl $caoc_str,8(%ebx)
 	addl $-16,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lca1f:
+.Lcaob:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-ca1h_info:
-.Lca1h:
-	movl $ca1m_info,(%ebp)
+caod_info:
+.Lcaod:
+	movl $caoi_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-ca1m_info:
-.Lca1m:
+caoi_info:
+.Lcaoi:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca1S
-.Lca1R:
+	ja .LcaoO
+.LcaoN:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
-	movl $ca1x_info,-4(%ebp)
-	movl $ca1w_str,8(%ebx)
+	movl $caot_info,-4(%ebp)
+	movl $caos_str,8(%ebx)
 	movl (%edi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
@@ -2721,29 +2721,29 @@ ca1m_info:
 	.align 4,0x90
 	.long	65
 	.long	32
-ca1x_info:
-.Lca1x:
-	movl $ca1B_info,(%ebp)
+caot_info:
+.Lcaot:
+	movl $caox_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	65
 	.long	32
-ca1B_info:
-.Lca1B:
+caox_info:
+.Lcaox:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca1X
-.Lca1W:
+	ja .LcaoT
+.LcaoS:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	movl 4(%ebp),%eax
 	leal -3(%edi),%ecx
-.Lca1J:
+.LcaoF:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca20
-.Lca1Z:
+	ja .LcaoW
+.LcaoV:
 	movl 3(%ecx),%ecx
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_StyleName_con_info,-16(%edi)
 	movl %eax,-12(%edi)
@@ -2758,22 +2758,22 @@ ca1B_info:
 	.align 4,0x90
 	.long	65
 	.long	32
-ca1I_info:
-.Lca1I:
+caoE_info:
+.LcaoE:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
-	jmp .Lca1J
-.Lca1N:
+	jmp .LcaoF
+.LcaoJ:
 	jmp *-16(%ebx)
-.Lca1S:
+.LcaoO:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lca1X:
+.LcaoT:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lca20:
+.LcaoW:
 	movl $20,904(%ebx)
-	movl $ca1I_info,(%ebp)
+	movl $caoE_info,(%ebp)
 	movl %ecx,%esi
 	jmp stg_gc_unpt_r1
 .data
@@ -2788,7 +2788,7 @@ Pages_mkCanvas3_closure:
 .section .rodata
 	.align 4
 .align 1
-ca2y_str:
+capu_str:
 	.byte	98
 	.byte	97
 	.byte	99
@@ -2808,7 +2808,7 @@ ca2y_str:
 .section .rodata
 	.align 4
 .align 1
-ca2O_str:
+capK_str:
 	.byte	119
 	.byte	104
 	.byte	105
@@ -2821,49 +2821,49 @@ ca2O_str:
 	.long	22
 .globl Pages_mkCanvas3_info
 Pages_mkCanvas3_info:
-.Lca2B:
+.Lcapx:
 	leal -20(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lca35
-.Lca36:
+	jb .Lcaq1
+.Lcaq2:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lca2x
-.Lca2w:
+	je .Lcapt
+.Lcaps:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $ca2z_info,-16(%ebp)
-	movl $ca2y_str,8(%ebx)
+	movl $capv_info,-16(%ebp)
+	movl $capu_str,8(%ebx)
 	addl $-16,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lca2x:
+.Lcapt:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-ca2z_info:
-.Lca2z:
-	movl $ca2E_info,(%ebp)
+capv_info:
+.Lcapv:
+	movl $capA_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-ca2E_info:
-.Lca2E:
+capA_info:
+.LcapA:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca3a
-.Lca39:
+	ja .Lcaq6
+.Lcaq5:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
-	movl $ca2P_info,-4(%ebp)
-	movl $ca2O_str,8(%ebx)
+	movl $capL_info,-4(%ebp)
+	movl $capK_str,8(%ebx)
 	movl (%edi),%eax
 	movl %eax,(%ebp)
 	addl $-4,%ebp
@@ -2872,29 +2872,29 @@ ca2E_info:
 	.align 4,0x90
 	.long	65
 	.long	32
-ca2P_info:
-.Lca2P:
-	movl $ca2T_info,(%ebp)
+capL_info:
+.LcapL:
+	movl $capP_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	65
 	.long	32
-ca2T_info:
-.Lca2T:
+capP_info:
+.LcapP:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca3f
-.Lca3e:
+	ja .Lcaqb
+.Lcaqa:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	movl 4(%ebp),%eax
 	leal -3(%edi),%ecx
-.Lca31:
+.LcapX:
 	addl $20,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca3i
-.Lca3h:
+	ja .Lcaqe
+.Lcaqd:
 	movl 3(%ecx),%ecx
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_StyleName_con_info,-16(%edi)
 	movl %eax,-12(%edi)
@@ -2909,22 +2909,22 @@ ca2T_info:
 	.align 4,0x90
 	.long	65
 	.long	32
-ca30_info:
-.Lca30:
+capW_info:
+.LcapW:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
-	jmp .Lca31
-.Lca35:
+	jmp .LcapX
+.Lcaq1:
 	jmp *-16(%ebx)
-.Lca3a:
+.Lcaq6:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lca3f:
+.Lcaqb:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lca3i:
+.Lcaqe:
 	movl $20,904(%ebx)
-	movl $ca30_info,(%ebp)
+	movl $capW_info,(%ebp)
 	movl %ecx,%esi
 	jmp stg_gc_unpt_r1
 .data
@@ -2939,7 +2939,7 @@ Pages_mkCanvas2_closure:
 .section .rodata
 	.align 4
 .align 1
-ca3H_str:
+caqD_str:
 	.byte	119
 	.byte	105
 	.byte	100
@@ -2952,53 +2952,53 @@ ca3H_str:
 	.long	22
 .globl Pages_mkCanvas2_info
 Pages_mkCanvas2_info:
-.Lca3K:
+.LcaqG:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lca3Y
-.Lca3Z:
+	jb .LcaqU
+.LcaqV:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lca3G
-.Lca3F:
+	je .LcaqC
+.LcaqB:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $ca3I_info,-16(%ebp)
-	movl $ca3H_str,8(%ebx)
+	movl $caqE_info,-16(%ebp)
+	movl $caqD_str,8(%ebx)
 	addl $-16,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lca3G:
+.LcaqC:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-ca3I_info:
-.Lca3I:
-	movl $ca3N_info,(%ebp)
+caqE_info:
+.LcaqE:
+	movl $caqJ_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-ca3N_info:
-.Lca3N:
+caqJ_info:
+.LcaqJ:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca43
-.Lca42:
+	ja .LcaqZ
+.LcaqY:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%eax
-.Lca3V:
+.LcaqR:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca46
-.Lca45:
+	ja .Lcar2
+.Lcar1:
 	movl 3(%eax),%eax
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_PropName_con_info,-4(%edi)
 	movl %eax,(%edi)
@@ -3009,18 +3009,18 @@ ca3N_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-ca3U_info:
-.Lca3U:
+caqQ_info:
+.LcaqQ:
 	movl %esi,%eax
-	jmp .Lca3V
-.Lca3Y:
+	jmp .LcaqR
+.LcaqU:
 	jmp *-16(%ebx)
-.Lca43:
+.LcaqZ:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lca46:
+.Lcar2:
 	movl $8,904(%ebx)
-	movl $ca3U_info,(%ebp)
+	movl $caqQ_info,(%ebp)
 	movl %eax,%esi
 	jmp stg_gc_unpt_r1
 .data
@@ -3035,7 +3035,7 @@ Pages_mkCanvas1_closure:
 .section .rodata
 	.align 4
 .align 1
-ca4s_str:
+caro_str:
 	.byte	104
 	.byte	101
 	.byte	105
@@ -3049,53 +3049,53 @@ ca4s_str:
 	.long	22
 .globl Pages_mkCanvas1_info
 Pages_mkCanvas1_info:
-.Lca4v:
+.Lcarr:
 	leal -16(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lca4J
-.Lca4K:
+	jb .LcarF
+.LcarG:
 	subl $4,%esp
 	pushl %esi
 	pushl %ebx
 	call newCAF
 	addl $12,%esp
 	testl %eax,%eax
-	je .Lca4r
-.Lca4q:
+	je .Lcarn
+.Lcarm:
 	movl $stg_bh_upd_frame_info,-12(%ebp)
 	movl %eax,-8(%ebp)
-	movl $ca4t_info,-16(%ebp)
-	movl $ca4s_str,8(%ebx)
+	movl $carp_info,-16(%ebp)
+	movl $caro_str,8(%ebx)
 	addl $-16,%ebp
 	jmp ghczmprim_GHCziCString_unpackCStringzh_info
-.Lca4r:
+.Lcarn:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-ca4t_info:
-.Lca4t:
-	movl $ca4y_info,(%ebp)
+carp_info:
+.Lcarp:
+	movl $caru_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	0
 	.long	32
-ca4y_info:
-.Lca4y:
+caru_info:
+.Lcaru:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca4O
-.Lca4N:
+	ja .LcarK
+.LcarJ:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	leal -3(%edi),%eax
-.Lca4G:
+.LcarC:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca4R
-.Lca4Q:
+	ja .LcarN
+.LcarM:
 	movl 3(%eax),%eax
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_PropName_con_info,-4(%edi)
 	movl %eax,(%edi)
@@ -3106,18 +3106,18 @@ ca4y_info:
 	.align 4,0x90
 	.long	0
 	.long	32
-ca4F_info:
-.Lca4F:
+carB_info:
+.LcarB:
 	movl %esi,%eax
-	jmp .Lca4G
-.Lca4J:
+	jmp .LcarC
+.LcarF:
 	jmp *-16(%ebx)
-.Lca4O:
+.LcarK:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lca4R:
+.LcarN:
 	movl $8,904(%ebx)
-	movl $ca4F_info,(%ebp)
+	movl $carB_info,(%ebp)
 	movl %eax,%esi
 	jmp stg_gc_unpt_r1
 .data
@@ -3129,47 +3129,47 @@ Pages_mkCanvas_closure:
 	.long	0
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(s9G6_info)+92
+	.long	Sa4h_srt-(sa32_info)+92
 	.long	1
 	.long	65553
-s9G6_info:
-.Lca5G:
+sa32_info:
+.LcasC:
 	leal -20(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lca63
-.Lca64:
+	jb .LcasZ
+.Lcat0:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $ca5D_info,-20(%ebp)
+	movl $casz_info,-20(%ebp)
 	movl 12(%esi),%eax
 	movl $Pages_mkCanvas1_closure,%esi
 	movl %eax,-16(%ebp)
 	addl $-20,%ebp
 	testw $7,%si
-	jne .Lca5D
-.Lca5E:
+	jne .Lcasz
+.LcasA:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-ca5D_info:
-.Lca5D:
-	movl $ca5J_info,(%ebp)
+casz_info:
+.Lcasz:
+	movl $casF_info,(%ebp)
 	movl %esi,%eax
 	movl 4(%ebp),%esi
 	movl %eax,4(%ebp)
 	testw $7,%si
-	jne .Lca5J
-.Lca5K:
+	jne .LcasF
+.LcasG:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-ca5J_info:
-.Lca5J:
-	movl $ca5O_info,(%ebp)
+casF_info:
+.LcasF:
+	movl $casK_info,(%ebp)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,24(%ebx)
 	movl 3(%esi),%eax
 	movl %eax,16(%ebx)
@@ -3179,29 +3179,29 @@ ca5J_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-ca5O_info:
-.Lca5O:
-	movl $ca5S_info,(%ebp)
+casK_info:
+.LcasK:
+	movl $casO_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-ca5S_info:
-.Lca5S:
+casO_info:
+.LcasO:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca6a
-.Lca69:
+	ja .Lcat6
+.Lcat5:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	movl 4(%ebp),%eax
 	leal -3(%edi),%ecx
-.Lca60:
+.LcasW:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca6d
-.Lca6c:
+	ja .Lcat9
+.Lcat8:
 	movl 3(%ecx),%ecx
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_Attribute_con_info,-8(%edi)
 	movl %eax,-4(%edi)
@@ -3213,64 +3213,64 @@ ca5S_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-ca5Z_info:
-.Lca5Z:
+casV_info:
+.LcasV:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
-	jmp .Lca60
-.Lca63:
+	jmp .LcasW
+.LcasZ:
 	jmp *-16(%ebx)
-.Lca6a:
+.Lcat6:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lca6d:
+.Lcat9:
 	movl $12,904(%ebx)
-	movl $ca5Z_info,(%ebp)
+	movl $casV_info,(%ebp)
 	movl %ecx,%esi
 	jmp stg_gc_unpt_r1
 .text
 	.align 4,0x90
-	.long	S9Hl_srt-(s9FX_info)+96
+	.long	Sa4h_srt-(sa2T_info)+96
 	.long	1
 	.long	65553
-s9FX_info:
-.Lca6m:
+sa2T_info:
+.Lcati:
 	leal -20(%ebp),%eax
 	cmpl 840(%ebx),%eax
-	jb .Lca6J
-.Lca6K:
+	jb .LcatF
+.LcatG:
 	movl $stg_upd_frame_info,-12(%ebp)
 	movl %esi,-8(%ebp)
-	movl $ca6j_info,-20(%ebp)
+	movl $catf_info,-20(%ebp)
 	movl 12(%esi),%eax
 	movl $Pages_mkCanvas2_closure,%esi
 	movl %eax,-16(%ebp)
 	addl $-20,%ebp
 	testw $7,%si
-	jne .Lca6j
-.Lca6k:
+	jne .Lcatf
+.Lcatg:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-ca6j_info:
-.Lca6j:
-	movl $ca6p_info,(%ebp)
+catf_info:
+.Lcatf:
+	movl $catl_info,(%ebp)
 	movl %esi,%eax
 	movl 4(%ebp),%esi
 	movl %eax,4(%ebp)
 	testw $7,%si
-	jne .Lca6p
-.Lca6q:
+	jne .Lcatl
+.Lcatm:
 	jmp *(%esi)
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-ca6p_info:
-.Lca6p:
-	movl $ca6u_info,(%ebp)
+catl_info:
+.Lcatl:
+	movl $catq_info,(%ebp)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,24(%ebx)
 	movl 3(%esi),%eax
 	movl %eax,16(%ebx)
@@ -3280,29 +3280,29 @@ ca6p_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-ca6u_info:
-.Lca6u:
-	movl $ca6y_info,(%ebp)
+catq_info:
+.Lcatq:
+	movl $catu_info,(%ebp)
 	jmp toJSStr
 .text
 	.align 4,0x90
 	.long	1
 	.long	32
-ca6y_info:
-.Lca6y:
+catu_info:
+.Lcatu:
 	addl $8,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca6Q
-.Lca6P:
+	ja .LcatM
+.LcatL:
 	movl $ghczmprim_GHCziTypes_Izh_con_info,-4(%edi)
 	movl %esi,(%edi)
 	movl 4(%ebp),%eax
 	leal -3(%edi),%ecx
-.Lca6G:
+.LcatC:
 	addl $12,%edi
 	cmpl 856(%ebx),%edi
-	ja .Lca6T
-.Lca6S:
+	ja .LcatP
+.LcatO:
 	movl 3(%ecx),%ecx
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_Attribute_con_info,-8(%edi)
 	movl %eax,-4(%edi)
@@ -3314,50 +3314,50 @@ ca6y_info:
 	.align 4,0x90
 	.long	1
 	.long	32
-ca6F_info:
-.Lca6F:
+catB_info:
+.LcatB:
 	movl 4(%ebp),%eax
 	movl %esi,%ecx
-	jmp .Lca6G
-.Lca6J:
+	jmp .LcatC
+.LcatF:
 	jmp *-16(%ebx)
-.Lca6Q:
+.LcatM:
 	movl $8,904(%ebx)
 	jmp stg_gc_unbx_r1
-.Lca6T:
+.LcatP:
 	movl $12,904(%ebx)
-	movl $ca6F_info,(%ebp)
+	movl $catB_info,(%ebp)
 	movl %ecx,%esi
 	jmp stg_gc_unpt_r1
 .section .data
 	.align 4
 .align 1
-ua72_srtd:
-	.long	S9Hl_srt+20
+uatY_srtd:
+	.long	Sa4h_srt+20
 	.long	23
 	.long	8257541
 .text
 	.align 4,0x90
-	.long	ua72_srtd-(Pages_mkCanvas_info)+0
+	.long	uatY_srtd-(Pages_mkCanvas_info)+0
 	.long	131087
 	.long	0
 	.long	-65521
 .globl Pages_mkCanvas_info
 Pages_mkCanvas_info:
-.Lca6X:
+.LcatT:
 	addl $80,%edi
 	movl 16(%ebx),%eax
 	movl 8(%ebx),%ecx
 	cmpl 856(%ebx),%edi
-	ja .Lca71
-.Lca70:
-	movl $s9G6_info,-76(%edi)
+	ja .LcatX
+.LcatW:
+	movl $sa32_info,-76(%edi)
 	movl %eax,-64(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-60(%edi)
 	leal -76(%edi),%eax
 	movl %eax,-56(%edi)
 	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,-52(%edi)
-	movl $s9FX_info,-48(%edi)
+	movl $sa2T_info,-48(%edi)
 	movl %ecx,-36(%edi)
 	movl $ghczmprim_GHCziTypes_ZC_con_info,-32(%edi)
 	leal -48(%edi),%eax
@@ -3378,7 +3378,7 @@ Pages_mkCanvas_info:
 	movl $LlHybR7LOSS7VAc0pG6N16_ControlziMonadziIOziClass_zdfMonadIOIO_closure,16(%ebx)
 	movl $FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_zdfIsElemElem_closure,8(%ebx)
 	jmp FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziCore_with_info
-.Lca71:
+.LcatX:
 	movl $80,904(%ebx)
 	movl %eax,16(%ebx)
 	movl %ecx,8(%ebx)
@@ -3387,7 +3387,7 @@ Pages_mkCanvas_info:
 .section .data
 	.align 4
 .align 1
-S9Hl_srt:
+Sa4h_srt:
 	.long	Pages_selectzuf1_closure
 	.long	FxthDgO5vhFC0dVxe1OwkF_HasteziDOMziJSString_newElemzuf1_closure
 	.long	Pages_mkDiv1_closure
