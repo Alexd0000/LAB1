@@ -7,6 +7,25 @@ import Data.Char
 data Expr = Num Double | Add Expr Expr | Mul Expr Expr | X | Sin Expr | Cos Expr
  deriving (Eq,Show)
 
+smartAdd :: Expr -> Expr -> Expr
+smartAdd (Num a) (Num b)                 = Num (a+b)
+smartAdd (Num 0) b                       = b
+smartAdd a (Num 0)                       = a
+smartAdd X X                             = smartMul (Num 2) X
+smartAdd (Mul (Num m) X) X               = smartMul (Num (m+1)) X
+smartAdd X (Mul (Num m) X)               = smartMul (Num (m+1)) X
+smartAdd (Mul (Num m) X) (Mul (Num n) X) = smartMul (Num (m+n)) X
+smartAdd a b                             = Add a b
+
+smartMul :: Expr -> Expr -> Expr
+smartMul (Num a) (Num b)                = Num (a*b)
+smartMul a b | a == Num 0 || b == Num 0 = Num 0
+             | a == Num 1               = b
+             | b == Num 1               = a
+smartMul (Num a) (Mul (Num b) e)        = Mul (Num(a*b)) e
+smartMul a b                            = Mul a b
+
+
 
 type Name = String
 
@@ -153,7 +172,7 @@ factor = ((factor' <|> func) <|> num)  <|> var
 --      - subexpressions not involving variables are always simplified to their smallest representation
 --      - (sub)expressions representing x + 0 , 0 * x and 1 * x and similar terms are always simplified
 --      - sums of multiples of x are combined to one multiple
-
+{-
 simplify :: Expr -> Expr
 simplify e | hasVariable e == False = (Num (eval e 0))
            | otherwise = simplify' e
@@ -182,16 +201,16 @@ simplify e | hasVariable e == False = (Num (eval e 0))
     hasVariable (Cos e) = hasVariable e
     hasVariable (Add e1 e2) = hasVariable e1 || hasVariable e2
     hasVariable (Mul e1 e2) = hasVariable e1 || hasVariable e2
-
+-}
 
 -- Function that differentiates the expression (with respect to x).
 differentiate :: Expr -> Expr
-differentiate e = simplify (differentiate' e)
+differentiate e = differentiate' e
   where
         differentiate' :: Expr -> Expr
         differentiate' (Num n) = (Num 0)
         differentiate' (X) = (Num 1)
-        differentiate' (Add e1 e2) = Add (differentiate e1) (differentiate e2)
-        differentiate' (Mul e1 e2) = Add (Mul (differentiate e1) e2) (Mul e1 (differentiate e2))
-        differentiate' (Sin e) = Mul (differentiate e) (Cos e)
-        differentiate' (Cos e) = Mul  (Num(-1)) (Mul (differentiate e) (Sin e))
+        differentiate' (Add e1 e2) = smartAdd (differentiate e1) (differentiate e2)
+        differentiate' (Mul e1 e2) = smartAdd (smartMul (differentiate e1) e2) (smartMul e1 (differentiate e2))
+        differentiate' (Sin e) = smartMul (differentiate e) (Cos e)
+        differentiate' (Cos e) = smartMul  (Num(-1)) (smartMul (differentiate e) (Sin e))
