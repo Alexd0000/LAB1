@@ -130,13 +130,13 @@ factor = ((factor' <|> func) <|> num)  <|> var
                   return e
 
     -- Parse a function
-    func = (func1 <|> func2) <|> func3
+--    func = (func1 <|> func2) <|> func3
 
     -- Case sin 2 or sin x
-    func1 = do name <- cosinus <|> sinus
-               n <- num <|> var
-               return (name n)
-
+    func = do name <- cosinus <|> sinus
+              fac <- factor
+              return (name fac)
+{-
     -- Case sin cos ....
     func2 = do name <- cosinus <|> sinus
                f <- func
@@ -148,7 +148,7 @@ factor = ((factor' <|> func) <|> num)  <|> var
                e <- expr
                char ')'
                return (name e)
-
+-}
     cosinus = do char 'c'
                  char 'o'
                  char 's'
