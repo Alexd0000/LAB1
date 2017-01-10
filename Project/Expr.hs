@@ -3,10 +3,12 @@ module Expr where
 import Parsing
 import Data.Maybe
 import Data.Char
+import Test.QuickCheck
 
 data Expr = Num Double | Add Expr Expr | Mul Expr Expr | X | Sin Expr | Cos Expr
  deriving (Eq,Show)
 
+-- Smart Constructor to be used always instead of Add
 smartAdd :: Expr -> Expr -> Expr
 smartAdd (Num a) (Num b)                 = Num (a+b)
 smartAdd (Num 0) b                       = b
@@ -17,6 +19,7 @@ smartAdd X (Mul (Num m) X)               = smartMul (Num (m+1)) X
 smartAdd (Mul (Num m) X) (Mul (Num n) X) = smartMul (Num (m+n)) X
 smartAdd a b                             = Add a b
 
+-- Smart Constructor to be used always instead of Mul
 smartMul :: Expr -> Expr -> Expr
 smartMul (Num a) (Num b)                = Num (a*b)
 smartMul a b | a == Num 0 || b == Num 0 = Num 0
@@ -109,16 +112,18 @@ expr, term, factor :: Parser Expr
 expr = expr' <|> term
   where
     expr' = do t <- term
-               char ' '
+               zeroOrMore (char ' ')
                char '+'
-               char ' '
+               zeroOrMore (char ' ')
                e <- expr
                return (Add t e)
 
 term = term' <|> factor
   where
     term' = do f <- factor
+               zeroOrMore (char ' ')
                char '*'
+               zeroOrMore (char ' ')
                t <- term
                return (Mul f t)
 
@@ -130,25 +135,10 @@ factor = ((factor' <|> func) <|> num)  <|> var
                   return e
 
     -- Parse a function
---    func = (func1 <|> func2) <|> func3
-
-    -- Case sin 2 or sin x
     func = do name <- cosinus <|> sinus
               fac <- factor
               return (name fac)
-{-
-    -- Case sin cos ....
-    func2 = do name <- cosinus <|> sinus
-               f <- func
-               return (name f)
 
-    -- Case sin (...)
-    func3 = do name <- cosinus <|> sinus
-               char '('
-               e <- expr
-               char ')'
-               return (name e)
--}
     cosinus = do char 'c'
                  char 'o'
                  char 's'
@@ -167,41 +157,22 @@ factor = ((factor' <|> func) <|> num)  <|> var
     var = do v <- (char 'x')
              return X
 
-
--- Function that simplifies expressions so that :
---      - subexpressions not involving variables are always simplified to their smallest representation
---      - (sub)expressions representing x + 0 , 0 * x and 1 * x and similar terms are always simplified
---      - sums of multiples of x are combined to one multiple
-{-
+--simplifies Expressions using the smart constructors
 simplify :: Expr -> Expr
-simplify e | hasVariable e == False = (Num (eval e 0))
-           | otherwise = simplify' e
-  where
-    simplify' :: Expr -> Expr
-    simplify' (Add X X) = Mul (Num 2) X
-    simplify' (Add (Mul (Num m) X) X) = Mul (Num(m+1)) X
-    simplify' (Add X (Mul (Num m) X)) = Mul (Num(m+1)) X
-    simplify' (Add (Mul (Num m) X) (Mul (Num n) X)) = Mul (Num (m+n)) X
-    simplify' (Add e1 e2) | e1 == (Num 0) = e2
-                          | e2 == (Num 0) = e1
-                          | otherwise = (Add (simplify e1) (simplify e2))
-    simplify' (Mul e1 e2) | e1 == (Num 0) || e2 == (Num 0) = (Num 0)
-                          | e1 == (Num 1) = e2
-                          | e2 == (Num 1) = e1
-                          | otherwise = (Mul (simplify e1) (simplify e2))
-    simplify' (Cos e) = (Cos (simplify e))
-    simplify' (Sin e) = (Sin (simplify e))
-    simplify' (Num n) = (Num n)
-    simplify' X = X
-    -- Helper function that searches if an expression contains a variable
-    hasVariable :: Expr -> Bool
-    hasVariable (Num n) = False
-    hasVariable X = True
-    hasVariable (Sin e) = hasVariable e
-    hasVariable (Cos e) = hasVariable e
-    hasVariable (Add e1 e2) = hasVariable e1 || hasVariable e2
-    hasVariable (Mul e1 e2) = hasVariable e1 || hasVariable e2
--}
+simplify (Add e1 e2) = smartAdd (simplify e1) (simplify e2)
+simplify (Mul e1 e2) = smartMul (simplify e1) (simplify e2)
+simplify (Cos e) = Cos (simplify e)
+simplify (Sin e) = Sin (simplify e)
+simplify (Num n) = Num n
+simplify X = X
+
+--property to test simplify
+prop_simplify :: Expr -> Double -> Property
+prop_simplify e x = collect e (eval (simplify e) x ~== eval e x)
+
+--Equality operator accepting little deviations
+(~==) :: (Ord a, Fractional a) => a -> a -> Bool
+x ~== y = x-y < 1e-10
 
 -- Function that differentiates the expression (with respect to x).
 differentiate :: Expr -> Expr
